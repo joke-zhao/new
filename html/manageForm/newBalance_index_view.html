@@ -1,0 +1,230 @@
+<div id="app">
+  <!-- 头部数据筛选区 -->
+  <header>
+    <div class="header-box">
+      <div class="box-name">
+        <div class="left-name">{{companyName}}</div>
+        <div class="right-name">币种:（CNY）</div>
+      </div>
+      <div class="box-date">
+        <div class="left-date">
+          <img src="../../image/manageForm/date.png" alt="" />
+        </div>
+        <div class="right-date">
+          <div @click="handlStartDate" class="date-YM">
+            <span v-if="!startDate">请选择开始年月</span>
+            <span v-else style="font-size: 0.28rem;">{{startDate}}</span>
+          </div>
+          <span>至</span>
+          <div @click="handlEndDate" class="date-YM">
+            <span v-if="!endDate">请选择结束年月</span>
+            <span v-else style="font-size: 0.28rem;">{{endDate}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="box-title">
+        <span>资产负债表</span>
+      </div>
+    </div>
+  </header>
+  <!-- 可视化区域展示区 -->
+  <main>
+    <div class="main-box">
+      <div class="echart-box" v-for="(item,index) in echartList" :key="index">
+        <div :id="item.eId" style="width: 100%; height: 3rem;"></div>
+      </div>
+      <div class="searchInfo" v-if="echartList.length === 0">选择查询信息后，点击下方 <span style="color:#486aef">蓝色按钮</span> 查询</div> 
+    </div>
+    
+  </main>
+  <!-- 表格区 -->
+  <menu>
+    <div class="menu-box">
+      <div @click="detailsShow = !detailsShow" class="box-title">
+        <div  class="left-title">查看明细</div>
+          <img v-show="!detailsShow" class="right-title" src="../../image/reportForm/arrow.png" alt="">
+          <img v-show="detailsShow" class="right-title" src=" ../../image/reportForm/arrow2.png" alt="" >
+      </div>
+      <div v-show="detailsShow" class="box-content">
+        <div class="content-header1">
+          {{companyName}}
+        </div>
+        <div class="content-header3">
+          <div class="content"> 
+            <span>
+              资产负债表
+            </span>
+          </div>
+          <div class="header3">
+            <span>月份</span>
+          <div @click="handlTableDate" class="search-data">
+            <span>{{tableDate}}</span>
+            <img src="../../image/reportForm/arrow.png" alt="">
+          </div>
+          </div>
+        </div>
+        <!-- 啊啊啊 -->
+        <div id="aaaa" class="watchDetail_content">
+          <div id="table1">
+          <table style="font-size: 18px" class="curAsset" border="1" cellspacing="0">
+              <thead class="curAsset-head">
+                  <tr>
+                      <th>项目</th>
+                      <th style="width: 30%">{{datePicker}}月</th>
+                  </tr>
+              </thead>
+              <tbody class="curAsset-body">
+              <tr><td class="padding-level_0">流动资产:</td><td class="curAsset-body_content" style="width: 30%"></td></tr></tr>
+              <tr><td>货币资金</td><td>{{fonetaryFund | NumFormat}}</td></tr>
+              <tr><td>以公允价值计量且其变动计入当期损益的金融资产</td><td></td></tr>
+              <tr>    <td>衍生金融资产</td><td></td></tr>
+              <tr>    <td>应收票据及应收账款</td><td></td></tr>
+              <tr>    <td class="padding-level_1">其中：应收票据</td><td>{{notesReceivable | NumFormat}}</td></tr>
+              <tr>    <td class="padding-level_2">应收账款</td><td>{{accountsReceivable | NumFormat}}</td></tr>
+              <tr>    <td>预付款项</td><td>{{prepayments | NumFormat}}</td></tr>
+              <tr>    <td>其他应收款</td><td></td></tr>
+              <tr>    <td class="padding-level_1">其中：应收利息</td><td>{{interestReceivable | NumFormat}}</td></tr>
+              <tr>    <td class="padding-level_2">应收股利</td><td>{{dividendsReceivable | NumFormat}}</td></tr>
+              <tr>    <td>存货</td><td>{{inventory | NumFormat}}</td></tr>
+              <tr>    <td>持有待售资产</td><td></td></tr>
+              <tr>    <td>一年内到期的零流动资产</td><td>{{conCurrentAssets | NumFormat}}</td></tr>
+              <tr>    <td>其他流动资产</td><td>{{otherCurrentAssets | NumFormat}}</td></tr>
+              <tr>    <td style="text-align: center">流动资产合计</td><td>{{totalCurrentAssets | NumFormat}}</td></tr>
+              <tr>    <td class="padding-level_0">非流动资产</td><td></td></tr>
+              <tr>    <td>可出售金融资产</td><td>{{financialAssetsAvailable | NumFormat}}</td></tr>
+              <tr>    <td>持有至到期投资</td><td>{{maturityInvestments | NumFormat}}</td></tr>
+              <tr>    <td>长期应收款</td><td>{{longTermReceivables | NumFormat}}</td></tr>
+              <tr>    <td>长期股权投资</td><td>{{longTermEquityInvestment | NumFormat}}</td></tr>
+              <tr>    <td>投资性房地产</td><td>{{investmentProperty | NumFormat}}</td></tr>
+              <tr>    <td>固定资产</td><td>{{fixedAssets | NumFormat}}</td></tr>
+              <tr>    <td>在建工程</td><td>{{projectsUnderConstruction | NumFormat}}</td></tr>
+              <tr>    <td>生产性生物资产</td><td>{{productiveBiologicalAssets | NumFormat}}</td></tr>
+              <tr>    <td>油气资产</td><td>{{oilGasAssets | NumFormat}}</td></tr>
+              <tr>    <td>无形资产</td><td>{{intangibleAssets | NumFormat}}</td></tr>
+              <tr>    <td>开发支出</td><td>{{developmentExpenditure | NumFormat}}</td></tr>
+              <tr>    <td>商誉</td><td>{{goodwill | NumFormat}}</td></tr>
+              <tr>    <td>长期待摊费用</td><td>{{longTermDeferredExpenses | NumFormat}}</td></tr>
+              <tr>    <td>递延所得税资产</td><td>{{deferredTaxAssets | NumFormat}}</td></tr>
+              <tr>    <td>其他非流动资产</td><td>{{otherNonCurrentAssets | NumFormat}}</td></tr>
+              <tr>    <td style="text-align: center">非流动资产合计</td><td>{{totalNonCurrentAssets | NumFormat}}</td></tr>
+              <tr>    <td style="text-align: center">总计</td><td>{{totalAssets | NumFormat}}</td></tr>
+              </tbody>
+          </table>
+              <table style="font-size: 18px"  class="curAsset marginTable"  border="1" cellspacing="0"><thead class="curAsset-head">
+              <tr>
+                  <th>项目</th>
+                  <th style="width: 30%">{{datePicker}}月</th>
+              </tr>
+              </thead>
+              <tbody class="curAsset-body">
+              <tr>    <td class="padding-level_0">流动负债：</td><td class="curAsset-body_content" style="width: 30%"></td></tr>
+              <tr>    <td>短期借款</td><td>{{shortTermBorrowing | NumFormat}}</td></tr>
+              <tr>    <td>以公允价值计量且其变动计入当期损益的金融负债</td><td></td></tr>
+              <tr>    <td>衍生金融负债</td><td></td></tr>
+              <tr>    <td>应付票据及应付账款</td><td></td></tr>
+              <tr>    <td>预收款项</td><td>{{advanceReceipt | NumFormat}}</td></tr>
+              <tr>    <td>应付职工薪酬</td><td>{{payrollPayable | NumFormat}}</td></tr>
+              <tr>    <td>应交税费</td><td>{{taxPayable | NumFormat}}</td></tr>
+              <tr>    <td>其他应付付款</td><td>{{otherPayables | NumFormat}}</td></tr>
+              <tr>    <td class="padding-level_1">其中：应收利息</td><td>{{payableInterest | NumFormat}}</td></tr>
+              <tr>    <td class="padding-level_2">应付股利</td><td>{{dividendsPayable | NumFormat}}</td></tr>
+              <tr>    <td>持有待售负债</td><td></td></tr>
+              <tr>    <td>一年内到期的非流动负债</td><td>{{oneYearNonCurrentLiability | NumFormat}}</td></tr>
+              <tr>    <td>其他流动负债</td><td>{{otherCurrentLiability | NumFormat}}</td></tr>
+              <tr>    <td style="text-align: center">流动负债合计</td><td>{{totalFlowResponsibility | NumFormat}}</td></tr>
+              <tr>    <td class="padding-level_0">零流动负债：</td><td></td></tr>
+              <tr>    <td>长期借款</td><td>{{longTermLoan | NumFormat}}</td></tr>
+              <tr>    <td>应付债券</td><td>{{bondsPayable | NumFormat}}</td></tr>
+              <tr>    <td class="padding-level_1">其中：优先股</td><td></td></tr>
+              <tr>    <td class="padding-level_2">永续债</td><td></td></tr>
+              <tr>    <td>长期应付款</td><td>{{longTermPayable | NumFormat}}</td></tr>
+              <tr>    <td>长期应付职工薪酬</td><td></td></tr>
+              <tr>    <td>预计负债</td><td>{{estimatedLiabilities | NumFormat}}</td></tr>
+              <tr>    <td>递延收益</td><td></td></tr>
+              <tr>    <td>递延所得税负债</td><td>{{deferredIncomeTaxLiabilities | NumFormat}}</td></tr>
+              <tr>    <td>其他非流动负债 </td><td>{{otherNonCurrentLiabilities | NumFormat}}</td></tr>
+              <tr>    <td style="text-align: center">非流动负债合计</td><td>{{totalNonCurrentLiabilities | NumFormat}}</td></tr>
+              <tr>    <td style="text-align: center">负债合计</td><td>{{totalLiabilities | NumFormat}}</td></tr>
+              <tr>    <td class="padding-level_0" >所有者权益（或股东权益）：</td><td></td></tr>
+              <tr>    <td>实收资本（或股本）</td><td>{{paidInCapital | NumFormat}}</td></tr>
+              <tr>    <td>其他权益工具</td><td></td></tr>
+              <tr>    <td class="padding-level_1">其中：优先股</td><td></td></tr>
+              <tr>    <td class="padding-level_2">永续债</td><td></td></tr>
+              <tr>    <td>资本公积</td><td>{{capitalReserve | NumFormat}}</td></tr>
+              <tr>    <td>减：库存股</td><td>{{treasuryStock | NumFormat}}</td></tr>
+              <tr>    <td>其他综合收益</td><td></td></tr>
+              <tr>    <td>专项储备</td><td></td></tr>
+              <tr>    <td>盈余公积</td><td>{{earnedSurplus | NumFormat}}</td></tr>
+              <tr>    <td>未分配利润</td><td>{{undistributedProfit | NumFormat}}</td></tr>
+              <tr>    <td style="text-align: center">所有者权益（或股东权益）合计</td><td>{{totalOwnersEquity | NumFormat}}</td></tr>
+              <tr>    <td style="text-align: center">负债和所有者权益（或股东权益）合计</td><td>{{totalLiabilitiesAndOwnerEquity | NumFormat}}</td></tr>
+              </tbody>
+              </table>
+  
+  
+          </div>
+  
+      </div>
+        <!-- 啊啊啊 -->
+      </div>
+    </div>
+  </menu>
+  <!-- 底部操作区 -->
+  <footer>
+    <div class="footer-box">
+      <div @click="showShare = true" class="left-box">
+        导出
+      </div>
+      <div @click="handlSearch" class="right-box">
+        查询
+      </div>
+    </div>
+  </footer>
+  <!-- 操作弹框 -->
+  <van-share-sheet
+    v-model="showShare"
+    :options="options"
+    @select="onSelect"
+    title="选择导出方式"
+  />
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <!-- 开始日期弹框 -->
+  <van-popup v-model="showDateStart" round position="bottom">
+    <van-datetime-picker
+      v-model="currentDate"
+      type="year-month"
+      title="选择年月"
+      :min-date="minDate"
+      :max-date="maxDate"
+      @confirm="openStartDate"
+      @cancel="closeStartDate"
+      :formatter="formatter"
+    />
+  </van-popup>
+  <!-- 结束日期弹框 -->
+  <van-popup v-model="showDateEnd" round position="bottom">
+    <van-datetime-picker
+      v-model="currentDate"
+      type="year-month"
+      title="选择年月"
+      :min-date="minEndDate"
+      :max-date="maxEndDate"
+      @confirm="openEndDate"
+      @cancel="closeEndDate"
+      :formatter="formatter"
+    />
+  </van-popup>
+  <!-- 查询表格 -->
+  <van-popup v-model="showDateTable" round position="bottom">
+    <van-datetime-picker
+      v-model="currentDate"
+      type="year-month"
+      title="选择年月"
+      :min-date="minDate"
+      :max-date="maxDate"
+      @confirm="openTableDate"
+      @cancel="closeTableDate"
+      :formatter="formatter"
+    />
+  </van-popup>
+</div>

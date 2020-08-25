@@ -1,0 +1,306 @@
+#waterElectricity {
+  width: 100%;
+  position: relative;
+  /* flex - 两边对齐 - 垂直居中 */
+  /* flex - 垂直居中对齐 */
+}
+#waterElectricity .flexSbC {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#waterElectricity .flexCC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#waterElectricity .startTime-font {
+  display: flex;
+  font-size: 0.25rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000000;
+  opacity: 0.96;
+}
+#waterElectricity .company {
+  width: 100%;
+  height: 1rem;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+#waterElectricity .company .company_name {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  height: 100%;
+}
+#waterElectricity .company .company_name p {
+  font-size: 0.35rem;
+  color: #000;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#waterElectricity .company .company_cny {
+  display: flex;
+  width: 25%;
+  align-items: center;
+  height: 100%;
+  flex-direction: row-reverse;
+  font-size: 0.2rem;
+  color: #000;
+}
+#waterElectricity .table_name {
+  width: 100%;
+  font-size: 0.35rem;
+  text-align: center;
+  height: 100%;
+  font-weight: 600;
+}
+#waterElectricity .datePick {
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 6.72rem;
+  height: 0.55rem;
+  border: 1px solid #000;
+  opacity: 1;
+  border-radius: 0.04rem;
+  margin-left: 0.38rem;
+}
+#waterElectricity .datePick .date-icon {
+  width: 0.25rem;
+  height: 0.26rem;
+  opacity: 0.8;
+}
+#waterElectricity .datePick .spans {
+  width: 0.01rem;
+  height: 0.36rem;
+  border: 0.01rem solid #000000;
+  opacity: 0.5;
+  margin-left: 0.18rem;
+}
+#waterElectricity .datePick .startTime {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  text-align: center;
+}
+#waterElectricity .datePick .startTime .van-cell {
+  padding: 0rem;
+  opacity: 1;
+}
+#waterElectricity .datePick .startTime .van-field__control {
+  text-align: center;
+  opacity: 1;
+}
+#waterElectricity .datePick .startTime .startTime_title {
+  width: 0.7rem;
+  font-size: 0.2rem;
+}
+#waterElectricity .datePick .endTime {
+  display: flex;
+}
+#waterElectricity .datePick .endTime .van-cell {
+  padding: 0rem;
+  opacity: 1;
+}
+#waterElectricity .datePick .endTime .van-field__control {
+  text-align: center;
+  opacity: 1;
+}
+#waterElectricity .datePick .endTime .endTime_title {
+  width: 0.7rem;
+  font-size: 0.2rem;
+}
+#waterElectricity .datePick > el-date-picker {
+  width: 40%;
+  height: 100%;
+}
+#waterElectricity .picture {
+  height: 6rem;
+  width: 100%;
+  padding: 0 0.2rem;
+}
+#waterElectricity .picture #myChart {
+  width: 100%;
+  height: 100%;
+}
+#waterElectricity .watchDetail_title {
+  height: 1rem;
+  width: 100%;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.3rem;
+  color: #000;
+  font-weight: 400;
+}
+#waterElectricity .watchDetail_title img {
+  height: 0.25rem;
+  width: 0.25rem;
+}
+#waterElectricity .accountDetails {
+  width: 100%;
+  height: 1rem;
+}
+#waterElectricity .accountDetails .accountDetails_content {
+  width: 100%;
+  padding: 0 0.2rem;
+  background-color: #F9F8F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.3rem;
+}
+#waterElectricity .accountTitle {
+  width: 100%;
+  height: 1.25rem;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+#waterElectricity .accountTitle .accountTitle_company {
+  width: 60%;
+  height: 100%;
+}
+#waterElectricity .accountTitle .accountTitle_company .accountTitle_company_1 {
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.35rem;
+  font-weight: 600;
+}
+#waterElectricity .accountTitle .accountTitle_company .accountTitle_company_2 {
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.2rem;
+}
+#waterElectricity .accountTitle .accountTitle_date {
+  width: 40%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+#waterElectricity .accountTitle .accountTitle_date .accountTitle_month {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #000;
+  height: 0.56rem;
+  padding: 0 auto;
+  border-radius: 0.05rem;
+}
+#waterElectricity .accountTitle .accountTitle_date .accountTitle_month img {
+  width: 0.28rem;
+  height: 0.16rem;
+  margin-top: 0.22rem;
+  margin-right: 0.2rem;
+}
+#waterElectricity .accountTitle .accountTitle_date .accountTitle_month .van-cell {
+  padding: 0;
+}
+#waterElectricity .accountTitle .accountTitle_date .accountTitle_month .van-field__control {
+  margin-top: 0.05rem;
+  text-align: center;
+  padding: 0;
+}
+#waterElectricity .accountTitle .accountTitle_date .accountTitle_date_1 {
+  font-size: 0.25rem;
+  width: 40%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.1rem;
+}
+#waterElectricity .accountTitle .accountTitle_date el-date-picker {
+  width: 60%;
+}
+#waterElectricity .watchDetail_content {
+  width: 100%;
+  padding: 0;
+  padding-bottom: 1rem;
+  margin: 0 auto;
+}
+#waterElectricity .watchDetail_content table {
+  width: 100%;
+  text-align: left;
+  font-size: 0.25rem;
+}
+#waterElectricity .watchDetail_content table thead .table-title {
+  font-size: 0.4rem;
+}
+#waterElectricity .watchDetail_content table thead .table-name {
+  font-size: 0.4rem;
+}
+#waterElectricity .watchDetail_content table thead .table-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#waterElectricity .watchDetail_content table thead .table-page-second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#waterElectricity footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+#waterElectricity footer .footer-box {
+  width: 100%;
+  height: 0.9rem;
+  display: flex;
+}
+#waterElectricity footer .footer-box div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-size: 0.3rem;
+  color: #fff;
+  font-weight: 600;
+}
+#waterElectricity footer .footer-box .left-box {
+  background: linear-gradient(0deg, #ff3d3d 0%, #e83737 100%);
+}
+#waterElectricity footer .footer-box .right-box {
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+}
+#waterElectricity .bottom_btns {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+}
+#waterElectricity .bottom_btns .export {
+  height: 50%;
+  width: 100%;
+  background: linear-gradient(0deg, #ff3d3d 0%, #e83737 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}
+#waterElectricity .bottom_btns .print {
+  height: 50%;
+  width: 100%;
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}

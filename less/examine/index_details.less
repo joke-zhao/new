@@ -1,0 +1,305 @@
+/* 单据审批详情 */
+#app {
+  font-size: 0.24rem;
+  width: 100%;
+
+  .flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header {
+    padding-bottom: 0.4rem;
+
+    .header-box {
+      width: 100%;
+      height: 3.2rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  main {
+      /* 发票-海关缴纳书-财政收据-存货 */
+    .mian-box {
+      width: 100%;
+      overflow: auto;
+        padding-bottom: 0.9rem;
+      .box-table {
+        width: 14rem;
+
+        .t-header {
+          display: flex;
+          width: 100%;
+          height: 0.72rem;
+          color: #000;
+          background-color: #f5f5f5;
+
+          > div {
+            flex: 1;
+            .flex_center();
+
+            span {
+              font-weight: 500;
+            }
+          }
+          .h-number{
+            flex:2;
+          }
+        }
+        .t-body {
+            width: 100%;
+          border-top: 1px solid #e0e0e0;
+          border-left: 1px solid #E0E0E0;
+
+          .b-info {
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            height: 0.72rem;
+            .info-item1 {
+              flex: 1;
+              .flex_center();
+
+              span {
+                font-weight: 500;
+              }
+
+              border-right: 1px solid #e0e0e0;
+            }
+
+            .info-item2 {
+              flex: 2;
+              .flex_center();
+              border-right: 1px solid #e0e0e0;
+            }
+          }
+
+          .b-name {
+              width: 100%;
+              height: 0.72rem;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+
+            > div {
+               
+              span {
+                font-weight: 500;
+              }
+              .flex_center();
+              padding: 0 5px;
+              border-right: 1px solid #e0e0e0;
+            }
+          }
+          .b-desc {
+            width: 100%;
+            min-height: 0.72rem;
+            // border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            >div{
+                .flex_center();
+                padding: 0 5px;
+                border-right: 1px solid #e0e0e0;
+                border-bottom: 1px solid #e0e0e0;
+                
+            }
+          }
+
+          .name-item1 {
+            flex: 5;
+          }
+
+          .name-item2 {
+            flex: 3;
+          }
+
+          .name-item3 {
+            flex: 2;
+          }
+        }
+        .t-footer{
+            display: flex;
+            // height: 0.8rem;
+            background-color: #f5f5f5;
+            .f-sign{
+                flex:1;
+                .flex_center();
+                span{
+                    font-weight: 600;
+                    padding: 0.2rem;
+                }
+                img{
+                    width: 2.7rem;
+                    height: 1rem;
+                }
+            }
+        }
+      }
+    }
+    /* 银行 */
+    .mian-box2 {
+        width: 100%;
+        overflow: auto;
+        // border: 1px solid #e0e0e0;
+          padding-bottom: 0.9rem;
+        .box-table {
+          width: 13rem;
+          .t-header {
+            display: flex;
+            width: 100%;
+            height: 0.72rem;
+            color: #000;
+            background-color: #f5f5f5;
+  
+            > div {
+              flex: 1;
+              .flex_center();
+  
+              span {
+                font-weight: 500;
+              }
+            }
+            .h-number{
+              flex:2;
+            }
+          }
+          .t-body{
+              color:#000;
+              font-size: .24rem;
+              border-left: 1px solid #E0E0E0;
+            .b-header{
+                width: 100%;
+                height: 2.2rem;
+                display: flex;
+                border-top: 1px solid #E0E0E0;
+                .h-box{
+                    flex:1;
+                    display: flex;
+                    .box-left{
+                        flex:1;
+                        .flex_center();
+                        font-weight: 500;
+                        border-right: 1px solid #E0E0E0;
+                        border-bottom: 1px solid #E0E0E0;
+                        writing-mode:vertical-lr;
+                    }
+                    .box-right{
+                        flex:9;
+                        display: flex;
+                        flex-direction: column;
+                        .right-item{
+                            flex:1;
+                            display: flex;
+                            border-bottom: 1px solid #E0E0E0;
+                            
+                            div{
+                                .flex_center();
+                                border-right: 1px solid #E0E0E0;
+                            }
+                            .item-name{
+                                flex:1;
+                                font-weight: 500;
+                            }
+                            .item-desc{
+                                flex:2;
+                            }
+                        }
+                    }
+                }
+            }
+            .b-main{
+               .m-box{
+                   display: flex;
+                   div{
+                    height: 0.72rem;
+                    border-right: 1px solid #E0E0E0;
+                    border-bottom: 1px solid #E0E0E0;
+                   }
+                   .box-left{
+                       flex:1;
+                       font-weight: 500;
+                       line-height: .72rem;
+                       text-align: center;
+                   }
+                   .box-right{
+                       flex:4;
+                       line-height: .72rem;
+                       text-indent:2em
+                   }
+               } 
+            }
+          }
+          .t-footer{
+              display: flex;
+              // height: 0.8rem;
+              background-color: #f5f5f5;
+              .f-sign{
+                  flex:1;
+                  .flex_center();
+                  span{
+                      font-weight: 600;
+                      padding: 0.2rem;
+                  }
+                  img{
+                      width: 2.7rem;
+                      height: 1rem;
+                  }
+              }
+          }
+        }
+      }
+  }
+
+  footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+    .footer-box {
+      display: flex;
+      width: 100%;
+      height: 0.9rem;
+      font-size: 0.2rem;
+
+      .box-item {
+        flex: 1;
+        .flex_center();
+        flex-direction: column;
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #e0e0e0;
+
+        img {
+          width: 0.32rem;
+          height: 0.32rem;
+        }
+      }
+
+      .box-item2 {
+        flex: 2;
+        .flex_center();
+        font-size: 0.3rem;
+        color: #fff;
+        background: linear-gradient(
+          0deg,
+          rgba(255, 61, 61, 1) 0%,
+          rgba(232, 55, 55, 1) 100%
+        );
+
+        span {
+          font-weight: 500;
+        }
+      }
+
+      .box-item2:last-child {
+        background: linear-gradient(
+          0deg,
+          rgba(104, 135, 255, 1) 0%,
+          rgba(71, 105, 238, 1) 100%
+        );
+      }
+    }
+  }
+}

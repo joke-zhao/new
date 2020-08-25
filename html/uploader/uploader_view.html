@@ -1,0 +1,5 @@
+<!-- 单据审批页面开始 -->
+<div id="app">
+  <van-uploader v-model="fileList"  :after-read="afterRead" accept="image/*" :max-count="9" 
+    @oversize="onOversize" multiple  capture="camera"/>
+</div>

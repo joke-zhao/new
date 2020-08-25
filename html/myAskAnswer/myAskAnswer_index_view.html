@@ -1,0 +1,76 @@
+<!-- 员工权限页面开始 -->
+<div id="app">
+    <header>
+        <div class="header-box">
+            <!-- 我提问的 -->
+            <div v-show="flag === 1" class="main-box">
+                <div class="box-header">
+                    <div class="box-top">
+                        <div @click="handleTab(1)" :class="flag === 1 ?'h-right':'h-left'">我提问的</div>
+                        <div class="h-center"></div>
+                        <div @click="handleTab(2)" :class="flag === 2 ?'h-right':'h-left'">我关注的</div>
+                    </div>
+                    <div class="box-main">
+                        <div v-show="askAnswerList.length===0" class="noData">暂无数据</div>
+                        <div v-for="(item,index) in askAnswerList" :key="item.id" @click="openProblemDetails(item.id,1)">
+                            <!-- 列表项 -->
+                            <div class="main-item">
+                                <div class="itemOne">
+                                    <img src="../../image/myAskAnswer/ask.png">
+                                    <p>{{ item.title }}</p>
+                                </div>
+                                <div class="itemTwo">
+                                    <img src="../../image/myAskAnswer/answer.png">
+                                    <div>
+                                        <p>{{ item.content }}</p>
+                                        <p>{{ item.creatTime | formatDate }}</p>
+                                    </div>
+                                </div>
+                                <div class="itemThree">
+                                    <p>全部{{ item.sum===null ? 0 : item.sum }}个回答</p>
+                                    <img src="../../image/myAskAnswer/gtSign.png" alt="">
+                                </div>
+                            </div>
+                            <div class="itemFour"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 我关注的 -->
+            <div v-show="flag === 2" class="main-box">
+                <div class="box-header">
+                    <div class="box-top">
+                        <div @click="handleTab(1)" :class="flag === 1 ?'h-right':'h-left'">我提问的</div>
+                        <div class="h-center"></div>
+                        <div @click="handleTab(2)" :class="flag === 2 ?'h-right':'h-left'">我关注的</div>
+                    </div>
+                    <div class="box-main">
+                        <div v-show="myAttentionList.length===0" class="noData">暂无数据</div>
+                        <div v-for="(item,index) in myAttentionList" :key="item.id" @click="openProblemDetails(item.id,2)">
+                            <!-- 列表项 -->
+                            <div class="main-item">
+                                <div class="itemOne">
+                                    <img src="../../image/myAskAnswer/ask.png">
+                                    <p>{{ item.title }}</p>
+                                </div>
+                                <div class="itemTwo">
+                                    <img src="../../image/myAskAnswer/answer.png">
+                                    <div>
+                                        <p><span>{{ item.userName }}:</span>&nbsp;&nbsp;{{ item.content }}</p>
+                                        <p>{{ item.creatTime | formatDate }}</p>
+                                    </div>
+                                </div>
+                                <div class="itemThree">
+                                    <p>全部{{ item.sum===null ? 0 : item.sum }}个回答</p>
+                                    <img src="../../image/myAskAnswer/gtSign.png" alt="">
+                                </div>
+                            </div>
+                            <div class="itemFour"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+</div>

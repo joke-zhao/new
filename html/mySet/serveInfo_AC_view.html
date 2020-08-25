@@ -1,0 +1,15 @@
+<div id="app">
+  <div class="container">
+    <div class="container-box">
+      <div class="box-name">资质证书</div>
+      <span>上传相关证书清晰正面照，图片将用于文字识别，不合规图片可能导致审核失败。图片不得超过5M</span>
+      <div @click="submitImg" class="box-image">
+        <img :src="AcUrl || '../../image/set-info/addimg.png'" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- 底部保存 -->
+  <div class="footer">
+    <div @click="upDataAC" class="footer-box">确定</div>
+  </div>
+</div>

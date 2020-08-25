@@ -1,0 +1,565 @@
+<div id="balanceSheet">
+    <div class="company">
+        <div class="company_name">{{companyName}}</div>
+        <div class="company_cny">币种:（CNY）</div>
+
+    </div>
+    <div class="datePick">
+        <van-field readonly clickable label="选择开始年月" :value="value1" @click="show1 = true" />
+        <van-popup v-model="show1" position="bottom" round>
+            <van-datetime-picker v-model="currentDate" type="year-month" title="选择开始年月" show-toolbar
+                :max-date="maxDate1" @change="changeMon1" :formatter="formatter" @cancel="show1 = false"
+                @confirm="onConfirm1" />
+        </van-popup>
+        <van-field readonly clickable label="选择结束年月" :value="value2" @click="show2 = true" />
+        <van-popup v-model="show2" position="bottom" round>
+            <van-datetime-picker v-model="currentDate" type="year-month" title="选择结束年月" show-toolbar :max-date="maxDate"
+                @change="changeMon2" :formatter="formatter2" @cancel="show2 = false" @confirm="onConfirm2" />
+        </van-popup>
+    </div>
+    <div class="picture">
+        <div class="picture1">
+            <div class="picture_date">
+                <div class="picture_date1">
+                    <div class="picture_date1_content"> <span>{{chooseMon1[0]}}</span>月份</div>
+                </div>
+                <div class="picture_date2">
+                    <div class="picture_date2_content"><span>{{chooseMon1[1]}}</span>月份</div>
+                </div>
+            </div>
+            <div class="picture_wrap">
+                <div style="width: 50%;height: 100%;" id="chartmain"></div>
+                <div style="width: 50%;height: 100%;" id="chartmain1"></div>
+            </div>
+            <div class="picture_date">
+                <div class="picture_date1">
+                    <div class="picture_date1_content"><span>{{chooseMon1[2]}}</span>月份</div>
+                </div>
+                <div class="picture_date2">
+                    <div class="picture_date2_content"><span>{{chooseMon1[3]}}</span>月份</div>
+                </div>
+            </div>
+            <div class="picture_wrap">
+                <div style="width: 50%;height: 100%;" id="chartmain2"></div>
+                <div style="width: 50%;height: 100%;" id="chartmain3"></div>
+            </div>
+        </div>
+        <div class="picture2">
+            <div class="picture_date">
+                <div class="picture_date1">
+                    <div class="picture_date1_content"> <span>{{chooseMon1[4]}}</span>月份</div>
+                </div>
+                <div class="picture_date2">
+                    <div class="picture_date2_content"><span>{{chooseMon1[5]}}</span>月份</div>
+                </div>
+            </div>
+            <div class="picture_wrap">
+                <div style="width: 50%;height: 100%;" id="chartmain4"></div>
+                <div style="width: 50%;height: 100%;" id="chartmain5"></div>
+            </div>
+            <div class="picture_date">
+                <div class="picture_date1">
+                    <div class="picture_date1_content"><span>{{chooseMon1[6]}}</span>月份</div>
+                </div>
+                <div class="picture_date2">
+                    <div class="picture_date2_content"><span>{{chooseMon1[7]}}</span>月份</div>
+                </div>
+            </div>
+            <div class="picture_wrap">
+                <div style="width: 50%;height: 100%;" id="chartmain6"></div>
+                <div style="width: 50%;height: 100%;" id="chartmain7"></div>
+            </div>
+        </div>
+        <div class="picture3">
+            <div class="picture_date">
+                <div class="picture_date1">
+                    <div class="picture_date1_content"> <span>{{chooseMon1[8]}}</span>月份</div>
+                </div>
+                <div class="picture_date2">
+                    <div class="picture_date2_content"><span>{{chooseMon1[9]}}</span>月份</div>
+                </div>
+            </div>
+            <div class="picture_wrap">
+                <div style="width: 50%;height: 100%;" id="chartmain8"></div>
+                <div style="width: 50%;height: 100%;" id="chartmain9"></div>
+            </div>
+            <div class="picture_date">
+                <div class="picture_date1">
+                    <div class="picture_date1_content"><span>{{chooseMon1[10]}}</span>月份</div>
+                </div>
+                <div class="picture_date2">
+                    <div class="picture_date2_content"><span>{{chooseMon1[11]}}</span>月份</div>
+                </div>
+            </div>
+            <div class="picture_wrap">
+                <div style="width: 50%;height: 100%;" id="chartmain10"></div>
+                <div style="width: 50%;height: 100%;" id="chartmain11"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="myChart" :style="{width: '300px', height: '300px'}"></div> -->
+    <div class="watchDetail_title" @click="showDetails">
+        <div>查看明细</div>
+        <img src=" ../../image/reportForm/arrow.png" alt="" v-show="detailsShowImg1">
+        <img src=" ../../image/reportForm/arrow2.png" alt="" v-show="detailsShowImg2">
+    </div>
+    <div class="accountDetails" v-show="detailsShow">
+        <div class="accountDetails_content">资产负债表</div>
+    </div>
+    <div class="accountTitle" v-show="detailsShow">
+        <div class="accountTitle_company">
+            <div class="accountTitle_company_1">{{companyName}}</div>
+            <!-- <div class="accountTitle_company_2">币种：（CNY）</div> -->
+        </div>
+        <div class="accountTitle_date">
+            <!-- <div class="accountTitle_date_1">月份</div> -->
+            <div class="accountTitle_date_2">
+                <!-- <van-cell is-link @click="showPopup"closeable>选择月份</van-cell> -->
+                <van-field readonly clickable label="选择月份" :value="value" @click="show = true" />
+                <van-popup v-model="show" position="bottom" round>
+                    <van-datetime-picker v-model="currentDate" type="year-month" title="选择年月" show-toolbar
+                        :formatter="formatter" @cancel="show = false" @confirm="onConfirm" />
+                </van-popup>
+                <!-- <van-cell title="选择年月" :value="date2" @click="show2 = true" />
+                <van-calendar v-model="show2" @confirm="onConfirm2" /> -->
+            </div>
+            <!-- <el-date-picker v-model="date3" type="month" placeholder="选择月">
+            </el-date-picker> -->
+
+
+        </div>
+    </div>
+
+    <div id="aaaa" class="watchDetail_content" v-show="detailsShow">
+        <!--<div class="project1">-->
+            <!--<div class="project1_name">-->
+                <!--<div class="project1_name_1">-->
+                    <!--<div class="project1_name_1_wrap">-->
+                        <!--<div class="project1_name_1_first">项</div>-->
+                        <!--<div class="project1_name_1_second">目</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="project1_name_2">{{datePicker}}月</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content1">-->
+                <!--<div class="project1_content1_1">流动资产：</div>-->
+                <!--<div class="project1_content1_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">{{fonetaryFund}}</div>-->
+                <!--<div class="project1_content2_2">{{fonetaryFund}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">以公允价值计量且其变动计入当期损益的金融资产</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">衍生金融资产</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">应收票据及应收账款</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+
+            <!--<div class="project1_content3">-->
+                <!--<div class="project1_content3_1">其中：应收票据</div>-->
+                <!--<div class="project1_content3_2">{{notesReceivable}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content4">-->
+                <!--<div class="project1_content4_1">应收账款</div>-->
+                <!--<div class="project1_content4_2">{{accountsReceivable}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">预付款项</div>-->
+                <!--<div class="project1_content2_2">{{prepayments}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">其他应收款</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content3">-->
+                <!--<div class="project1_content3_1">其中：应收利息</div>-->
+                <!--<div class="project1_content3_2">{{interestReceivable}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content4">-->
+                <!--<div class="project1_content4_1">应收股利</div>-->
+                <!--<div class="project1_content4_2">{{dividendsReceivable}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">存货</div>-->
+                <!--<div class="project1_content2_2">{{inventory}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">持有待售资产</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">一年内到期的零流动资产</div>-->
+                <!--<div class="project1_content2_2">{{conCurrentAssets}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">其他流动资产</div>-->
+                <!--<div class="project1_content2_2">{{otherCurrentAssets}}</div>-->
+            <!--</div>-->
+            <!--<div class="total">-->
+                <!--<div class="total_1">流动资产合计</div>-->
+                <!--<div class="total_2">{{totalCurrentAssets}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content1">-->
+                <!--<div class="project1_content1_1">非流动资产：</div>-->
+                <!--<div class="project1_content1_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">可出售金融资产</div>-->
+                <!--<div class="project1_content2_2">{{financialAssetsAvailable}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">持有至到期投资</div>-->
+                <!--<div class="project1_content2_2">{{maturityInvestments}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">长期应收款</div>-->
+                <!--<div class="project1_content2_2">{{longTermReceivables}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">长期股权投资</div>-->
+                <!--<div class="project1_content2_2">{{longTermEquityInvestment}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">投资性房地产</div>-->
+                <!--<div class="project1_content2_2">{{investmentProperty}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">固定资产</div>-->
+                <!--<div class="project1_content2_2">{{fixedAssets}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">在建工程</div>-->
+                <!--<div class="project1_content2_2">{{projectsUnderConstruction}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">生产性生物资产</div>-->
+                <!--<div class="project1_content2_2">{{productiveBiologicalAssets}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">油气资产</div>-->
+                <!--<div class="project1_content2_2">{{oilGasAssets}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">无形资产</div>-->
+                <!--<div class="project1_content2_2">{{intangibleAssets}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">开发支出</div>-->
+                <!--<div class="project1_content2_2">{{developmentExpenditure}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">商誉</div>-->
+                <!--<div class="project1_content2_2">{{goodwill}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">长期待摊费用</div>-->
+                <!--<div class="project1_content2_2">{{longTermDeferredExpenses}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">递延所得税资产</div>-->
+                <!--<div class="project1_content2_2">{{deferredTaxAssets}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">其他非流动资产</div>-->
+                <!--<div class="project1_content2_2">{{otherNonCurrentAssets}}</div>-->
+            <!--</div>-->
+            <!--<div class="total">-->
+                <!--<div class="total_1">非流动资产合计</div>-->
+                <!--<div class="total_2">{{totalNonCurrentAssets}}</div>-->
+            <!--</div>-->
+            <!--<div class="total">-->
+                <!--<div class="total_1">资产合计</div>-->
+                <!--<div class="total_2">{{totalAssets}}</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="project2">-->
+            <!--<div class="project1_name">-->
+                <!--<div class="project1_name_1">-->
+                    <!--<div class="project1_name_1_wrap">-->
+                        <!--<div class="project1_name_1_first">项</div>-->
+                        <!--<div class="project1_name_1_second">目</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="project1_name_2">{{datePicker}}月</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content1">-->
+                <!--<div class="project1_content1_1">流动负债：</div>-->
+                <!--<div class="project1_content1_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">短期借款</div>-->
+                <!--<div class="project1_content2_2">{{shortTermBorrowing}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">以公允价值计量且其变动计入当期损益的金融负债</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">衍生金融负债</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">应付票据及应付账款</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">预收款项</div>-->
+                <!--<div class="project1_content2_2">{{advanceReceipt}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">应付职工薪酬</div>-->
+                <!--<div class="project1_content2_2">{{payrollPayable}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">应交税费</div>-->
+                <!--<div class="project1_content2_2">{{taxPayable}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">其他应付付款</div>-->
+                <!--<div class="project1_content2_2">{{otherPayables}}</div>-->
+            <!--</div>-->
+
+            <!--<div class="project1_content3">-->
+                <!--<div class="project1_content3_1">其中：应收利息</div>-->
+                <!--<div class="project1_content3_2">{{payableInterest}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content4">-->
+                <!--<div class="project1_content4_1">应付股利</div>-->
+                <!--<div class="project1_content4_2">{{dividendsPayable}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">持有待售负债</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">一年内到期的非流动负债</div>-->
+                <!--<div class="project1_content2_2">{{oneYearNonCurrentLiability}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">其他流动负债</div>-->
+                <!--<div class="project1_content2_2">{{otherCurrentLiability}}</div>-->
+            <!--</div>-->
+            <!--<div class="total">-->
+                <!--<div class="total_1">流动负债合计</div>-->
+                <!--<div class="total_2">{{totalFlowResponsibility}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content1">-->
+                <!--<div class="project1_content1_1">零流动负债：</div>-->
+                <!--<div class="project1_content1_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">长期借款</div>-->
+                <!--<div class="project1_content2_2">{{longTermLoan}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">应付债卷</div>-->
+                <!--<div class="project1_content2_2">{{bondsPayable}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content3">-->
+                <!--<div class="project1_content3_1">其中：优先股</div>-->
+                <!--<div class="project1_content3_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content4">-->
+                <!--<div class="project1_content4_1">永续债</div>-->
+                <!--<div class="project1_content4_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">长期应付款</div>-->
+                <!--<div class="project1_content2_2">{{longTermPayable}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">长期应付职工薪酬</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">预计负债</div>-->
+                <!--<div class="project1_content2_2">{{estimatedLiabilities}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">递延收益</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">递延所得税负债</div>-->
+                <!--<div class="project1_content2_2">{{deferredIncomeTaxLiabilities}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">其他非流动负债</div>-->
+                <!--<div class="project1_content2_2">{{otherNonCurrentLiabilities}}</div>-->
+            <!--</div>-->
+            <!--<div class="total">-->
+                <!--<div class="total_1">非流动负债合计</div>-->
+                <!--<div class="total_2">{{totalNonCurrentLiabilities}}</div>-->
+            <!--</div>-->
+            <!--<div class="total">-->
+                <!--<div class="total_1">负债合计</div>-->
+                <!--<div class="total_2">{{totalLiabilities}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content1">-->
+                <!--<div class="project1_content1_1">所有者权益（或股东权益）：</div>-->
+                <!--<div class="project1_content1_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">实收资本（或股本）</div>-->
+                <!--<div class="project1_content2_2">{{paidInCapital}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">其他权益工具</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content3">-->
+                <!--<div class="project1_content3_1">其中：优先股</div>-->
+                <!--<div class="project1_content3_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content4">-->
+                <!--<div class="project1_content4_1">永续债</div>-->
+                <!--<div class="project1_content4_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">资本公积</div>-->
+                <!--<div class="project1_content2_2">{{capitalReserve}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">减：库存股</div>-->
+                <!--<div class="project1_content2_2">{{treasuryStock}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">其他综合收益</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">专项储备</div>-->
+                <!--<div class="project1_content2_2"></div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">盈余公积</div>-->
+                <!--<div class="project1_content2_2">{{earnedSurplus}}</div>-->
+            <!--</div>-->
+            <!--<div class="project1_content2">-->
+                <!--<div class="project1_content2_1">未分配利润</div>-->
+                <!--<div class="project1_content2_2">{{undistributedProfit}}</div>-->
+            <!--</div>-->
+            <!--<div class="total">-->
+                <!--<div class="total_1">所有者权益（或股东权益）合计</div>-->
+                <!--<div class="total_2">{{totalOwnersEquity}}</div>-->
+            <!--</div>-->
+            <!--<div class="total">-->
+                <!--<div class="total_1">负债和所有者权益（或股东权益）合计</div>-->
+                <!--<div class="total_2">{{totalLiabilitiesAndOwnerEquity}}</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div id="table1">
+        <table style="font-size: 18px" class="curAsset" border="1" cellspacing="0">
+            <thead class="curAsset-head">
+                <tr>
+                    <th>项目</th>
+                    <th style="width: 30%">{{datePicker}}月</th>
+                </tr>
+            </thead>
+            <tbody class="curAsset-body">
+            <tr><td class="padding-level_0">流动资产:</td><td class="curAsset-body_content" style="width: 30%"></td></tr></tr>
+            <tr><td>货币资金</td><td>{{fonetaryFund}}</td></tr>
+            <tr><td>以公允价值计量且其变动计入当期损益的金融资产</td><td></td></tr>
+            <tr>    <td>衍生金融资产</td><td></td></tr>
+            <tr>    <td>应收票据及应收账款</td><td></td></tr>
+            <tr>    <td class="padding-level_1">其中：应收票据</td><td>{{notesReceivable}}</td></tr>
+            <tr>    <td class="padding-level_2">应收账款</td><td>{{accountsReceivable}}</td></tr>
+            <tr>    <td>预付款项</td><td>{{prepayments}}</td></tr>
+            <tr>    <td>其他应收款</td><td></td></tr>
+            <tr>    <td class="padding-level_1">其中：应收利息</td><td>{{interestReceivable}}</td></tr>
+            <tr>    <td class="padding-level_2">应收股利</td><td>{{dividendsReceivable}}</td></tr>
+            <tr>    <td>存货</td><td>{{inventory}}</td></tr>
+            <tr>    <td>持有待售资产</td><td></td></tr>
+            <tr>    <td>一年内到期的零流动资产</td><td>{{conCurrentAssets}}</td></tr>
+            <tr>    <td>其他流动资产</td><td>{{otherCurrentAssets}}</td></tr>
+            <tr>    <td style="text-align: center">流动资产合计</td><td>{{totalCurrentAssets}}</td></tr>
+            <tr>    <td class="padding-level_0">非流动资产</td><td></td></tr>
+            <tr>    <td>可出售金融资产</td><td>{{financialAssetsAvailable}}</td></tr>
+            <tr>    <td>持有至到期投资</td><td>{{maturityInvestments}}</td></tr>
+            <tr>    <td>长期应收款</td><td>{{longTermReceivables}}</td></tr>
+            <tr>    <td>长期股权投资</td><td>{{longTermEquityInvestment}}</td></tr>
+            <tr>    <td>投资性房地产</td><td>{{investmentProperty}}</td></tr>
+            <tr>    <td>固定资产</td><td>{{fixedAssets}}</td></tr>
+            <tr>    <td>在建工程</td><td>{{projectsUnderConstruction}}</td></tr>
+            <tr>    <td>生产性生物资产</td><td>{{productiveBiologicalAssets}}</td></tr>
+            <tr>    <td>油气资产</td><td>{{oilGasAssets}}</td></tr>
+            <tr>    <td>无形资产</td><td>{{intangibleAssets}}</td></tr>
+            <tr>    <td>开发支出</td><td>{{developmentExpenditure}}</td></tr>
+            <tr>    <td>商誉</td><td>{{goodwill}}</td></tr>
+            <tr>    <td>长期待摊费用</td><td>{{longTermDeferredExpenses}}</td></tr>
+            <tr>    <td>递延所得税资产</td><td>{{deferredTaxAssets}}</td></tr>
+            <tr>    <td>其他非流动资产</td><td>{{otherNonCurrentAssets}}</td></tr>
+            <tr>    <td style="text-align: center">非流动资产合计</td><td>{{totalNonCurrentAssets}}</td></tr>
+            <tr>    <td style="text-align: center">资产合计</td><td>{{totalAssets}}</td></tr>
+            </tbody>
+        </table>
+            <table style="font-size: 18px"  class="curAsset marginTable"  border="1" cellspacing="0"><thead class="curAsset-head">
+            <tr>
+                <th>项目</th>
+                <th style="width: 30%">{{datePicker}}月</th>
+            </tr>
+            </thead>
+            <tbody class="curAsset-body">
+            <tr>    <td class="padding-level_0">流动负债：</td><td class="curAsset-body_content" style="width: 30%"></td></tr>
+            <tr>    <td>短期借款</td><td>{{shortTermBorrowing}}</td></tr>
+            <tr>    <td>以公允价值计量且其变动计入当期损益的金融负债</td><td></td></tr>
+            <tr>    <td>衍生金融负债</td><td></td></tr>
+            <tr>    <td>应付票据及应付账款</td><td></td></tr>
+            <tr>    <td>预收款项</td><td>{{advanceReceipt}}</td></tr>
+            <tr>    <td>应付职工薪酬</td><td>{{payrollPayable}}</td></tr>
+            <tr>    <td>应交税费</td><td>{{taxPayable}}</td></tr>
+            <tr>    <td>其他应付付款</td><td>{{otherPayables}}</td></tr>
+            <tr>    <td class="padding-level_1">其中：应收利息</td><td>{{payableInterest}}</td></tr>
+            <tr>    <td class="padding-level_2">应付股利</td><td>{{dividendsPayable}}</td></tr>
+            <tr>    <td>持有待售负债</td><td></td></tr>
+            <tr>    <td>一年内到期的非流动负债</td><td>{{oneYearNonCurrentLiability}}</td></tr>
+            <tr>    <td>其他流动负债</td><td>{{otherCurrentLiability}}</td></tr>
+            <tr>    <td style="text-align: center">流动负债合计</td><td>{{totalFlowResponsibility}}</td></tr>
+            <tr>    <td class="padding-level_0">零流动负债：</td><td></td></tr>
+            <tr>    <td>长期借款</td><td>{{longTermLoan}}</td></tr>
+            <tr>    <td>应付债券</td><td>{{bondsPayable}}</td></tr>
+            <tr>    <td class="padding-level_1">其中：优先股</td><td></td></tr>
+            <tr>    <td class="padding-level_2">永续债</td><td></td></tr>
+            <tr>    <td>长期应付款</td><td>{{longTermPayable}}</td></tr>
+            <tr>    <td>长期应付职工薪酬</td><td></td></tr>
+            <tr>    <td>预计负债</td><td>{{estimatedLiabilities}}</td></tr>
+            <tr>    <td>递延收益</td><td></td></tr>
+            <tr>    <td>递延所得税负债</td><td>{{deferredIncomeTaxLiabilities}}</td></tr>
+            <tr>    <td>其他非流动负债 </td><td>{{otherNonCurrentLiabilities}}</td></tr>
+            <tr>    <td style="text-align: center">非流动负债合计</td><td>{{totalNonCurrentLiabilities}}</td></tr>
+            <tr>    <td style="text-align: center">负债合计</td><td>{{totalLiabilities}}</td></tr>
+            <tr>    <td class="padding-level_0" >所有者权益（或股东权益）</td><td></td></tr>
+            <tr>    <td>实收资本（或股本）</td><td>{{paidInCapital}}</td></tr>
+            <tr>    <td>其他权益工具</td><td></td></tr>
+            <tr>    <td class="padding-level_1">其中：优先股</td><td></td></tr>
+            <tr>    <td class="padding-level_2">永续债</td><td></td></tr>
+            <tr>    <td>资本公积</td><td>{{capitalReserve}}</td></tr>
+            <tr>    <td>减：库存股</td><td>{{treasuryStock}}</td></tr>
+            <tr>    <td>其他综合收益</td><td></td></tr>
+            <tr>    <td>专项储备</td><td></td></tr>
+            <tr>    <td>盈余公积</td><td>{{earnedSurplus}}</td></tr>
+            <tr>    <td>未分配利润</td><td>{{undistributedProfit}}</td></tr>
+            <tr>    <td style="text-align: center">所有者权益（或股东权益）合计</td><td>{{totalOwnersEquity}}</td></tr>
+            <tr>    <td style="text-align: center">负债和所有者权益（或股东权益）合计</td><td>{{totalLiabilitiesAndOwnerEquity}}</td></tr>
+            </tbody>
+            </table>
+
+
+        </div>
+
+    </div>
+    <div class="bottom_btns">
+        <div class="export" @click="showShare = true">导出</div>
+        <van-share-sheet v-model="showShare" :options="options" 
+        @select="onSelect" title="选择导出方式"  />
+        <div class="print" @click="handlPrint">打印</div>
+    </div>
+</div>

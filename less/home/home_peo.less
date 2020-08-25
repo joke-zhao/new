@@ -1,0 +1,260 @@
+
+/**css代码在此处开始*/
+#home-peo {
+  // 头部样式
+  .header {
+    padding: 0 0.24rem;
+    height: 0.86rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      // width: 2.63rem;
+      height: 0.35rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .site {
+        width: 0.35rem;
+        height: 0.4rem;
+      }
+      .address {
+        font-size: 0.28rem;
+        padding: 0 0.03rem;
+        font-weight: 500;
+      }
+      .arrow {
+        margin-top: 0.12rem;
+        width: 0;
+        height: 0;
+        border:0.08rem solid transparent;
+        border-top-color: #000;
+      }
+    }
+    .right {
+      position: relative;
+      width: 0.4rem;
+      height: 0.35rem;
+      padding-right: 0.06rem;
+      .news {
+        width: 0.34rem;
+        height: 0.35rem;
+      }
+      .ts {
+        position: absolute;
+        width: 0.3rem;
+        height: 0.24rem;
+        background-color: #F64A38;
+        color: #fff;
+        text-align: center;
+        line-height: 0.24rem;
+        font-size: 0.18rem;
+        border-radius: 0.12rem;
+        right: -0.16rem;
+        top: -0.08rem;
+      }
+    }
+  }
+  // 职位导航样式
+  .job-nav {
+    border-top: 1px solid #EEEEEE;
+    height: 2.1rem;
+    // 首页-服务商端样式
+    .job-facilitator {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      li {
+        flex: 1;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 0.9rem;
+          height: 0.9rem;
+          border-radius: 50%;
+        }
+        p {
+          padding-top: 0.11rem;
+          font-size: 0.24rem;
+        }
+      }
+    }
+  }
+  // 分割线样式
+  .tieku {
+    height: 0.2rem;
+    background-color: #F5F5F5;
+  }
+  // 地图盒子模块样式
+  .mapbox {
+    height: 3.6rem;
+    width: 100%;
+    background-color: lightyellow;
+  }
+  // 附近服务商样式
+  .facilitator {
+    h3 {
+      margin-top: 0.3rem;
+      padding: 0 0.24rem;
+      line-height: 0.92rem;
+      height: 0.92rem;
+      font-weight: 600;
+      font-size: 0.3rem;
+      border-bottom: 0.01rem solid #c0c0c0;
+      span {
+        font-size: 0.24rem;
+        float: right;
+      }
+    }
+    .revenue-ul {
+      width: 100%;
+      padding: 0 0.24rem;
+      li {
+        height: 2.08rem;
+        padding: 0.24rem 0;
+        box-sizing: border-box;
+        border-bottom: 0.01rem solid #EEEEEE;
+        img {
+          float: left;
+          width: 1.6rem;
+          height: 1.6rem;
+          border-radius: 0.1rem;
+        }
+        .details {
+          float: right;
+          width: 5.2rem;
+          height: 1.6rem;
+          .kj {
+            font-size: 0.28rem;
+          }
+          .grade {
+            margin: 0.05rem 0;
+            width: 5.2rem;
+            height: 0.25rem;
+            font-size: 0.24rem;
+            color: #808080;
+            display: flex;
+            align-items: center;
+            .star {
+              width: 1.1rem;
+              height: 0.21rem;
+              img {
+                width: 0.2rem;
+                height: 0.2rem;
+                float: left;
+              }
+            }
+            .stance {
+              margin-left: 2.9rem;
+            }
+          }
+          p {
+            margin-bottom: 0.03rem;
+            font-size: 0.24rem;
+            color: #808080;
+          }
+          .dljz {
+            color: #808080;
+            font-size: 0.2rem;
+            width: 0.96rem;
+            height: 0.28rem;
+            border: 1px solid #808080;
+            text-align: center;
+            line-height: 0.28rem;
+            border-radius: 0.08rem;
+          }
+        }
+      }
+    }
+  }
+  // 每日税讯样式
+  .revenue {
+    h3 {
+      padding: 0 0.24rem;
+      line-height: 0.92rem;
+      height: 0.92rem;
+      font-weight: 600;
+      font-size: 0.3rem;
+      border-bottom: 0.01rem solid #EEEEEE;
+      span {
+        font-size: 0.24rem;
+        float: right;
+      }
+    }
+    .revenue-ul {
+      width: 100%;
+      padding: 0 0.24rem;
+      li {
+        height: 1.98rem;
+        padding: 0.24rem 0;
+        box-sizing: border-box;
+        border-bottom: 0.01rem solid #EEEEEE;
+        img {
+          float: left;
+          width: 2.1rem;
+          height: 1.5rem;
+        }
+        .details {
+          float: right;
+          width: 4.68rem;
+          height: 1.5rem;
+          .de-news {
+            font-size: 0.28rem;
+            font-weight: 500;
+            // 多行文本超出显示省略号
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+          }
+          p {
+            padding-top: 0.22rem;
+            font-size: 0.24rem;
+            color: #808080;
+            span {
+              float: right;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 底线样式
+  .bottomku {
+    height: 0.21rem;
+    background-color: #F5F5F5;
+  }
+  // 电话客服样式
+  .phone-kf {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background-image: url(../../image/home-peo/phone-kf.png);
+    background-size: 100% 100%;
+    position: fixed;
+    right: 0.4rem;
+    top: 7.77rem;
+    font-size: 0.14rem;
+    color: #fff;
+    text-align: center;
+    padding-top: 0.5rem;
+  }
+  // 微信客服样式
+  .wx-kf {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background-image: url(../../image/home-peo/wx-kf.png);
+    background-size: 100% 100%;
+    position: fixed;
+    right: 0.4rem;
+    top: 8.94rem;
+    font-size: 0.14rem;
+    color: #fff;
+    text-align: center;
+    padding-top: 0.5rem;
+  }
+}

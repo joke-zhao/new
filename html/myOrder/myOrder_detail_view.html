@@ -1,0 +1,32 @@
+<div class="container column_center-start">
+    <div class="type">
+        <div class="type_title">服务类型：</div>
+        <div class="type_content">{{label}}</div>
+    </div>
+    <div class="content">
+        <div class="content_title">服务内容：</div>
+        <div class="content_text">
+            <div class="content_item" v-for="item in prices">
+                <div class="item_title">{{item.typeId}}</div>
+                <div class="item_cost">￥{{item.price}}</div>
+            </div>
+            <div class="sum">合计：￥{{sum}}</div>
+        </div>
+    </div>
+    <div class="description border-slive">
+        <div class="description_title">
+            <img src="../../image/order-all/content.png"/>服务内容描述：
+        </div>
+        <div class="description_content">
+            {{obj.content}}
+        </div>
+    </div>
+    <div class="description">
+        <div class="description_title">
+            <img src="../../image/order-all/material.png"/>准备材料：
+        </div>
+        <div class="description_content">
+            {{obj.prepareData}}
+        </div>
+    </div>
+</div>

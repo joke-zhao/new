@@ -1,0 +1,236 @@
+#app{
+  width: 100%;
+  overflow-x: hidden;
+  .register{
+    width: 100%;
+    .register-upload{
+      padding: .24rem;
+      border-bottom: .01rem solid #f5f5f5;
+    }
+    .register-require{
+      padding-left: .16rem;
+      padding-right: .07rem;
+      color: #FF3D3D;
+      font-size: .28rem;
+      font-family:PingFang SC;
+      font-weight:bold;
+    }
+    .register-title{
+      white-space: nowrap;
+      font-size: .28rem;
+      font-family:PingFang SC;
+      font-weight:500;
+      color:#222222;
+      padding-right: .2rem;
+    }
+    .register-area{
+      width: 100%;
+      display: flex;
+      height: 1rem;
+      align-items: center;
+      border-bottom: .01rem solid #f5f5f5;
+      .register-area-item{
+        white-space: nowrap;
+        width: 18%;
+        display: flex;
+        align-items: center;
+        padding-left: .30rem;
+        .register-area-item-text{
+          font-size:.28rem;
+          font-family:PingFang SC;
+          font-weight:400;
+          color:#222222;
+        }
+        .register-area-item-icon{
+          margin-left: .12rem;
+          width: .16rem;
+          height: .09rem;
+          background: url("../../image/commercial/down.png") no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+    .register-tag{
+      width: 100%;
+      padding-top: .3rem;
+      padding-bottom: .3rem;
+      border-bottom: .01rem solid #f5f5f5;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      .register-tag-list{
+        padding-top: .3rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: .2rem;
+        flex-wrap: wrap;
+        .register-tag-list-item{
+          margin-top: .1rem;
+          margin-left: .2rem;
+          box-sizing: border-box;
+          height: 50%;
+          padding-left: .2rem;
+          padding-right: .2rem;
+          font-size: .28rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family:PingFang SC;
+          font-weight:500;
+          color:#222222;
+          border-radius: .24rem;
+          border: .01rem solid #222222;
+        }
+        .register-tag-list-item-selected{
+          border: .01rem solid #6887FF;
+          color: #6887FF;
+        }
+      }
+    }
+    .register-price{
+      width: 100%;
+      display: flex;
+      height: 1rem;
+      align-items: center;
+      border-bottom: .01rem solid #f5f5f5;
+      .register-price-text{
+        font-size:.34rem;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:#F64A38;
+        padding-left: .34rem;
+      }
+      .register-price-explain{
+        font-size:.24rem;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:#808080;
+        padding-left: .15rem;
+      }
+    }
+    .register-content{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-bottom: .24rem;
+      border-bottom: .01rem solid #f5f5f5;
+      .register-content-title{
+        width: 100%;
+        height: 1rem;
+        align-items: center;
+        display: flex;
+      }
+      .register-content-input{
+        width: 6.7rem;
+        height: 2.4rem;
+        background:#F5F5F5;
+        border-radius:.16rem;
+        margin-bottom: .24rem;
+        textarea{
+          resize: none;
+          font-size: .28rem;
+          font-family:PingFang SC;
+          font-weight:500;
+          color:#222222;
+          border:  0 none;
+          width: 100%;
+          height: 100%;
+          border-radius:.16rem;
+          background:rgba(245,245,245,1);
+          padding: .2rem 0 0 .2rem;
+          outline:none;
+          caret-color:#ccc; //修改光标颜色 一定要加 否则苹果手机无法输入
+          -webkit-user-select:auto !important; //苹果手机兼容
+          user-select:auto !important;
+        }
+      }
+    }
+    .register-material {
+      width: 100%;
+      padding-bottom: .24rem;
+      border-bottom: .01rem solid #f5f5f5;
+      .register-material-title{
+        width: 100%;
+        height: 1rem;
+        display: flex;
+        align-items: center;
+        padding-left: .41rem;
+      }
+      .register-material-input{
+        width: 6.7rem;
+        height: 2.4rem;
+        background:#F5F5F5;
+        border-radius:.16rem;
+        margin-bottom: .24rem;
+        margin-left: .4rem;
+        textarea{
+          resize: none;
+          font-size: .28rem;
+          font-family:PingFang SC;
+          font-weight:500;
+          color:#222222;
+          border:  0 none;
+          width: 100%;
+          height: 100%;
+          border-radius:.16rem;
+          background:rgba(245,245,245,1);
+          padding: .2rem 0 0 .2rem;
+          outline:none;
+          caret-color:#ccc; //修改光标颜色 一定要加 否则苹果手机无法输入
+          -webkit-user-select:auto !important; //苹果手机兼容
+          user-select:auto !important;
+        }
+      }
+    }
+    .register-choose{
+      width: 100%;
+      .register-choose-item{
+        width: 100%;
+        height: 1rem;
+        display: flex;
+        align-items: center;
+        .register-choose-item-check{
+          width:.4rem;
+          height:.4rem;
+          border:.02rem solid #BBBBBB;
+          border-radius:50%;
+          margin-left: .4rem;
+        }
+        .register-choose-item-checked{
+          background: url("../../image/commercial/checked.png") no-repeat;
+          background-size: cover;
+          border: none;
+        }
+        .register-choose-item-text{
+          font-size:.28rem;
+          font-family:PingFang SC;
+          font-weight:500;
+          color:#222222;
+          margin-left: .24rem;
+          border-bottom: .01rem solid #f5f5f5;
+        }
+      }
+    }
+    .register-divide{
+      width: 100%;
+      background: #f5f5f5;
+      height: .41rem;
+    }
+    .register-button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: .9rem;
+      background:linear-gradient(0deg,#6887FF 0%,#4769EE 100%);
+      font-size:.3rem;
+      font-family:PingFang SC;
+      font-weight:bold;
+      color:#fff;
+    }
+  }
+}
+

@@ -1,0 +1,98 @@
+<!-- 报表主页样式开始 -->
+<div id="app">
+    <!-- 公司列表切换 -->
+    <div class="companyName">
+        <div class="companyNameContent">
+            <van-dropdown-menu>
+                <van-dropdown-item @change="changeCompany" v-model="deptId" :options="OrgList"/>
+            </van-dropdown-menu>
+        </div>
+    </div>
+    <!-- 报表主体 -->
+    <div class="content">
+        <!-- 管理报表 -->
+        <div class="content-box">
+            <!-- 报表头 -->
+            <div class="box-header">
+                <span>管理报表</span>
+            </div>
+            <!-- 报表块 -->
+            <div class="box-main">
+                <!-- 报表列表项 -->
+                <div v-for="(item,index) in formList.slice(0,9)" :key="item.name" :class="item.enable ? 'main-item' : 'main2-item'">
+                    <div @click="openNextForm(item.name)" class="item-info">
+                        <div class="info-left">
+                            <img :src="'../../image/reportForm/manageForm-'+index+'.png'" alt="">
+                        </div>
+                        <div class="info-right">
+                            <span>{{item.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 经营报表 -->
+        <div class="content-box">
+            <!-- 报表头 -->
+            <div class="box-header">
+                <span>经营报表</span>
+            </div>
+            <!-- 报表块 -->
+            <div class="box-main">
+                <!-- 报表列表项 -->
+                <div v-for="(item,index) in formList.slice(9,14)" :key="item.name" :class="item.enable ? 'main-item' : 'main2-item'">
+                    <div @click="openNextForm(item.name)" class="item-info">
+                        <div class="info-left">
+                            <img :src="'../../image/reportForm/businessForm-'+index+'.png'" alt="">
+                        </div>
+                        <div class="info-right">
+                            <span>{{item.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 财务账本 -->
+        <div class="content-box">
+            <!-- 报表头 -->
+            <div class="box-header">
+                <span>财务账本</span>
+            </div>
+            <!-- 报表块 -->
+            <div class="box-main">
+                <!-- 报表列表项 -->
+                <div v-for="(item,index) in formList.slice(14,19)" :key="item.name" :class="item.enable ? 'main-item' : 'main2-item'">
+                    <div @click="openNextForm(item.name)" class="item-info">
+                        <div class="info-left">
+                            <img :src="'../../image/reportForm/FinancialBooks-'+index+'.png'" alt="">
+                        </div>
+                        <div class="info-right">
+                            <span>{{item.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 纳税申报表 -->
+        <div class="content-box">
+            <!-- 报表头 -->
+            <div class="box-header">
+                <span>纳税申报表</span>
+            </div>
+            <!-- 报表块 -->
+            <div class="box-main">
+                <!-- 报表列表项 -->
+                <div v-for="(item,index) in formList.slice(19,25)" :key="item.name" :class="item.enable ? 'main-item' : 'main2-item'">
+                    <div @click="openNextForm(item.name)" class="item-info">
+                        <div class="info-left">
+                            <img :src="'../../image/reportForm/taxDeclaration-'+index+'.png'" alt="">
+                        </div>
+                        <div class="info-right">
+                            <span>{{item.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

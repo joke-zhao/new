@@ -1,0 +1,41 @@
+<!-- 我的收入页面开始 -->
+<div id="app">
+  <header>
+    <div class="header-box">
+      <div class="box">
+        我邀请的BOSS
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main-box">
+      <!-- 详细信息-订单编号 -->
+      <div class="box-main">
+        <!-- 列表项 -->
+        <div v-for="item in bossList" :key="item.id" class="main-item">
+          <div class="item-left">
+            <img :src="item.imgUrl || '../../image/set-info/dog.png'" alt="">
+          </div>
+          <div class="item-right">
+            <div class="right-name">
+              {{item.nickname}}
+            </div>
+            <div class="right-company">
+              {{item.company}}
+            </div>
+            <div class="right-desc">
+              <!-- <div class="desc-left">收入：￥99.9</div> -->
+              <div></div>
+              <div class="desc-right">{{item.createDate | formatDate}}注册</div>
+            </div>
+          </div>
+        </div>
+        <div v-show="bossList.length === 0" class="main-item2">
+          <span>暂无邀请的BOSS</span>
+        </div>
+      </div>
+
+    </div>
+</div>
+</main>
+</div>

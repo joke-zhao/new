@@ -1,0 +1,10 @@
+<div id="servicetype">
+    <div class="servicetype-content">
+        <div class="servicetype-content-describe">纳税人发布需求后将根据服务类型推荐服务商  请选择<span class="servicetype-content-describe-number">3项</span>您最具竞争力的服务类型</div>
+        <div class="servicetype-content-list" >
+            <div :class="isActive[index] ? y : n" v-for="(item,index) in typeList" @click="select(item,index)">{{item.name}}</div>
+        </div>
+
+        <div class="sure" @click="open()">确定</div>
+    </div>
+</div>

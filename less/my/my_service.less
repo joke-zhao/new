@@ -1,0 +1,77 @@
+#app{
+  width: 100%;
+  height: 100%;
+  .service{
+    width: 100%;
+    height: 100%;
+    .service-list{
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      .service-list-item{
+        width: 100%;
+        display: flex;
+        .service-list-item-img{
+          width: 2.39rem;
+          height: 1.52rem;
+          background: #f1f1f1;
+          margin-top: .17rem;
+          margin-left: .43rem;
+          margin-bottom: .31rem;
+        }
+        .service-list-item-right{
+          margin-left: .33rem;
+          .service-list-item-right-title{
+            font-size:.3rem;
+            font-family:PingFang SC;
+            font-weight:500;
+            color:#333333;
+            margin-top: .16rem;
+          }
+          .service-list-item-right-company{
+            width: 2.35rem;
+            font-size: .24rem;
+            font-family:PingFang SC;
+            font-weight:500;
+            color:#999999;
+
+            white-space: nowrap;
+            text-overflow:ellipsis;
+            overflow: hidden;
+          }
+          .service-list-item-right-bottom{
+            margin-top: .19rem;
+            width: 4.01rem;
+            display: flex;
+            justify-content: space-between;
+            height: .48rem;
+            .service-list-item-right-bottom-price{
+              font-size:.4rem;
+              font-family:PingFang SC;
+              font-weight:800;
+              color:#FCC92C;
+            }
+            .service-list-item-right-bottom-delete{
+              width: 1.09rem;
+              height: 100%;
+              background:#6383FD;
+              border-radius:.24rem;
+              font-size: .24rem;
+              font-family:PingFang SC;
+              font-weight:500;
+              color:#fff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+      }
+      .service-list-line{
+        width: 100%;
+        height: .03rem;
+        background: #EEEEEE;
+      }
+    }
+  }
+}

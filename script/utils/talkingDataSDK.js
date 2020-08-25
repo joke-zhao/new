@@ -1,0 +1,433 @@
+var winData = [{
+	url: 'account/login',
+	winName: 'account-login-win',
+	title: '登录'
+}, {
+	url: 'account/regist',
+	winName: 'account-regist-win',
+	title: '注册'
+}, {
+	url: 'account/forget',
+	winName: 'account-forget-win',
+	title: '忘记密码'
+}, {
+	url: 'article/select',
+	winName: 'article-select-win',
+	title: '精选文章'
+}, {
+	url: 'article/create',
+	winName: 'article-create-win',
+	title: '创建文章'
+}, {
+	url: 'article/detail',
+	winName: 'article-detail-win',
+	title: '文章详情'
+}, {
+	url: 'article/list',
+	winName: 'article-list-win',
+	title: '美肤/纤体/健康的文章列表'
+}, {
+	url: 'article/list',
+	winName: 'bodyFat-calendar-win',
+	title: '体脂管理日历选择'
+}, {
+	url: 'bodyFat/calendar',
+	winName: 'bodyFat-calendar-win',
+	title: '数据指标详情'
+}, {
+	url: 'bodyFat/history',
+	winName: 'bodyFat-history-win',
+	title: '体质数据历史'
+}, {
+	url: 'bodyFat/index',
+	winName: 'bodyFat-meal-win',
+	title: '体质管理'
+}, {
+	url: 'bodyFat/report',
+	winName: 'bodyFat-report-win',
+	title: '测量报告'
+}, {
+	url: 'bodyFat/target',
+	winName: 'bodyFat-target-win',
+	title: '我的目标'
+}, {
+	url: 'bodyFat/weight',
+	winName: 'bodyFat-target-win',
+	title: '设置目标体重'
+}, {
+	url: 'comment/complain',
+	winName: 'comment-complaint-win',
+	title: '评论举报'
+}, {
+	url: 'comment/post',
+	winName: 'comment-post-win',
+	title: '发表评论'
+}, {
+	url: 'comment/myList',
+	winName: 'comment-myList-win',
+	title: '我的评论列表'
+}, {
+	url: 'comment/detail',
+	winName: 'comment-detail-win',
+	title: '评论详情'
+}, {
+	url: 'cart/index',
+	winName: 'main-index-win',
+	title: '智选首页'
+}, {
+	url: 'cart/recommend',
+	winName: 'cart-recomment-win',
+	title: '我的推荐'
+}, {
+	url: 'cart/cartSub',
+	winName: 'cart-cartSub-win',
+	title: '美肤/纤体/健康的产品列表'
+}, {
+	url: 'cart/personal',
+	winName: 'cart-personal-win',
+	title: '个性化推荐'
+}, {
+	url: 'community/index',
+	winName: 'main-index-win',
+	title: '社区首页'
+}, {
+	url: 'community/result',
+	winName: 'search-search-win',
+	title: '社区搜索结果'
+}, {
+	url: 'equipment/list',
+	winName: 'equipment-list-win',
+	title: '智能设备列表'
+}, {
+	url: 'equipment/buy',
+	winName: 'equipment-buy-win',
+	title: '智能设备'
+}, {
+	url: 'equipment/allComment',
+	winName: 'equipment-allComment-win',
+	title: '设备评论'
+}, {
+	url: 'equipment/measure',
+	winName: 'equipment-measure-win',
+	title: '绑定设备'
+}, {
+	url: 'goods-allInclusion',
+	winName: 'goods-allInclusion-win',
+	title: '全部成分'
+}, {
+	url: 'goods/detail',
+	winName: 'goods-detail-win',
+	title: '产品详情'
+}, {
+	url: 'goods/inclusionDetail',
+	winName: 'goods-inclusionDetail-win',
+	title: '成分详情'
+}, {
+	url: 'goods/list',
+	winName: 'goods-list-win',
+	title: '产品列表'
+}, {
+	url: 'goods/rankList',
+	winName: 'goods-rankList-win',
+	title: '分类榜单'
+}, {
+	url: 'goods/rankType',
+	winName: 'goods-rankList-win',
+	title: '分类榜单弹窗'
+}, {
+	url: 'home/bind',
+	winName: 'home-bind-win',
+	title: '绑定采集器'
+}, {
+	url: 'home/finishBind',
+	winName: 'home-finishBind-win',
+	title: '完成绑定采集器'
+}, {
+	url: 'home/index',
+	winName: 'main-index-win',
+	title: '首页'
+}, {
+	url: 'home/issue',
+	winName: 'home-issue-win',
+	title: '常见问题'
+}, {
+	url: 'home/issueDetail',
+	winName: 'home-issueDetial-win',
+	title: '问题详情'
+}, {
+	url: 'home/issueReason',
+	winName: 'search-search-win',
+	title: '常见问题搜索结果'
+}, {
+	url: 'home/question',
+	winName: 'home-question-win',
+	title: '问卷调查'
+}, {
+	url: 'home/result',
+	winName: 'search-search-win',
+	title: '首页全部分类搜索'
+}, {
+	url: 'home/resultByType',
+	winName: 'search-search-win',
+	title: '首页分类搜索'
+}, {
+	url: 'home/tag',
+	winName: 'search-search-win',
+	title: '首页搜索标签'
+}, {
+	url: 'home/state',
+	winName: 'home-bind-win',
+	title: '说明弹窗'
+}, {
+	url: 'home/state',
+	winName: 'home-finishBind-win',
+	title: '说明弹窗'
+}, {
+	url: 'home/state',
+	winName: 'home-question-win',
+	title: '说明弹窗'
+}, {
+	url: 'home/state',
+	winName: 'scan-scan-win',
+	title: '说明弹窗'
+}, {
+	url: 'home/state',
+	winName: 'share-detail-win',
+	title: '说明弹窗'
+}, {
+	url: 'home/state',
+	winName: 'share-list-win',
+	title: '说明弹窗'
+}, {
+	url: 'lead/index',
+	winName: 'lead-index-win',
+	title: '广告图'
+}, {
+	url: 'location/address',
+	winName: 'location-address-win',
+	title: '填写收货地址'
+}, {
+	url: 'location/addAddress',
+	winName: 'location-addAddress-win',
+	title: '新增收货地址'
+}, {
+	url: 'main/index',
+	winName: 'main-index-win',
+	title: '主页'
+}, {
+	url: 'me/index',
+	winName: 'me-index-win',
+	title: '我的主页'
+}, {
+	url: 'me/advice',
+	winName: 'me-advice-win',
+	title: '意见反馈'
+}, {
+	url: 'me/bindPhone',
+	winName: 'me-bindPhone-win',
+	title: '绑定手机'
+}, {
+	url: 'me/essay',
+	winName: 'me-essay-win',
+	title: '我的帖子'
+}, {
+	url: 'me/fav',
+	winName: 'me-fav-win',
+	title: '我的收藏'
+}, {
+	url: 'me/report',
+	winName: 'me-report-win',
+	title: '我的报告'
+}, {
+	url: 'me/order',
+	winName: 'me-order-win',
+	title: '我的订单'
+}, {
+	url: 'me/loginPassword',
+	winName: 'me-loginPassword-win',
+	title: '修改密码'
+}, {
+	url: 'me/setting',
+	winName: 'me-setting-win',
+	title: '设置'
+}, {
+	url: 'me/myInfo',
+	winName: 'me-myInfo-win',
+	title: '我的个人信息'
+}, {
+	url: 'me/simpleInfo',
+	winName: 'me-simpleInfo-win',
+	title: '个人信息'
+}, {
+	url: 'me/protocal/frame',
+	winName: 'me-protocal-win',
+	title: '用户协议/检测报告'
+}, {
+	url: 'mealAndSport/index',
+	winName: 'mealAndSport-index-win',
+	title: '一日三餐'
+}, {
+	url: 'mealAndSport/add',
+	winName: 'mealAndSport-add-win',
+	title: '添加运动/三餐'
+}, {
+	url: 'mealAndSport/addPopup',
+	winName: 'mealAndSport-add-win',
+	title: '添加运动/三餐弹窗'
+}, {
+	url: 'mealAndSport/weight',
+	winName: 'mealAndSport-weight-win',
+	title: '估算食物重量'
+}, {
+	url: 'mealAndSport/result',
+	winName: 'search-search-win',
+	title: '搜索结果'
+}, {
+	url: 'me/index',
+	winName: 'message-index-win',
+	title: '消息'
+}, {
+	url: 'me/list',
+	winName: 'message-list-win',
+	title: '信息列表'
+}, {
+	url: 'me/systemDetail',
+	winName: 'message-systemDetail-win',
+	title: '系统消息'
+}, {
+	url: 'me/detail',
+	winName: 'order-detail-win',
+	title: '订单详情'
+}, {
+	url: 'me/express',
+	winName: 'order-express-win',
+	title: '物流信息'
+}, {
+	url: 'me/fillOrder',
+	winName: 'order-fillOrder-win',
+	title: '填写订单'
+}, {
+	url: 'me/list',
+	winName: 'order-list-win',
+	title: '我的订单列表'
+}, {
+	url: 'me/payStatus',
+	winName: 'order-fillOrder-win',
+	title: '支付状态'
+}, {
+	url: 'me/payStatus',
+	winName: 'order-detail-win',
+	title: '支付状态'
+}, {
+	url: 'scan/index',
+	winName: 'scan-index-win',
+	title: '绑定采集器'
+}, {
+	url: 'scan/scan',
+	winName: 'scan-index-win',
+	title: '扫描二维码'
+}, {
+	url: 'search/search_header',
+	winName: 'search-search-win',
+	title: '搜索头部'
+}, {
+	url: 'service/index',
+	winName: 'main-index-win',
+	title: '知音首页'
+}, {
+	url: 'service/example',
+	winName: 'service-example-win',
+	title: '示例报告'
+}, {
+	url: 'service/report',
+	winName: 'service-report-win',
+	title: '单项报告示例'
+}, {
+	url: 'service/edit',
+	winName: 'service-edit-win',
+	title: '个人单项报告'
+}, {
+	url: 'share/index',
+	winName: 'share-index-win',
+	title: '分享有惠'
+}, {
+	url: 'share/detail',
+	winName: 'share-detail-win',
+	title: '分享有惠详情'
+}, {
+	url: 'skinTest/index',
+	winName: 'skinTest-index-win',
+	title: '肤质测试首页'
+}, {
+	url: 'skinTest/goods',
+	winName: 'skinTest-goods-win',
+	title: '肤质建议-产品推荐'
+}, {
+	url: 'skinTest/report',
+	winName: 'skinTest-report-win',
+	title: '我的肤质报告'
+}, {
+	url: 'skinTest/rule',
+	winName: 'skinTest-rule-win',
+	title: '评分细则'
+}, {
+	url: 'skinTest/skinType',
+	winName: 'skinTest-index-win',
+	title: '肤质类型'
+}, {
+	url: 'skinTest/tips',
+	winName: 'skinTest-index-win',
+	title: '肤质测试提示'
+}, {
+	url: 'vs/create',
+	winName: 'vs-create-win',
+	title: '发起对比'
+}, {
+	url: 'vs/detail',
+	winName: 'vs-detail-win',
+	title: '对比详情'
+}, {
+	url: 'vs/index',
+	winName: 'vs-index-win',
+	title: '尖货对比首页'
+}, {
+	url: 'vs/myList',
+	winName: 'vs-myList-win',
+	title: '我的对比'
+}, {
+	url: 'vs/result',
+	winName: 'search-search-win',
+	title: '对比搜索'
+}, {
+	url: 'vs/frame',
+	winName: 'vs-index-win',
+	title: '对比类型'
+}];
+
+function getTitle(opts) {
+	var title = '';
+	_.each(this.winData, function (item, index) {
+		if(item.winName === opts.winName) {
+			title = item.title;
+			return;
+		}
+	});
+	return title;
+}
+
+// define(function (require, exports, module) {
+//
+// 	// 验证码处理模块
+//
+// 	function TalkingDataSDK() {
+// 	}
+//
+// 	TalkingDataSDK.prototype = {
+//
+// 	};
+//
+// 	TalkingDataSDK.prototype.constructor = TalkingDataSDK;
+//
+// 	module.exports = new TalkingDataSDK();
+//
+// });

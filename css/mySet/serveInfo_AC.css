@@ -1,0 +1,34 @@
+#app {
+  font-size: 0.24rem;
+}
+#app .container {
+  width: 90%;
+  margin: 0 auto;
+}
+#app .container .container-box .box-name {
+  font-size: 0.3rem;
+  padding: 0.2rem 0;
+}
+#app .container .container-box .box-image {
+  padding: 0.2rem 0;
+}
+#app .container .container-box .box-image img {
+  width: 2rem;
+  height: 2rem;
+}
+#app .footer {
+  position: fixed;
+  bottom: 1rem;
+  width: 100%;
+}
+#app .footer .footer-box {
+  width: 90%;
+  height: 0.8rem;
+  margin: 0 auto;
+  line-height: 0.8rem;
+  font-size: 0.3rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+}

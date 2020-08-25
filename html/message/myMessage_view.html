@@ -1,0 +1,74 @@
+<div id="myMessage">
+    <!-- 信息类型 -->
+    <div class="message_type">
+        <div class="message_char" @click="switchChar">
+            <img src="../../image/message/char.png">
+            <div class="alarm">
+                5
+            </div>
+            <div class="type">聊天</div>
+        </div>
+        <div class="message_char" @click="switchNotice">
+            <img src="../../image/message/inform.png">
+            <div class="alarm" style="right:41.5%;">
+                99
+            </div>
+            <div class="type">通知</div>
+        </div>
+        <div class="message_char">
+            <img src="../../image/message/questions.png">
+            <div class="alarm" style="right:8%;">
+                1
+            </div>
+            <div class="type">问答</div>
+        </div>
+    </div>
+    <!-- 聊天列表 -->
+    <div class="message_list" v-if="isCharShow">
+        <ul class="list_ul">
+            <li v-for="(item,index) in messageList" class="list_li" @click="openWechat(item)">
+                <!--                <img class="li_img" :src="item.userPhoto">-->
+                <img class="li_img" v-if="item.userPhoto" :src=item.userPhoto>
+                <img class="li_img" v-else src="../../image/login/logo1.png">
+                <div class="alarm" v-if="item.unreadCount > 0">
+                    {{item.unreadCount}}
+                </div>
+                <div class="li_right">
+                    <div class="li_right_up">
+                        <div class="inform">
+                            <div class="name">{{item.nickname}}</div>
+                            <div class="companyName">{{item.name}}</div>
+                        </div>
+                        <div class="time">{{item.createTime | formatDate}}</div>
+                    </div>
+                    <div class="li_right_down">{{item.content}}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- 通知列表 -->
+    <div class="message_list" v-if="isNoticeShow">
+        <ul class="list_ul">
+            <li v-for="(item,index) in noticeList" class="list_li" @click="openNotice(index)">
+                <!--                <img class="li_img" :src="item.userPhoto">-->
+<!--                <img class="li_img" v-if="item.imgUrl" :src=item.imgUrl>-->
+<!--                <img class="li_img" v-else src="../../image/login/logo1.png">-->
+<!--                <div class="alarm" v-if="item.unreadCount > 0">-->
+<!--                    {{item.unreadCount}}-->
+<!--                </div>-->
+                <div class="li_right">
+                    <div class="li_right_up">
+                        <div class="inform">
+                            <div class="name">{{item.nickname}}</div>
+<!--                            <div class="companyName">{{item.name}}</div>-->
+                        </div>
+<!--                        <div class="time">{{item.createTime | formatDate}}</div>-->
+                    </div>
+                    <div class="li_right_down">{{item.content}}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

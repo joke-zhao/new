@@ -1,0 +1,79 @@
+<!-- 员工权限页面开始 -->
+<div id="app">
+  <header>
+    <div class="header-box">
+      <div class="box-left">
+        <img :src="photo ||'../../image/enterprise_staff/cat.png'" alt="">
+        <span>{{name}}</span>
+      </div>
+      <div class="box-right">
+        <div @click="handleDelShow">剔除</div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- 操作权限 -->
+    <div v-show="flag === 1" class="main-box">
+      <div class="box-header">
+        <div @click="handleTab(1)" :class="flag === 1 ?'h-right':'h-left'">操作权限</div>
+        <div class="h-center"></div>
+        <div @click="handleTab(2)" :class="flag === 2 ?'h-right':'h-left'">数据权限</div>
+      </div>
+      <div class="box-main">
+        <!-- 列表项 -->
+        <div v-for="(item,index) in staffList" :key="item.id" class="main-item">
+          <div class="item-left">{{item.companyName}}</div>
+          <div class="item-right">
+            <van-switch @change='changeBtn1(item)' v-model="item.operatePermission" :disabled="roleStatus"  size="0.48rem"  />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 数据权限 -->
+    <div v-show="flag === 2" class="main-box">
+      <div class="box-header">
+        <div @click="handleTab(1)" :class="flag === 1 ?'h-right':'h-left'">操作权限</div>
+        <div class="h-center"></div>
+        <div @click="handleTab(2)" :class="flag === 2 ?'h-right':'h-left'">数据权限</div>
+      </div>
+      <div class="box-main">
+
+        <!-- 列表项 -->
+        <div v-for="(item,index) in staffList" :key="item.id" class="main-item2">
+          <!-- 公司 -->
+          <div class="item-company">{{item.companyName}}</div>
+          <!-- 公司旗下报表 -->
+          <div class="item-form">
+            <!-- 报表数据 -->
+            <div v-for="item2 in item.dataPermissions" :key="item2.name" class="form-son">
+              <div class="left-son">{{item2.name}}</div>
+            <div class="right-son">
+              <van-switch @change='changeBtn2(item,item2)' v-model="item2.enable" :disabled="roleStatus" size="0.30rem"  />
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- 弹出层 -->
+  <footer>
+    <van-popup  round :style="{ height: '3.5rem',width:'80%'}" v-model="delShow">
+      <div class="popUp-box">
+        <div class="box-main">
+          <div class="main-left">
+            <img src="../../image/set-info/tishi.png" alt="">
+          </div>
+          <div class="main-right">
+            <p>提示：</p>
+            <span>确定剔除该员工？</span>
+          </div>
+        </div>
+        <div class="box-footer">
+          <div @click="delShow = false" class="f-left"><span>我再想想</span></div>
+          <div @click="handleDel" class="f-right"><span>确认</span></div>
+        </div>
+      </div>
+    </van-popup>
+  </footer>
+</div>

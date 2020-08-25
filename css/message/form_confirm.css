@@ -1,0 +1,290 @@
+#app {
+  width: 100%;
+  height: 100%;
+}
+#app .confirm {
+  width: 100%;
+  height: 100%;
+}
+#app .confirm .confirm-company {
+  margin-top: 0.59rem;
+  margin-left: 0.39rem;
+  font-size: 0.34rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  line-height: 0.37rem;
+}
+#app .confirm .confirm-date {
+  margin-top: 0.25rem;
+  margin-left: 0.39rem;
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+}
+#app .confirm .confirm-explain {
+  width: 6.7rem;
+  margin-left: 0.38rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  line-height: 0.46rem;
+  margin-top: 0.36rem;
+}
+#app .confirm .confirm-table {
+  margin-top: 0.38rem;
+  width: 7.01rem;
+  height: 3.6rem;
+  margin-left: 0.24rem;
+}
+#app .confirm .confirm-table .confirm-table-item {
+  width: 100%;
+  height: 0.72rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+#app .confirm .confirm-table .confirm-table-item .confirm-table-item-value {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  border-right: 0.01rem solid #f1f1f1;
+  border-bottom: 0.01rem solid #f1f1f1;
+  box-sizing: border-box;
+}
+#app .confirm .confirm-table .confirm-table-item .confirm-table-item-value:nth-child(3),
+#app .confirm .confirm-table .confirm-table-item .confirm-table-item-value:nth-child(5),
+#app .confirm .confirm-table .confirm-table-item .confirm-table-item-value:nth-child(7),
+#app .confirm .confirm-table .confirm-table-item .confirm-table-item-value:nth-child(9) {
+  border-left: 0.01rem solid #f1f1f1;
+}
+#app .confirm .confirm-table .confirm-table-item .confirm-table-item-value:nth-child(9) {
+  border-bottom-left-radius: 0.16rem;
+}
+#app .confirm .confirm-table .confirm-table-item .confirm-table-item-value:nth-child(10) {
+  border-bottom-right-radius: 0.16rem;
+}
+#app .confirm .confirm-table .confirm-table-item .confirm-table-item-value:nth-child(1) {
+  border-top-left-radius: 0.16rem;
+  border-right: 0.01rem solid #E0E0E0;
+  background: #4769EE;
+  color: #fff;
+  font-weight: bold;
+}
+#app .confirm .confirm-table .confirm-table-item .confirm-table-item-value:nth-child(2) {
+  border-top-right-radius: 0.16rem;
+  background: #4769EE;
+  color: #fff;
+  font-weight: bold;
+}
+#app .confirm .confirm-divide {
+  margin-top: 0.24rem;
+  width: 100%;
+  height: 0.2rem;
+  background: #F5F5F5;
+}
+#app .confirm .confirm-reply {
+  width: 100%;
+}
+#app .confirm .confirm-reply .confirm-reply-mine {
+  margin-top: 0.39rem;
+  margin-left: 0.24rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  line-height: 0.37rem;
+}
+#app .confirm .confirm-reply .confirm-reply-area {
+  margin-top: 0.24rem;
+  margin-left: 0.23rem;
+  width: 7.02rem;
+  height: 1.8rem;
+  background: #F5F5F5;
+  border: 1px solid #E0E0E0;
+  border-radius: 0.16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .confirm .confirm-reply .confirm-reply-area textarea {
+  width: 90%;
+  height: 70%;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  background: #F5F5F5;
+  color: #222222;
+  line-height: 0.37rem;
+  border: none;
+}
+#app .confirm .confirm-reply .confirm-reply-area textarea:focus {
+  outline: 0;
+}
+#app .confirm .confirm-reply .confirm-reply-other {
+  margin-left: 0.23rem;
+  margin-top: 0.16rem;
+  width: 7.02rem;
+  height: 0.9rem;
+  background: #F5F5F5;
+  border: 1px solid #E0E0E0;
+  border-radius: 0.16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .confirm .confirm-reply .confirm-reply-other input {
+  display: block;
+  width: 90%;
+  height: 80%;
+  border: none;
+  color: #BBBBBB;
+  background: #F5F5F5;
+  line-height: 0.37rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  border: 0;
+  caret-color: #000;
+  user-select: auto !important;
+  -webkit-user-select: auto !important;
+  outline-style: none;
+}
+#app .confirm .confirm-button {
+  margin-top: 0.4rem;
+  margin-left: 0.23rem;
+  width: 7.02rem;
+  height: 0.8rem;
+  background: linear-gradient(0deg, #6887FF 0%, #4769EE 100%);
+  border-radius: 0.16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #fff;
+}
+#app .confirm .confirm-dialog {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .confirm .confirm-dialog .confirm-dialog-window {
+  z-index: 1000;
+  width: 6.1rem;
+  height: 3.4rem;
+  background: #fff;
+  border-radius: 0.16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  position: relative;
+}
+#app .confirm .confirm-dialog .confirm-dialog-window .confirm-dialog-window-title {
+  margin-top: 0.6rem;
+  font-size: 0.34rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #222222;
+}
+#app .confirm .confirm-dialog .confirm-dialog-window .confirm-dialog-window-content {
+  margin-top: 0.4rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  line-height: 0.44rem;
+}
+#app .confirm .confirm-dialog .confirm-dialog-window .confirm-dialog-window-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.9rem;
+  display: flex;
+}
+#app .confirm .confirm-dialog .confirm-dialog-window .confirm-dialog-window-bottom .confirm-dialog-window-bottom-cancel {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F5F5F5;
+  border-bottom-left-radius: 0.16rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222;
+}
+#app .confirm .confirm-dialog .confirm-dialog-window .confirm-dialog-window-bottom .confirm-dialog-window-bottom-ok {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #6887FF 0%, #4769EE 100%);
+  border-bottom-right-radius: 0.16rem;
+  color: #FFFFFF;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+}
+#app .confirm .confirm-result {
+  width: 100%;
+}
+#app .confirm .confirm-result .confirm-result-mine {
+  align-items: center;
+  width: 100%;
+  height: 0.91em;
+  display: flex;
+  border-bottom: 0.01rem solid #E0E0E0;
+}
+#app .confirm .confirm-result .confirm-result-mine .confirm-result-mine-text {
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  line-height: 0.37rem;
+  margin-left: 0.24rem;
+}
+#app .confirm .confirm-result .confirm-result-content {
+  width: 100%;
+  height: 1.73rem;
+}
+#app .confirm .confirm-result .confirm-result-content .confirm-result-content-reply {
+  margin-top: 0.39rem;
+  margin-left: 0.24rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  line-height: 0.37rem;
+}
+#app .confirm .confirm-result .confirm-result-content .confirm-result-content-other {
+  margin-top: 0.39rem;
+  margin-left: 0.24rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  line-height: 0.37rem;
+  margin-bottom: 0.4rem;
+}
+#app .confirm .confirm-gray {
+  width: 100%;
+  height: 100%;
+  background: #F5F5F5;
+}

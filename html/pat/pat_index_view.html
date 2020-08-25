@@ -1,0 +1,25 @@
+<!-- 单据审批页面开始 -->
+<div id="app">
+    <div class="dialog-wrapper" v-show="dialogShow">
+        <div class="dialog">
+          <!-- <div class="dialog-close" @click="dialogShow = false">
+              x
+            <div class="dialog-close-left"></div>
+            <div class="dialog-close-right"></div> 
+          </div> -->
+          <div class="dialog-bottom">
+            <div class="dialog-bottom-tag">
+              <div class="dialog-bottom-tag-photo" @click="openCamera">
+                <img src="../../image/dialog/photo.png" class="dialog-bottom-tag-photo-icon">
+                <div class="dialog-bottom-tag-photo-text">拍照</div>
+              </div>
+              <div class="dialog-bottom-tag-graph" @click="openAlbum">
+                <img src="../../image/dialog/graph.png" class="dialog-bottom-tag-graph-icon">
+                <div class="dialog-bottom-tag-graph-text">相册</div>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+</div>

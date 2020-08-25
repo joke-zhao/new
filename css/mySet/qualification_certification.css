@@ -1,0 +1,36 @@
+#app {
+  width: 100%;
+}
+#app .qualification-certification {
+  height: 100%;
+  overflow-y: auto;
+  padding-top: 0.48rem;
+  padding-left: 0.43rem;
+  padding-right: 0.43rem;
+}
+#app .qualification-certification .qualification-certification-title {
+  font-weight: 500;
+  font-size: 0.28rem;
+  padding-bottom: 0.27rem;
+}
+#app .qualification-certification .qualification-certification-description {
+  color: #9A9A9A;
+  font-size: 0.22rem;
+  padding-bottom: 0.44rem;
+}
+#app .qualification-certification .qualification-certification-images {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#app .qualification-certification .qualification-certification-images .qualification-certification-images-item {
+  height: 1.56rem;
+  width: 1.56rem;
+  padding: 0.001rem;
+  margin-right: 0.27rem;
+  border: #000000 dashed 0.001rem;
+}
+#app .qualification-certification .qualification-certification-images .qualification-certification-images-item img {
+  width: 100%;
+  height: 100%;
+}

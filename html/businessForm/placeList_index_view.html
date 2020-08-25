@@ -1,0 +1,75 @@
+<div id="placeList">
+    <div class="company">
+        <div class="company_name">{{deptName}}</div>
+        <div class="company_cny">币种:（CNY）</div>
+
+    </div>
+    <div class="datePick">
+        <div class="imgWrap"> <img src="../../image/reportForm/date.png" alt="">
+        </div>
+        <div class="datePick_line"></div>
+        <div class="datePick_content" @click="openPopup1">{{msg}}</div>
+        <van-popup v-model="show1" position="bottom" round>
+            <van-datetime-picker v-model="currentDate" type="year-month" title="选择开始年月" show-toolbar
+                :max-date="maxDate1" :formatter="formatter" @cancel="show1 = false" @confirm="onConfirm1" />
+        </van-popup>
+        <div class="datePick_word">至</div>
+        <div class="datePick_content" @click="openPopup2">{{msg1}}</div>
+        <van-popup v-model="show2" position="bottom" round>
+            <van-datetime-picker v-model="currentDate" type="year-month" title="选择结束年月" show-toolbar :max-date="maxDate"
+                :formatter="formatter2" @cancel="show2 = false" @confirm="onConfirm2" />
+        </van-popup>
+    </div>
+
+    <div class="picture">
+        <div id="myChart"></div>
+    </div>
+    <!-- <div id="myChart" :style="{width: '300px', height: '300px'}"></div> -->
+    <div class="watchDetail_title" @click="showDetails">
+        <div>查看明细</div>
+        <img src=" ../../image/reportForm/arrow.png" alt="" v-show="detailsShowImg1">
+        <img src=" ../../image/reportForm/arrow2.png" alt="" v-show="detailsShowImg2">
+    </div>
+    <div class="accountDetails" v-show="detailsShow">
+        <div class="accountDetails_content">场地表</div>
+    </div>
+    <div class="accountTitle" v-show="detailsShow">
+        <div class="accountTitle_company">
+            <div class="accountTitle_company_1">{{deptName}}</div>
+            <div class="accountTitle_company_2">币种：（CNY）</div>
+        </div>
+        <div class="accountTitle_date">
+            <div class="accountTitle_date_img"> <img src="../../image/reportForm/date.png" alt="">
+            </div>
+            <div class="accountTitle_date_1" @click="openPopup3">选择月份</div>
+            <van-popup v-model="show3" position="bottom" round>
+                <van-datetime-picker v-model="currentDate" type="year-month" title="选择年月" show-toolbar
+                    :max-date="maxDate" :formatter="formatter3" @cancel="show3 = false" @confirm="onConfirm3" />
+            </van-popup>
+            <div class="accountTitle_date_2" v-show="show4">{{msg2}}</div>
+        </div>
+    </div>
+    <div class="watchDetail_content" v-show="detailsShow">
+        <table class="watchDetail_content_table">
+            <caption>场地表</caption>
+            <tr class="watchDetail_content_table_content">
+                <td class="watchDetail_content_table_content_1">项目</td>
+                <td class="watchDetail_content_table_content_1">名称</td>
+                <td class="watchDetail_content_table_content_1">面积</td>
+                <td class="watchDetail_content_table_content_1">租金</td>
+                <td class="watchDetail_content_table_content_1">坪效</td>
+            </tr>
+            <tr class="watchDetail_content_table_content" v-show="openChooseDate">
+                <td class="watchDetail_content_table_content_1">{{chooseDate}}月</td>
+                <td class="watchDetail_content_table_content_1">{{name}}</td>
+                <td class="watchDetail_content_table_content_1">{{area}}</td>
+                <td class="watchDetail_content_table_content_1">{{rent}}</td>
+                <td class="watchDetail_content_table_content_1">{{pingEffect}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="bottom_btns">
+        <div class="export">导出</div>
+        <div class="print">打印</div>
+    </div>
+</div>

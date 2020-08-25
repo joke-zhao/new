@@ -1,0 +1,22 @@
+<div id="app">
+    <header>
+        <div class="header-box">
+            <div class="box-item">
+                <div class="item-left">
+                  <span>{{phone}}</span>
+                </div>
+            </div>
+            <div class="box-item">
+                <div class="item-left">
+                    <input maxlength="6" v-model='sureNumber' placeholder="输入验证码" type="text">
+                </div>
+                <div @click='handleGetCode' class="item-right">{{codeDesc}}</div>
+            </div>
+        </div>
+    </header>
+    <footer>
+        <div @click="handlePhone" class="footer-box">
+            下一步
+        </div>
+    </footer>
+</div>

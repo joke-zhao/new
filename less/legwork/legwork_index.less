@@ -1,0 +1,127 @@
+#app{
+  width: 100%;
+  height: 100%;
+  .list{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    //flex-wrap: wrap;
+    justify-content: flex-start;
+    background: #F5F5F5;
+    padding-bottom: 1.02rem;
+    .list-item{
+      margin-top: .2rem;
+      width: 7.02rem;
+      height: 2.73rem;
+      background: #FFFFFF;
+      border-radius: .16rem;
+      .list-item-main{
+        width: auto;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        margin-left: .24rem;
+        .list-item-main-img{
+          width: 1.4rem;
+          height: 1.4rem;
+          background: #E0E0E0;
+          border-radius: 50%;
+          img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+        .list-item-main-list{
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          width: 5.14rem;
+          height: 1.17rem;
+          margin-left: .24rem;
+          .list-item-main-list-item{
+            width: 100%;
+            font-size:.26rem;
+            font-family:PingFang SC;
+            font-weight:400;
+            color:#222222;
+          }
+        }
+      }
+      .list-item-line{
+        width: 100%;
+        height: .01rem;
+        background: #EEEEEE;
+      }
+      .list-item-bottom{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: .72rem;
+        .list-item-bottom-fee{
+          width: 1.61rem;
+          height: .28rem;
+          display: flex;
+          white-space: nowrap;
+          align-items: center;
+          justify-content: space-between;
+          font-family:PingFang SC;
+          font-weight:400;
+          color:#222222;
+          line-height:.37rem;
+          .list-item-bottom-fee-title{
+            margin-left: .24rem;
+            font-size:.24rem;
+          }
+          .list-item-bottom-fee-money{
+            font-size:.34rem;
+            color: #FF3D3D;
+          }
+        }
+        .list-item-bottom-location{
+          font-size:.24rem;
+          font-family:PingFang SC;
+          font-weight:400;
+          color:#808080;
+          line-height:.37rem;
+          margin-right: .23rem;
+        }
+      }
+    }
+  }
+  .bottom-bar{
+    border:1px solid #E0E0E0;
+    box-sizing: border-box;
+    width: 100%;
+    height: .98rem;
+    background: #fff;
+    position: fixed;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    .bottom-bar-item{
+      width: 33.3%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size:.2rem;
+      font-family:PingFang SC;
+      font-weight:400;
+      color:#999999;
+      &:first-child{
+        color: #4769EE;
+      }
+      img{
+        width: .5rem;
+        height: .38rem;
+      }
+    }
+  }
+
+}

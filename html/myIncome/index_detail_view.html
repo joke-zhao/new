@@ -1,0 +1,40 @@
+<!-- 我的收入页面开始 -->
+<div id="app">
+  <header>
+    <div class="header-box">
+      <div class="box">
+        <div v-for="item in tabs" :key="item.id" class="box-item">
+          <div class="'item-border">
+            <span class="item-name">{{item.name}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main-box">
+      <!-- 详细信息-订单编号 -->
+      <div class="box-main">
+        <!-- 列表项 -->
+        <div v-for="item in detailsList" :key="item.order" class="main-item">
+          <div class="item1">
+            <span>{{item.order}}</span>
+          </div>
+          <div class="item2">
+            <span>{{item.incomeType}}</span>
+          </div>
+          <div class="item3">
+            <span>￥{{item.orderPrice}}</span>
+          </div>
+          <div class="item4">
+            +{{item.incomePrice}}
+          </div>
+        </div>
+        
+      </div>
+      <div v-show="detailsList.length === 0" class="box-main2">
+        <span>暂无收入明细信息</span>
+      </div>
+    </div>
+  </main>
+</div>

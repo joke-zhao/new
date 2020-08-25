@@ -1,0 +1,52 @@
+<!-- 自定义头部使用说明
+1.如果需要定义样式, 可以直接通过<style>来设置, 可以覆盖一些全局已经定义的样式
+2.自定义头部一定要有一个 id="header" 的 div 来包裹着所有的dom结构, 会做通用的头部样式处理
+3.如果需要执行自定义的头部的相关js, 需要放在<script>中来执行
+  3.1-这里的js环境是最原始的js环境, 任何库和封装方法都不能使用, 只能使用原生js
+  3.2-按钮事件统一为 onclick , 方法名统一为 btnTap, 接受参数列表的形式进行传参
+    3.2.1-其中第一个参数表示, 按钮事件类型, 1 和 2 为预设值, 分别对应 leftBtnTap 和 rightBtnTap
+    3.2.2-不是以上两种类型的表示为扩展按钮事件类型, 可以设置任意的值, 业务代码应通过 extraBtnTap 监听到该事件
+      3.2.2.1-demo
+        window.extraBtnTap = function() {
+            alert('arguments[0],' + arguments[0]); // 判断第一个参数是什么类型以做不同的处理
+            alert('arguments[1],' + arguments[1]);
+        };
+    3.2.3-设置了按钮事件的dom元素, 需要设置 tapmode="active" , 全局会做样式优化和点击优化
+  3.3-如果有其他事件需要设置的, 通过 window.other = function() {} 的方式设置监听, 自行处理
+4.用法, 通过配置 openWin 的 customHeader 属性来启用, 通过 _g.getTemplate('baseWin/custom_header_view') 加载模板
+_g.openWin({
+    name: 'test',
+    url: '../main/test.html',
+    customHeader: _g.getTemplate('baseWin/custom_header_view'),
+});
+  4.1-加载的模板不支持 vue 语法
+-->
+<style>
+    #header {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        z-index: 999;
+        background-color: #fff;
+    }
+    #leftText{
+        color: black;
+    }
+    #leftIcon{
+    }
+</style>
+<div id="header" class="ui-header">
+    <div id="leftBtn" class="ui-header__leftBtn" onclick="btnTap(1);" tapmode="active">
+        <i id="leftIcon" class="iconfont icon-xiangzuojiantou"></i>
+        <span id="leftText">返回</span>
+    </div>
+    <div id="title" class="ui-header__title"></div>
+    <div id="rightBtn" class="ui-header__rightBtn" onclick="btnTap(3,4,5);" tapmode="active">
+       
+        <span id="rightText"> <img src="../../image/baseWin/fenxiang.png" style="width: 22px;height: 22px;"></span>
+        <!-- <i id="rightIcon" class="iconfont icon-saoyisao"></i> -->
+    </div>
+</div>
+<script>
+    document.getElementById('header').style.opacity = 1;
+</script>

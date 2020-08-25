@@ -1,0 +1,325 @@
+
+
+#app{
+  width: 100%;
+  height: 100%;
+  .buy{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #F5F5F5;
+    .buy-image{
+      width: 100%;
+      height: 3.16rem;
+      background: #fff;
+      .buy-image-content{
+        margin-top: .1rem;
+        margin-left: .17rem;
+        width: 7.12rem;
+        height: 2.97rem;
+        background:#000;
+        opacity:0.2;
+      }
+    }
+    .buy-form{
+      width: 100%;
+      margin-top: .09rem;
+      background: #fff;
+      .buy-form-area{
+        width: 100%;
+        height: .65rem;
+        display: flex;
+        .buy-form-area-title{
+          margin-top: .29rem;
+          margin-left: .48rem;
+          font-size:.28rem;
+          font-family:PingFang SC;
+          font-weight:bold;
+          color:#333333;
+          line-height:.48rem;
+        }
+        .buy-form-area-button{
+          width: 1.22rem;
+          height: .43rem;
+          border:.01rem solid #000000;
+          margin-top: .29rem;
+          margin-left: .18rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .buy-form-area-button-text{
+            font-size:.24rem;
+            font-family:PingFang SC;
+            font-weight:400;
+            color:#000;
+            line-height:.48rem;
+          }
+          .buy-form-area-button-more{
+            width: .1rem;
+            height: .1rem;
+            margin-left: .1rem;
+            border-right: .01rem solid #000;
+            border-bottom: .01rem solid #000;
+            transform: rotate(45deg);
+          }
+        }
+      }
+      .buy-form-service{
+        width: 100%;
+        margin-top: .54rem;
+        .buy-form-service-title{
+          margin-left: .48rem;
+          font-size:.28rem;
+          font-family:PingFang SC;
+          font-weight:bold;
+          color:#333333;
+          line-height:.48rem;
+        }
+        .buy-form-service-choose{
+          width: 7rem;
+          .buy-form-service-choose-item{
+            margin-left: .49rem;
+            margin-top: .13rem;
+            margin-bottom: .17rem;
+            border-bottom: .01rem solid #F5F5F5;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            .buy-form-service-choose-item-key{
+              margin-left: .29rem;
+              display: flex;
+              align-items: center;
+              .buy-form-service-choose-item-key-check{
+                width: .19rem;
+                height: .19rem;
+                border: .01rem solid #000;
+                border-radius: 50% ;
+              }
+              .buy-form-service-choose-item-key-checked{
+                background: url("../../image/home/checked.png") no-repeat;
+                background-size: cover;
+                border:none;
+              }
+              .buy-form-service-choose-item-key-text{
+                margin-left: .17rem;
+                font-size:.24rem;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:#000;
+                line-height:.48rem;
+              }
+            }
+            .buy-form-service-choose-item-price{
+              font-size:.24rem;
+              font-family:PingFang SC;
+              font-weight:bold;
+              color:#FF0000;
+              line-height:.48rem;
+              margin-right: 1.44rem;
+            }
+          }
+        }
+        .buy-form-service-bottom{
+          width: 100%;
+          height: .21rem;
+          background: #fff;
+        }
+      }
+    }
+    .buy-content{
+      margin-top: .13rem;
+      padding-bottom: .27rem;
+      width: 100%;
+      background: #fff;
+      .buy-content-title{
+        padding-top: .28rem;
+        margin-left: .48rem;
+        font-size:.28rem;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:#333333;
+        line-height:.48rem;
+      }
+      .buy-content-area{
+        margin-top: .12rem;
+        margin-left: .44rem;
+        width: 80%;
+        background:#F3F3F3;
+        border-radius:.1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .17rem .49rem .17rem .29rem;
+        .buy-content-area-text{
+          width: 5.83rem;
+          font-size:.24rem;
+          font-family:PingFang SC;
+          font-weight:400;
+          color:#000;
+        }
+      }
+    }
+    .buy-choose{
+      width: 100%;
+      margin-top: .12rem;
+      background: #fff;
+      margin-bottom: .9rem;
+      .buy-choose-item{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-top: .1rem;
+        margin-left: .72rem;
+        padding-bottom: .1rem;
+        .buy-choose-item-check{
+          width: .19rem;
+          height: .19rem;
+          border: .01rem solid #000;
+          border-radius: 50%;
+        }
+        .buy-choose-item-checked{
+          background: url("../../image/home/checked.png") no-repeat;
+          background-size: cover;
+          border:none;
+        }
+        .buy-choose-item-text{
+          margin-left: .11rem;
+          font-size:.24rem;
+          font-family:PingFang SC;
+          font-weight:400;
+          color:#000;
+          line-height:.48rem;
+        }
+      }
+      margin-bottom: .9rem;
+    }
+    .buy-button{
+      z-index: 1000;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: .9rem;
+      display: flex;
+      border-top: .01rem solid #E0E0E0;
+      .buy-button-price{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        background: #F5F5F5;
+        justify-content: center;
+        align-items: center;
+        font-size:.36rem;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:#FF9601;
+      }
+      .buy-button-buy{
+        background:linear-gradient(0deg,#6887FF 0%,#4769EE 100%);
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size:.3rem;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:#fff;
+      }
+    }
+  }
+  /* 支付方式弹吃层 */
+  .popup-box {
+
+    .box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      .box-header {
+        padding: .3rem 0;
+        font-size: .3rem;
+        font-weight: 600;
+        text-align: center;
+        border-bottom: 2px solid #f5f5f5;
+      }
+
+      .box-main {
+        padding: 0 .2rem;
+        p {
+          font-size: .28rem;
+          font-weight: 600;
+        }
+
+        .main-item {
+          box-sizing: border-box;
+          width: 100%;
+          height: 1rem;
+          margin-top: 0.2rem;
+          padding: 0 0.2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-radius: 5px;
+          font-size: .28rem;
+          color: #000;
+          border: 1px solid #fff;
+
+          .item-left {
+            display: flex;
+            align-items: center;
+            img {
+              margin-right: .2rem;
+              width: 0.48rem;
+              height: 0.39rem;
+            }
+          }
+        }
+
+        .main-item:last-child {
+          img {
+            width: 0.4rem;
+            height: 0.4rem;
+          }
+        }
+
+        /* 支付方式选中的样式 */
+        .select-pay {
+          border: 1px solid #1BA3E8;
+          background-color: #DEF4FF;
+        }
+      }
+
+      .box-footer {
+        position: absolute;
+        width: 100%;
+        height: .9rem;
+        bottom: 0;
+        .footer{
+          width: 100%;
+          height: 100%;
+          display: flex;
+
+          div{
+            flex:1;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .28rem;
+            span{
+              color:#FF0000;
+            }
+          }
+          div:last-child{
+            font-size: .3rem;
+            color:#fff;
+            font-weight: 600;
+            background:linear-gradient(0deg,rgba(104,135,255,1) 0%,rgba(71,105,238,1) 100%);
+          }
+        }
+      }
+    }
+  }
+}
+

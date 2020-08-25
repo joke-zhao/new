@@ -1,0 +1,88 @@
+#app {
+  width: 100%;
+}
+#app .head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.4rem;
+}
+#app .head .head_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .head .head_title input {
+  text-indent: 1em;
+  width: 6.12rem;
+  height: 0.9rem;
+  background-color: #F5F5F5;
+  border-radius: 0.16rem;
+  padding-right: 0.9rem;
+  border: none;
+  outline: none;
+}
+#app .head .head_tip {
+  position: absolute;
+  right: 0.3rem;
+  padding-right: 0.08rem;
+}
+#app .head .head_tip .row_right {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+}
+#app .text_area {
+  margin-top: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .text_area textarea {
+  width: 6.82rem;
+  height: 3.4rem;
+  background-color: #F5F5F5;
+  border-radius: 0.16rem;
+  resize: none;
+  border: none;
+  outline: none;
+  padding-top: 0.3rem;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+}
+#app .text_area .head_tip {
+  position: absolute;
+  right: 0.4rem;
+  top: 4.7rem;
+}
+#app .text_area .head_tip .row_right {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+}
+#app .btn_box {
+  margin-top: 0.84rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .btn_box .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6.7rem;
+  height: 0.8rem;
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+  border-radius: 0.16rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #fff;
+}

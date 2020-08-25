@@ -1,0 +1,64 @@
+<div id="applicationAgency">
+    <div class="agency-title">申请代理</div>
+    <div class="agency-box">
+        <div class="agency-content">
+            <div class="agency-content-title">*意向区域</div>
+            <div class="agency-content-input">
+<!--                选择省市区-->
+                <div class="buy-form-area-button" @click="show = true">
+                    <div class="buy-form-area-button-text">
+                        {{ province }}
+                    </div>
+                    <div class="buy-form-area-button-more" ></div>
+                </div>
+                <div class="buy-form-area-button" @click="show = true">
+                    <div class="buy-form-area-button-text">
+                        {{ city }}
+                    </div>
+                    <div class="buy-form-area-button-more"></div>
+                </div>
+                <div class="buy-form-area-button" @click="show = true">
+                    <div class="buy-form-area-button-text">
+                        {{ county }}
+                    </div>
+                    <div class="buy-form-area-button-more"></div>
+                </div>
+            </div>
+        </div>
+        <div class="agency-content">
+            <div class="agency-content-title">企业名称</div>
+            <div class="agency-content-input">
+                <van-field v-model="enterpriseName" placeholder="请输入企业名称" style="border: .01rem solid grey;border-radius: 0.12rem;"/>
+            </div>
+        </div>
+        <div class="agency-content">
+            <div class="agency-content-title">*您的姓名</div>
+            <div class="agency-content-input">
+                <van-field v-model="yourName" placeholder="请输入您的姓名" style="border: .01rem solid grey;border-radius: 0.12rem;"/>
+            </div>
+        </div>
+        <div class="agency-content">
+            <div class="agency-content-title">*您的联系方式</div>
+            <div class="agency-content-input">
+                <van-field v-model="phone" placeholder="请输入您的联系方式" style="border: .01rem solid grey;border-radius: 0.12rem;"/>
+            </div>
+        </div>
+        <div class="agency-content">
+            <div class="agency-content-title">*申请理由</div>
+            <div class="agency-content-input">
+                <van-field v-model="reasonable" placeholder="请输入申请理由" style="border: .01rem solid grey;border-radius: 0.12rem;"/>
+            </div>
+        </div>
+    </div>
+<!--    省市区显示-->
+    <van-popup v-model="show" position="bottom" :style="{ height: '40%' }">
+        <van-area
+                :area-list="areaList"
+                @cancel="handleCancel"
+                @confirm="handleConfirm"
+        />
+    </van-popup>
+    <div class="bottom_btns">
+        <div class="export" @click="submit">提交</div>
+    </div>
+</div>

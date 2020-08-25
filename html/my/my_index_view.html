@@ -1,0 +1,176 @@
+<div id="freelance">
+  <!-- 头部 -->
+  <header class="userinfo">
+    <!-- 头像 -->
+    <div class="head-shot">
+      <img :src="photoUrl || '../../image/register/taxer@2x.png'" alt="">
+    </div>
+    <!-- 个人信息 -->
+    <div class="personal">
+      <h3>{{userName || '暂未设置昵称'}} <span>{{roleName}}</span></h3>
+      <p>{{companyName}}</p>
+    </div>
+
+    <!-- 消息 -->
+    <div class="inform" style="margin-left: .11rem;" @click="openMessage">
+      <img src="../../image/user/inform.png" alt="">
+      <span class="ts">{{UnreadCount}}</span>
+    </div>
+
+    <!-- 分享 -->
+    <div class="inform" @click="showDialog = true" style="background:url('../../image/my/share.png') no-repeat; background-size: cover;">
+    </div>
+  </header>
+  <!-- 资产中心 -->
+  <div class="asset">
+    <!-- 中间浮动卡片 根据资产中心定位-->
+    <div class="combo">
+      <div @click="openMyPackage" class="left-box">
+        <img src="../../image/user/quanyi.png" alt="">
+        <p>做账、报税专享价，提问、课程免费学</p>
+        <span>立即开通></span>
+      </div>
+      <div class="right-img">
+        <img src="../../image/user/combo.png" alt="">
+      </div>
+    </div>
+    <!-- 资产信息列表 -->
+    <ul class="wealth">
+      <li @click="openIncome">
+        <span>{{incomeSum}}</span>
+        <p>收入</p>
+      </li>
+      <li @click="openSurplus">
+        <span>{{ balance }}</span>
+        <p>余额</p>
+      </li>
+      <li @click="openIntegral">
+        <span>{{integralTotal}}</span>
+        <p>积分</p>
+      </li>
+    </ul>
+  </div>
+  <!-- 分割线 -->
+  <h4 class="tieku"></h4>
+  <!-- 订单 -->
+  <div class="myorder">
+    <h3 >我的订单<span>全部订单></span></h3>
+    <ul class="orderinfo" @click="openMyOrder">
+      <li>
+        <img src="../../image/user/min-1.png" alt="">
+        <p>进行中</p>
+      </li>
+      <li>
+        <img src="../../image/user/min-2.png" alt="">
+        <p>待确认</p>
+      </li>
+      <li>
+        <img src="../../image/user/min-3.png" alt="">
+        <p>待评价</p>
+      </li>
+      <li>
+      </li>
+    </ul>
+  </div>
+  <!-- 分割线 -->
+  <h4 class="tieku"></h4>
+  <!-- 活动宣传 -->
+  <div class="propagandize">
+    <div class="propagandize-img1">
+      <img src="../../image/user/propagandize-1.png" alt="">
+    </div>
+    <div class="propagandize-img2">
+      <img src="../../image/user/propagandize-2.png" alt="">
+    </div>
+  </div>
+  <!-- 分割线 -->
+  <h4 class="tieku"></h4>
+  <!-- 我的服务 -->
+  <div class="mypayqqcom">
+      <h3>我的服务</h3>
+      <ul class="service">
+        <li @click="openMyService" v-show="typeShow === 3 || typeShow === 4" >
+          <img src="../../image/user/hart.png" alt="">
+          <p>我的服务</p>
+        </li>
+        <li @click="openMyCustomer">
+          <img src="../../image/user/kh-1.png" alt="">
+          <p>我的客户</p>
+        </li>
+        <li @click="openMyBills">
+          <img src="../../image/user/wode-1.png" alt="">
+          <p>我的单据</p>
+        </li>
+        <li @click="openMyClass">
+          <img src="../../image/user/wode-2.png" alt="">
+          <p>我的课程</p>
+        </li>
+        <li @click="openMyAskAnswer">
+          <img src="../../image/user/wode-3.png" alt="">
+          <p>我的问答</p>
+        </li>
+        <li @click="openMySet">
+          <img src="../../image/user/wode-6.png" alt="">
+          <p>设置</p>
+        </li>
+        <li>
+          <img src="../../image/user/wode-7.png" alt="" @click="openCooperation">
+          <p>我要合作</p>
+        </li>
+        <li @click="openMyFeedback">
+          <img src="../../image/user/wode-4.png" alt="">
+          <p>反馈意见</p>
+        </li>
+        <li>
+          <img src="../../image/user/wode-5.png" alt="" @click="openAboutUs">
+          <p>关于我们</p>
+        </li>
+        <li>
+          <img src="../../image/user/wode-8.png" alt="">
+          <p>期末处理</p>
+        </li>
+        <li v-show="typeShow !== 1" @click="openMakeInvoices">
+          <img src="../../image/user/wode-9.png" alt="">
+          <p>开票</p>
+        </li>
+        <li>
+          <img style="padding:0.08rem" src="../../image/user/wode-10.png" alt="" @click="openTaxation">
+          <p>税务</p>
+        </li>
+      </ul>
+  </div>
+  <!-- 底线 -->
+  <h4 class="tiemi"></h4>
+
+  <!-- 分享弹窗 -->
+  <div class="share-dialog" v-show="showDialog">
+    <div class="share-dialog-window">
+      <div class="share-dialog-window-text">
+        <div class="share-dialog-window-text-content">
+          分享至
+        </div>
+        <div class="share-dialog-window-text-close" @click="showDialog = false">
+          <img src="../../image/my/close.png">
+        </div>
+      </div>
+      <div class="share-dialog-window-list">
+        <div class="share-dialog-window-list-item">
+          <div class="share-dialog-window-list-item-img">
+            <img src="../../image/my/friend.png" alt="">
+          </div>
+          <div class="share-dialog-window-list-item-text">
+            微信好友
+          </div>
+        </div>
+        <div class="share-dialog-window-list-item">
+          <div class="share-dialog-window-list-item-img">
+            <img src="../../image/my/loop.png" alt="">
+          </div>
+          <div class="share-dialog-window-list-item-text">
+            分享朋友圈
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

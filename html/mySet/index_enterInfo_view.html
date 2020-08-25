@@ -1,0 +1,368 @@
+<div id="enterprise-information-details">
+    <!--    头部-->
+    <div class="peoinfomation">
+        <div class="enterprise-information-header">
+            <div class="enterprise-information-header-basic" @click="showBasic">
+                <div class="underline" :class="{tabBottom:index===1}">基本情况</div>
+            </div>
+            <div class="enterprise-information-header-basic" @click="showStocks">
+                <div class="underline" :class="{tabBottom:index===2}">股东情况</div>
+            </div>
+            <div class="enterprise-information-header-password" @click="showTax">
+                <div class="underline" :class="{tabBottom:index===3}" v-if="roleId == 2 || roleId == 4">报税密码</div>
+            </div>
+        </div>
+    </div>
+
+    <!--基本情况-->
+    <div v-show="basic" class="enterprise-information-situation">
+        <div class="enterprise-information-situation-content">
+            <!--         1.账王科技有限公司   -->
+            <div class="situation-content-introduction">
+                <div class="situation-content-introduction-left">
+                    <div class="situation-content-introduction-left-h">
+                        <img src="../../image/enterprise_information_details/company.png" alt="" class="icon-company">
+                        {{companyName}}
+                    </div>
+                    <div class="situation-content-introduction-left-m">
+                        <textarea style="padding: .2rem;width: 4.6rem" v-model="companySummary"
+                                  placeholder="这里是公司简介"></textarea>
+                    </div>
+                </div>
+                <!--                头像-->
+                <div class="situation-content-introduction-right">
+                    <!--                <img src="../../image/enterprise_information_details/cat.png" alt="" class="icon-location"/>-->
+                                        <van-uploader :after-read="afterReadLogo" style="margin-top: .3rem;margin-left: .2rem" v-model="logoUrlList" :max-count="1"/>
+                </div>
+            </div>
+
+            <div class="divide"></div>
+            <!--        2.服务地址-->
+            <div class="situation-content-address" v-if="roleId == 1 || roleId == 2">
+                <div class="situation-content-address-left">
+                    <!--                标题部分-->
+                    <div class="situation-content-address-header">
+                        <img src="../../image/enterprise_information_details/location.png" alt="" class="icon-location">
+                        服务地址
+                    </div>
+                    <!--                    内容-->
+                    <div class="situation-content-address-footer">
+                        <div class="situation-content-address-input" @click="openMap(0)">
+                            {{serverAddress}}
+                        </div>
+                        <div class="situation-content-address-right">
+                            <div class="icon-right"></div>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--            3.服务类型-->
+            <div class="situation-content-address" v-if="roleId == 1 || roleId == 2">
+                <div class="situation-content-address-left">
+                    <!--                标题部分-->
+                    <div class="situation-content-address-header">
+                        <img src="../../image/enterprise_information_details/service.png" alt="" class="icon-location">
+                        服务类型
+                    </div>
+                    <!--                    内容-->
+                    <div class="situation-content-address-footer" @click="onServiceType">
+                        <div class="situation-content-address-input">
+                            <div class="situation-new-button"
+                                 v-for="item in selectTypeList">{{item}}
+                            </div>
+                        </div>
+                        <div class="situation-content-address-right">
+                            <div class="icon-right"></div>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <!--                    4.企业类型-->
+            <div class="situation-content-address">
+                <div class="situation-content-address-left">
+                    <!--                标题部分-->
+                    <div class="situation-content-address-header">
+                        <img src="../../image/enterprise_information_details/enterprise.png" alt=""
+                             class="icon-location">
+                        企业类型
+                    </div>
+                    <!--                    内容-->
+                    <div class="situation-content-address-footer">
+                        <div class="situation-content-address-input" @click="showCompanyType=true">
+                            {{companyType}}
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--                    新增.法人姓名-->
+            <!--        2.服务地址-->
+            <div class="situation-content-address">
+                <div class="situation-content-address-left">
+                    <!--                标题部分-->
+                    <div class="situation-content-address-header">
+                        <img src="../../image/enterprise_information_details/location.png" alt="" class="icon-location">
+                        法人姓名
+                    </div>
+                    <!--                    内容-->
+                    <div class="situation-content-address-footer">
+                        <div class="situation-content-address-input">
+                            <input v-model="legalPeople" placeholder="请输入法人姓名">
+                        </div>
+                        <div class="situation-content-address-right">
+                            <div class="icon-right-null"></div>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--5.纳税人类型-->
+            <div class="situation-content-address">
+                <div class="situation-content-address-left">
+                    <!--                标题部分-->
+                    <div class="situation-content-address-header">
+                        <img src="../../image/enterprise_information_details/taxpayer.png" alt="" class="icon-location">
+                        纳税人类型
+                    </div>
+                    <!--                    内容-->
+                    <div class="situation-content-address-footer">
+                        <div class="situation-content-address-input" style="margin-bottom: -0.2rem;">
+                            小规模纳税人
+                        </div>
+                        <div class="situation-content-address-right">
+                            <div class="check-box" @click="checkTaxer(1)">
+                                <div style=""><img src="../../image/enterprise_information_details/checkbox.png" alt=""
+                                          v-show="taxer==1"></div>
+
+                                <div class="check-box-null" v-show="taxer==2"></div>
+                            </div>
+                        </div>
+                        <!--                    划线-->
+                        <div class="line"></div>
+                    </div>
+                    <div class="situation-content-address-footer">
+                        <div class="situation-content-address-input" style="margin-bottom: -0.2rem;">
+                            一般纳税人
+                        </div>
+                        <div class="situation-content-address-right">
+                            <div class="check-box" @click="checkTaxer(2)">
+                                <img src="../../image/enterprise_information_details/checkbox.png" alt=""
+                                     v-show="taxer==2">
+                                <div class="check-box-null" v-show="taxer==1"></div>
+                            </div>
+                        </div>
+                        <!--                    划线-->
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--            6.行业分类-->
+            <div class="situation-content-address">
+                <div class="situation-content-address-left">
+                    <!--                标题部分-->
+                    <div class="situation-content-address-header">
+                        <img src="../../image/enterprise_information_details/industry.png" alt="" class="icon-location">
+                        行业分类
+                    </div>
+                    <!--                    内容-->
+                    <div class="situation-content-address-footer">
+                        <div class="situation-content-address-input">
+<!--                             @click="showIndustrys=true">-->
+
+<!--                            {{industry}}-->
+                            <!--                            <div v-model="industry">请选择所属行业</div>-->
+<!--                        新改，模糊搜索-->
+                            <input
+                                    type="text"
+                                    @input="delayed2"
+                                    v-model="value3"
+                                    placeholder="请输入所属行业"
+                            />
+                        </div>
+                        <div class="situation-content-address-right">
+                            <div class="icon-right"></div>
+                        </div>
+                        <!--                    划线-->
+                        <div class="line"></div>
+                    </div>
+                    <div class="situation-content-address-footer">
+                        <div class="situation-content-address-input"
+                             @click="showIndustrys2=true">
+                            {{industry2}}
+                        </div>
+                        <div class="situation-content-address-right">
+                            <div class="icon-right"></div>
+                        </div>
+                        <!--                    划线-->
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <!--            7.企业营业执照-->
+            <div class="situation-content-address">
+                <div class="situation-content-address-left">
+                    <!--                标题部分-->
+                    <div class="situation-content-address-header">
+                        <img src="../../image/enterprise_information_details/taxpayer.png" alt="" class="icon-location">
+                        企业营业执照
+                    </div>
+                    <!--                    内容-->
+                    <div class="situation-content-address-footer">
+                        <div class="situation-content-address-input">
+                            <span>上传竖版或横版的三合一营业执照，图片将用于文字识别。不合规则图片可能导致审核失败。</span>
+                        </div>
+                    </div>
+                    <div class="situation-content-address-footer">
+                        <div class="situation-content-images">
+                            <!--                            <img src="../../image/enterprise_information_details/add.png" alt="添加证书">-->
+                            <van-uploader v-model="fileList" :max-count="1" :after-read="afterRead"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--            8.其他资质-->
+            <div class="situation-content-address" v-if="roleId == 1 || roleId == 2">
+                <div class="situation-content-address-left">
+                    <!--                标题部分-->
+                    <div class="situation-content-address-header" style="margin-top: .5rem">
+                        <img src="../../image/enterprise_information_details/qualifications.png" alt=""
+                             class="icon-location">
+                        其他资质
+                    </div>
+                    <!--                    内容-->
+                    <div class="situation-content-address-footer">
+                        <div class="situation-content-address-input">
+                            <span>图片不得超过5张，每张不得超过5M。</span>
+                        </div>
+                    </div>
+                    <div class="situation-content-address-footer">
+                        <div class="situation-content-images-others">
+                            <van-uploader v-model="fileList2" multiple :max-count="5" :after-read="afterReadZz"
+                                          :max-size="500 * 1024" @oversize="onOversize"/>
+                            <!--                            <img src="../../image/enterprise_information_details/add.png" alt="添加证书">-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--            9.保存按钮-->
+            <div class="situation-content-button" :style="{'margin-top':(fileList2.length>2?'3rem':'1rem')}">
+                <div class="situation-save" @click="submit">保存</div>
+            </div>
+        </div>
+    </div>
+    <!--股东情况-->
+    <div v-show="stocks" class="enterprise-information-content">
+        <div class="enterprise-information-content-item-first">
+            <div class="company-name" style="width: 60%">
+                <van-field
+                        readonly
+                        clickable
+                        :value="company"
+                        placeholder="请选择公司名称"
+                        @click="showCompany = true"
+                />
+                <van-popup v-model="showCompany" round position="bottom">
+                    <van-picker
+                            show-toolbar
+                            :columns="companyList"
+                            @cancel="showCompany = false"
+                            @confirm="onCompany"
+                    />
+                </van-popup>
+            </div>
+
+            <div class="button" @click="openShareholder" style="width: 30%;margin-left: .2rem">新增</div>
+            <!--            股东列表-->
+
+        </div>
+
+        <!--        <div class="divide"></div>-->
+        <div class="holder-list" v-for="item in holderList">
+            <!--            -->
+            <div class="situation-content-address-footer">
+                <div class="situation-content-address-input">
+                    {{item.userName}}
+                </div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <!--报税密码-->
+    <div v-show="tax" class="enterprise-information-content">
+        <div class="enterprise-information-content-item-first">
+            <div class="enterprise-information-content-item-test">
+                {{name}}
+                <div class="button-group">
+                    <div class="button" @click="isShow=true">设置电子税务局密码</div>
+                    <div class="box"></div>
+                    <div class="button" @click="isShow2=true">修改个人所得税密码</div>
+                </div>
+            </div>
+        </div>
+        <div class="divide"></div>
+
+    </div>
+    <!--    弹窗-->
+    <van-dialog v-model="isShow" title="电子税务局密码" show-cancel-button>
+        <van-cell-group>
+            <van-field v-model="password1" placeholder="请输入密码"/>
+        </van-cell-group>
+    </van-dialog>
+    <van-dialog v-model="isShow2" title="修改个人所得税密码" show-cancel-button>
+        <van-cell-group>
+            <van-field v-model="password2" placeholder="请输入密码"/>
+        </van-cell-group>
+    </van-dialog>
+    <!--股东弹窗-->
+    <van-dialog v-model="isShareholder" title="股东名字" show-cancel-button @confirm="insertStockholder">
+        <van-cell-group>
+            <van-field v-model="shareholder" placeholder="请输入股东名字"/>
+        </van-cell-group>
+    </van-dialog>
+    <!--    行业选择-->
+    <van-popup close-on-click-overlay v-model="showIndustrys" round position="bottom">
+        <van-picker
+                show-toolbar
+                :columns="industrys"
+                @cancel="showIndustrys = false"
+                @confirm="onConfirm"
+        />
+    </van-popup>
+    <!--    行业类型-->
+    <van-popup close-on-click-overlay v-model="showIndustrys2" round position="bottom">
+        <van-picker
+                show-toolbar
+                :columns="industrys"
+                @cancel="showIndustrys2 = false"
+                @confirm="onConfirm2"
+        />
+    </van-popup>
+    <!--    企业类型-->
+    <van-popup close-on-click-overlay v-model="showCompanyType" round position="bottom">
+        <van-picker
+                show-toolbar
+                :columns="companyTypeList"
+                @cancel="showCompanyType = false"
+                @confirm="onConfirmCompany"
+        />
+    </van-popup>
+<!--    所属行业-->
+    <van-popup v-model="industryPicker" round position="bottom">
+        <van-picker
+                show-toolbar
+                :columns="industry"
+                @cancel="industryPicker = false"
+                @confirm="onIndustry"
+        />
+    </van-popup>
+</div>

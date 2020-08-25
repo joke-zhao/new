@@ -1,0 +1,237 @@
+/**css代码在此处开始*/
+#register {
+  background: #F5F5F5;
+  width: 100%;
+  height: 100%;
+}
+#register .divide {
+  width: 100%;
+  height: 0.2rem;
+}
+#register .line {
+  width: 100%;
+  height: 1px;
+  background: #EEEEEE;
+}
+#register .item-identity {
+  background: #ffffff;
+  width: 100%;
+}
+#register .item-identity .item-title-wrapper {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+}
+#register .item-identity .item-title-wrapper .item-title-blue-point {
+  width: 0.06rem;
+  height: 0.4rem;
+  background: linear-gradient(0deg, #6887FF 0%, #4769EE 100%);
+  border-radius: 0 0.06rem 0.06rem 0;
+}
+#register .item-identity .item-title-wrapper .item-title-text {
+  margin-left: 0.33rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+}
+#register .item-identity .item-content-wrapper .item-content {
+  display: flex;
+  align-items: center;
+  height: 1rem;
+  margin-left: 0.33rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+}
+#register .item-identity .item-content-wrapper .item-content .test1 {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  border: 1px solid #CDCDCD;
+  margin-right: 0.25rem;
+}
+#register .item-identity .item-content-wrapper .item-content .test1_active {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  margin-right: 0.25rem;
+  background-image: url(../../image/register/radio_selected.png);
+  background-size: 100% 100%;
+}
+#register .item-company {
+  background: #ffffff;
+  width: 100%;
+}
+#register .item-company .line {
+  width: 100%;
+  height: 1px;
+  background: #EEEEEE;
+}
+#register .item-company .item-title-wrapper {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+}
+#register .item-company .item-title-wrapper .item-title-blue-point {
+  width: 0.06rem;
+  height: 0.4rem;
+  background: linear-gradient(0deg, #6887FF 0%, #4769EE 100%);
+  border-radius: 0 0.06rem 0.06rem 0;
+}
+#register .item-company .item-title-wrapper .item-title-text {
+  margin-left: 0.33rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+}
+#register .item-company .item-content-wrapper {
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+#register .item-company .item-content-wrapper .icon-company {
+  width: 0.36rem;
+  height: 0.36rem;
+  margin-left: 0.33rem;
+}
+#register .item-company .item-content-wrapper .icon-address {
+  margin-left: 0.33rem;
+  width: 0.3rem;
+  height: 0.36rem;
+}
+#register .item-company .item-content-wrapper .icon-right {
+  width: 0.14rem;
+  height: 0.24rem;
+  margin-right: 0.4rem;
+}
+#register .item-company .item-content-wrapper .icon-mobile {
+  margin-left: 0.33rem;
+  width: 0.26rem;
+  height: 0.36rem;
+}
+#register .item-company .item-content-wrapper .icon-code {
+  margin-left: 0.33rem;
+  width: 0.32rem;
+  height: 0.36rem;
+}
+#register .item-company .item-content-wrapper .icon-password {
+  margin-left: 0.33rem;
+  width: 0.3rem;
+  height: 0.36rem;
+}
+#register .item-company .item-content-wrapper .icon-invite {
+  margin-left: 0.33rem;
+  width: 0.34rem;
+  height: 0.3rem;
+}
+#register .item-company .item-content-wrapper .item-content-input {
+  margin-left: 0.74rem;
+  outline-style: none ;
+  border: 0;
+  padding: 0.13rem 0.14rem;
+  width: 100%;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #000;
+  outline: none;
+  border: none;
+  caret-color: #000;
+  -webkit-user-select: auto!important;
+  user-select: auto!important;
+}
+#register .item-company .item-content-wrapper .icon-more {
+  width: 0.24rem;
+  height: 0.14rem;
+  margin-right: 0.4rem;
+}
+#register .item-company .item-content-wrapper .item-content-code {
+  white-space: nowrap;
+  width: 1.7rem;
+  height: 0.56rem;
+  border: 1px solid #EEEEEE;
+  border-radius: 0.16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.4rem;
+}
+#register .item-company .item-content-wrapper .item-content-code .item-content-code-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.28rem;
+  height: 0.25rem;
+  font-size: 0.26rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+}
+#register .item-company .item-content-wrapper .item-content {
+  margin-left: 0.33rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+}
+#register .bottom {
+  width: 100%;
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#register .bottom .bottom-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.8rem;
+  width: 6.7rem;
+  height: 0.8rem;
+  background: linear-gradient(0deg, #6887FF 0%, #486AEE 100%);
+  border-radius: 0.16rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+#register .bottom .bottom-text {
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 0.22rem;
+  font-size: 0.22rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+  margin-top: 0.33rem;
+}
+#register .bottom .bottom-text span {
+  color: #4769EE;
+}
+#register .bottom .icon-wechat {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.8rem;
+}
+#register .bottom .bottom-wechat-text {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+  margin-top: 0.03rem;
+  margin-bottom: 0.08rem;
+}
+#register .searchBox /deep/ .van-overlay {
+  display: none !important;
+}
+#register input:disabled {
+  background-color: #fff;
+}

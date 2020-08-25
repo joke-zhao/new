@@ -1,0 +1,177 @@
+<div id="ratepayer">
+  <div class="conbox">
+    <h4 class="tieku"></h4>
+    <form action="#" method="get">
+      <p>
+        <span>*</span>名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称
+        <input type="text" v-model="name" placeholder="请输入名称" />
+      </p>
+      <p>
+        <span>*</span>纳税人类型
+        <van-field
+          readonly
+          clickable
+          :value="value1"
+          placeholder="请选择纳税人类型"
+          @click="taxpayerPicker = true"
+        />
+        <van-popup v-model="taxpayerPicker" round position="bottom">
+          <van-picker
+            show-toolbar
+            :columns="taxpayer"
+            @cancel="taxpayerPicker = false"
+            defaultIndex
+            @confirm="onTaxpayer"
+          />
+        </van-popup>
+        <img src="../../image/ratepayer/bottom-jt.png" alt="" />
+      </p>
+      <p>
+        <span>*</span>基本税率
+        <van-field
+          readonly
+          clickable
+          :value="valueShow2"
+          placeholder="请选择税率"
+          @click="ratePicker = true"
+        />
+        <van-popup v-model="ratePicker" round position="bottom">
+          <van-picker
+            show-toolbar
+            :columns="rate"
+            @cancel="ratePicker = false"
+            defaultIndex
+            @confirm="onRate"
+          />
+        </van-popup>
+        <img src="../../image/ratepayer/bottom-jt.png" alt="" />
+      </p>
+      
+      <p>
+        <span>*</span>行业类型
+        <van-field
+          readonly
+          clickable
+          :value="value4"
+          placeholder="请选择行业类型"
+          @click="industryTypePicker = true"
+        />
+        <van-popup v-model="industryTypePicker" round position="bottom">
+          <van-picker
+            show-toolbar
+            :columns="industryType"
+            @cancel="industryTypePicker = false"
+            defaultIndex
+            @confirm="onIndustryType"
+          />
+        </van-popup>
+        <img src="../../image/ratepayer/bottom-jt.png" alt="" />
+      </p>
+      <p>
+        <span>*</span>所属行业
+        <!-- <van-field
+          readonly
+          clickable
+          :value="value3"
+          placeholder="请选择所属行业"
+          @click="industryPicker = true"
+        /> -->
+        <input
+          type="text"
+          @input="delayed2"
+          v-model="value3"
+          placeholder="请输入所属行业"
+        />
+        <!-- <van-popup v-model="industryPicker" round position="bottom">
+          <van-picker
+            show-toolbar
+            :columns="industry"
+            @cancel="industryPicker = false"
+            defaultIndex
+            @confirm="onIndustry"
+          />
+        </van-popup> -->
+        <img src="../../image/ratepayer/bottom-jt.png" alt="" />
+      </p>
+      <div class="searchBox">
+        <van-popup v-model="industryPicker" round position="bottom">
+          <van-picker
+            show-toolbar
+            :columns="industry"
+            @cancel="industryPicker = false"
+            @confirm="onIndustry"
+          />
+        </van-popup>
+      </div>
+      <p>
+        <span>*</span>主要产品或服务
+        <input
+          type="text"
+          @input="delayed"
+          v-model="prod"
+          placeholder="请输入所属产品或服务"
+        />
+        <img src="../../image/ratepayer/bottom-jt.png" alt="" />
+      </p>
+      <div class="searchBox">
+        <van-popup v-model="showProd" round position="bottom">
+          <van-picker
+            show-toolbar
+            :columns="prodList"
+            @cancel="showProd = false"
+            @confirm="onProd"
+          />
+        </van-popup>
+      </div>
+      <p>
+        <span>*</span>
+        统一社会信用代码
+        <input
+          type="text"
+          v-model="creditCode"
+          placeholder="请输入统一社会信用代码"
+        />
+      </p>
+      <p><span>*</span>
+        企业类型
+        <input type="text" v-model="comType" placeholder="请选择企业类型" />
+        <!-- <img src="../../image/ratepayer/bottom-jt.png" alt="" /> -->
+      </p>
+      <p class="pppp" @click="showDate = true"><span>*</span>
+        注册日期
+        <i class="selectDate" v-if="!recordDate">请选择注册日期</i>
+        <i class="selectDate" v-else>{{recordDate | formatDate}}</i>
+      </p>
+      <p><span>*</span>
+        注册资本
+        <input type="text" v-model="recordMoney" placeholder="请输入注册资本" />
+      </p>
+      <p><span>*</span>
+        法定代表人
+        <input
+          type="text"
+          v-model="legalPeople"
+          placeholder="请输入法定代表人"
+        />
+      </p>
+      <p>
+        <span>*</span>
+        住&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所
+        <input
+          type="text"
+          v-model="serverAddress"
+          placeholder="请输入住所地址"
+        />
+      </p>
+      <p><span>*</span>
+        经营范围
+        <input type="text" v-model="business" placeholder="请输入经营范围" />
+      </p>
+      <div class="footbox">
+        <div @click="submit">提交</div>
+      </div>
+    </form>
+  </div>
+  <!-- 日期弹框 -->
+  <van-calendar :min-date="minDate" v-model="showDate" @confirm="onDate" />
+</div>

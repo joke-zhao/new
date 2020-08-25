@@ -1,0 +1,93 @@
+<!-- 单据审批页面开始 -->
+<div id="app">
+  <!-- <header>
+    <div class="header-box">
+      <div class="box-search">
+        <div class="search-icon">
+          <img src="../../image/review/sousuo.png" alt="">
+        </div>
+        <div class="search-input">
+          <input type="text" placeholder="请输入客户名称">
+        </div>
+      </div>
+      <div class="box-bth">
+        <span @click="openPopup">更多筛选</span>
+      </div>
+    </div>
+    <div class="header-bottom"></div>
+  </header> -->
+  <main>
+    <div class="main-box">
+      <div class="box-nav">
+        <div class="nav-text">
+          <span>单据列表</span>
+        </div>
+        <div class="nav-news">
+         <span  style="color:#4769EE"> {{total}}</span> /
+         <span>{{allNumber}}</span>
+        </div>
+      </div>
+      <div class="box-bills">
+        <!-- 每一项 -->
+        <div v-for="(item,i) in examineList" :ket="item.id" class="bills-item">
+         <div @click="openDetails(item.id,item.type,item.imgUrl)" class="item-box">
+          <div class="item-img">
+            <img :src="item.imgUrl || '../../image/login/logo1.png'" alt="">
+          </div>
+          <div  class="item-desc">
+            <!-- <div class="desc-name">帐王科技有限公司</div> -->
+            <div class="desc-number">
+              <span>单据编号：{{item.number}}</span>
+            </div>
+            <div class="desc-type">
+              <span>单据类型：{{item.type | billFilter}}</span>
+            </div>
+            <div class="desc-status">
+              <span>{{item.status | statusFilter}}</span>
+            </div>
+          </div>
+         </div>
+          <div class="item-check">
+            <van-checkbox @click="handleChangeBtn" v-model="item.flag" icon-size="0.3rem"></van-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-box">
+      <div class="box-btn">
+        <van-checkbox @click="handleChangeBox" v-model="checked" icon-size="0.4rem">全选</van-checkbox>
+      </div>
+      <div @click="getBatchList('FailureApproval')" class="box-btn">驳回</div>
+      <div @click="getBatchList('SuccessApproval')" class="box-btn">通过</div>
+    </div>
+  </footer>
+  <!-- 更多筛选弹框 -->
+  <van-popup round :style="{ height: '6rem',width:'80%'}" v-model="show">
+
+    <div class="popup-box">
+      <div class="box-main">
+        <div class="m-title">
+          更多筛选
+        </div>
+        <div class="m-name">
+          <input placeholder="输入客户名称" type="text">
+        </div>
+        <div class="m-name">
+          <input  placeholder="输入单据名称" type="text">
+        </div>
+        <div class="m-name" @click="showDate = true">
+          <span v-show="!date">选择单据日期</span>{{date}}
+          <img v-show="!date" src="../../image/review/xiala.png" alt="">
+        </div>
+      </div>
+      <div class="box-footer">
+        <div class="f-left">重置</div>
+        <div @click="closePopup" class="f-right">提交</div>
+      </div>
+    </div>
+  </van-popup>
+  <!-- 日期弹框 -->
+  <van-calendar :min-date="minDate" v-model="showDate" @confirm="onConfirm" />
+</div>

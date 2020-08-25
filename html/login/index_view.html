@@ -1,0 +1,36 @@
+<div class="app">
+    <!--头部logo图像-->
+    <div class="logo1">
+        <img src="../../image/login/logo1.png" alt="" class="logo1_pho">
+    </div>
+    <div class="logo2">
+        <img src="../../image/login/logo2.png" alt="" class="logo2_pho">
+    </div>
+    <div class="item">
+        <div class="item-input">
+            <img src="../../image/login/shouji.png" class="icon-company">
+            <input maxlength="11" type="text" v-model="phone" placeholder="请输入手机号码">
+        </div>
+        <div class="item-input">
+            <img src="../../image/login/lock.png" class="icon-company">
+            <input maxlength="12" :type="show ? 'text':'password'" v-model="password" placeholder="请输入密码">
+            <div @click="show = !show" class="item-hide">
+                <img :src="[show ?'../../image/login/xianshi.png':'../../image/login/yincang.png']" class="item-hide-icon">
+            </div>
+        </div>
+    </div>
+    <div class="foot" @click="login">
+        登录
+    </div>
+    <div class="forgter">
+        <div class="forgter-box1" @click="openForgetPassword">忘记密码 ？</div>
+        <div class="forgter-box2" @click="openRegister">新用户注册</div>
+    </div>
+    <div class="wechat">
+        <div class="wechat-icon">
+            <img src="../../image/login/wechat.png" class="wechat-icon-logo">
+        </div>
+        <div class="wechat-word">微信登录</div>
+    </div>
+    <div class="footer">登录即代表您同意<span class="footer_font">《用户服务协议》</span>和<span @click="openPrivacy" class="footer_font">《隐私协议》</span></div>
+</div>

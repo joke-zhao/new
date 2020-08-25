@@ -1,0 +1,54 @@
+/**css代码在此处开始*/
+#aboutUs {
+  width: 100%;
+}
+#aboutUs .settlement-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  box-shadow: 10px 0px 10px grey;
+}
+#aboutUs .settlement-img img {
+  height: 5rem;
+}
+#aboutUs .settlement-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.3rem;
+}
+#aboutUs .settlement-content .settlement-content-item {
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #656565;
+  line-height: 0.52rem;
+  padding: 0rem 0.5rem 0rem;
+}
+#aboutUs .settlement-tip {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+#aboutUs .settlement-tip .settlement-tip-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 70%;
+  height: 100%;
+  background-color: #f9f8f8;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #656565;
+  line-height: 0.52rem;
+  box-shadow: 10px 0px 10px grey;
+}

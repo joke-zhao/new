@@ -1,0 +1,70 @@
+#applicationAgency {
+  width: 100%;
+}
+#applicationAgency .agency-title {
+  width: 100%;
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 0.6rem;
+}
+#applicationAgency .agency-box .agency-content {
+  padding: 0.5rem 0.5rem 0 0.5rem;
+}
+#applicationAgency .agency-box .agency-content .agency-content-title {
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #656565;
+  line-height: 0.52rem;
+  margin-bottom: 0.3rem;
+}
+#applicationAgency .agency-box .agency-content .agency-content-input {
+  display: flex;
+  justify-content: space-between;
+}
+#applicationAgency .agency-box .agency-content .agency-content-input .buy-form-area-button {
+  width: 30%;
+  background-color: #FFFFFF;
+  height: 0.85rem;
+  border: 0.01rem solid grey;
+  border-radius: 0.12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#applicationAgency .agency-box .agency-content .agency-content-input .buy-form-area-button .buy-form-area-button-text {
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #000;
+  line-height: 0.48rem;
+}
+#applicationAgency .agency-box .agency-content .agency-content-input .buy-form-area-button .buy-form-area-button-more {
+  width: 0.15rem;
+  height: 0.15rem;
+  margin-left: 0.3rem;
+  margin-bottom: 0.08rem;
+  border-right: 0.01rem solid grey;
+  border-bottom: 0.01rem solid grey;
+  transform: rotate(45deg);
+}
+#applicationAgency .bottom_btns {
+  width: 100%;
+  height: 1.3rem;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 1rem;
+  bottom: 0;
+}
+#applicationAgency .bottom_btns .export {
+  height: 100%;
+  width: 100%;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}

@@ -1,0 +1,153 @@
+#salaryList {
+  width: 100%;
+  position: relative;
+}
+#salaryList .company {
+  width: 100%;
+  height: 1rem;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+#salaryList .company .company_name {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  height: 100%;
+  font-size: 0.35rem;
+  color: #000;
+  font-weight: 600;
+}
+#salaryList .company .company_cny {
+  display: flex;
+  width: 25%;
+  align-items: center;
+  height: 100%;
+  flex-direction: row-reverse;
+  justify-content: center;
+  font-size: 0.2rem;
+  color: #000;
+}
+#salaryList .datePick {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#salaryList .picture {
+  height: 6rem;
+  width: 100%;
+  padding: 0 0.2rem;
+}
+#salaryList .picture #myChart {
+  width: 100%;
+  height: 100%;
+}
+#salaryList .watchDetail_title {
+  height: 1rem;
+  width: 100%;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.3rem;
+  color: #000;
+  font-weight: 400;
+}
+#salaryList .watchDetail_title img {
+  height: 0.25rem;
+  width: 0.25rem;
+}
+#salaryList .accountDetails {
+  width: 100%;
+  height: 1rem;
+}
+#salaryList .accountDetails .accountDetails_content {
+  width: 100%;
+  padding: 0 0.2rem;
+  background-color: #F9F8F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.3rem;
+}
+#salaryList .accountTitle {
+  width: 100%;
+  height: 1.25rem;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+#salaryList .accountTitle .accountTitle_company {
+  width: 50%;
+  height: 100%;
+}
+#salaryList .accountTitle .accountTitle_company .accountTitle_company_1 {
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.35rem;
+  font-weight: 600;
+}
+#salaryList .accountTitle .accountTitle_company .accountTitle_company_2 {
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.2rem;
+}
+#salaryList .accountTitle .accountTitle_date {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#salaryList .accountTitle .accountTitle_date .accountTitle_date_1 {
+  font-size: 0.3rem;
+  width: 40%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.1rem;
+}
+#salaryList .accountTitle .accountTitle_date .accountTitle_date_2 {
+  width: 60%;
+}
+#salaryList .watchDetail_content {
+  height: 4rem;
+  padding: 0 0.2rem;
+  margin: 0 auto;
+}
+#salaryList .bottom_btns {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+#salaryList .bottom_btns .export {
+  height: 50%;
+  width: 100%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}
+#salaryList .bottom_btns .print {
+  height: 50%;
+  width: 100%;
+  background-color: #5172F3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}

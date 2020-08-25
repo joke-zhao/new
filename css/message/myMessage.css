@@ -1,0 +1,157 @@
+#myMessage {
+  width: 100%;
+  height: 100%;
+  background: #eeeeee;
+  margin: 0;
+  padding: 0;
+}
+#myMessage .message_type {
+  width: 100%;
+  height: 2.1rem;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+#myMessage .message_type .message_char {
+  width: 0.92rem;
+  height: 1.4rem;
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+}
+#myMessage .message_type .message_char .img {
+  width: 0.92rem;
+  height: 0.92rem;
+  margin: 0;
+  padding: 0;
+}
+#myMessage .message_type .message_char .alarm {
+  position: absolute;
+  color: white;
+  font-size: 0.17rem;
+  background-color: red;
+  /*height: 24px;改前*/
+  min-height: 0.34rem;
+  /*改后新增的代码*/
+  min-width: 0.4rem;
+  /*改后新增的代码*/
+  line-height: 0.24rem;
+  right: 75%;
+  text-align: center;
+  -webkit-border-radius: 0.34rem;
+  border-radius: 0.24rem;
+  padding: 0.08rem;
+}
+#myMessage .message_type .message_char .type {
+  width: 0.56rem;
+  height: 0.23rem;
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  line-height: 0.37rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 0.15rem;
+}
+#myMessage .message_list {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  margin-top: 0.1rem;
+}
+#myMessage .message_list .list_ul {
+  width: 100%;
+}
+#myMessage .message_list .list_ul .list_li {
+  width: 100%;
+  border: seagreen;
+  height: 1.5rem;
+  display: flex;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#myMessage .message_list .list_ul .list_li .li_img {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.24rem;
+  margin-left: 0.21rem;
+}
+#myMessage .message_list .list_ul .list_li .alarm {
+  position: absolute;
+  color: white;
+  font-size: 0.17rem;
+  background-color: red;
+  /*height: 24px;改前*/
+  min-height: 0.34rem;
+  /*改后新增的代码*/
+  min-width: 0.4rem;
+  /*改后新增的代码*/
+  line-height: 0.24rem;
+  right: 83%;
+  margin-top: 0.15rem;
+  text-align: center;
+  -webkit-border-radius: 0.34rem;
+  border-radius: 0.24rem;
+  padding: 0.08rem;
+}
+#myMessage .message_list .list_ul .list_li .li_right {
+  width: 5.8rem;
+  margin-left: 0.21rem;
+}
+#myMessage .message_list .list_ul .list_li .li_right .li_right_up {
+  width: 100%;
+  display: flex;
+  margin-top: 0.33rem;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+#myMessage .message_list .list_ul .list_li .li_right .li_right_up .inform {
+  width: 100%;
+  height: 0.34rem;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#myMessage .message_list .list_ul .list_li .li_right .li_right_up .inform .name {
+  height: 0.29rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #222222;
+  line-height: 0.37rem;
+}
+#myMessage .message_list .list_ul .list_li .li_right .li_right_up .inform .companyName {
+  height: 0.23rem;
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+  line-height: 0.37rem;
+  margin-left: 0.2rem;
+}
+#myMessage .message_list .list_ul .list_li .li_right .li_right_up .time {
+  width: 0.52rem;
+  height: 0.16rem;
+  font-size: 0.2rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  line-height: 0.37rem;
+  margin-right: 0rem;
+}
+#myMessage .message_list .list_ul .list_li .li_right .li_right_down {
+  height: 0.34rem;
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  line-height: 0.37rem;
+  margin-top: 0.2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

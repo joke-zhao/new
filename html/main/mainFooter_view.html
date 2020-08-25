@@ -1,0 +1,11 @@
+<div id="footer">
+    <div class="ui-mainFooter">
+        <div class="ui-mainFooter__item"
+             v-for="item in page"
+             :class="{'is-active': pageActiveIndex === $index}"
+             v-touch:tap="onFooterTap($index)">
+            <i class="{{item.icon}}"></i>
+            <p>{{item.title}}</p>
+        </div>
+    </div>
+</div>

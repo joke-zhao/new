@@ -1,0 +1,249 @@
+
+/**css代码在此处开始*/
+#register {
+  background: #F5F5F5;
+  width: 100%;
+  height: 100%;
+  .divide{
+    width: 100%;
+    height: 0.2rem;
+  }
+  .line{
+    width: 100%;
+    height: 1px;
+    background: #EEEEEE;
+  }
+  .item-identity{
+    background: #ffffff;
+    width: 100%;
+
+    .item-title-wrapper{
+      width: 100%;
+      height: 1rem;
+      display: flex;
+      align-items: center;
+      .item-title-blue-point{
+        width: .06rem;
+        height: .4rem;
+        background:linear-gradient(0deg,#6887FF 0%,#4769EE 100%);
+        border-radius:0 .06rem .06rem 0;
+      }
+      .item-title-text{
+        margin-left: 0.33rem;
+        font-size:.3rem;
+        font-family:PingFang SC;
+        font-weight:500;
+        color:rgba(34,34,34,1);
+      }
+    }
+    .item-content-wrapper{
+      .item-content{
+        display: flex;
+        align-items: center;
+        height: 1rem;
+        margin-left: 0.33rem;
+        font-size:.3rem;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(34,34,34,1);
+
+        .test1{
+          width: .4rem;
+          height: .4rem;
+          border-radius: 50%;
+          border: 1px solid #CDCDCD;
+          margin-right: .25rem;
+          
+        }
+        .test1_active{
+          width: .4rem;
+          height: .4rem;
+          border-radius: 50%;
+          margin-right: .25rem;
+          background-image: url(../../image/register/radio_selected.png);
+          background-size: 100% 100%;
+        }
+      }
+    }
+  }
+  .item-company{
+    background: #ffffff;
+    width: 100%;
+    .line{
+      width: 100%;
+      height: 1px;
+      background: #EEEEEE;
+    }
+    .item-title-wrapper{
+      width: 100%;
+      height: 1rem;
+      display: flex;
+      align-items: center;
+      .item-title-blue-point{
+        width: .06rem;
+        height: .4rem;
+        background:linear-gradient(0deg,#6887FF 0%,#4769EE 100%);
+        border-radius:0 .06rem .06rem 0;
+      }
+      .item-title-text{
+        margin-left: 0.33rem;
+        font-size:.3rem;
+        font-family:PingFang SC;
+        font-weight:500;
+        color:rgba(34,34,34,1);
+      }
+    }
+    .item-content-wrapper{
+      height: 1rem;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      .icon-company {
+        width: 0.36rem;
+        height: 0.36rem;
+        margin-left: 0.33rem;
+      }
+      .icon-address {
+        margin-left: 0.33rem;
+        width: .3rem;
+        height: .36rem;
+      }
+      .icon-right {
+        width: .14rem;
+        height: .24rem;
+        margin-right: .4rem;
+      }
+      .icon-mobile {
+        margin-left: 0.33rem;
+        width: .26rem;
+        height: .36rem;
+      }
+      .icon-code {
+        margin-left: 0.33rem;
+        width: .32rem;
+        height: .36rem;
+      }
+      .icon-password {
+        margin-left: 0.33rem;
+        width: .3rem;
+        height: .36rem;
+      }
+      .icon-invite {
+        margin-left: 0.33rem;
+        width: .34rem;
+        height: .3rem;
+      }
+      .item-content-input {
+        margin-left: 0.74rem;
+        outline-style: none ;
+        border: 0;
+        padding: 0.13rem 0.14rem;
+        width: 100%;
+        font-size:0.3rem;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:#000;
+        outline:none;
+        border:none;
+        caret-color:#000; //修改光标颜色 一定要加 否则苹果手机无法输入
+        -webkit-user-select:auto!important; //苹果手机兼容
+        user-select:auto!important;
+      }
+      .icon-more {
+        width: .24rem;
+        height: .14rem;
+        margin-right: .4rem;
+      }
+      .item-content-code {
+        white-space: nowrap;
+        width: 1.7rem;
+        height: .56rem;
+        border: 1px solid #EEEEEE;
+        border-radius:.16rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: .4rem;
+        .item-content-code-text{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width:1.28rem;
+          height:.25rem;
+          font-size:.26rem;
+          font-family:PingFang SC;
+          font-weight:400;
+          color:#222222;
+        }
+      }
+      .item-content{
+        margin-left: 0.33rem;
+        font-size:.3rem;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(34,34,34,1);
+
+      }
+    }
+  }
+  .bottom {
+    width: 100%;
+    background-color: #F5F5F5;
+    //margin-left: .4rem;
+    display: flex;
+    //align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .bottom-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: .8rem;
+      width: 6.7rem;
+      height: .8rem;
+      background:linear-gradient(0deg,#6887FF 0%,#486AEE 100%);
+      border-radius:.16rem;
+      font-size:.3rem;
+      font-family:PingFang SC;
+      font-weight:bold;
+      color:#FFFFFF;
+    }
+    .bottom-text {
+      white-space: nowrap;
+      display: flex;
+      justify-content: center;
+      //width:4.94rem;
+      width: 100%;
+      height:.22rem;
+      font-size:.22rem;
+      font-family:PingFang SC;
+      font-weight:400;
+      color:#808080;
+      margin-top: .33rem;
+      span {
+        color: #4769EE;
+      }
+    }
+    .icon-wechat {
+      width: 1rem;
+      height: 1rem;
+      margin-top: .8rem;
+    }
+    .bottom-wechat-text {
+      font-size:.24rem;
+      font-family:PingFang SC;
+      font-weight:400;
+      color:#808080;
+      margin-top: .03rem;
+      margin-bottom: .08rem;
+    }
+  }
+  .searchBox{
+    /deep/ .van-overlay{
+      display: none !important;
+    }
+  }
+  input:disabled{
+    background-color: #fff;
+  }
+}

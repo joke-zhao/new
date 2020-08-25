@@ -1,0 +1,174 @@
+/* 我的下级代理页面样式开始 */
+#app {
+  font-size: 0.24rem;
+  color: #000;
+}
+#app header {
+  width: 100%;
+  height: 2.3rem;
+  padding-top: 0.5rem;
+  background-image: url(../../image/set-info/myIncome.png);
+  background-size: 100% 2.3rem;
+}
+#app header .box {
+  width: 90%;
+  margin: 0 auto;
+  height: 0.44rem;
+  line-height: 0.44rem;
+  padding: 0 0.3rem;
+  font-size: 0.32rem;
+  color: #fff;
+  font-weight: 600;
+  border-left: 3px solid #fff;
+}
+#app main {
+  width: 100%;
+}
+#app main .main-box {
+  width: 100%;
+  margin-top: -0.5rem;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+}
+#app main .main-box .box-main {
+  width: 90%;
+  margin: 0 auto;
+}
+#app main .main-box .box-main .main-baba {
+  border-bottom: 1px solid #E5E5E5;
+  /* 每个main-baba的第一个main-item为父项为其设置高度 */
+}
+#app main .main-box .box-main .main-baba .main-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+#app main .main-box .box-main .main-baba .main-item .item-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+#app main .main-box .box-main .main-baba .main-item .item-left img {
+  display: block;
+  width: 1.27rem;
+  height: 1.27rem;
+  border-radius: 1.27rem;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right {
+  flex: 3;
+  /* 下边处理子项样式 */
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .right-desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .right-desc .desc-name {
+  font-size: 0.3rem;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .right-desc .desc-address {
+  display: flex;
+  align-items: center;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .right-desc .desc-address .img-right {
+  margin-left: 0.2rem;
+  width: 0.14rem;
+  height: 0.24rem;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .right-desc .desc-address .img-next {
+  margin-left: 0.2rem;
+  width: 0.24rem;
+  height: 0.14rem;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .right-info {
+  display: flex;
+  padding: 0.2rem 0;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .right-info .info-MD {
+  display: flex;
+  width: 2rem;
+  height: 0.4rem;
+  border: 1px solid #6383FD;
+  border-radius: 5px;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .right-info .info-MD div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.2rem;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .right-info .info-MD .MD-left {
+  color: #fff;
+  background-color: #6383FD;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .right-info .info-MD .MD-right {
+  color: #6383FD;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .right-info .info-MD:first-child {
+  margin-right: 0.3rem;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .item-rigth-son {
+  display: flex;
+  align-items: center;
+  height: 1.5rem;
+  border-bottom: 1px solid #E5E5E5;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .item-rigth-son .right-img-son {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .item-rigth-son .right-img-son img {
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 1.05rem;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .item-rigth-son .right-detail-son {
+  flex: 3;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .item-rigth-son .right-detail-son .detail-desc-son {
+  display: flex;
+  justify-content: space-between;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .item-rigth-son .right-detail-son .detail-desc-son .desc-name-son {
+  font-size: 0.3rem;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .item-rigth-son .right-detail-son .detail-desc-son .desc-address-son {
+  color: #999999;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .item-rigth-son .right-detail-son .detail-info-son {
+  padding: 0.1rem;
+  font-size: 0.24rem;
+  color: #6383FD;
+}
+#app main .main-box .box-main .main-baba .main-item .item-right .item-rigth-son .right-detail-son .detail-info-son span:first-child {
+  margin-right: 0.3rem;
+}
+#app main .main-box .box-main .main-baba .main-item:first-child {
+  height: 2rem;
+  /* border-bottom: 1px solid #E5E5E5; */
+}
+#app main .main-box .box-main .main-baba .main-item:last-child {
+  border: none;
+}
+#app main .main-box .box-main .main-baba .main-item:last-child .item-rigth-son {
+  border: none;
+}
+#app main .main-box .box-main .main-baba .main2-item {
+  display: none;
+}
+#app main .main-box .box-main .main-baba:last-child {
+  border: none;
+}
+#app main .main-box .box-main .main-baba2 {
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.3rem;
+  font-weight: 600;
+}

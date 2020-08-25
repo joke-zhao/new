@@ -1,0 +1,317 @@
+#app{
+  height:100%;
+  .tabs-wrapper{
+    height:2.25rem;
+    background: url("../../image/order-all/bg.png") no-repeat center;
+    background-size:contain;
+    .tabs{
+      height: 1.5rem;
+      font-size:.24rem;
+      color: #fff;
+      display:flex;
+      font-weight:500;
+      padding-top: .5rem;
+      .tab_item{
+        .tab-item-inner{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.active{
+            color:#fff;
+            border-bottom:#fff solid .06rem;
+          }
+        }
+        flex:1;
+        padding: 0 .8rem;
+        display:flex;
+        border-right: .01rem #fff solid;
+        // align-items:center;
+        // justify-content:center;
+        &:nth-child(3){
+          border-right:none;
+        }
+      }
+    }
+  }
+  .tabs_content{
+    width: 100%;
+    display: flex;
+    .allOrder{
+      // display: flex;
+      width: 100%;
+      height: 3rem;
+      .allOrder_header{
+        width: 85%;
+        height: 35%;
+        display: flex;
+        text-align: center;
+        margin: 0 auto;
+        border-bottom: 0.01rem #DCDCDC solid;
+        padding-bottom: 0.1rem solid red;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.25rem;
+        .company_name{
+            color: #333333;
+            font-weight: 600;
+        }
+        .tradingStatus{
+          color: #6383FD;
+        }
+      }
+      .allOrder_main{
+        width: 85%;
+        height: 65%;
+        display: flex;
+        // background-color: blue;
+        margin: 0 auto;
+        align-items: center;
+        // justify-content: center;
+        img{
+          width: 40%;
+          height: 85%;
+          background-color: #EEEEEE;
+        }
+        .allOrder_main_content{
+          height: 85%;
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+            justify-content: space-between;
+            margin-left: 0.2rem;
+          .allOrder_main_content_header{
+            width: 100%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 0.2rem;
+            .allOrder_main_content_header_1{
+              color: #333333;font-weight: 500;
+              font-size: 0.3rem;
+              width: 80%;
+            }
+            .allOrder_main_content_header_2{
+              font-size: 0.2rem;
+              width: 80%;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+          }
+          .allOrder_main_content_real{
+            font-size: 0.3rem;
+            color: red;
+            font-weight: 800;
+            span{
+              font-weight: 800;
+            }
+          }
+        }
+      }
+    }
+    .waitConfirm{
+      // display: flex;
+      width: 100%;
+      height: 3rem;
+      .waitConfirm_header{
+        width: 85%;
+        height: 35%;
+        display: flex;
+        text-align: center;
+        margin: 0 auto;
+        border-bottom: 0.01rem #DCDCDC solid;
+        padding-bottom: 0.1rem solid red;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.25rem;
+        .company_name{
+            color: #333333;
+            font-weight: 600;
+        }
+        .tradingStatus{
+          color: #6383FD;
+        }
+      }
+      .waitConfirm_main{
+        width: 85%;
+        height: 65%;
+        display: flex;
+        // background-color: blue;
+        margin: 0 auto;
+        align-items: center;
+        // justify-content: center;
+        img{
+          width: 40%;
+          height: 85%;
+          background-color: #EEEEEE;
+        }
+        .waitConfirm_main_content{
+          height: 85%;
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+            justify-content: space-between;
+            margin-left: 0.2rem;
+          .waitConfirm_main_content_header{
+            width: 100%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 0.2rem;
+            .waitConfirm_main_content_header_1{
+              color: #333333;font-weight: 500;
+              font-size: 0.3rem;
+              width: 80%;
+            }
+            .waitConfirm_main_content_header_2{
+              font-size: 0.2rem;
+              width: 80%;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+          }
+          .waitConfirm_main_content_real{
+            font-size: 0.3rem;
+            color: red;
+            font-weight: 800;
+            display: flex;
+            width: 100%;
+            height: 30%;
+            align-items: center;
+            .waitConfirm_main_content_real_1{
+              width: 20%;
+              height: 80%;
+              font-size: 0.2rem;
+              background-color:#F39800 ;
+              color: #FFFFFF;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 0.2rem;
+            }
+            span{
+              font-weight: 800;
+            }
+          }
+        }
+      }
+      
+    }
+    .ongoing{
+      // display: flex;
+      width: 100%;
+      height: 3rem;
+      .ongoing_header{
+        width: 85%;
+        height: 35%;
+        display: flex;
+        text-align: center;
+        margin: 0 auto;
+        border-bottom: 0.01rem #DCDCDC solid;
+        padding-bottom: 0.1rem solid red;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.25rem;
+        .company_name{
+            color: #333333;
+            font-weight: 600;
+        }
+        .tradingStatus{
+          color: #6383FD;
+        }
+      }
+      .ongoing_main{
+        width: 85%;
+        height: 65%;
+        display: flex;
+        // background-color: blue;
+        margin: 0 auto;
+        align-items: center;
+        box-sizing: border-box;
+        // border-bottom: 0.02rem #DCDCDC solid;
+        // justify-content: center;
+        img{
+          width: 40%;
+          height: 85%;
+          background-color: #EEEEEE;
+        }
+        .ongoing_main_content{
+          height: 85%;
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+            justify-content: space-between;
+            margin-left: 0.2rem;
+          .ongoing_main_content_header{
+            width: 100%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 0.2rem;
+            .ongoing_main_content_header_1{
+              color: #333333;font-weight: 500;
+              font-size: 0.3rem;
+              width: 80%;
+            }
+            .ongoing_main_content_header_2{
+              font-size: 0.2rem;
+              width: 80%;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+          }
+          .ongoing_main_content_real{
+            font-size: 0.3rem;
+            color: red;
+            font-weight: 800;
+            display: flex;
+            width: 100%;
+            height: 30%;
+            align-items: center;
+            .ongoing_main_content_real_1{
+              width: 20%;
+              height: 80%;
+              font-size: 0.2rem;
+              background-color:#F39800 ;
+              color: #FFFFFF;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 0.2rem;
+            }
+            span{
+              font-weight: 800;
+            }
+          }
+        }
+      }
+      .ongoing_orderDone{
+        width: 90%;
+        height: 25%;
+        margin: 0 auto;
+        margin-top: 0.2rem;
+        position: relative;
+        .ongoing_orderDone_content{
+          position: absolute;
+          right: 0;
+          height: 75%;
+          width: 35%;
+          text-align: center;
+          background-color:#6383FD ;
+          color: #fff;
+          font-size: 0.35rem;
+          border-radius: 0.3rem;
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,15 @@
+<div id="app">
+    <div class="qualification-certification">
+        <div class="qualification-certification-title">
+            资质证书
+        </div>
+        <div class="qualification-certification-description">
+            上传相关证书清晰正面照，图片将用于文字识别，不合规图片可能导致审核失败。图片每次只能上传一张，不得超过3张，每张不得超过5M。
+        </div>
+        <van-uploader v-model="fileList" multiple :max-count="3" :max-size="5000 * 1024" @oversize="onOversize"
+                      :before-delete="beforeDelete"/>
+    </div>
+    <div class="bottom_btns">
+        <div class="export" @click="afterRead">提交</div>
+    </div>
+</div>

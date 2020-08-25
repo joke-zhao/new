@@ -1,0 +1,100 @@
+<div id="app">
+    <div class="confirm">
+        <div class="confirm-company">
+            广州爪瓦科技有限公司
+        </div>
+        <div class="confirm-date">
+            5月28日 15:00
+        </div>
+        <div class="confirm-explain">
+            2020年05月，贵公司拟申报的税费情况如下，请回复是否同意，并确保缴税账户余额充足，谢谢！
+        </div>
+        <div class="confirm-table">
+            <div class="confirm-table-item">
+                <div class="confirm-table-item-value">
+                    项目
+                </div>
+                <div class="confirm-table-item-value">
+                    金额
+                </div>
+
+                <div class="confirm-table-item-value">
+                    增值税
+                </div>
+                <div class="confirm-table-item-value">
+                    3290.00
+                </div>
+
+                <div class="confirm-table-item-value">
+                    个人所得税
+                </div>
+                <div class="confirm-table-item-value">
+                    3290.00
+                </div>
+
+                <div class="confirm-table-item-value">
+                    社会保险费
+                </div>
+                <div class="confirm-table-item-value">
+                    3290.00
+                </div>
+
+                <div class="confirm-table-item-value">
+                    总税金
+                </div>
+                <div class="confirm-table-item-value">
+                    3290.00
+                </div>
+            </div>
+        </div>
+        <div class="confirm-divide"></div>
+        <div class="confirm-reply" v-show="!showResult">
+            <div class="confirm-reply-mine">
+                我的回复
+            </div>
+            <div class="confirm-reply-area">
+                <textarea>同意，余额充足</textarea>
+            </div>
+            <div class="confirm-reply-other">
+                <input type="text" placeholder="其它备注（可不填）">
+            </div>
+        </div>
+        <div class="confirm-button" v-show="!showResult" @click="showDialog = true">
+            回复
+        </div>
+        <div class="confirm-dialog" v-show="showDialog">
+            <div class="confirm-dialog-window">
+                <div class="confirm-dialog-window-title">
+                    提示
+                </div>
+                <div class="confirm-dialog-window-content">
+                    回复即代表您已同意，请知悉！
+                </div>
+                <div class="confirm-dialog-window-bottom">
+                    <div class="confirm-dialog-window-bottom-cancel" @click="showDialog = false">
+                        返回检查一下
+                    </div>
+                    <div class="confirm-dialog-window-bottom-ok" @click="confirm">
+                        确定
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="confirm-result" v-show="showResult">
+            <div class="confirm-result-mine">
+                <div class="confirm-result-mine-text">
+                    我的回复
+                </div>
+            </div>
+            <div class="confirm-result-content">
+                <div class="confirm-result-content-reply">
+                    同意，余额充足
+                </div>
+                <div class="confirm-result-content-other">
+                    其它备注：尽快完成
+                </div>
+            </div>
+        </div>
+        <div class="confirm-gray" v-show="showResult"></div>
+    </div>
+</div>

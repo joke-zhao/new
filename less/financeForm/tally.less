@@ -1,0 +1,233 @@
+/* 记账凭证样式开始 */
+#app{
+    font-size: .24rem;
+    color:#000;
+    /* flex - 两边对齐 - 垂直居中 */
+    .flexSbC{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    };
+    /* flex - 垂直居中对齐 */
+    .flexCC{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header{
+        background-color: #fff;
+        .header-box{
+            padding: .3rem;
+            .box-name{
+                .flexSbC();
+                .left-name{
+                    font-size: .3rem;
+                    font-weight: 600;
+                }
+            }
+            .box-subject{
+                .flexSbC();
+                display: flex;
+               .left-subject{
+                   flex:1; 
+                    font-size: .3rem;
+                    font-weight: 600;
+               }
+               .right-subject{
+                   flex: 3;
+                   .flexSbC();
+                   span{
+                       padding: 0 .2rem;
+                       font-size: .28rem;
+                   }
+                   .inputStyle{
+                    width: 45%;
+                    height: 100%;
+                    outline-style: none;
+                    border: none;
+                    color: #000;
+                    caret-color: #000; //修改光标颜色 一定要加 否则苹果手机无法输入
+                    -webkit-user-select: auto !important; //苹果手机兼容
+                    user-select: auto !important;
+                    border: 1px solid #000;
+                    border-radius: 2px;
+                    font-size: .28rem;
+                   }
+               } 
+            }
+            .box-date{
+                display: flex;
+                box-sizing: border-box;
+                width: 100%;
+                height: 0.48rem;
+                padding: 5px 0;
+                margin:.3rem 0;
+                border: 1px solid #000;
+                border-radius: 2px;
+                .left-date{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 10%;
+                    border-right: 1px solid #000;
+                    img{
+                        width: .26rem;
+                        height: 0.28rem;
+                    }
+                }
+                .right-date{
+                    display: flex;
+                    width: 90%;
+                    .date-YM{
+                        width: 45%;
+                        .flexCC()
+                    }
+                    span{
+                        .flexCC()
+                    }
+                }
+            }
+        }
+    }
+    main{
+        margin-top: .2rem;
+        margin-bottom: .9rem;
+        background-color: #fff;
+        .newMain-box{
+            overflow: auto;
+            .main-box{
+                width: 11rem;
+                border: 1px solid #000;
+                margin-bottom: .2rem;
+                .t-header{
+                    width: 100%;
+                    height: .7rem;
+                    border-bottom:1px solid #000 ;
+                    font-size: .30rem;
+                    .flexCC();
+                }
+                .t-nav{
+                    display: flex;
+                    height: .6rem;
+                    border-bottom:1px solid #000 ;
+                    div{
+                        flex:1;
+                        border-right: 1px solid #000;
+                        .flexCC()
+                    }
+                    div:last-child {
+                        border: none;
+                    }
+                    p{
+                        flex:3;
+                        .flexCC()
+                    }
+                }
+                .t-main{
+                    .m-header{
+                        display: flex;
+                        height: .6rem;
+                        font-size: .28rem;
+                        border-bottom: 1px solid #000;
+                        div{
+                            .flexCC();
+                            border-right: 1px solid #000;
+                        }
+                        div:last-child {
+                            border: none;
+                        }
+                    }
+                    .m-body{
+                        .b-item{ 
+                            display: flex;
+                            min-height: .6rem;
+                            border-bottom: 1px solid #000;
+                            div{
+                                .flexCC();
+                                word-break:break-all;
+                                border-right: 1px solid #000;
+                            }
+                            div:last-child {
+                                border: none;
+                            }
+                        }
+                        .b-info{
+                            height: .6rem;
+                            line-height: .6rem;
+                            text-indent:2em;
+                            font-size: .3rem;
+                            color:#ccc;
+                            border-bottom: 1px solid #ccc;
+                        }
+                    }
+                    .item4{
+                        flex:4;
+                    }
+                    .item3{
+                        flex:3;
+                    }
+                    .item2{
+                        flex:2;
+                    }
+                }
+                .t-footer{
+                    height: .6rem;
+                    line-height: .6rem;
+                    span{
+                        padding: 0 .4rem;
+                    }
+                }
+            }
+        }
+        
+    }
+    .searchInfo{
+        width: 100%;
+        height: 0.8rem;
+        margin-top: 0.2rem;
+        line-height: .8rem;
+        font-size: .32rem;
+        text-align: center;
+        background-color: #fff;
+    }
+    footer{
+        width: 100%;  
+        position: fixed;
+        bottom: 0;
+        .footer-box{
+            width: 100%;
+            height: .9rem;
+            display: flex;
+            div{
+                .flexCC();
+                flex:1;
+                font-size: .3rem;
+                color:#fff;
+                font-weight: 600;
+            }
+            .left-box{
+                background:linear-gradient(0deg,rgba(255,61,61,1) 0%,rgba(232,55,55,1) 100%);
+            }
+            .right-box{
+                background:linear-gradient(0deg,rgba(104,135,255,1) 0%,rgba(71,105,238,1) 100%);
+            }
+        }
+    }
+    .van-dropdown-menu{
+        border: 1px solid #000000;
+        border-radius: 2px;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .van-dropdown-menu__bar{
+            background-color:rgba(0,0,0,0);
+            width: 100%;
+            height: 100% !important;
+            padding: 0;
+            box-shadow: none !important;
+    }
+    .van-dropdown-menu__title{
+        font-size: .28rem!important;
+    }
+   
+} 

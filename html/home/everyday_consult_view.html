@@ -1,0 +1,32 @@
+<div id="app">
+    <div class="consult-wrapper">
+        <div class="consult-tabs">
+            <div class="consult-tabs-item" :class="tabActive === index ? 'consult-tabs-item-active' : '' " v-for="(item,index) in tabList" :key="index" @click="changeTab(index)">
+                {{ item.type }}
+            </div>
+        </div>
+        <div class="consult-list">
+            <div v-for="(item,index) in consultList" :key="index">
+                <div class="consult-list-item" @click="openDetail(item.id)">
+                    <div class="consult-list-item-img">
+                        <img :src="item.imgUrl" style="width: 100%;height: 100%;">
+                    </div>
+                    <div class="consult-list-item-right">
+                        <div class="consult-list-item-right-title">
+                            {{ item.title }}
+                        </div>
+                        <div class="consult-list-item-right-bottom">
+                            <div class="consult-list-item-right-bottom-province">
+                                {{ item.province }}
+                            </div>
+                            <div class="consult-list-item-right-bottom-date">
+                                {{ item.creatTime | dateFormat }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="consult-list-line"></div>
+            </div>
+        </div>
+    </div>
+</div>

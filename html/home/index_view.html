@@ -1,0 +1,170 @@
+<div id="home">
+  <div class="dialog-wrapper" v-show="dialogShow">
+    <div class="dialog">
+      <div class="dialog-close" @click="dialogShow = false">
+        <img src="../../image/home/close.png" alt="">
+      </div>
+      <!-- <div class="dialog-text">
+        <select name="selected">
+          <option value="新增boss下其他公司" selected>新增boss下其他公司</option>
+          <option value="新增纳税人（客户）">新增纳税人（客户）</option>
+        </select>
+      </div> -->
+      <div class="dialog-bottom">
+        <div class="dialog-bottom-tag">
+          <div class="dialog-bottom-tag-photo" @click="openCamera">
+            <img src="../../image/dialog/photo.png" class="dialog-bottom-tag-photo-icon">
+            <div class="dialog-bottom-tag-photo-text">拍照</div>
+          </div>
+          <div class="dialog-bottom-tag-graph" @click="openAlbum">
+            <img src="../../image/dialog/graph.png" class="dialog-bottom-tag-graph-icon">
+            <div class="dialog-bottom-tag-graph-text">相册</div>
+          </div>
+          <div @click="openAddTaxpayer_manual" class="dialog-bottom-tag-add">
+            <img src="../../image/dialog/add.png" class="dialog-bottom-tag-add-icon">
+            <div class="dialog-bottom-tag-add-text">手动录入</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 头部 -->
+  <header class="header">
+    <div class="left">
+      <img class="site" src="../../image/home/position-i.png" alt="">
+      <p class="address">
+        {{address}}
+      </p>
+      <p class="arrow"></p>
+    </div>
+    <div class="right" @click="openMessage">
+      <img class="news" src="../../image/home/news.png" alt="">
+      <span class="ts">{{UnreadCount}}</span>
+    </div>
+  </header>
+  <!-- 功能导航 -->
+  <nav class="navigation">
+    <!-- 纳税人员工 -->
+    <ul v-if="typeShow === 1" class="navigation-facilitator">
+      <li @click="dialogShow = true">
+        <img src="../../image/home/newcompony.png" alt="">
+        <p>新增公司</p>
+      </li>
+      <li @click="openReview">
+        <img src="../../image/home/bills.png" alt="">
+        <p>单据审核</p>
+      </li>
+      <li @click="openReviewManual">
+        <img src="../../image/home/hand.png" alt="">
+        <p>手工输入</p>
+      </li>
+      <li @click="openMakeInvoices">
+        <img src="../../image/home/make-invoice.png" alt="">
+        <p>开票</p>
+      </li>
+    </ul>
+    <!-- 自由职业者 -->
+    <ul v-else class="navigation-facilitator">
+      <li @click="dialogShow = true">
+        <img src="../../image/home/new-people.png" alt="">
+        <p>新增纳税人</p>
+      </li>
+      <li @click="openReview">
+        <img src="../../image/home/bills.png" alt="">
+        <p>单据审核</p>
+      </li>
+      <li @click="openReviewManual">
+        <img src="../../image/home/hand.png" alt="">
+        <p>手工输入</p>
+      </li>
+      <li @click="openExamine">
+        <img src="../../image/home/uicon.png" alt="">
+        <p>单据审批</p>
+      </li>
+    </ul>
+  </nav>
+  <!-- 轮播图 -->
+  <div class="swiper-box">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div  v-for="item in swiperList" :key="item.id"   class="swiper-slide">
+          <img :src="item.swiper" alt="">
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <!-- 职位导航 -->
+  <div class="job-nav">
+    <!-- 纳税人员工 -->
+    <ul v-if="typeShow === 1" class="job-facilitator">
+      <li @click="openPackage">
+        <img src="../../image/home/accountant-1.png" alt="">
+        <p>会计</p>
+      </li>
+      <li @click="openCommercial">
+        <img src="../../image/home/accountant-2.png" alt="">
+        <p>工商</p>
+      </li>
+      <li @click="openeTaxClass">
+        <img src="../../image/home/school.png" alt="">
+        <p>E税学堂</p>
+      </li>
+      <li @click="openLegwork">
+        <img src="../../image/home/accountant-4.png" alt="">
+        <p>跑腿</p>
+      </li>
+    </ul>
+    <!-- 自由职业者 -->
+    <ul v-else class="job-facilitator">
+      <li>
+        <img src="../../image/home/accountant-1.png" alt="">
+        <p>会计</p>
+      </li>
+      <li @click="openCommercial">
+        <img src="../../image/home/accountant-2.png" alt="">
+        <p>工商</p>
+      </li>
+      <li>
+        <img src="../../image/home/loans.png" alt="" @click="openLoan">
+        <p>贷款</p>
+      </li>
+      <li @click="openLegwork">
+        <img src="../../image/home/accountant-4.png" alt="">
+        <p>跑腿</p>
+      </li>
+      <li>
+        <img src="../../image/home/school.png" alt="">
+        <p>E税学堂</p>
+      </li>
+    </ul>
+  </div>
+  <!-- 分割线 -->
+  <h4 class="tieku"></h4>
+  <!-- 每日税讯 -->
+  <div class="revenue">
+    <h3>每日税讯<span @click="openConsult">更多></span></h3>
+    <!-- 新闻信息 -->
+    <ul class="revenue-ul">
+      <li v-for="(item,index) in consultList" :key="index" @click="openDetail(item.id)">
+        <img src="../../image/legwork/adver.png" alt="">
+        <div class="details">
+          <div class="de-news">{{ item.title }}</div>
+          <p>{{ item.province }}<span>{{ item.creatTime | dateFormat }}</span></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- 底线 -->
+  <!-- <h4 class="bottomku"></h4> -->
+  <!-- 电话客服 -->
+  <div class="phone-kf" @click="callPhone">
+    <span>电话客服</span>
+  </div>
+  <!-- 微信客服 -->
+  <div class="wx-kf">
+    <span>微信客服</span>
+  </div>
+</div>

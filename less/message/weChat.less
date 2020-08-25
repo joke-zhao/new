@@ -1,0 +1,138 @@
+#weChat {
+    padding-bottom: 1.2rem;//底部盒子高度
+    .message{
+        .mysend{
+            margin-top: .4rem;
+            .date{
+                text-align: center;
+                font-size:.24rem;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:#808080;
+            }
+            .my{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: .3rem;
+                .align{
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-left: auto;
+                    align-items: center;
+                    .myMessage{
+                        margin-top: .4rem;
+                        max-width: 60%;
+                        background:#A1EB72;
+                        border-radius:.12rem;
+                        font-size:.3rem;
+                        font-family:PingFang SC;
+                        font-weight:500;
+                        color:#222222;
+                        padding: .2rem .3rem .2rem .3rem;
+                    }
+                    .myJt{
+                        width:.23rem;
+                        height:.23rem;
+                        margin-left: -.15rem;
+                        background:#A1EB72;
+                        transform:rotate(40deg);
+                        -ms-transform:rotate(40deg); 	/* IE 9 */
+                        -moz-transform:rotate(40deg); 	/* Firefox */
+                        -webkit-transform:rotate(40deg); /* Safari 和 Chrome */
+                        -o-transform:rotate(40deg); 	/* Opera */
+                    }
+                    .myPhoto{
+                        margin-left: .2rem;
+                        img{
+                            width:.8rem;
+                            height:.8rem;
+                            border-radius:50%;
+                        }
+                    }
+                }
+            }
+        }
+        .yousend{
+            margin-top: .4rem;
+            .date{
+                text-align: center;
+                font-size:.24rem;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:#808080;
+            }
+            .my{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: .3rem;
+                .align{
+                    display: flex;
+                    justify-content: flex-start;
+                    margin-right: auto;
+                    align-items: center;
+                    .myPhoto{
+                        margin-right: .2rem;
+                        img{
+                            width:.8rem;
+                            height:.8rem;
+                            border-radius:50%;
+                        }
+                    }
+                    .myJt{
+                        width:.23rem;
+                        height:.23rem;
+                        margin-right: -.15rem;
+                        background:#FFFFFF;
+                        transform:rotate(40deg);
+                        -ms-transform:rotate(40deg); 	/* IE 9 */
+                        -moz-transform:rotate(40deg); 	/* Firefox */
+                        -webkit-transform:rotate(40deg); /* Safari 和 Chrome */
+                        -o-transform:rotate(40deg); 	/* Opera */
+                    }
+                    .myMessage{
+                        margin-top: .4rem;
+                        max-width: 60%;
+                        background:#FFFFFF;
+                        border-radius:.12rem;
+                        font-size:.3rem;
+                        font-family:PingFang SC;
+                        font-weight:500;
+                        color:#222222;
+                        padding: .2rem .3rem .2rem .3rem;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    .send{
+        width: 100%;
+        height:1rem;
+        background:#EEEEEE;
+        position: fixed;
+        bottom: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .content{
+            width: 6.1rem;
+            height:.72rem;
+            background:#fff;
+            border-radius:.08rem;
+            border: none;
+            outline: none;
+        }
+        .todo{
+            font-size:.3rem;
+            font-family:PingFang SC;
+            font-weight:500;
+            color:#000;
+            margin-left: .2rem;
+        }
+    }
+
+}

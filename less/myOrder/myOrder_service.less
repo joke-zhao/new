@@ -1,0 +1,151 @@
+.container{
+  background-image: url("../../image/order-all/bg.png");
+  background-repeat: repeat-y;
+  background-size: 7.5rem 2.45rem;
+  width: 100%;
+  .title{
+    width: 100%;
+    height: 1.68rem;
+    .title_item{
+      width: 33.3%;
+      height: 100%;
+      color:white;
+      font-size:.24rem;
+      font-family:PingFang SC;
+      font-weight:500;
+
+      .border_white{
+        &::after{
+          content: '';
+          width: .97rem;
+          height: .06rem;
+          display: block;
+          border-radius: 0.03rem;
+          background-color: white;
+          position: relative;
+          top:0.23rem;
+        }
+      }
+      .border_none{
+        &::after{
+          content: '';
+          width: .97rem;
+          height: .06rem;
+          display: block;
+          position: relative;
+          top:0.23rem;
+        }
+      }
+
+
+    }
+    .line{
+      width: .01rem;
+      height: .53rem;
+      background-color: white;
+    }
+  }
+  .container_bg{
+    width: 100%;
+    background-color: white;
+    border-top-left-radius: .5rem ;
+    border-top-right-radius: .5rem;
+    .content{
+      border-top-left-radius: .5rem ;
+      border-top-right-radius: .5rem;
+      width: 100%;
+      background-color: #F5F5F5;
+
+      .content_item{
+
+        width: 100%;
+        height: 3.32rem;
+        background-color: white;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: .24rem;
+        .item_title{
+          width: 6.64rem;
+          height: 1.02rem;
+          display: flex;
+          flex-flow: row;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: .02px solid rgba(220,220,220,1);;
+          .title_content{
+            font-size:.24rem;
+            font-family:PingFang SC;
+            font-weight:800;
+          }
+          .status{
+            font-size:.24rem;
+            font-family:PingFang SC;
+            font-weight:500;
+            color:rgba(99,131,253,1);
+          }
+        }
+        .item_content{
+          height: 2.28rem;
+          .image{
+            width: 2.39rem;
+            height: 1.52rem;
+            border-radius: .1rem;
+            img{
+              border-radius: .1rem;
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .item_content_text{
+            margin-left: 0.33rem;
+            height: 1.52rem;
+            width: 3.92rem;
+            .register{
+              font-size:.30rem;
+              font-family:PingFang SC;
+              font-weight:500;
+              color:rgba(51,51,51,1);
+            }
+            .service_type{
+              font-size:.24rem;
+              font-family:PingFang SC;
+              font-weight:500;
+              color:rgba(153,153,153,1);
+            }
+            .service_cost{
+              font-size:.3rem;
+              font-family:PingFang SC;
+              font-weight:800;
+              color:rgba(191,29,29,1);
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+.column_center-start{
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.column_center{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.row_center{
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+.border-top{
+  border-top-left-radius: .5rem ;
+  border-top-right-radius: .5rem;
+}

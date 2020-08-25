@@ -1,0 +1,27 @@
+<div id="app">
+  <div class="container">
+    <div class="container-box">
+      <!-- 顶部需求 -->
+      <div class="box-header">
+        <div>
+          纳税人发布需求后将根据服务类型推荐服务商
+        </div>
+        <div>
+          请选择<span>3项</span>
+          您最具竞争力的服务类型
+        </div>
+      </div>
+      <!-- 选择标签 -->
+      <div class="box-main">
+				<!-- 服务类型标签 -->
+			<div @click="handleTag(index,item.status)" v-for="(item,index) in serveTagList" :key="item.id" :class="item.status === 2 ? 'main-item2' : 'main-item'">
+				<span>{{item.type}}</span>
+			</div>
+	  </div>
+    </div>
+  </div>
+  <!-- 底部保存 -->
+  <div class="footer">
+    <div @click="upDataServeTag" class="footer-box">确定</div>
+  </div>
+</div>

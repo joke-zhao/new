@@ -1,0 +1,243 @@
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#header {
+  display: block;
+  box-sizing: content-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* height: 55px; */
+  background-color: transparent;
+}
+
+.ui-mainHeader {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  font-size: 0;
+}
+
+.ui-mainHeader .active {
+  opacity: 0.3;
+}
+
+.ui-mainHeader.no-line:after {
+  height: 0;
+}
+
+.ui-mainHeader__item {
+  position: relative;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.is-room {
+  /* background-color: #4769ED; */
+}
+
+.ui-mainHeader__title {
+  height: 100%;
+  color: #ffffff;
+  font-size: 0.32rem;
+  line-height: 110px;
+  text-align: center;
+  font-weight: bold;
+  font-family: Microsoft YaHei;
+  position: relative;
+}
+
+.is-room__title {
+  color: #ffffff;
+}
+
+.ui-message {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  background-size: 25px 25px;
+  background-position: center 7px;
+}
+
+.ui-meaasge__tips {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  display: block;
+  min-width: 10px;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 5px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  background-color: #FF3D00;
+  border-radius: 15px;
+}
+
+#footer {
+  display: block;
+  box-sizing: content-box;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.98rem;
+  background-color: #ffffff;
+  box-shadow: 0px -2px 8px 0px rgba(0, 0, 0, 0.07);
+}
+
+.ui-mainFooter {
+  display: flex;
+  flex-flow: row;
+  -webkit-box-orient: horizontal;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.ui-mainFooter:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.11);
+  transform: scale(1, 0.5);
+  transform-origin: center top;
+}
+
+.ui-mainFooter .active {
+  opacity: 0.3;
+}
+
+.ui-mainFooter__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  position: relative;
+  flex: 1;
+  height: 100%;
+  text-align: center;
+  font-size: 0;
+  color: #505050;
+}
+
+.ui-mainFooter__item.is-active>i {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-size: 0.5rem;
+}
+
+.ui-mainFooter__item.is-active>i.is-home {
+  background-image: url(../../image/bottomBar/home-on.png);
+}
+
+.ui-mainFooter__item.is-active>i.is-dan {
+  background-image: url(../../image/bottomBar/pai-on.png);
+}
+
+.ui-mainFooter__item.is-active>i.is-bao {
+  background-image: url(../../image/bottomBar/bao-on.png);
+}
+
+.ui-mainFooter__item.is-active>i.is-me {
+  background-image: url(../../image/bottomBar/me-on.png);
+}
+
+.ui-mainFooter__item.is-active>p {
+  color: #4769ED;
+}
+
+.ui-mainFooter__item>i {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-size: 0.5rem;
+}
+
+.ui-mainFooter__item>i.is-home {
+  background-image: url(../../image/bottomBar/home-no.png);
+}
+
+.ui-mainFooter__item>i.is-dan {
+  background-image: url(../../image/bottomBar/pai-no.png);
+}
+
+.ui-mainFooter__item>i.is-bao {
+  background-image: url(../../image/bottomBar/bao-no.png);
+}
+
+.ui-mainFooter__item>i.is-me {
+  background-image: url(../../image/bottomBar/me-no.png);
+}
+
+.ui-mainFooter__item>p {
+  line-height: 0.25rem;
+  margin-top: 0.06rem;
+  font-size: 0.25rem;
+  color: #666666;
+  font-weight: normal;
+}
+
+.ui-hotItem__icon {
+  widows: 0.42rem;
+  height: 0.42rem;
+  position: absolute;
+  bottom: 0.4rem;
+  left: 0.52rem;
+  z-index: 100;
+}
+
+.ui-hotItem__input {
+  width: 6.9rem;
+  height: 0.9rem;
+  padding-left: 0.91rem;
+  font-size: 0.3rem;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #999999;
+  line-height: 0.18rem;
+  background: #ffffff;
+  box-shadow: 0rem 0rem 0.18rem 0rem rgba(0, 0, 0, 0.06);
+  border-radius: 0.45rem;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.2rem;
+  margin: auto;
+}

@@ -1,0 +1,112 @@
+<!-- 课程详情页面 -->
+<div id="app">
+    <div class="header">
+        <div class="video">
+            <!-- buyStatus : 1.已购买 可观看视频   2.未购买 -->
+            <video :src="classList.url" preload controls="controls" v-if="classList.buyStatus === 1">
+                您的浏览器不支持视频播放。</video>
+            <img  v-if="classList.buyStatus === 2" :src="classList.imageUrl">
+        </div>
+        <div class="title">{{classList.name}}</div>
+        <div class="content">
+            <div class="charge" v-if="classList.money === 0">免费</div>
+            <div class="charge" v-if="classList.money > 0">收费</div>
+            <div class="sum">{{classList.studySum}}人已学</div>
+            <div class="zan">
+                <!-- 点赞 ： 1为已点赞  2为未点赞 -->
+                <img v-if="classList.status === 1" @click="createBeatUserLike" src="../../image/eTaxClass/dianzan.png" />
+                <img v-if="classList.status === 2" @click="createBeatUserLike"
+                    src="../../image/eTaxClass/weidianzan.png" />
+                <span>{{classList.likeSum}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <div class="tab">
+            <div class="tab1" @click="handleTab(1)" :class="flag === 1 ?'h-left':'h-right'">课程简介</div>
+            <div class="tab2" @click="handleTab(2)" :class="flag === 2 ?'h-left':'h-right'">
+                评价({{classList.commentSum}}条)</div>
+        </div>
+        <!-- 课程简介 -->
+        <div class="introduction" v-if="flag === 1">
+            {{classList.introduction}}
+        </div>
+
+        <!-- 评价 -->
+        <div class="friend_replied" v-for="(item,index) in commentList" :key="index" v-if="flag === 2">
+            <div class="contents">
+                <div class="user">
+                    <div class="photo">
+                        <img v-if="item.userPhoto == ''" src="../../image/login/logo1.png" alt/>
+                        <img v-else :src="item.userPhoto" />
+                    </div>
+                    <div class="namedate">
+                        <div class="name">{{item.nickname}}</div>
+                        <div class="date">{{item.createTime |formatDate}}</div>
+                    </div>
+                </div>
+                <div class="content">
+                    <!-- {{item.content}} <span>展开全部</span> -->
+                    <span class="contentspan" @click="getAll(index)"
+                        :class="{'getAll':1===item.id}">{{item.content}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom" v-if="flag === 1 && classList.buyStatus === 2">
+        <div class="price">￥{{classList.money}}</div>
+        <div class="buy" @click="payShow = true">立即购买</div>
+    </div>
+
+  <!-- 支付方式弹出层 -->
+  <div class="popup-box">
+    <van-popup
+      v-model="payShow"
+      position="bottom"
+      :style="{ height: '40%' }"
+    >
+      <div class="box">
+        <div class="box-header">
+          支付
+        </div>
+        <div class="box-main">
+          <!-- <p>支付方式</p> -->
+          <van-radio-group v-model="payFlag">
+            <div
+              v-for="item in payList"
+              :key="item.payId"
+              :class="{ 'main-item': true, 'select-pay': item.payId === payFlag }"
+            >
+              <div class="item-left">
+                <img :src="item.icon" alt="" />
+                <span>{{item.name}}</span>
+              </div>
+              <div class="item-rigth">
+                <van-radio icon-size="0.33rem" :name="item.payId"></van-radio>
+              </div>
+            </div>
+          </van-radio-group>
+        </div>
+        <div class="box-footer">
+          <div class="footer">
+            <div class="lefe-footer">
+              应付金额：
+              <span>￥{{classList.money}}</span>
+            </div>
+            <div @click="handlePayType" class="right-footer">
+              付款
+            </div>
+          </div>
+        </div>
+      </div>
+    </van-popup>
+  </div>
+    <div class="bottomSearch" v-if="flag === 2">
+        <van-search v-model="searchVal" background="#F5F5F5" show-action placeholder="说点什么吧..." left-icon="none"
+            @search="insertCourseComment">
+            <template #action>
+                <div @click="insertCourseComment">发表</div>
+            </template>
+        </van-search>
+    </div>
+</div>

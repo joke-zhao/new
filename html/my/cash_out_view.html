@@ -1,0 +1,22 @@
+<div id="app">
+    <!-- 提现明细 -->
+    <div class="cash">
+        <div class="cash-list">
+            <div class="cash-list-item" v-for="(item,index) in list" :key="index">
+                <div class="cash-list-item-left">
+                    <div class="cash-list-item-left-title">
+                        提现到-{{ item.way }}
+                    </div>
+                    <div class="cash-list-item-left-date">
+                        {{ item.createTime | dateFormat }}
+                    </div>
+                </div>
+                <div class="cash-list-item-right">
+                    <div class="cash-list-item-right-money">
+                        {{ item.price }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

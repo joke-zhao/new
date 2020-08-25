@@ -1,0 +1,34 @@
+<div id="weChat">
+    <div class="message" v-for="(item,index) in msgList" :key="index" id="chatRecord">
+        <!-- 自己发送的消息 -->
+        <div class="mysend" v-if="item.senderId === userId">
+            <div class="date">{{item.createTime |formatDate}}</div>
+            <div class="my">
+                <div class="align">
+                    <div class="myMessage">{{item.content}}</div>
+                    <div class="myJt"></div>
+                    <div class="myPhoto">
+                        <img :src=item.senderPhoto />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 别人发送的消息 -->
+        <div class="yousend" v-else>
+            <div class="date">{{item.createTime |formatDate}}</div>
+            <div class="my">
+                <div class="align">
+                    <div class="myPhoto">
+                        <img :src=item.senderPhoto />
+                    </div>
+                    <div class="myJt"></div>
+                    <div class="myMessage">{{item.content}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="send" @click="toBottom">
+        <input class="content" type="text" v-model="msg">
+        <div class="todo" @click="sendChat">发送</div>
+    </div>
+</div>

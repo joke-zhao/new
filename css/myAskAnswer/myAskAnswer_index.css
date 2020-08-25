@@ -1,0 +1,95 @@
+/* 我的问答页面样式开始 */
+#app {
+  font-size: 0.24rem;
+}
+#app header .header-box .main-box .box-header {
+  background-image: url(../../image/set-info/skyimg.png);
+  background-size: 100% 2.65rem;
+  height: 2.65rem;
+}
+#app header .header-box .main-box .box-header .box-top {
+  width: 64%;
+  height: 1.72rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #FFFFFF;
+  margin: 0 auto;
+}
+#app header .header-box .main-box .box-header .box-top .h-center {
+  width: 1px;
+  height: 0.53rem;
+  background-color: #FFFFFF;
+}
+#app header .header-box .main-box .box-header .box-top .h-left {
+  border-bottom: 3px solid #6383FD;
+}
+#app header .header-box .main-box .box-header .box-top .h-right {
+  border-bottom: 3px solid #fff;
+}
+#app header .header-box .main-box .box-header .box-main {
+  border-radius: 0.5rem;
+  background-color: #FFFFFF;
+  height: 100%;
+}
+#app header .header-box .main-box .box-header .box-main .noData {
+  text-align: center;
+  height: 0.8rem;
+  line-height: 0.8rem;
+}
+#app header .header-box .main-box .box-header .box-main .itemFour {
+  margin: 0 0.3rem;
+  height: 2px;
+  background-color: #E5E5E5;
+}
+#app header .header-box .main-box .box-header .box-main .main-item {
+  padding: 0.3rem;
+}
+#app header .header-box .main-box .box-header .box-main .main-item .itemOne {
+  display: flex;
+  align-items: center;
+  height: 0.6rem;
+}
+#app header .header-box .main-box .box-header .box-main .main-item .itemOne img {
+  width: 0.35rem;
+  height: 0.35rem;
+  margin-right: 0.3rem;
+}
+#app header .header-box .main-box .box-header .box-main .main-item .itemOne p {
+  display: inline-block;
+  font-size: 0.3rem;
+  color: #333333;
+  font-weight: 700;
+}
+#app header .header-box .main-box .box-header .box-main .main-item .itemTwo {
+  display: flex;
+  height: 1.3rem;
+}
+#app header .header-box .main-box .box-header .box-main .main-item .itemTwo img {
+  width: 0.35rem;
+  height: 0.35rem;
+  margin-right: 0.3rem;
+}
+#app header .header-box .main-box .box-header .box-main .main-item .itemTwo div p {
+  color: #999999;
+  line-height: 0.4rem;
+  height: 0.9rem;
+}
+#app header .header-box .main-box .box-header .box-main .main-item .itemTwo div p span {
+  color: #333333;
+  font-weight: 700;
+}
+#app header .header-box .main-box .box-header .box-main .main-item .itemThree {
+  display: flex;
+  align-items: center;
+  padding-left: 0.65rem;
+}
+#app header .header-box .main-box .box-header .box-main .main-item .itemThree p {
+  display: inline-block;
+  color: #FCC92C;
+}
+#app header .header-box .main-box .box-header .box-main .main-item .itemThree img {
+  width: 0.14rem;
+  height: 0.23rem;
+  margin-left: 0.07rem;
+}

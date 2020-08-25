@@ -1,0 +1,658 @@
+#bankDiaryBill {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  padding-right: .2rem;
+  .startTime-font {
+    display: flex;
+    font-size: .25rem;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+    opacity: 0.96;
+  }
+
+  .aTitle {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.35rem;
+    margin-top: 0.3rem;
+    margin-bottom: -.5rem;
+  }
+
+  .company {
+    width: 100%;
+    //height: 1rem;
+    // background-color: pink;
+    padding: 0 0.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: .38rem;
+    // align-items: center;
+    .company-top {
+      margin-top: .42rem;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      .company_name {
+        display: flex;
+        //width: 75%;
+        height: 100%;
+        p{
+          font-size: 0.35rem;
+          color: #000;
+          font-weight: 600;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis
+        }
+      }
+    }
+
+    //科目级别
+    .level {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: left;
+      align-items: center;
+      //height: .6rem;
+      display: flex;
+      width: 6.72rem;
+      height: .68rem;
+      //opacity:0.5;
+      //margin-left: .38rem;
+      margin-top: .3rem;
+
+      .level-font {
+        font-size: 0.35rem;
+        color: #000;
+        font-family: PingFang SC;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+        //font-weight: 600;
+      }
+
+      //科目级别选择
+      .level-pick {
+        //height: .6rem;
+        padding: 0 0.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1.72rem;
+        height: .68rem;
+        border: 1px solid #7F7F7F;
+        //opacity:0.5;
+        border-radius: .04rem;
+        margin-left: .38rem;
+
+        .date-icon {
+          width: .25rem;
+          height: .26rem;
+          opacity: 0.8;
+        }
+
+
+        .spans {
+          width: .01rem;
+          height: .36rem;
+          border: .01rem solid rgba(0, 0, 0, 1);
+          opacity: 0.3;
+          margin-left: 0.18rem;
+        }
+
+        //选择日期
+        .startTime {
+          display: flex;
+          flex-flow: row;
+          justify-content: center;
+          text-align: center;
+
+
+          .van-cell {
+            padding: 0rem;
+            opacity: 1;
+          }
+
+          .van-field__control {
+            text-align: center;
+            opacity: 1;
+          }
+
+          .startTime_title {
+            width: 0.7rem;
+            font-size: 0.2rem;
+          }
+        }
+
+        .endTime {
+          display: flex;
+
+          .van-cell {
+            padding: 0rem;
+            opacity: 1;
+          }
+
+          .van-field__control {
+            text-align: center;
+            opacity: 1;
+          }
+
+          .endTime_title {
+            width: 0.7rem;
+            font-size: 0.2rem;
+          }
+        }
+
+        > el-date-picker {
+          width: 40%;
+          height: 100%;
+        }
+      }
+
+      //  币种
+      .company_cny {
+        //display: flex;
+        //justify-content: flex-end;
+        //margin-left: ;
+        width: 45%;
+        text-align: right;
+        font-size: 0.24rem;
+        color: #000;
+        font-family: PingFang SC;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+      }
+    }
+
+    //科目
+    .subject {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: left;
+      align-items: center;
+      //height: .6rem;
+      display: flex;
+      width: 6.72rem;
+      height: .68rem;
+      //opacity:0.5;
+      //margin-left: .38rem;
+      margin-top: .3rem;
+
+      .subject-font {
+        font-size: 0.35rem;
+        color: #000;
+        font-family: PingFang SC;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+        //font-weight: 600;
+      }
+
+      //科目级别选择
+      .subject-pick {
+        //height: .6rem;
+        padding: 0 0.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 4.93rem;
+        height: .68rem;
+        border: 1px solid #7F7F7F;
+        //opacity:0.5;
+        border-radius: .04rem;
+        margin-left: .38rem;
+
+        .date-icon {
+          width: .25rem;
+          height: .26rem;
+          opacity: 0.8;
+        }
+
+        .spans {
+          width: .01rem;
+          height: .36rem;
+          border: .01rem solid rgba(0, 0, 0, 1);
+          opacity: 0.3;
+          margin-left: 0.18rem;
+        }
+
+        //选择日期
+        .startTime {
+          display: flex;
+          flex-flow: row;
+          justify-content: center;
+          text-align: center;
+
+
+          .van-cell {
+            padding: 0rem;
+            opacity: 1;
+          }
+
+          .van-field__control {
+            text-align: center;
+            opacity: 1;
+          }
+
+          .startTime_title {
+            width: 0.7rem;
+            font-size: 0.2rem;
+          }
+        }
+
+        .endTime {
+          display: flex;
+
+          .van-cell {
+            padding: 0rem;
+            opacity: 1;
+          }
+
+          .van-field__control {
+            text-align: center;
+            opacity: 1;
+          }
+
+          .endTime_title {
+            width: 0.7rem;
+            font-size: 0.2rem;
+          }
+        }
+
+        > el-date-picker {
+          width: 40%;
+          height: 100%;
+        }
+      }
+
+      //  币种
+      .company_cny {
+        //display: flex;
+        //justify-content: flex-end;
+        //margin-left: ;
+        width: 45%;
+        text-align: right;
+        font-size: 0.24rem;
+        color: #000;
+        font-family: PingFang SC;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+      }
+    }
+  }
+
+
+  //日期选择
+  .datePick {
+    //height: .6rem;
+    padding: 0 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 6.72rem;
+    height: .68rem;
+    border: 1px solid #7F7F7F;
+    //opacity:0.5;
+    border-radius: .04rem;
+    //margin-left: .38rem;
+    margin-top: .3rem;
+
+    .date-icon {
+      width: .25rem;
+      height: .26rem;
+      opacity: 0.8;
+    }
+
+    .spans {
+      width: .01rem;
+      height: .36rem;
+      border: .01rem solid rgba(0, 0, 0, 1);
+      opacity: 0.3;
+      margin-left: 0.18rem;
+    }
+
+    //选择日期
+    .startTime {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      text-align: center;
+
+
+      .van-cell {
+        padding: 0rem;
+        opacity: 1;
+      }
+
+      .van-field__control {
+        text-align: center;
+        opacity: 1;
+      }
+
+      .startTime_title {
+        width: 0.7rem;
+        font-size: 0.2rem;
+      }
+    }
+
+    .endTime {
+      display: flex;
+
+      .van-cell {
+        padding: 0rem;
+        opacity: 1;
+      }
+
+      .van-field__control {
+        text-align: center;
+        opacity: 1;
+      }
+
+      .endTime_title {
+        width: 0.7rem;
+        font-size: 0.2rem;
+      }
+    }
+
+    > el-date-picker {
+      width: 40%;
+      height: 100%;
+    }
+  }
+
+  .picture {
+    height: 6rem;
+    width: 100%;
+    padding: 0 0.2rem;
+    //  background-color: yellow;
+    #myChart {
+      width: 100%;
+      height: 100%;
+
+    }
+  }
+
+  //.watchDetail_title {
+  //  height: 1rem;
+  //  width: 100%;
+  //  padding: 0 0.2rem;
+  //  display: flex;
+  //  justify-content: space-between;
+  //  align-items: center;
+  //  font-size: 0.3rem;
+  //  color: #000;
+  //  font-weight: 400;
+  //
+  //  img {
+  //    height: 0.25rem;
+  //    width: 0.25rem;
+  //     margin-right: 0.25rem;
+  //  }
+  //}
+  .watchDetail_title {
+    //height: 1rem;
+    //width: 100%;
+    //padding: 0 0.2rem;
+    //display: flex;
+    //justify-content: space-between;
+    //align-items: center;
+    //font-size: 0.3rem;
+    //color: #000;
+    //font-weight: 400;
+
+    height: 1rem;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.3rem;
+    color: #000;
+    font-weight: 400;
+
+    img {
+      //height: 0.25rem;
+      //width: 0.25rem;
+      margin-right: 0.25rem;
+      height: 0.15rem;
+      width: 0.2rem;
+    }
+  }
+
+  .accountDetails {
+    width: 100%;
+    //height: 1rem;
+    margin-top: 0.3rem;
+
+    .accountDetails_content {
+      width: 100%;
+      padding: 0 0.2rem;
+      background-color: #F9F8F8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.3rem;
+    }
+  }
+
+  .accountTitle {
+    width: 100%;
+    height: 1.25rem;
+    padding: 0 0.2rem;
+    display: flex;
+    justify-content: space-between;
+
+    .accountTitle_company {
+      width: 100%;
+      //height: 100%
+
+      .accountTitle_company_2 {
+        //height: 50%;
+        display: flex;
+        justify-content: center;
+        //align-items: center;
+        font-size: 0.3rem;
+        color: #000000;
+        background-color: #9e9e9e;
+      }
+
+      .accountTitle_company_3 {
+        height: 50%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        font-size: 0.2rem;
+        color: #7f7f7f;
+        margin-top: -0.2rem;
+      }
+    }
+
+    .accountTitle_date {
+      width: 40%;
+      height: 50%;
+      display: flex;
+      justify-content: space-between;
+
+      .accountTitle_month {
+        display: flex;
+        justify-content: center;
+        border: 1px solid #7F7F7F;
+        //opacity:0.5;
+        border-radius: .04rem;
+
+        img {
+          height: 0.15rem;
+          width: 0.2rem;
+          margin-top: 0.22rem;
+          margin-right: 0.30rem;
+        }
+
+        .van-cell {
+          padding: 0;
+        }
+
+        .van-field__control {
+          margin-top: 0.05rem;
+          text-align: center;
+          padding: 0;
+        }
+      }
+
+      .accountTitle_date_1 {
+        font-size: 0.25rem;
+        width: 40%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.1rem;
+      }
+
+      el-date-picker {
+        width: 60%;
+      }
+    }
+  }
+
+
+  //可滑动
+  .watchDetail_content {
+    padding-left: 0.2rem;
+    //margin: 0 auto;
+    overflow-x: scroll;
+    margin-top: .3rem;
+    #table {
+      overflow-x: scroll;
+      width: 300%;
+      font-size: 0.29rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      //border: 1px #A7A7A7 solid;
+      //border-right: .5rem;
+      .table-title {
+        font-size: 0.5rem;
+      }
+
+      .table-name {
+        font-size: 0.4rem;
+      }
+
+      .table-page {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        //margin-right: 10%;
+        //height: .7rem;
+        .table-page-box-left{
+          width: 35%;
+          display: flex;
+          justify-content: flex-start;
+        }
+        .table-page-box-right{
+          width: 35%;
+          display: flex;
+          justify-content: flex-end;
+        }
+        .table-page-box-page{
+
+        }
+      }
+      .table-page-second{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        //margin-right: 10%;
+        //height: .7rem;
+        .table-page-box{
+          //width: 20%;
+        }
+      }
+
+      .table-box{
+        //border: .01rem;
+        //border-bottom:0;
+        //border-top: 0;
+        //border-left: 0;
+        //border-right: 0;
+        width: 100%;
+        table{
+          border-collapse: collapse;
+          border: 0px solid #999;
+        }
+
+        table td {
+          border-top: 0;
+          border-right: 1px solid #999;
+          border-bottom: 1px solid #999;
+          border-left: 0;
+        }
+
+      }
+    }
+
+    .signature {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      margin-top: .2rem;
+
+      .signature-man {
+        width: 4rem;
+        font-size: 0.29rem;
+
+      }
+    }
+  }
+
+.bottom_btns {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  //  margin-top: 0.3rem;
+  // position: absolute;
+  // bottom: 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+
+  .export {
+    height: 50%;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 0.3rem;
+  }
+
+  .print {
+    height: 50%;
+    width: 100%;
+    background-color: #5172F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 0.3rem;
+  }
+}
+
+}
+
+//.accounts{
+//  width: 6.55rem;
+//  height: 3.92rem;
+//  margin:5.345rem 0.275rem 1.03rem 0.2rem;
+//  boder:1px #A7A7A7 solid;
+//}

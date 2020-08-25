@@ -1,0 +1,248 @@
+/* 记账凭证样式开始 */
+#app {
+  font-size: 0.24rem;
+  color: #000;
+  /* flex - 两边对齐 - 垂直居中 */
+  /* flex - 垂直居中对齐 */
+}
+#app .flexSbC {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app .flexCC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app header {
+  background-color: #fff;
+}
+#app header .header-box {
+  padding: 0.3rem;
+}
+#app header .header-box .box-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app header .header-box .box-name .left-name {
+  font-size: 0.3rem;
+  font-weight: 600;
+}
+#app header .header-box .box-subject {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+#app header .header-box .box-subject .left-subject {
+  flex: 1;
+  font-size: 0.3rem;
+  font-weight: 600;
+}
+#app header .header-box .box-subject .right-subject {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app header .header-box .box-subject .right-subject span {
+  padding: 0 0.2rem;
+  font-size: 0.28rem;
+}
+#app header .header-box .box-subject .right-subject .inputStyle {
+  width: 45%;
+  height: 100%;
+  outline-style: none;
+  border: none;
+  color: #000;
+  caret-color: #000;
+  -webkit-user-select: auto !important;
+  user-select: auto !important;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 0.28rem;
+}
+#app header .header-box .box-date {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 0.48rem;
+  padding: 5px 0;
+  margin: 0.3rem 0;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+#app header .header-box .box-date .left-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  border-right: 1px solid #000;
+}
+#app header .header-box .box-date .left-date img {
+  width: 0.26rem;
+  height: 0.28rem;
+}
+#app header .header-box .box-date .right-date {
+  display: flex;
+  width: 90%;
+}
+#app header .header-box .box-date .right-date .date-YM {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app header .header-box .box-date .right-date span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app main {
+  margin-top: 0.2rem;
+  margin-bottom: 0.9rem;
+  background-color: #fff;
+}
+#app main .newMain-box {
+  overflow: auto;
+}
+#app main .newMain-box .main-box {
+  width: 11rem;
+  border: 1px solid #000;
+  margin-bottom: 0.2rem;
+}
+#app main .newMain-box .main-box .t-header {
+  width: 100%;
+  height: 0.7rem;
+  border-bottom: 1px solid #000;
+  font-size: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app main .newMain-box .main-box .t-nav {
+  display: flex;
+  height: 0.6rem;
+  border-bottom: 1px solid #000;
+}
+#app main .newMain-box .main-box .t-nav div {
+  flex: 1;
+  border-right: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app main .newMain-box .main-box .t-nav div:last-child {
+  border: none;
+}
+#app main .newMain-box .main-box .t-nav p {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app main .newMain-box .main-box .t-main .m-header {
+  display: flex;
+  height: 0.6rem;
+  font-size: 0.28rem;
+  border-bottom: 1px solid #000;
+}
+#app main .newMain-box .main-box .t-main .m-header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #000;
+}
+#app main .newMain-box .main-box .t-main .m-header div:last-child {
+  border: none;
+}
+#app main .newMain-box .main-box .t-main .m-body .b-item {
+  display: flex;
+  min-height: 0.6rem;
+  border-bottom: 1px solid #000;
+}
+#app main .newMain-box .main-box .t-main .m-body .b-item div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  border-right: 1px solid #000;
+}
+#app main .newMain-box .main-box .t-main .m-body .b-item div:last-child {
+  border: none;
+}
+#app main .newMain-box .main-box .t-main .m-body .b-info {
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-indent: 2em;
+  font-size: 0.3rem;
+  color: #ccc;
+  border-bottom: 1px solid #ccc;
+}
+#app main .newMain-box .main-box .t-main .item4 {
+  flex: 4;
+}
+#app main .newMain-box .main-box .t-main .item3 {
+  flex: 3;
+}
+#app main .newMain-box .main-box .t-main .item2 {
+  flex: 2;
+}
+#app main .newMain-box .main-box .t-footer {
+  height: 0.6rem;
+  line-height: 0.6rem;
+}
+#app main .newMain-box .main-box .t-footer span {
+  padding: 0 0.4rem;
+}
+#app .searchInfo {
+  width: 100%;
+  height: 0.8rem;
+  margin-top: 0.2rem;
+  line-height: 0.8rem;
+  font-size: 0.32rem;
+  text-align: center;
+  background-color: #fff;
+}
+#app footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+#app footer .footer-box {
+  width: 100%;
+  height: 0.9rem;
+  display: flex;
+}
+#app footer .footer-box div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-size: 0.3rem;
+  color: #fff;
+  font-weight: 600;
+}
+#app footer .footer-box .left-box {
+  background: linear-gradient(0deg, #ff3d3d 0%, #e83737 100%);
+}
+#app footer .footer-box .right-box {
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+}
+#app .van-dropdown-menu {
+  border: 1px solid #000000;
+  border-radius: 2px;
+  width: 100% !important;
+  height: 100% !important;
+}
+#app .van-dropdown-menu__bar {
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100% !important;
+  padding: 0;
+  box-shadow: none !important;
+}
+#app .van-dropdown-menu__title {
+  font-size: 0.28rem !important;
+}

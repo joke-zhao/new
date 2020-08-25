@@ -1,0 +1,108 @@
+<div id="app">
+	<div class="container">
+		<div class="container-box">
+			<!-- 头像 -->
+			<div class="box-item">
+				<div class="item-left">
+					<span>头像</span>
+				</div>
+				<div @click="submitImg" class="item-right">
+					<div class="image"><img :src="photoUrl||'../../image/register/taxer@2x.png'" />
+					</div>
+				</div>
+		</div>
+		<!-- 昵称 -->
+		<div class="box-item">
+			<div class="item-left">
+				<span>姓名</span>
+				<div class="left-box">
+					<input type="text" placeholder="请填写新昵称" maxlength="7" v-model="userName">
+				</div>
+			</div>
+			<div class="item-right">
+				<img src="../../image/set-info/right.png" alt="">
+			</div>
+		</div>
+		<!-- 服务地址 -->
+		<div class="box-item">
+			<div class="item-left">
+				<span>服务地址</span>
+				<div class="left-box">
+					<img src="../../image/set-info/address.png" alt="">
+					<input type="text" placeholder="请填写服务地址" v-model="serverAddress">
+				</div>
+			</div>
+			<div class="item-right">
+				<img src="../../image/set-info/right.png" alt="">
+			</div>
+		</div>
+		<!-- 服务类型 -->
+		<div @click="openServrType" class="box-item">
+			<div class="item-left">
+				<span>服务类型</span>
+				<!-- 服务类型标签块 -->
+				<div class="left-box">
+					<div v-for="(item,index) in serverList" :key="index" class="box-tag">{{item}}</div>
+				</div>
+			</div>
+			<div class="item-right">
+				<img src="../../image/set-info/right.png" alt="">
+			</div>
+		</div>
+		<!-- 资质认证 -->
+		<div @click="openAC" class="box-item">
+			<div class="item-left">
+				<span>资质认证</span>
+				<div class="left-box">
+					<span>{{status ? '已认证' : '未认证'}}</span>
+				</div>
+			</div>
+			<div class="item-right">
+				<img src="../../image/set-info/right.png" alt="">
+			</div>
+		</div>
+		<!-- 用户签名 -->
+		<div @click="openSignature()" class="box-item">
+			<div class="item-left">
+				<span>签名</span>
+				<div class="left-box">
+					<span>{{sign}}</span>
+				</div>
+			</div>
+			<div class="item-right">
+				<img src="../../image/set-info/right.png" alt="">
+			</div>
+		</div>
+		<!-- 工龄 -->
+		<div class="box-item">
+			<div class="item-left">
+				<span>工龄</span>
+				<div class="left-box">
+					<input type="text" oninput="value=value.replace(/[^1-9]/g,'')" placeholder="请填写工作年龄" maxlength="4" v-model="seniority">
+				</div>
+			</div>
+			<div class="item-right">
+				<img src="../../image/set-info/right.png" alt="">
+			</div>
+		</div>
+		<!-- 个人简介 -->
+		<div class="box-item">
+			<div class="item-left">
+				<span>个人简介</span>
+				<div class="left-box">
+					<input type="text" placeholder="请填写自我介绍" maxlength="20" v-model="introduction">
+				</div>
+			</div>
+			<div class="item-right">
+				<img src="../../image/set-info/right.png" alt="">
+			</div>
+		</div>
+	</div>
+	<!-- 底部保存 -->
+	<div class="footer">
+		<div @click="submit" class="footer-box">
+			保存
+		</div>
+	</div>
+    
+</div>

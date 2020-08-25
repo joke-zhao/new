@@ -1,0 +1,56 @@
+#app {
+  height: 100%;
+  padding: .2rem;
+  // 卡片
+  .card_item {
+    display: block;
+    height: 2.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .4rem;
+    border-radius: 8px;
+    &:nth-child(n+2){
+      margin-top: .2rem;
+    }
+    img {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    .info {
+      display: flex;
+      color: #fff;
+      text-align: right;
+      justify-content: space-between;
+      align-items: center;
+      .info_text {
+        h4 {
+          font-size: 19px;
+          font-weight: 500;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      img {
+        width: .49rem;
+        height: .49rem;
+      }
+    }
+  }
+}
+// 纳税人卡片
+.card_taxer{
+  background: url('../../image/register/bg-blue@2x.png') center no-repeat;
+}
+// 服务商卡片
+.card_server{
+  background: url('../../image/register/bg-yellow@2x.png') center no-repeat;
+}
+// 游客
+.card_visitor{
+  background: url('../../image/register/bg-gray@2x.png') center no-repeat;
+}

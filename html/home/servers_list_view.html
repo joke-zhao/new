@@ -1,0 +1,29 @@
+<div id="app">
+  <!-- 附近服务商模块 -->
+  <div class="facilitator">
+    <ul class="revenue-ul" v-for="(item,index) in serverList" :key="index">
+      <li @click="openRegisterBuy(index)">
+        <img src="../../image/home-peo/fwimg.png" alt="">
+        <div class="details">
+          <h4 class="kj">{{item.companyName}}</h4>
+          <div class="grade">
+            <div class="star">
+              <img src="../../image/home-peo/m-star.png" alt="">
+              <img src="../../image/home-peo/m-star.png" alt="">
+              <img src="../../image/home-peo/m-star.png" alt="">
+              <img src="../../image/home-peo/m-star.png" alt="">
+              <img src="../../image/home-peo/b-star.png" alt="">
+            </div>
+            <p>4.5分</p>
+            <p class="jl">{{item.distance|number}}km</p>
+            <!-- <span class="stance">1.2km</span> -->
+          </div>
+          <p>{{item.content}}</p>
+          <div class="dljz">
+            代理记账
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

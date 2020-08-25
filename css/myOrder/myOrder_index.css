@@ -1,0 +1,305 @@
+#app {
+  height: 100%;
+}
+#app .tabs-wrapper {
+  height: 2.25rem;
+  background: url("../../image/order-all/bg.png") no-repeat center;
+  background-size: contain;
+}
+#app .tabs-wrapper .tabs {
+  height: 1.5rem;
+  font-size: 0.24rem;
+  color: #fff;
+  display: flex;
+  font-weight: 500;
+  padding-top: 0.5rem;
+}
+#app .tabs-wrapper .tabs .tab_item {
+  flex: 1;
+  padding: 0 0.8rem;
+  display: flex;
+  border-right: 0.01rem #fff solid;
+}
+#app .tabs-wrapper .tabs .tab_item .tab-item-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .tabs-wrapper .tabs .tab_item .tab-item-inner.active {
+  color: #fff;
+  border-bottom: #fff solid 0.06rem;
+}
+#app .tabs-wrapper .tabs .tab_item:nth-child(3) {
+  border-right: none;
+}
+#app .tabs_content {
+  width: 100%;
+  display: flex;
+}
+#app .tabs_content .allOrder {
+  width: 100%;
+  height: 3rem;
+}
+#app .tabs_content .allOrder .allOrder_header {
+  width: 85%;
+  height: 35%;
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  border-bottom: 0.01rem #DCDCDC solid;
+  padding-bottom: 0.1rem solid red;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.25rem;
+}
+#app .tabs_content .allOrder .allOrder_header .company_name {
+  color: #333333;
+  font-weight: 600;
+}
+#app .tabs_content .allOrder .allOrder_header .tradingStatus {
+  color: #6383FD;
+}
+#app .tabs_content .allOrder .allOrder_main {
+  width: 85%;
+  height: 65%;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+#app .tabs_content .allOrder .allOrder_main img {
+  width: 40%;
+  height: 85%;
+  background-color: #EEEEEE;
+}
+#app .tabs_content .allOrder .allOrder_main .allOrder_main_content {
+  height: 85%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 0.2rem;
+}
+#app .tabs_content .allOrder .allOrder_main .allOrder_main_content .allOrder_main_content_header {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.2rem;
+}
+#app .tabs_content .allOrder .allOrder_main .allOrder_main_content .allOrder_main_content_header .allOrder_main_content_header_1 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 0.3rem;
+  width: 80%;
+}
+#app .tabs_content .allOrder .allOrder_main .allOrder_main_content .allOrder_main_content_header .allOrder_main_content_header_2 {
+  font-size: 0.2rem;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app .tabs_content .allOrder .allOrder_main .allOrder_main_content .allOrder_main_content_real {
+  font-size: 0.3rem;
+  color: red;
+  font-weight: 800;
+}
+#app .tabs_content .allOrder .allOrder_main .allOrder_main_content .allOrder_main_content_real span {
+  font-weight: 800;
+}
+#app .tabs_content .waitConfirm {
+  width: 100%;
+  height: 3rem;
+}
+#app .tabs_content .waitConfirm .waitConfirm_header {
+  width: 85%;
+  height: 35%;
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  border-bottom: 0.01rem #DCDCDC solid;
+  padding-bottom: 0.1rem solid red;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.25rem;
+}
+#app .tabs_content .waitConfirm .waitConfirm_header .company_name {
+  color: #333333;
+  font-weight: 600;
+}
+#app .tabs_content .waitConfirm .waitConfirm_header .tradingStatus {
+  color: #6383FD;
+}
+#app .tabs_content .waitConfirm .waitConfirm_main {
+  width: 85%;
+  height: 65%;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+#app .tabs_content .waitConfirm .waitConfirm_main img {
+  width: 40%;
+  height: 85%;
+  background-color: #EEEEEE;
+}
+#app .tabs_content .waitConfirm .waitConfirm_main .waitConfirm_main_content {
+  height: 85%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 0.2rem;
+}
+#app .tabs_content .waitConfirm .waitConfirm_main .waitConfirm_main_content .waitConfirm_main_content_header {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.2rem;
+}
+#app .tabs_content .waitConfirm .waitConfirm_main .waitConfirm_main_content .waitConfirm_main_content_header .waitConfirm_main_content_header_1 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 0.3rem;
+  width: 80%;
+}
+#app .tabs_content .waitConfirm .waitConfirm_main .waitConfirm_main_content .waitConfirm_main_content_header .waitConfirm_main_content_header_2 {
+  font-size: 0.2rem;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app .tabs_content .waitConfirm .waitConfirm_main .waitConfirm_main_content .waitConfirm_main_content_real {
+  font-size: 0.3rem;
+  color: red;
+  font-weight: 800;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  align-items: center;
+}
+#app .tabs_content .waitConfirm .waitConfirm_main .waitConfirm_main_content .waitConfirm_main_content_real .waitConfirm_main_content_real_1 {
+  width: 20%;
+  height: 80%;
+  font-size: 0.2rem;
+  background-color: #F39800;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.2rem;
+}
+#app .tabs_content .waitConfirm .waitConfirm_main .waitConfirm_main_content .waitConfirm_main_content_real span {
+  font-weight: 800;
+}
+#app .tabs_content .ongoing {
+  width: 100%;
+  height: 3rem;
+}
+#app .tabs_content .ongoing .ongoing_header {
+  width: 85%;
+  height: 35%;
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  border-bottom: 0.01rem #DCDCDC solid;
+  padding-bottom: 0.1rem solid red;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.25rem;
+}
+#app .tabs_content .ongoing .ongoing_header .company_name {
+  color: #333333;
+  font-weight: 600;
+}
+#app .tabs_content .ongoing .ongoing_header .tradingStatus {
+  color: #6383FD;
+}
+#app .tabs_content .ongoing .ongoing_main {
+  width: 85%;
+  height: 65%;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  box-sizing: border-box;
+}
+#app .tabs_content .ongoing .ongoing_main img {
+  width: 40%;
+  height: 85%;
+  background-color: #EEEEEE;
+}
+#app .tabs_content .ongoing .ongoing_main .ongoing_main_content {
+  height: 85%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 0.2rem;
+}
+#app .tabs_content .ongoing .ongoing_main .ongoing_main_content .ongoing_main_content_header {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.2rem;
+}
+#app .tabs_content .ongoing .ongoing_main .ongoing_main_content .ongoing_main_content_header .ongoing_main_content_header_1 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 0.3rem;
+  width: 80%;
+}
+#app .tabs_content .ongoing .ongoing_main .ongoing_main_content .ongoing_main_content_header .ongoing_main_content_header_2 {
+  font-size: 0.2rem;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app .tabs_content .ongoing .ongoing_main .ongoing_main_content .ongoing_main_content_real {
+  font-size: 0.3rem;
+  color: red;
+  font-weight: 800;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  align-items: center;
+}
+#app .tabs_content .ongoing .ongoing_main .ongoing_main_content .ongoing_main_content_real .ongoing_main_content_real_1 {
+  width: 20%;
+  height: 80%;
+  font-size: 0.2rem;
+  background-color: #F39800;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.2rem;
+}
+#app .tabs_content .ongoing .ongoing_main .ongoing_main_content .ongoing_main_content_real span {
+  font-weight: 800;
+}
+#app .tabs_content .ongoing .ongoing_orderDone {
+  width: 90%;
+  height: 25%;
+  margin: 0 auto;
+  margin-top: 0.2rem;
+  position: relative;
+}
+#app .tabs_content .ongoing .ongoing_orderDone .ongoing_orderDone_content {
+  position: absolute;
+  right: 0;
+  height: 75%;
+  width: 35%;
+  text-align: center;
+  background-color: #6383FD;
+  color: #fff;
+  font-size: 0.35rem;
+  border-radius: 0.3rem;
+}

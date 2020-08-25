@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>baseWin页面</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/baseWin/iconfont.css">
+    <link rel="stylesheet" href="../../css/baseWin/index.css">
+</head>
+
+<body>
+    <!-- <script src="../../script/utils/response.js"></script> -->
+    <div id="header" class="ui-header is-base">
+        <div id="leftBtn" class="ui-header__leftBtn" onclick="btnTap(1);" tapmode="active">
+            <i id="leftIcon" class="iconfont icon-xiangzuojiantou"></i>
+            <span id="leftText">返回</span>
+        </div>
+        <div id="title" class="ui-header__title"></div>
+        <!-- <div id="rightBtn" class="ui-header__rightBtn" onclick="btnTap(2);" tapmode="active"> -->
+        <div id="rightBtn" class="ui-header__rightBtn" onclick="btnTap(2);" tapmode="active">
+            <span id="rightText"></span>
+            <i id="rightIcon" class="iconfont icon-saoyisao"></i>
+        </div>
+    </div>
+    <div id="customHeader"></div>
+    <div id="content">
+        <div id="loader" class="loader">
+            <div class="loader-inner ball-clip-rotate-multiple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var search = window.location.search;
+        var _leftBtn = document.getElementById('leftBtn');
+        var _title = document.getElementById('title');
+        var _rightBtn = document.getElementById('rightBtn');
+        var _header = document.getElementById('header');
+        var _customHeader = document.getElementById('customHeader');
+        var _loader = document.getElementById('loader');
+        var headerOpts = {};
+        if (search) {
+            var param = search.slice(1).split('&');
+            var paramData = {};
+            for (var i = 0; i < param.length; i++) {
+                var kv = param[i].split('=');
+                paramData[kv[0]] = decodeURIComponent(kv[1]);
+            }
+            // 通用配置
+            setTimeout(function () {
+                _loader.style.opacity = 1;
+            }, 20);
+            // 获取自定义头部配置
+            var _g = {
+                isAndroid: (/android/gi).test(navigator.appVersion),
+                uzStorage: function () {
+                    var ls = window.localStorage;
+                    if (this.isAndroid && !window.location.host) ls = os.localStorage();
+                    return ls;
+                },
+                setLS: function (key, value) {
+                    if (arguments.length === 2) {
+                        var v = value;
+                        if (typeof v == 'object') {
+                            v = JSON.stringify(v);
+                            v = 'obj-' + v;
+                        } else {
+                            v = 'str-' + v;
+                        }
+                        var ls = this.uzStorage();
+                        if (ls) {
+                            ls.setItem(key, v);
+                        }
+                    }
+                },
+                getLS: function (key) {
+                    var ls = this.uzStorage();
+                    if (ls) {
+                        var v = ls.getItem(key);
+                        if (!v) {
+                            return;
+                        }
+                        if (v.indexOf('obj-') === 0) {
+                            v = v.slice(4);
+                            return JSON.parse(v);
+                        } else if (v.indexOf('str-') === 0) {
+                            return v.slice(4);
+                        }
+                    }
+                },
+                rmLS: function (key) {
+                    var ls = this.uzStorage();
+                    if (ls && key) ls.removeItem(key);
+                },
+                clearLS: function () {
+                    var ls = this.uzStorage();
+                    if (ls) ls.clear();
+                },
+            };
+            var customHeader = _g.getLS('customHeader');
+            if (customHeader) {
+                // 自定义头部配置
+                document.body.removeChild(_header); // 移除通用头部
+                window.setHeader = new Function(); // 重置头部设置方法
+                _customHeader.innerHTML = customHeader; // 插入自定义头部
+                // 状态栏设置
+                if (paramData['StatusBarHeight'] && document.getElementById('header')) {
+                    _header = document.getElementById('header');
+                    _header.style.paddingTop = paramData['StatusBarHeight'] + 'px';
+                }
+                var scripts = _customHeader.getElementsByTagName('script');
+                for (var j = 0; j < scripts.length; j++) {
+                    var script = document.createElement('script');
+                    script.text = scripts[j].innerText;
+                    document.head.appendChild(script).parentNode.removeChild(script);
+                }
+                // 清空缓存
+                _g.rmLS('customHeader');
+            } else {
+                // 常规配置
+                // 状态栏设置
+                if (paramData['StatusBarHeight']) {
+                    _header.style.paddingTop = paramData['StatusBarHeight'] + 'px';
+                }
+                // 左边按钮设置
+                var leftBtnDom = '';
+                headerOpts['leftIcon'] = paramData['leftIcon'] || 'is-left';
+                // headerOpts['leftIcon'] = paramData['leftIcon'] || 'icon-xiangzuojiantou';
+                headerOpts['leftText'] = paramData['leftText'] || '';
+                leftBtnDom += '<i id="leftIcon" class="iconfont ' + headerOpts['leftIcon'] + '"></i>';
+                leftBtnDom += '<span id="leftText">' + headerOpts['leftText'] + '</span>';
+                // alert(leftBtnDom)
+                _leftBtn.innerHTML = leftBtnDom;
+                // 标题设置
+                headerOpts['title'] = paramData['title'] || '';
+                _title.innerText = headerOpts['title'];
+                // 右边按钮设置
+                var rightBtnDom = '';
+                headerOpts['rightIcon'] = paramData['rightIcon'] || '';
+                headerOpts['rightText'] = paramData['rightText'] || '';
+                rightBtnDom += '<i id="rightIcon" class="iconfont ' + headerOpts['rightIcon'] + '"></i>';
+                rightBtnDom += '<span id="rightText">' + headerOpts['rightText'] + '</span>';
+                _rightBtn.innerHTML = rightBtnDom;
+                // 动画效果设置
+                setTimeout(function () {
+                    _header.style.opacity = 1;
+                    if ((/android/gi).test(navigator.appVersion)) {
+                        _title.style.webkitTransform = 'translate3d(0,0,0)';
+                    } else {
+                        _title.classList.add('move');
+                    }
+                }, 20);
+            }
+        }
+
+        window.setHeader = function (opts) {
+            for (var key in opts) {
+                headerOpts[key] = opts[key];
+                if (key == 'title') {
+                    _title.innerText = opts[key];
+                } else if (key == 'leftIcon') {
+                    var _leftIcon = document.getElementById('leftIcon');
+                    _leftIcon.className = 'iconfont ' + opts[key];
+                } else if (key == 'leftText') {
+                    document.getElementById('leftText').innerText = opts[key];
+                } else if (key == 'rightIcon') {
+                    var _rightIcon = document.getElementById('rightIcon');
+                    _rightIcon.className = 'iconfont ' + opts[key];
+                } else if (key == 'rightText') {
+                    document.getElementById('rightText').innerText = opts[key];
+                }
+            }
+        };
+
+        window.btnTap = function (type) {
+            if (type == 1) {
+                window.leftBtnTap && window.leftBtnTap();
+            } else if (type == 2) {
+                if (!headerOpts.rightIcon && !headerOpts.rightText) return;
+                window.rightBtnTap && window.rightBtnTap();
+            } else {
+                window.extraBtnTap && window.extraBtnTap(arguments);
+            }
+        };
+    </script>
+    <script src="../../script/base.js"></script>
+    <script src="../../script/global.js" data-path="M/baseWin/index" id="entry"></script>
+</body>
+
+</html>

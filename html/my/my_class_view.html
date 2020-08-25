@@ -1,0 +1,20 @@
+<div id="myclass">
+  <div class="title">
+    <div class="shu"></div>
+    <div class="my">我的课程</div>
+  </div>
+  <div class="content">
+    <div class="contentList" v-for="(item,index) in classList" :key="index" @click="openClassDetails(item.id)">
+      <div class="picture">
+        <img :src="item.imageUrl" />
+      </div>
+      <div class="info">
+        <div class="titles">{{item.name}}</div>
+        <div class="name">
+          <img src="../../image/my/laoshi.png" />
+          <span>{{item.author}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

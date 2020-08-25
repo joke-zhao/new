@@ -1,0 +1,56 @@
+<widget id="A6047010299111" version="0.0.1">
+    <name>拍账王</name>
+    <description>
+        Example For APICloud.
+    </description>
+    <author email="developer@apicloud.com" href="http://www.apicloud.com">
+        小草
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="pageBounce" value="false" />
+    <preference name="appBackground" value="rgba(0,0,0,0.0)" />
+    <preference name="windowBackground" value="rgba(0,0,0,0.0)" />
+    <preference name="frameBackgroundColor" value="rgba(0,0,0,0.0)" />
+    <preference name="hScrollBarEnabled" value="true" />
+    <preference name="vScrollBarEnabled" value="true" />
+    <preference name="autoLaunch" value="false" />
+    <preference name="fullScreen" value="false" />
+    <preference name="autoUpdate" value="true" />
+    <preference name="smartUpdate" value="true" />
+    <preference name="debug" value="true" />
+    <preference name="customRefreshHeader" value="UIPullRefreshFlash"/>
+    <!-- 状态栏 -->
+    <preference name="statusBarAppearance" value="true" />
+    <preference name="iOS7StatusBarAppearance" value="true" />
+    <preference name="querySchemes" value="sinaweibohd,sinaweibo,weibosdk,weibosdk2.5,weibosdk3.1.4,tmall,tbopen" />
+    <!-- 下拉刷新 -->
+    <preference name="customRefreshHeader" value="UIPullRefreshFlash"/>
+    <!-- 测试外部启动app的urlScheme -->
+    <preference name="urlScheme" value="myscheme" />
+    <!-- 开发模式下的标识, 正式包可以去掉 -->
+    <!-- <preference name="userAgent" value="(dev)" /> -->
+    <permission name="readPhoneState" />
+    <permission name="camera" />
+    <permission name="record" />
+    <permission name="location" />
+    <permission name="fileSystem" />
+    <permission name="internet" />
+    <permission name="bootCompleted" />
+    <permission name="hardware" />
+    <!-- 支付宝支付 -->
+    <feature name="aliPayPlus">
+      <param name="urlScheme" value="AliPayPlusA6047010299111" />
+    </feature>
+        <!-- 微信支付 现在用的这个appid是我们爪瓦的 -->
+         <feature name="wxPayPlus">
+    <param name="urlScheme" value="wxfe12afb78ada060a"/>
+    <param name="apiKey" value="wxfe12afb78ada060a"/>
+    <param name="apiSecret" value="ECD7B71F706989FAEA189B0ABE8D50A2"/>
+    <!-- <param name="universalLink" value="https://bjtest.apicloud.com"/> -->
+  </feature>
+    <feature name="bMap">
+        <param name="android_api_key" value="GBIRcrMViKHfGKgh6iARUS8fvLRPHGgP" />
+        <param name="ios_api_key" value="81qz3dBYB5q2nGji4IYrawr1" />
+    </feature>
+</widget>

@@ -1,0 +1,202 @@
+#unilateralCheck {
+  width: 100%;
+  height: 100%;
+}
+#unilateralCheck .notice {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  background: #F5F5F5;
+}
+#unilateralCheck .notice .notice-item {
+  width: 100%;
+}
+#unilateralCheck .notice .notice-item .notice-item-time {
+  width: 100%;
+  height: 1.02rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#unilateralCheck .notice .notice-item .notice-item-time .notice-item-time-text {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+}
+#unilateralCheck .notice .notice-item .notice-item-card {
+  width: 7.01rem;
+  margin-left: 0.25rem;
+  background: #fff;
+  border-radius: 0.16rem;
+}
+#unilateralCheck .notice .notice-item .notice-item-card .notice-item-card-title {
+  width: 100%;
+  height: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#unilateralCheck .notice .notice-item .notice-item-card .notice-item-card-title .notice-item-card-title-left {
+  padding-left: 0.24rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  line-height: 0.37rem;
+}
+#unilateralCheck .notice .notice-item .notice-item-card .notice-item-card-title .notice-item-card-title-right {
+  width: 1.8rem;
+  display: flex;
+  align-items: center;
+  margin-right: 0.24rem;
+}
+#unilateralCheck .notice .notice-item .notice-item-card .notice-item-card-title .notice-item-card-title-right .notice-item-card-title-right-text {
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #F64A38;
+  padding-right: 0.17rem;
+}
+#unilateralCheck .notice .notice-item .notice-item-card .notice-item-card-title .notice-item-card-title-right .notice-item-card-title-right-more {
+  width: 0.16rem;
+  height: 0.16rem;
+  border-right: 0.01rem solid #000;
+  border-bottom: 0.01rem solid #000;
+  transform: rotate(-45deg);
+}
+#unilateralCheck .notice .notice-item .notice-item-card .notice-item-card-line {
+  width: 100%;
+  height: 0.01rem;
+  background: #F5F5F5;
+}
+#unilateralCheck .notice .notice-item .notice-item-card .notice-item-card-content {
+  width: 100%;
+  height: 1.88rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#unilateralCheck .notice .notice-item .notice-item-card .notice-item-card-content .notice-item-card-content-area {
+  width: 6.5rem;
+  height: 1.4rem;
+  background: #F5F5F5;
+  border-radius: 0.08rem;
+}
+#unilateralCheck .notice .notice-item .notice-item-card .notice-item-card-content .notice-item-card-content-area .notice-item-card-content-area-text {
+  padding: 0.24rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+  line-height: 0.46rem;
+}
+#unilateralCheck .popup {
+  width: 6.1rem;
+  height: 6.34rem;
+  background: #ffffff;
+  border-radius: 0.16rem;
+  padding: 0;
+  margin: 0;
+}
+#unilateralCheck .popup .popupTitle {
+  width: 3.58rem;
+  height: 0.33rem;
+  font-size: 0.34rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #222222;
+  margin: 0 auto;
+  margin-top: 0.59rem;
+}
+#unilateralCheck .popup .popupContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#unilateralCheck .popup .popupContent .content1 {
+  width: 100%;
+  display: flex;
+}
+#unilateralCheck .popup .popupContent .content1 .content1Select {
+  width: 0.4rem;
+  height: 0.4rem;
+  border: 0.02rem solid #bbbbbb;
+  border-radius: 50%;
+  margin-left: 0.4rem;
+  margin-top: 0.5rem;
+  background-image: url(../../image/message/select.png) 0.4rem 0.4rem;
+  background-repeat: no-repeat;
+}
+#unilateralCheck .popup .popupContent .content1 .content1Accomplish {
+  width: 1.87rem;
+  height: 0.28rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  margin-left: 0.4rem;
+  margin-top: 0.5rem;
+}
+#unilateralCheck .popup .popupContent .content2 {
+  margin-top: 0.3rem;
+  width: 4.4rem;
+  height: 0.72rem;
+  background: #f5f5f5;
+  border-radius: 0.08rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+  margin-left: 1rem;
+  line-height: 0.8rem;
+  padding-left: 0.3rem;
+}
+#unilateralCheck .popup .popupContent .content3 {
+  width: 100%;
+  display: flex;
+}
+#unilateralCheck .popup .popupContent .content3 .content3Select {
+  width: 0.4rem;
+  height: 0.4rem;
+  border: 0.02rem solid #bbbbbb;
+  border-radius: 50%;
+  margin-left: 0.4rem;
+  margin-top: 0.5rem;
+}
+#unilateralCheck .popup .popupContent .content3 .content1UnAccomplish {
+  width: 1.87rem;
+  height: 0.28rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  margin-left: 0.4rem;
+  margin-top: 0.5rem;
+}
+#unilateralCheck .popup .popupContent .content4 {
+  margin-top: 0.3rem;
+  width: 4.4rem;
+  height: 0.72rem;
+  background: #f5f5f5;
+  border-radius: 0.08rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+  margin-left: 1rem;
+  line-height: 0.8rem;
+  padding-left: 0.3rem;
+}
+#unilateralCheck .popup .submit {
+  width: 100%;
+  height: 0.7rem;
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+  line-height: 0.7rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 0.8rem;
+  text-align: center;
+}

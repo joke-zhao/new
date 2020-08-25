@@ -1,0 +1,96 @@
+.container {
+  padding: 0 0.4rem 0 0.4rem;
+}
+.container .type {
+  height: 0.79rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000000;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 0.02rem solid #DCDCDC;
+}
+.container .type .type_title {
+  width: 1.58rem;
+  opacity: 0.5;
+}
+.container .type .type_content {
+  width: 5.05rem;
+}
+.container .content {
+  padding: 0.23rem 0 0.25rem 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  border-bottom: 0.02rem solid #DCDCDC;
+}
+.container .content .content_title {
+  width: 1.58rem;
+  color: #000000;
+  opacity: 0.5;
+}
+.container .content .content_text {
+  width: 5.05rem;
+}
+.container .content .content_text .content_item {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .content .content_text .content_item .item_cost {
+  font-family: PingFang SC;
+  font-weight: 800;
+  color: #bf1d1d;
+}
+.container .content .content_text .sum {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: PingFang SC;
+  font-weight: 800;
+  color: #bf1d1d;
+}
+.container .description {
+  padding: 0.3rem 0 0.44rem 0;
+  width: 6.65rem;
+}
+.container .description .description_title {
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000000;
+  opacity: 0.9;
+}
+.container .description .description_title img {
+  width: 0.22rem;
+  height: 0.25rem;
+  margin-right: 0.13rem;
+}
+.container .description .description_content {
+  margin-top: 0.3rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000000;
+  line-height: 0.36rem;
+  height: 2.42rem;
+  overflow-y: auto;
+}
+.column_center-start {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.border-slive {
+  border-bottom: 0.02rem solid #DCDCDC;
+}

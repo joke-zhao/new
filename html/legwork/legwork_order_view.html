@@ -1,0 +1,95 @@
+<div class="container column_center-start">
+	<div class="title row_center">
+		<!-- isActive ? 'white_border' : 'none_box' -->
+		<div class="title_item row_center" @click="toggleTabTitle(0)"><div :class="isActive1 ? 'white_border' : 'none_box'">我发</div></div>
+		<!-- {'white_border':isActive,'none_box':!isActice} -->
+		<div class="division"></div>
+		<div class="title_item row_center" @click="toggleTabTitle(1)"><div :class="isActive1 ? 'none_box' : 'white_border'">我接</div></div>
+	</div>
+	<div class="content">
+		<div class="content_title row_center" v-if="tabs_title[0].isActive">
+			<div class="title_item row_center" :class="{'font-blue':tabs[0].isActive}" @click="showSend(0)">全部</div>
+			<div class="division"></div>
+			<!--@click="showPD"-->
+			<div class="title_item row_center" :class="{'font-blue':tabs[1].isActive}" @click="showSend(1)">待收货</div>
+			<div class="division"></div>
+			<!--@click="showPT"-->
+			<div class="title_item row_center" :class="{'font-blue':tabs[2].isActive}" @click="showSend(2)">待付款</div>
+			<div class="division"></div>
+			<!--@click="showFinishedSend"-->
+			<div class="title_item row_center" :class="{'font-blue':tabs[3].isActive}" @click="showSend(3)">结束</div>
+		</div>
+		<div class="content_title row_center" v-if="tabs_title[1].isActive">
+			<!--@click="showAllDel"-->
+			<div class="title_item row_center" :class="{'font-blue':tabs[0].isActive}" @click="showDelievery(0)">全部</div>
+			<div class="division"></div>
+
+			<div class="title_item row_center" :class="{'font-blue':tabs[1].isActive}" @click="showDelievery(1)">待发货</div>
+			<div class="division"></div>
+			<!--@click="showTT"-->
+			<div class="title_item row_center" :class="{'font-blue':tabs[2].isActive}" @click="showDelievery(2)">待收款</div>
+			<div class="division"></div>
+			<!--@click="showFinishedDel"-->
+			<div class="title_item row_center" :class="{'font-blue':tabs[3].isActive}" @click="showDelievery(3)">结束</div>
+		</div>
+		<div class="content_container">
+			<div class="sub_container" v-if="tabs_title[0].isActive">
+				<div class="content_item" v-for="item in list">
+					<div class="item-title">
+						<div class="cost">跑腿费：<span>￥{{item.cost}}</span></div>
+						<div class="pickupTime">取货时间：{{item.deliveryDate|formatDate}}</div>
+					</div>
+					<div class="item-content mar">取货地址：{{item.pickupAddress|subText}}</div>
+					<div class="item-content">送货地址：{{item.deliveryAddress|subText}}</div>
+					<div class="btnbox"><div class="item-btn row_center" :class="item.status|styleChange" @click="openSendDetail(item.id)">{{item.status|statusText}}</div></div>
+				</div>
+
+			</div>
+			<div class="sub_container" v-if="tabs_title[1].isActive">
+				<div class="content_item" v-for="item in list">
+					<div class="item-title">
+						<div class="cost">跑腿费：<span>￥{{item.cost}}</span></div>
+						<div class="pickupTime">取货时间：{{item.deliveryDate|formatDate}}</div>
+					</div>
+					<div class="item-content mar">取货地址：{{item.pickupAddress|subText}}</div>
+					<div class="item-content">送货地址：{{item.deliveryAddress|subText}}</div>
+					<!--@click="openDeliDetail"-->
+					<div class="btnbox"><div class="item-btn row_center" :class="item.status|styleChange" @click="openDeliDetail(item.id)">{{item.status|statusText}}</div></div>
+				</div>
+
+			</div>
+
+
+		</div>
+		</div>
+	<div class="bottom-bar">
+		<div @click="openIndex" class="bottom-bar-item">
+			<img src="../../image/legwork/help_no.png">
+			帮人跑
+		</div>
+		<div @click="openLookfor" class="bottom-bar-item">
+			<img src="../../image/legwork/lookfor_no.png">
+			找人跑
+		</div>
+		<div  class="bottom-bar-item">
+			<img src="../../image/legwork/order_on.png">
+			我的订单
+		</div>
+	</div>
+</div>
+
+		<!-- 页脚 -->
+		<!--<div class="bottom-bar row_center">-->
+			<!--<div @click="openIndex" class="bottom-bar-item">-->
+				<!--<img src="../../image/legwork/help_on.png">-->
+					<!--帮人跑-->
+			<!--</div>-->
+			<!--<div  @click="openLookfor" class="bottom-bar-item">-->
+				<!--<img src="../../image/legwork/lookfor_no.png">-->
+					<!--找人跑-->
+			<!--</div>-->
+			<!--<div class="bottom-bar-item">-->
+				<!--<img src="../../image/legwork/order_no.png">-->
+					<!--我的订单-->
+			<!--</div>-->
+		<!--</div>-->

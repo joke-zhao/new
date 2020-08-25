@@ -1,0 +1,127 @@
+#app {
+  width: 100%;
+}
+#app .container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.42rem;
+  padding-right: 0.43rem;
+}
+#app .container .enterprise-information-header {
+  height: 1.52rem;
+  border-bottom: #E4E4E4 solid 1px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#app .container .enterprise-information-header .enterprise-information-header-title {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 0.22rem;
+}
+#app .container .enterprise-information-header .enterprise-information-header-image {
+  display: flex;
+  justify-content: flex-end;
+}
+#app .container .enterprise-information-header .enterprise-information-header-image .image {
+  width: 0.96rem;
+  height: 0.96rem;
+}
+#app .container .enterprise-information-header .enterprise-information-header-image .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.48rem;
+}
+#app .container .enterprise-information-item {
+  height: 1.52rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-bottom: #E4E4E4 solid 1px;
+}
+#app .container .enterprise-information-item .enterprise-information-item-title {
+  font-size: 0.22rem;
+}
+#app .container .enterprise-information-item .enterprise-information-item-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+}
+#app .container .enterprise-information-item .enterprise-information-item-list .enterprise-information-item-list-img {
+  width: 0.31rem;
+  height: 0.37rem;
+  margin-right: 0.19rem;
+}
+#app .container .enterprise-information-item .enterprise-information-item-list .enterprise-information-item-list-img img {
+  width: 100%;
+  height: 100%;
+}
+#app .container .enterprise-information-item .enterprise-information-item-list .enterprise-information-item-list-address {
+  width: 5.95rem;
+}
+#app .container .enterprise-information-item .enterprise-information-item-list select {
+  width: 6.44rem;
+  height: 100%;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+#app .container .enterprise-information-item .enterprise-information-item-list::after {
+  content: '';
+  position: relative;
+  bottom: 0.25rem;
+  width: 0.14rem;
+  height: 0.23rem;
+  display: block;
+  background: url(../../image/enterprise_information/right.png) no-repeat center;
+  background-size: 0.16rem;
+}
+#app .container .enterprise-information-item .enterprise-information-item-itemGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.18rem;
+  width: 100%;
+}
+#app .container .enterprise-information-item .enterprise-information-item-itemGroup .enterprise-information-item-buttonGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 6.44rem;
+}
+#app .container .enterprise-information-item .enterprise-information-item-itemGroup .enterprise-information-item-buttonGroup .enterprise-information-item-buttonGroup-button {
+  width: 1.51rem;
+  height: 0.48rem;
+  font-size: 0.24rem;
+  background-color: #6383FD;
+  border-radius: 0.24rem 0.24rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  margin-right: 0.19rem;
+}
+#app .container .enterprise-information-item .enterprise-information-item-itemGroup::after {
+  content: '';
+  position: relative;
+  bottom: 0.25rem;
+  width: 0.14rem;
+  height: 0.23rem;
+  display: block;
+  background: url(../../image/enterprise_information/right.png) no-repeat center;
+  background-size: 0.16rem;
+  /*transform: rotate(180deg);*/
+}

@@ -1,0 +1,243 @@
+<!--明细分类账-->
+<div id="bankDiaryBill">
+    <!--    头部-->
+    <!--    以下部分不可以滑动-->
+    <div class="company">
+        <!--        公司名-->
+        <div class="company-top">
+            <div class="company_name"><p>{{companyName}}</p></div>
+        </div>
+        <!--        选择科目级别-->
+        <div class="level">
+            <div class="level-font">科目级别</div>
+            <div class="level-pick">
+                <div class="startTime">
+                    <!--            <div class="startTime_title">起始</div>-->
+                    <van-field
+                            readonly
+                            clickable
+                            :value="level1"
+                            @click="showLevelPicker1 = true"
+                    />
+                    <van-popup style="opacity:1" v-model="showLevelPicker1" position="bottom">
+                        <van-picker
+                                show-toolbar
+                                :columns="levelColumns"
+                                @cancel="showLevelPicker1 = false"
+                                @confirm="onLevel1"
+                        />
+                    </van-popup>
+                </div>
+                <div class="startTime-font">至</div>
+                <div class="endTime">
+                    <!--            <div class="endTime_title">结束</div>-->
+                    <van-field
+                            readonly
+                            clickable
+                            :value="level2"
+                            @click="showLevelPicker2 = true"
+                    />
+                    <van-popup style="opacity:1" v-model="showLevelPicker2" position="bottom">
+                        <van-picker
+                                show-toolbar
+                                :columns="levelColumns2"
+                                @cancel="showLevelPicker2 = false"
+                                @confirm="onLevel2"
+                        />
+                    </van-popup>
+                </div>
+            </div>
+            <div class="company_cny">币种:（CNY）</div>
+        </div>
+        <!--        选择科目-->
+        <div class="subject">
+            <div class="subject-font">科目&emsp;&emsp;</div>
+            <!--            选择器-->
+            <div class="subject-pick">
+                <div class="startTime">
+                    <!--            <div class="startTime_title">起始</div>-->
+                    <van-field
+                            readonly
+                            clickable
+                            :value="subject1"
+                            @click="showSubjectPicker1 = true"
+                    />
+                    <van-popup style="opacity:1" v-model="showSubjectPicker1" position="bottom">
+                        <van-picker
+                                show-toolbar
+                                :columns="accNoList"
+                                @cancel="showLevelPicker1 = false"
+                                @confirm="onsubject1"
+                        />
+                    </van-popup>
+                </div>
+                <div class="startTime-font">至</div>
+                <div class="endTime">
+                    <!--            <div class="endTime_title">结束</div>-->
+                    <van-field
+                            readonly
+                            clickable
+                            :value="subject2"
+                            @click="showSubjectPicker2 = true"
+                    />
+                    <van-popup style="opacity:1" v-model="showSubjectPicker2" position="bottom">
+                        <van-picker
+                                show-toolbar
+                                :columns="accNoList"
+                                @cancel="showSubjectPicker2 = false"
+                                @confirm="onsubject2"
+                        />
+                    </van-popup>
+                </div>
+            </div>
+        </div>
+        <!--    时间选择段-->
+        <div class="datePick">
+            <div class="date-icon">
+                <img src="../../image/manageForm/date.png" alt="">
+            </div>
+            <span class="spans"></span>
+            <div class="startTime">
+                <!--            <div class="startTime_title">起始</div>-->
+                <van-field
+                        readonly
+                        clickable
+                        name="datetimePicker"
+                        :value="startTime"
+                        placeholder="请选择开始年月"
+                        @click="showPicker1 = true"
+                />
+                <van-popup style="opacity:1" v-model="showPicker1" position="bottom">
+                    <van-datetime-picker
+                            v-model="currentDate"
+                            type="year-month"
+                            title="开始年月"
+                            :min-date="yearMinDate"
+                            :max-date="yearMaxDate"
+                            :formatter="formatter"
+                            @confirm="onStart"
+                            @cancel="showPicker1 = false"
+                    />
+                </van-popup>
+            </div>
+            <div class="startTime-font">至</div>
+            <div class="endTime">
+                <!--            <div class="endTime_title">结束</div>-->
+                <van-field
+                        readonly
+                        clickable
+                        name="datetimePicker"
+                        :value="endTime"
+                        placeholder="请选择结束年月"
+                        @click="showPicker2 = true"
+                />
+                <van-popup v-model="showPicker2" position="bottom">
+                    <van-datetime-picker
+                            v-model="currentDate"
+                            type="year-month"
+                            title="结束年月"
+                            :min-date="yearMinDate"
+                            :max-date="yearMaxDate"
+                            :formatter="formatter"
+                            @confirm="onEnd"
+                            @cancel="showPicker2 = false"
+                    />
+                </van-popup>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_btns">
+        <div @click="showShare = true" class="export">导出</div>
+        <van-share-sheet v-model="showShare" :options="options"
+                         @select="onSelect" title="选择导出方式"/>
+        <div @click="handlPrint" class="print">打印</div>
+    </div>
+    <!--    点击显示隐藏-->
+    <div class="showTable">
+        <div class="accountDetails">
+            <div class="accountDetails_content">{{companyName}}</div>
+        </div>
+<!--        <div class="accountTitle">-->
+<!--            <div class="accountTitle_company">-->
+<!--                &lt;!&ndash;                <div class="accountTitle_company_1">{{companyName}}</div>&ndash;&gt;-->
+<!--                <div class="accountTitle_company_2">明细分类账</div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <!--表格-->
+        <div class="watchDetail_content">
+            <table id="table" class="table-box" v-for="(accName,index) in accNameList">
+                <tr>
+                    <td>
+                        <div class="table-title">现金银行日记账</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="table-page">
+                            <div class="table-page-box-left">单位名称：{{companyName}}</div>
+                            <div class="table-page-box">时间：{{startTime.substring(0,4)}}年{{endTime.substring(5,7)}}月</div>
+                            <div class="table-page-box-right">第{{index+1}}页/共{{accNameList.length}}页</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <div class="table-page-second">
+                        <div class="table-page-box">明细科目：{{accName}}</div>
+                        <div class="table-page-box">币别：人民币</div>
+                    </div>
+                </tr>
+                <tr>
+                    <td>
+                        <!--            主表格-->
+                        <table border="1" class="table-box">
+                            <thead>
+                            <tr>
+                                <th style="white-space:nowrap">凭证日期</th>
+                                <th style="white-space:nowrap">凭证号码</th>
+                                <th style="width: 6rem;white-space:nowrap">摘要</th>
+                                <th style="width:4rem;white-space:nowrap">对方科目</th>
+                                <th style="white-space:nowrap">期间</th>
+                                <th style="width: 1.5rem;white-space:nowrap">借方</th>
+                                <th style="width: 1.5rem;white-space:nowrap">贷方</th>
+                                <th style="white-space:nowrap">余额|借/贷</th>
+                                <th style="width: 2rem;white-space:nowrap">余额|本位币</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!--            循环list-->
+                            <tr v-for="(item,index) in detailClassifyList" v-if="accName==item.accName">
+                                <td style="text-align: left;white-space:nowrap;">{{item.vohDateStr}}</td>
+                                <td style="text-align: left;white-space:nowrap">{{item.vohNO}}</td>
+                                <td style="text-align: left;word-break: break-all;">{{item.accRem}}</td>
+                                <td style="text-align: left;">{{item.subjectName}}</td>
+                                <td style="text-align: left;white-space:nowrap">{{item.period}}</td>
+                                <td style="text-align: right;white-space:nowrap">
+                                    {{item.debit==0?'':item.debit}}
+                                </td>
+                                <td style="text-align: right;white-space:nowrap">
+                                    {{item.credit==0?'':item.credit}}
+                                </td>
+                                <td style="text-align: center;white-space:nowrap">{{item.dcStr}}</td>
+                                <td style="text-align: right;white-space:nowrap">
+                                    {{item.sum==0?'':item.sum}}
+                                </td>
+                            </tr>
+                            <!--合计-->
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="signature">
+                            <div class="signature-man">制单人：</div>
+                            <div class="signature-man">打印人：</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>

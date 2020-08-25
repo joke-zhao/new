@@ -1,0 +1,38 @@
+<div >
+    <div id="header">
+        <div class="ui-mainHeader ">
+            <!-- <div id="homeHeader" class="ui-mainHeader__item is-room" v-show="pageActiveIndex === 0">
+                <div class="ui-mainHeader__title">
+                    <img src="../../image/home/searchIcon.png" class="ui-hotItem__icon"/>
+                    <input type="text" class="ui-hotItem__input" placeholder="请输入电房名称" @keyup.enter="onSearchTap" v-model="keyword"/>
+                </div>
+            </div> -->
+            <div id="operationHeader" class="ui-mainHeader__item is-room" v-show="pageActiveIndex === 0">
+                <div class="ui-mainHeader__title is-room__title">首页</div>
+            </div>
+            <div id="operationHeader" class="ui-mainHeader__item is-room" v-show="pageActiveIndex === 1">
+                <div class="ui-mainHeader__title is-room__title" >拍一拍</div>
+            </div>
+            <div id="editHeader" class="ui-mainHeader__item is-room" v-show="pageActiveIndex === 2">
+                <div class="ui-mainHeader__title is-room__title">报表</div>
+            </div>
+            <div id="editHeader" class="ui-mainHeader__item is-room" v-show="pageActiveIndex === 3">
+                <div class="ui-mainHeader__title is-room__title">我的</div>
+            </div>
+            <!-- <div id="meHeader" class="ui-mainHeader__item is-me " v-show="pageActiveIndex === 4">
+            </div> -->
+        </div>
+    </div>
+    <div id="footer">
+        <div class="ui-mainFooter">
+            <div class="ui-mainFooter__item"
+                 v-for="(item, index) in page"
+                 :class="{'is-active': pageActiveIndex === index}"
+                 v-hammer:tap="() => onFooterTap(index)">
+                <i :class="item.icon"></i>
+                <p>{{item.title}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,71 @@
+/**css代码在此处开始*/
+#servicetype {
+  width: 100%;
+  height: 100%;
+}
+#servicetype .servicetype-content {
+  width: 100%;
+}
+#servicetype .servicetype-content .servicetype-content-describe {
+  margin-top: 0.59rem;
+  margin-right: 0.76rem;
+  margin-left: 0.76rem;
+  text-align: center;
+  width: 6rem;
+  height: 0.77rem;
+  font-weight: 400;
+  line-height: 0.4rem;
+  font-size: 0.3rem;
+  color: #333333;
+}
+#servicetype .servicetype-content .servicetype-content-describe .servicetype-content-describe-number {
+  color: #6383FD;
+  font-size: 0.3rem;
+}
+#servicetype .servicetype-content .servicetype-content-list {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-left: 0.3rem;
+  margin-top: 0.3rem;
+}
+#servicetype .servicetype-content .servicetype-content-list .servicetype-content-list-y {
+  width: 1.99rem;
+  height: 0.72rem;
+  background: #6383fd;
+  border: 0.02rem solid #6383fd;
+  border-radius: 0.36rem;
+  font-size: 0.24rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  line-height: 0.7rem;
+  margin-top: 0.3rem;
+  margin-left: 0.2rem;
+}
+#servicetype .servicetype-content .servicetype-content-list .servicetype-content-list-n {
+  width: 1.99rem;
+  height: 0.72rem;
+  border-radius: 0.36rem;
+  border: 0.02rem solid #6383fd;
+  font-size: 0.24rem;
+  font-weight: 400;
+  color: #6383FD;
+  text-align: center;
+  line-height: 0.7rem;
+  margin-top: 0.3rem;
+  margin-left: 0.2rem;
+}
+#servicetype .sure {
+  width: 2.99rem;
+  height: 0.72rem;
+  background: #6383fd;
+  border-radius: 0.36rem;
+  font-size: 0.24rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  line-height: 0.7rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+}

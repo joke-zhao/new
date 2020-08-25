@@ -1,0 +1,232 @@
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+html,
+body {
+  font-size: 50px;
+  overflow: hidden;
+}
+#header {
+  box-sizing: content-box;
+  z-index: 999;
+}
+.ui-header {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  font-size: 0.36rem;
+  color: #000;
+  font-weight: bold;
+  font-family: PingFangSC-Regular;
+  background-color: #fff;
+  box-sizing: content-box;
+  z-index: 999;
+  opacity: 0.2;
+  transition: opacity 0.4s;
+}
+.ui-header:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  transform: scale(1, 0.5);
+  transform-origin: center center;
+}
+.ui-header .active {
+  opacity: 0.3;
+}
+.ui-header__leftBtn {
+  /*display: block;
+    position: relative;
+    top: 0.5rem;
+    left: 0.2rem;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0.88rem !important;
+  height: 0.88rem !important;
+  background-size: 20px !important;
+  color: #fff;
+  content: url(../../image/baseWin/icon-leftBack.png);
+  z-index: 99999;
+}
+.ui-header__leftBtn,
+.ui-header__rightBtn {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  min-width: 0.88rem;
+  max-width: 1.76rem;
+  height: 0.88rem;
+  text-align: center;
+  font-size: 0;
+  z-index: 9999;
+  @include ellipsis;
+}
+.ui-header__leftBtn:active,
+.ui-header__rightBtn:active {
+  opacity: 0.3;
+}
+.ui-header__leftBtn > i,
+.ui-header__rightBtn > i,
+.ui-header__leftBtn > span,
+.ui-header__rightBtn > span {
+  display: inline-block;
+  font-size: 0.32rem;
+  color: #333;
+  vertical-align: middle;
+}
+.ui-header__leftBtn > i,
+.ui-header__rightBtn > i {
+  font-size: 0.44rem;
+}
+.ui-header__leftBtn .is-search,
+.ui-header__rightBtn .is-search {
+  display: block;
+  padding: 0.22rem;
+  width: 0.88rem;
+  height: 0.88rem;
+  background-origin: content-box;
+  background-clip: content-box;
+  @include bgi-cover(url(../../image/home/icon-search.png));
+}
+.ui-header__leftBtn .is-share,
+.ui-header__rightBtn .is-share {
+  display: block;
+  width: 0.88rem;
+  height: 0.88rem;
+  @include bgi-cover(url(../../image/activity/icon-share.png));
+}
+.ui-header__leftBtn .is-left,
+.ui-header__rightBtn .is-left {
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 0.88rem;
+  height: 0.88rem;
+  @include bgi-center(url(../../image/baseWin/icon-leftBack.png));
+  background-size: 20px;
+}
+.ui-header__rightBtn {
+  right: 0.3rem;
+}
+.ui-header__rightBtn > span {
+  font-size: 12px;
+  color: #5F8FF2;
+  font-weight: normal;
+  font-family: PingFangSC-Regular;
+}
+.ui-header__title {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.88rem;
+  padding: 0 1.76rem;
+  font-family: PingFangSC-Regular;
+  font-weight: normal;
+  box-sizing: border-box;
+  @include ellipsis;
+  text-align: center;
+  transform: translate3d(5%, 0, 0);
+}
+.ui-header__title.move {
+  animation: rightToLeft 0.2s 0s ease-in-out forwards;
+}
+.loader {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.loader-inner {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 35px;
+  height: 35px;
+}
+.ball-clip-rotate-multiple {
+  /*position: relative;*/
+}
+.ball-clip-rotate-multiple > div {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border: 2px solid #666;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  border-radius: 100%;
+  height: 35px;
+  width: 35px;
+  -webkit-animation: rotate 1s 0s ease-in-out infinite;
+  animation: rotate 1s 0s ease-in-out infinite;
+  -webkit-animation: rotate 1.6s 0s ease-in-out infinite;
+  animation: rotate 1.6s 0s ease-in-out infinite;
+}
+.ball-clip-rotate-multiple > div:last-child {
+  display: inline-block;
+  top: 10px;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  border-color: #666 transparent #666 transparent;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rightToLeft {
+  0% {
+    transform: translate3d(5%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

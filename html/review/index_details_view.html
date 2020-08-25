@@ -1,0 +1,1208 @@
+<!-- 单据详情页面开始 -->
+<div id="app">
+  <!-- 单据切换选择 -->
+  <header>
+    <div class="header-box">
+    <van-dropdown-menu>
+      <van-dropdown-item @change="changeBillType" v-model="billType" :options="billList" />
+    </van-dropdown-menu>
+    </div>
+  </header>
+  <!-- 单据图片选择 -->
+  <nav>
+    <div @click="handleImgUrl" class="nav-box">
+      <img :src="billData.imgUrl" alt="">
+    </div>
+  </nav>
+  <!-- 手工单据主体 ------------------------------------------->
+  <main class="fontColor" v-show='billType == "OTHER"'>
+    <div class="main-box">
+      <!-- 发票单据识别内容 -->
+      <div class="box-bills">
+        <!-- 每个item代表一行 -->
+       <!-- --------------- -->
+       <div class="bills-item">
+         <div class="item-name">
+           <span>购买方名称</span>
+         </div>
+         <div class="item-desc">
+           <!-- <span>{{billData.buyName}}</span> -->
+           <input v-model="billData.buyName" type="text">
+         </div>
+         <div class="item-name">
+           <span>币别</span>
+         </div>
+         <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.curId" :options="curList" />
+            </van-dropdown-menu>
+            <img src="../../image/review/more.png" alt="">
+          </div>
+         </div>
+       </div> 
+       <!-- --------------- -->
+       <div class="bills-item">
+        <div class="item-name">
+          <span>单据编号</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写单据编号" v-model="billData.invoiceNum" type="text">
+        </div>
+        <div class="item-name">
+          <span>扣税类别</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.taxID" :options="taxList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>单据日期</span>
+        </div>
+        <div @click="showDate = true" class="item-desc">
+          <span>{{billData.date | formatDate}}</span>
+        </div>
+        <div class="item-name">
+          <span>发票类型</span>
+        </div>
+        <div class="item-desc">
+          <span>{{billData.invoiceType}}</span>
+         </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>销售方名称</span>
+        </div>
+        <div class="item-desc">
+          <!-- <span>{{billData.saleName}}</span> -->
+          <input v-model="billData.saleName" type="text">
+        </div>
+        <div class="item-name">
+          <span>业务类型</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item @change="changBusinessTyep" v-model="billData.businessType" :options="businessList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- --------------- 切换为费用采购发票出现的情况 -->
+      <div v-show="billData.businessType === 'Cost'" class="bills-item">
+        <div class="item-name">
+          <span>所属项目</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.project" :options="proList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+        <div class="item-name">
+          <span>所属部门</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.dept" :options="proList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div v-show="billData.businessType === 'Cost'" class="bills-item">
+        <div class="item-name">
+          <span>成本属性</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.attr" :options="attrList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+        <div class="item-name">
+        </div>
+        <div class="item-desc">
+        </div>
+      </div>
+      </div>
+      <!-- 单据修改表格 -->
+      <div class="box-table">
+        <div class="table-item table-item-invoice">
+          
+        <div class="table-itemName ">
+          <div class="item-select">
+            <span>选择</span>
+          </div>
+          <div class="item-textBig">
+            <span>货物或应税劳务、服务名称</span>
+        </div>
+          <div class="item-textBig">
+            <span>规格型号</span>
+          </div>
+          <div class="item-textSmall">
+            <span>单位</span>
+          </div>
+          <div class="item-textSmall">
+            <span>数量</span>
+          </div>
+          <div class="item-textSmall">
+            <span>单价</span>
+          </div>
+          <div class="item-textSmall">
+            <span>金额</span>
+          </div>
+          <div class="item-textSmall">
+            <span>税率</span>
+          </div>
+          <div class="item-textSmall">
+            <span>税额</span>
+          </div>
+          <div class="item-textBig">摘要</div>
+          <!-- 切换为费用采购发票出现的情况 -->
+          <div v-show="billData.businessType === 'Cost'" class="item-textBig">
+            <span>费用代码</span>
+          </div>
+          <!-- 切换为固定资产采购发票出现的情况 -->
+          <div v-show="fixShow" class="item-textSmall">
+            <span>资产类别</span>
+          </div>
+          <div v-show="fixShow" class="item-textSmall">
+            <span>取得方式</span>
+          </div>
+          <div v-show="fixShow" class="item-textSmall">
+            <span>使用状况</span>
+          </div>
+          <div v-show="fixShow" class="item-textBig">
+            <span>已折旧年月</span>
+          </div>
+        </div>
+        <!-- 此处为增加、删除、修改行 -->
+        <div v-for="(item,index) in lineArray" :key="item.vid" class="table-itemDesc">
+          <div @click="seletLine(index)" class="item-select">
+            <div :class="[item.flag ? 'active_select' : 'active']"></div>
+          </div>
+          <div class="item-textBig">
+            <input v-model="item.serviceName" type="text">
+        </div>
+          <div class="item-textBig">
+            <input v-model="item.model" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.unit" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.number" oninput="value=value.replace(/[^\d\.]/g,'')" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.price" oninput="value=value.replace(/[^\d\.]/g,'')"  type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.money" oninput="value=value.replace(/[^\d\.]/g,'')"  type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.tax"  oninput="value=value.replace(/[^\d\.]/g,'')"  type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.taxMoney"  oninput="value=value.replace(/[^\d\.]/g,'')"  type="text">
+          </div>
+          <div class="item-textBig">
+            <input v-model="item.note" type="text">
+          </div>
+          <!-- 切换为费用采购发票出现的情况 -->
+          <div v-show="billData.businessType === 'Cost'" class="item-textBig">
+            <input @input="delayedCost(item.codeView,index)" v-model="item.codeView" type="text">
+          </div>
+          <!-- 切换为固定资产采购发票出现的情况 -->
+          <div v-show="fixShow" class="item-textSmall hehe">
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="item.fxKnd" :options="fxkndList" />
+            </van-dropdown-menu>
+          </div>
+          <div v-show="fixShow" class="item-textSmall hehe">
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="item.fxGetMth" :options="fxgetList" />
+            </van-dropdown-menu>
+          </div>
+          <div v-show="fixShow" class="item-textSmall hehe">
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="item.stsId" :options="fxstatusList" />
+            </van-dropdown-menu>
+          </div>
+          <div v-show="fixShow" class="item-textBig hehe">
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="item.disDd" :options="fxdisDdList" />
+            </van-dropdown-menu>
+          </div>
+        </div>
+        <div class="messageInfo" v-if="lineArray.length == 0">暂无列表项数据，用户可手动添加</div>
+        </div>
+      </div>
+      </div>
+  </main>
+  <!-- 发票单据主体 ------------------------------------------->
+  <main class="fontColor" v-show='billType == "INVOICE"'>
+    <div class="main-box">
+      <!-- 发票单据识别内容 -->
+      <div class="box-bills">
+        <!-- 每个item代表一行 -->
+       <!-- --------------- -->
+       <div class="bills-item">
+         <div class="item-name">
+           <span>购买方名称</span>
+         </div>
+         <div class="item-desc">
+           <!-- <span>{{billData.buyName}}</span> -->
+           <input v-model="billData.buyName" type="text">
+         </div>
+         <div class="item-name">
+           <span>币别</span>
+         </div>
+         <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.curId" :options="curList" />
+            </van-dropdown-menu>
+            <img src="../../image/review/more.png" alt="">
+          </div>
+         </div>
+       </div> 
+       <!-- --------------- -->
+       <div class="bills-item">
+        <div class="item-name">
+          <span>单据编号</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写单据编号" v-model="billData.invoiceNum" type="text">
+        </div>
+        <div class="item-name">
+          <span>扣税类别</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.taxID" :options="taxList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>单据日期</span>
+        </div>
+        <div @click="showDate = true" class="item-desc">
+          <span>{{billData.date | formatDate}}</span>
+        </div>
+        <div class="item-name">
+          <span>发票类型</span>
+        </div>
+        <div class="item-desc">
+          <span>{{billData.invoiceType}}</span>
+         </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>销售方名称</span>
+        </div>
+        <div class="item-desc">
+          <!-- <span>{{billData.saleName}}</span> -->
+          <input v-model="billData.saleName" type="text">
+        </div>
+        <div class="item-name">
+          <span>业务类型</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item @change="changBusinessTyep" v-model="billData.businessType" :options="businessList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- --------------- 切换为费用采购发票出现的情况 -->
+      <div v-show="billData.businessType === 'Cost'" class="bills-item">
+        <div class="item-name">
+          <span>所属项目</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.project" :options="proList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+        <div class="item-name">
+          <span>所属部门</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.dept" :options="proList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div v-show="billData.businessType === 'Cost'" class="bills-item">
+        <div class="item-name">
+          <span>成本属性</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.attr" :options="attrList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+        <div class="item-name">
+        </div>
+        <div class="item-desc">
+        </div>
+      </div>
+      </div>
+      <!-- 单据修改表格 -->
+      <div class="box-table">
+        <div class="table-item table-item-invoice">
+          
+        <div class="table-itemName ">
+          <div class="item-select">
+            <span>选择</span>
+          </div>
+          <div class="item-textBig">
+            <span>货物或应税劳务、服务名称</span>
+        </div>
+          <div class="item-textBig">
+            <span>规格型号</span>
+          </div>
+          <div class="item-textSmall">
+            <span>单位</span>
+          </div>
+          <div class="item-textSmall">
+            <span>数量</span>
+          </div>
+          <div class="item-textSmall">
+            <span>单价</span>
+          </div>
+          <div class="item-textSmall">
+            <span>金额</span>
+          </div>
+          <div class="item-textSmall">
+            <span>税率</span>
+          </div>
+          <div class="item-textSmall">
+            <span>税额</span>
+          </div>
+          <div class="item-textBig">摘要</div>
+          <!-- 切换为费用采购发票出现的情况 -->
+          <div v-show="billData.businessType === 'Cost'" class="item-textBig">
+            <span>费用代码</span>
+          </div>
+          <!-- 切换为固定资产采购发票出现的情况 -->
+          <div v-show="fixShow" class="item-textSmall">
+            <span>资产类别</span>
+          </div>
+          <div v-show="fixShow" class="item-textSmall">
+            <span>取得方式</span>
+          </div>
+          <div v-show="fixShow" class="item-textSmall">
+            <span>使用状况</span>
+          </div>
+          <div v-show="fixShow" class="item-textBig">
+            <span>已折旧年月</span>
+          </div>
+        </div>
+        <!-- 此处为增加、删除、修改行 -->
+        <div v-for="(item,index) in lineArray" :key="item.vid" class="table-itemDesc">
+          <div @click="seletLine(index)" class="item-select">
+            <div :class="[item.flag ? 'active_select' : 'active']"></div>
+          </div>
+          <div class="item-textBig">
+            <input v-model="item.serviceName" type="text">
+        </div>
+          <div class="item-textBig">
+            <input v-model="item.model" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.unit" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.number" oninput="value=value.replace(/[^\d\.]/g,'')" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.price" oninput="value=value.replace(/[^\d\.]/g,'')"  type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.money" oninput="value=value.replace(/[^\d\.]/g,'')"  type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.tax"  oninput="value=value.replace(/[^\d\.]/g,'')"  type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.taxMoney"  oninput="value=value.replace(/[^\d\.]/g,'')"  type="text">
+          </div>
+          <div class="item-textBig">
+            <input v-model="item.note" type="text">
+          </div>
+          <!-- 切换为费用采购发票出现的情况 -->
+          <div v-show="billData.businessType === 'Cost'" class="item-textBig">
+            <input @input="delayedCost(item.codeView,index)" v-model="item.codeView" type="text">
+          </div>
+          <!-- 切换为固定资产采购发票出现的情况 -->
+          <div v-show="fixShow" class="item-textSmall hehe">
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="item.fxKnd" :options="fxkndList" />
+            </van-dropdown-menu>
+          </div>
+          <div v-show="fixShow" class="item-textSmall hehe">
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="item.fxGetMth" :options="fxgetList" />
+            </van-dropdown-menu>
+          </div>
+          <div v-show="fixShow" class="item-textSmall hehe">
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="item.stsId" :options="fxstatusList" />
+            </van-dropdown-menu>
+          </div>
+          <div v-show="fixShow" class="item-textBig hehe">
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="item.disDd" :options="fxdisDdList" />
+            </van-dropdown-menu>
+          </div>
+        </div>
+        <div class="messageInfo" v-if="lineArray.length == 0">暂无列表项数据，用户可手动添加</div>
+        </div>
+      </div>
+      </div>
+  </main>
+  <!-- 存货单据主体 --------------------------------------------->
+  <main class="fontColor" v-show='typeId === 2'>
+    <div class="main-box">
+      <!-- 存货单据识别内容 -->
+      <div class="box-bills">
+        <!-- 每个item代表一行 -->
+       <!-- --------------- -->
+       <div class="bills-item">
+         <div class="item-name">
+           <span>购买方名称</span>
+         </div>
+         <div class="item-desc">
+           <span>广州市经士智能科技有限公司</span>
+         </div>
+         <div class="item-name">
+           <span>币别</span>
+         </div>
+         <div class="item-desc">
+          <div>
+            <span>人民币</span>
+            <!-- <img src="../../image/review/more.png" alt=""> -->
+          </div>
+         </div>
+       </div> 
+       <!-- --------------- -->
+       <div class="bills-item">
+        <div class="item-name">
+          <span>单据编号</span>
+        </div>
+        <div class="item-desc">
+          <span>05891394</span>
+        </div>
+        <div class="item-name">
+          <!-- <span>扣税类别</span> -->
+        </div>
+        <div class="item-desc">
+         <div>
+         </div>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>单据日期</span>
+        </div>
+        <div class="item-desc">
+          <span>200-12-21</span>
+        </div>
+        <div class="item-name">
+          <span>业务类型</span>
+        </div>
+        <div class="item-desc">
+         <div>
+           <select @change="changeStockType" v-model="stockID">
+             <option v-for="item in stockList" :key="item.id" :value="item.id" >{{item.name}}</option>
+           </select>
+           <img src="../../image/review/more.png" alt="">
+         </div>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div v-show="stockStatu2" class="bills-item">
+        <div class="item-name">
+          <span>销售方名称</span>
+        </div>
+        <div class="item-desc">
+          <span>山东省蓝翔信息科技有限技术股份公司啊</span>
+        </div>
+        <div class="item-name">
+          
+        </div>
+        <div class="item-desc">
+         
+        </div>
+      </div>
+      </div>
+      <!-- 单据修改表格 -->
+      <div class="box-table">
+        <div class="table-item">
+          <div class="table-itemName">
+            <div class="item-select">
+              <span>选择</span>
+            </div>
+            <div class="item-textBig">
+              <span>货物或应税劳务、服务名称</span>
+          </div>
+            <div class="item-textSmall">
+              <span>规格型号</span>
+            </div>
+            <div class="item-textSmall">
+              <span>单位规格</span>
+            </div>
+            <div class="item-textSmall">
+              <span>数量</span>
+            </div>
+            <div v-show="stockStatus" class="item-textSmall">
+              <span>单价</span>
+            </div>
+            <div  v-show="stockStatus" class="item-textSmall">
+              <span>金额</span>
+            </div>
+            <div class="item-textBig">摘要</div>
+          </div>
+          <!-- 此处为增加、删除、修改行 -->
+          <div v-for="(item,index) in lineArray" :key="item.id" class="table-itemDesc">
+            <div @click="seletLine(index)" class="item-select">
+              <div :class="[item.flag ? 'active_select' : 'active']"></div>
+            </div>
+            <div class="item-textBig">
+              <input v-model="item.serviceName" type="text">
+          </div>
+            <div class="item-textSmall">
+              <input v-model="item.model" type="text">
+            </div>
+            <div class="item-textSmall">
+              <input v-model="item.unit" type="text">
+            </div>
+            <div class="item-textSmall">
+              <input v-model="item.number" type="text">
+            </div>
+            <div  v-show="stockStatus" class="item-textSmall">
+              <input v-model="item.name5" type="text">
+            </div>
+            <div  v-show="stockStatus" class="item-textSmall">
+              <input v-model="item.name6" type="text">
+            </div>
+            <div class="item-textBig">
+              <input v-model="item.name7" type="text">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </main>
+  <!-- 银行主体 ------------------------------------------->
+  <main class="fontColor" v-show='billType == "BANK"'>
+    <div class="main-box">
+      <!-- 存货单据识别内容 -->
+      <div class="box-bills box-bills-money">
+       <!-- 每个item代表一行 -->
+       <!-- --------------- -->
+       <div class="bills-item">
+        <div class="item-name">
+          <span>付款人全称</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写付款人全称" v-model="billData.payeeName" type="text">
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>付款人账户</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写付款人账户" v-model="billData.payeeAccount" type="text">
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>付款人开户银行</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写付款人开户银行" v-model="billData.payeeBank" type="text">
+        </div>
+      </div>
+       <!-- --------------- -->
+       <div class="bills-item">
+        <div class="item-name">
+          <span>单据编号</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写单据编号" v-model="billData.transaction" type="text">
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>单据日期</span>
+        </div>
+        <div @click="showDate = true" class="item-desc">
+          <span>{{billData.date | formatDate}}</span>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>收款人全称</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写收款人全称" v-model="billData.acceptName" type="text">
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>收款人账户</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写收款人账户" v-model="billData.acceptAccount" type="text">
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>收款人开户银行</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写收款人开户银行" v-model="billData.acceptBank" type="text">
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span class="text_two">币别</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.currency" :options="curList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span class="text_two">金额</span>
+        </div>
+        <div class="item-desc">
+          
+          <input placeholder="请手动填写金额" v-model="billData.money" oninput="value=value.replace(/[^\d\.]/g,'')" type="text">
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>款项类型</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item  @change="changBankType" v-model="billData.type" :options="bankList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+     <!-- --------------- -->
+     <div v-show="bankShow" class="bills-item">
+      <div class="item-name">
+        <span>所属项目</span>
+      </div>
+      <div class="item-desc">
+        <div>
+          <van-dropdown-menu>
+            <van-dropdown-item v-model="billData.project" :options="proList" />
+          </van-dropdown-menu>
+        <img src="../../image/review/more.png" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- --------------- -->
+    <div v-show="bankShow" class="bills-item">
+      <div class="item-name">
+        <span>所属部门</span>
+      </div>
+      <div class="item-desc">
+        <div>
+          <van-dropdown-menu>
+            <van-dropdown-item v-model="billData.dept" :options="proList" />
+          </van-dropdown-menu>
+        <img src="../../image/review/more.png" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- --------------- -->
+    <div v-show="bankShow" class="bills-item">
+      <div class="item-name">
+        <span>成本属性</span>
+      </div>
+      <div class="item-desc">
+        <div>
+          <van-dropdown-menu>
+            <van-dropdown-item v-model="billData.attr" :options="attrList" />
+          </van-dropdown-menu>
+        <img src="../../image/review/more.png" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- --------------- -->
+    <div v-show="bankShow" class="bills-item">
+      <div class="item-name">
+        <span>费用代码</span>
+      </div>
+      <div class="item-desc">
+        <input @input="delayedCost(billData.codeView)" placeholder="请手动填写费用代码" v-model="billData.codeView" type="text">
+      </div>
+    </div>
+    <!-- --------------- -->
+    <div v-show="bankShow" class="bills-item">
+      <div class="item-name">
+        <span class="text_two">用途</span>
+      </div>
+      <div class="item-desc">
+        <input placeholder="请手动填写用途" v-model="billData.use" type="text">
+      </div>
+    </div>
+      </div>
+      </div>
+  </main>
+  <!-- 海关缴纳书单据主体 ------------------------------------------->
+  <main class="fontColor" v-show='billType == "CUSTOMS"'>
+    <div class="main-box">
+      <!-- 存货单据识别内容 -->
+      <div class="box-bills">
+        <!-- 每个item代表一行 -->
+       <!-- --------------- -->
+       <div class="bills-item">
+         <div class="item-name">
+           <span>购买方名称</span>
+         </div>
+         <div class="item-desc">
+          <input placeholder="请手动填写购买方名称" v-model="billData.name" type="text">
+         </div>
+         <div class="item-name">
+           <span>币别</span>
+         </div>
+         <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.currency" :options="curList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+         </div>
+       </div> 
+       <!-- --------------- -->
+       <div class="bills-item">
+        <div class="item-name">
+          <span>单据编号</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写单据编号" v-model="billData.number" type="text">
+        </div>
+        <div class="item-name">
+          <span>扣税类别</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.taxID" :options="taxList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>单据日期</span>
+        </div>
+          <div @click="showDate = true" class="item-desc">
+            <span>{{billData.date | formatDate}}</span>
+          </div>
+        <div class="item-name">
+          <span>发票类型</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <!-- <input placeholder="请手动填写发票类型" v-model="billData.revenue" type="text"> -->
+            <span>海关</span>
+          </div>
+         </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>销售方名称</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写销售方名称" v-model="billData.revenue" type="text">
+        </div>
+        <div class="item-name">
+          <span>业务类型</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item @change="changCustomsTyep" v-model="billData.type" :options="subList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- 单据修改表格 -->
+      <div class="box-table">
+        <div class="table-item table-item-invoice">
+          
+        <div class="table-itemName">
+          <div class="item-select">
+            <span>选择</span>
+          </div>
+          <div class="item-textBig">
+            <span>货物或应税劳务、服务名称</span>
+        </div>
+          <div class="item-textSmall">
+            <span>规格型号</span>
+          </div>
+          <div class="item-textSmall">
+            <span>单位</span>
+          </div>
+          <div class="item-textSmall">
+            <span>数量</span>
+          </div>
+          <div class="item-textSmall">
+            <span>单价</span>
+          </div>
+          <div class="item-textSmall">
+            <span>金额</span>
+          </div>
+          <div class="item-textSmall">
+            <span>税率</span>
+          </div>
+          <div class="item-textSmall">
+            <span>税额</span>
+          </div>
+          <div class="item-textSmall">摘要</div>
+          <!-- 切换为固定资产出现的情况 -->
+          <div v-show="customShow" class="item-textSmall">
+            <span>资产类别</span>
+          </div>
+          <div v-show="customShow" class="item-textSmall">
+            <span>取得方式</span>
+          </div>
+          <div v-show="customShow" class="item-textSmall">
+            <span>使用状况</span>
+          </div>
+          <div v-show="customShow" class="item-textBig">
+            <span>已折旧年月</span>
+          </div>
+        </div>
+        <!-- 此处为增加、删除、修改行 -->
+        <div v-for="(item,index) in lineArray" :key="item.vid" class="table-itemDesc">
+          <div @click="seletLine(index)" class="item-select">
+            <div :class="[item.flag ? 'active_select' : 'active']"></div>
+          </div>
+          <div class="item-textBig">
+            <input v-model="item.goods" type="text">
+        </div>
+          <div class="item-textSmall">
+            <!-- <input v-model="item.model" type="text"> -->
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.unit" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.num" oninput="value=value.replace(/[^\d\.]/g,'')" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.singlePrice" oninput="value=value.replace(/[^\d\.]/g,'')"  type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.price" oninput="value=value.replace(/[^\d\.]/g,'')"  type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.taxRatio" oninput="value=value.replace(/[^\d\.]/g,'')"  type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.taxPrice"  oninput="value=value.replace(/[^\d\.]/g,'')"  type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.note" type="text">
+          </div>
+          <!-- 切换为固定资产出现的情况 -->
+          <div v-show="customShow" class="item-textSmall hehe">
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="item.fxKnd" :options="fxkndList" />
+            </van-dropdown-menu>
+          </div>
+          <div v-show="customShow" class="item-textSmall hehe">
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="item.fxGetMth" :options="fxgetList" />
+            </van-dropdown-menu>
+          </div>
+          <div v-show="customShow" class="item-textSmall hehe">
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="item.stsId" :options="fxstatusList" />
+            </van-dropdown-menu>
+          </div>
+          <div v-show="customShow" class="item-textBig hehe">
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="item.disDd" :options="fxdisDdList" />
+            </van-dropdown-menu>
+          </div>
+        </div>
+        <div class="messageInfo" v-if="lineArray.length == 0">暂无列表项数据，用户可手动添加</div>
+        </div> 
+      </div>
+      </div>
+  </main>
+  <!-- 财政收据主体 ------------------------------------------->
+  <main class="fontColor" v-show='billType == "FINANCIAL"'>
+    <div class="main-box">
+      <!-- 存货单据识别内容 -->
+      <div class="box-bills">
+        <!-- 每个item代表一行 -->
+       <!-- --------------- -->
+       <div class="bills-item">
+         <div class="item-name">
+           <span>购买方名称</span>
+         </div>
+         <div class="item-desc">
+           <input v-model="billData.payment" type="text">
+         </div>
+         <div class="item-name">
+           <span>币别</span>
+         </div>
+         <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.currency" :options="curList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+         </div>
+       </div> 
+       <!-- --------------- -->
+       <div class="bills-item">
+        <div class="item-name">
+          <span>单据编号</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写单据编号" v-model="billData.num" type="text">
+        </div>
+        <div class="item-name">
+        </div>
+        <div class="item-desc">
+         <div></div>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>单据日期</span>
+        </div>
+        <div @click="showDate = true" class="item-desc">
+          <span>{{billData.date | formatDate}}</span>
+        </div>
+        <div class="item-name">
+          <span>发票类型</span>
+        </div>
+        <div class="item-desc">
+          <span>财政</span>
+         </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>销售方名称</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写销售方名称" v-model="billData.accept" type="text">
+        </div>
+        <div class="item-name">
+          <span>成本属性</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.attr" :options="attrList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="bills-item">
+        <div class="item-name">
+          <span>所属项目</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.project" :options="proList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+        <div class="item-name">
+          <span>所属部门</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.dept" :options="proList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div v-show="billData.businessType === 'Cost'" class="bills-item">
+        <div class="item-name">
+          <span>成本属性</span>
+        </div>
+        <div class="item-desc">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.attr" :options="attrList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+        <div class="item-name">
+        </div>
+        <div class="item-desc">
+        </div>
+      </div>
+      </div>
+      <!-- 单据修改表格 -->
+      <div class="box-table">
+        <div class="table-item">
+          
+        <div class="table-itemName">
+          <div class="item-select">
+            <span>选择</span>
+          </div>
+          <div class="item-textBig">
+            <span>应税劳务、服务名称</span>
+        </div>
+          <div class="item-textSmall">
+            <span>单位</span>
+          </div>
+          <div class="item-textSmall">
+            <span>数量</span>
+          </div>
+          <div class="item-textSmall">
+            <span>金额</span>
+          </div>
+          <div class="item-textSmall">
+            <span>摘要</span>
+          </div>
+          <div class="item-textSmall">
+            <span>备注</span>
+          </div>
+          <div class="item-textSmall">
+            <span>费用代码</span>
+          </div>
+        </div>
+        <!-- 此处为增加、删除、修改行 -->
+        <div v-for="(item,index) in lineArray" :key="item.vid" class="table-itemDesc">
+          <div @click="seletLine(index)" class="item-select">
+            <div :class="[item.flag ? 'active_select' : 'active']"></div>
+          </div>
+          <div class="item-textBig">
+            <input v-model="item.serviceName" type="text">
+        </div>
+          <div class="item-textSmall">
+            <input v-model="item.unit" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.number" oninput="value=value.replace(/[^\d\.]/g,'')" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.money" oninput="value=value.replace(/[^\d\.]/g,'')" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.desc" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input v-model="item.note" type="text">
+          </div>
+          <div class="item-textSmall">
+            <input @input="delayedCost(item.codeView,index)" v-model="item.codeView" type="text">
+          </div>
+        </div>
+        <div class="messageInfo" v-if="lineArray.length == 0">暂无列表项数据，用户可手动添加</div>
+        </div>
+        
+      </div>
+      </div>
+  </main>
+  <!-- ++++单据操作按钮++++ -->
+  <footer>
+    <div class="footer-box">
+      <div @click='addLine' class="box-add">
+        <img src="../../image/review/add.png" alt="">
+        <span>增加行</span>
+      </div>
+      <div @click="delLine" class="box-del">
+        <img src="../../image/review/del.png" alt="">
+        <span>删除行</span>
+      </div>
+      <div class="box-submit" @click="sumbit">提交</div>
+    </div>
+  </footer>
+  <!-- 日期选择器 -->
+  <van-calendar :min-date="minDate" v-model="showDate" @confirm="onConfirm" />
+  <!-- 费用代码弹出层 -->
+  <div class="searchBox">
+    <van-popup v-model="showCost" round position="bottom">
+        <van-picker
+          show-toolbar
+          :columns="costList"
+          @cancel="showCost = false"
+          @confirm="onCost"
+        />
+      </van-popup>
+</div>
+</div>

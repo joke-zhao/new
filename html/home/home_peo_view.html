@@ -1,0 +1,101 @@
+<div id="home-peo">
+  <!-- 头部 -->
+  <header class="header">
+    <div class="left" @click="openbMapPage">
+      <img class="site" src="../../image/home-peo/positio-i.png" alt="">
+      <p class="address" >
+        {{address}}
+      </p>
+      <p class="arrow"></p>
+    </div>
+    <div class="right" @click="openMessage">
+      <img class="news" src="../../image/home-peo/news.png" alt="">
+      <span class="ts">{{UnreadCount}}</span>
+    </div>
+  </header>
+  <!-- 职位导航 -->
+  <div class="job-nav">
+    <!-- 首页-服务商端 渲染数据根据时使用v-else条件渲染-->
+    <ul class="job-facilitator">
+      <li @click="openPackage">
+        <img src="../../image/home-peo/accountant-1.png" alt="">
+        <p>会计</p>
+      </li>
+      <li @click="openCommercial">
+        <img src="../../image/home-peo/accountant-2.png" alt="">
+        <p>工商</p>
+      </li>
+      <li>
+        <img src="../../image/home-peo/loans.png" alt="">
+        <p>贷款</p>
+      </li>
+      <li @click="openeTaxClass">
+        <img src="../../image/home-peo/school.png" alt="">
+        <p>E税学堂</p>
+      </li>
+      <li @click="openReview">
+        <img src="../../image/home/shenhe.png" alt="">
+        <p>单据审核</p>
+      </li>
+    </ul>
+  </div>
+  <!-- 分割线 -->
+  <h4 class="tieku"></h4>
+  <!-- 中间地图模块 -->
+  <div class="mapbox">
+  </div>
+  <!-- 分割线 -->
+  <h4 class="tieku"></h4>
+  <!-- 附近服务商模块 -->
+  <div class="facilitator">
+    <h3>附近服务商<span @click="openServerList">更多></span></h3>
+    <!-- 新闻信息 -->
+    <ul class="revenue-ul" v-for="(item,index) in allServerList" v-if="index < 3" :key="index">
+      <li @click="openRegisterBuy(item.id)">
+        <img src="../../image/home-peo/fwimg.png" alt="">
+        <div class="details">
+          <h4 class="kj">{{item.companyName}}</h4>
+          <div class="grade">
+            <div class="star">
+              <img src="../../image/home-peo/m-star.png" alt="">
+              <img src="../../image/home-peo/m-star.png" alt="">
+              <img src="../../image/home-peo/m-star.png" alt="">
+              <img src="../../image/home-peo/m-star.png" alt="">
+              <img src="../../image/home-peo/b-star.png" alt="">
+            </div>
+            <p>4.5分</p>
+            <!-- <span class="stance">1.2km</span> -->
+          </div>
+          <p>{{item.content}}</p>
+          <div class="dljz">代理记账</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- 分割线 -->
+  <h4 class="tieku"></h4>
+  <!-- 每日税讯 -->
+  <div class="revenue">
+    <h3>每日税讯<span @click="openConsult">更多></span></h3>
+    <!-- 新闻信息 -->
+    <ul class="revenue-ul">
+      <li v-for="(item,index) in consultList" :key="index" @click="openDetail(item.id)">
+        <img src="../../image/legwork/adver.png" alt="">
+        <div class="details">
+          <div class="de-news">{{ item.title }}</div>
+          <p>{{ item.province }}<span>{{ item.creatTime | dateFormat }}</span></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- 底线 -->
+  <h4 class="bottomku"></h4>
+  <!-- 电话客服 -->
+  <div class="phone-kf" @click="callPhone">
+    <span>电话客服</span>
+  </div>
+  <!-- 微信客服 -->
+  <div class="wx-kf">
+    <span>微信客服</span>
+  </div>
+</div>

@@ -1,0 +1,129 @@
+<div id="app">
+	<div class="register">
+		<div class="register-upload">
+			<van-uploader
+					v-model="fileList"
+					multiple :max-count="2"
+					:before-read="beforeRead"
+					:after-read="afterRead"
+					:before-delete="beforeDelete"
+			/>
+		</div>
+		<div class="register-area">
+			<div class="register-require">
+				*
+			</div>
+			<div class="register-title">
+				服务地区
+			</div>
+			<div class="register-area-item" @click="loadProvinceData">
+				<div class="register-area-item-text">
+					{{ province | textShow }}
+				</div>
+				<div class="register-area-item-icon"></div>
+			</div>
+			<div class="register-area-item" @click="loadCityData">
+				<div class="register-area-item-text">
+					{{ city | textShow }}
+				</div>
+				<div class="register-area-item-icon"></div>
+			</div>
+			<div class="register-area-item" @click="loadCountryData">
+				<div class="register-area-item-text">
+					{{ country | textShow }}
+				</div>
+				<div class="register-area-item-icon"></div>
+			</div>
+		</div>
+		<div class="register-tag">
+			<div class="register-require">
+				*
+			</div>
+			<div class="register-title">
+				服务类型
+			</div>
+			<div class="register-tag-list" >
+				<div class="register-tag-list-item"
+					 @click="changeTagStyle(item,index)"
+					 v-for="(item,index) in tagList"
+					 :class="item.isChecked ? 'register-tag-list-item-selected' : ''"
+					 :key="index">
+					{{ item.type }}
+				</div>
+			</div>
+		</div>
+		<div class="register-price">
+			<div class="register-require">
+				*
+			</div>
+			<div class="register-title">
+				服务费
+			</div>
+			<div class="register-price-text">
+				￥{{ price }}
+			</div>
+			<div class="register-price-explain">
+				平台统一价
+			</div>
+		</div>
+		<div class="register-content">
+			<div class="register-content-title">
+				<div class="register-require">
+					*
+				</div>
+				<div class="register-title">
+					服务内容
+				</div>
+			</div>
+			<div class="register-content-input">
+				<textarea v-model="serviceContent"></textarea>
+			</div>
+		</div>
+		<div class="register-material">
+			<div class="register-material-title">
+				<div class="register-title">
+					准备材料
+				</div>
+			</div>
+			<div class="register-material-input">
+				<textarea v-model="prepareData"></textarea>
+			</div>
+		</div>
+		<div class="register-choose" v-for="(item,index) in chooseList" :key="index">
+			<div class="register-choose-item" @click="choose(index)">
+				<div class="register-choose-item-check" :class="item.isChecked ? 'register-choose-item-checked' : ''"></div>
+				<div class="register-choose-item-text" @click="openProtocol(index)">
+					{{ item.title }}
+				</div>
+			</div>
+		</div>
+		<div class="register-divide"></div>
+		<div class="register-button" @click="addService">
+			发布服务
+		</div>
+	</div>
+	<van-popup v-model="provinceShow" round position="bottom">
+		<van-picker
+				show-toolbar
+				:columns="provinceList"
+				@cancel="provinceShow = false"
+				@confirm="onProvinceConfirm"
+		/>
+	</van-popup>
+	<van-popup v-model="cityShow" round position="bottom">
+		<van-picker
+				show-toolbar
+				:columns="cityList"
+				@cancel="cityShow = false"
+				@confirm="onCityConfirm"
+		/>
+	</van-popup>
+	<van-popup v-model="countryShow" round position="bottom">
+		<van-picker
+				show-toolbar
+				:columns="countryList"
+				@cancel="countryShow = false"
+				@confirm="onCountryConfirm"
+		/>
+	</van-popup>
+</div>

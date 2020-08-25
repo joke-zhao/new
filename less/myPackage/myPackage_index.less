@@ -1,0 +1,118 @@
+/* 我的套餐页面样式开始 */
+#app{
+    font-size: .24rem;
+  header{
+    width: 100%;
+    height: 3rem;
+    background-image: url(../../image/set-info/myPackage2.png);
+    background-size: 100% 3rem;
+    .header-box{
+        position: relative;
+        width: 96%;
+        height: 2.6rem;
+        margin: 0 auto;
+        background-image: url(../../image/set-info/myPackage.png);
+        background-size: 105% 2.6rem;
+        color:#fff;
+        .box-name{
+            position: absolute;
+            top: 0.4rem;
+            left: 45%;
+            font-size: .24rem;
+        }
+        .box-desc{
+            position: absolute;
+            top: .9rem;
+            left: 25%;
+            font-size: .4rem;
+        }
+        .box-small{
+            position: absolute;
+            top: 1.6rem;
+            left: 40%;
+            font-size: .14rem;
+        }
+    }
+  }
+  main{
+      width: 100%;
+      .main-box{
+          box-sizing: border-box;
+          width: 100%;
+          margin-top: -0.4rem;
+          border-radius: .4rem;
+          background-color: #fff;
+          box-shadow:0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+        .box{
+            .box-item{
+                width: 90%;
+                margin: 0 auto;
+                padding: .2rem 0;
+                .item-name{
+                    padding-bottom: .1rem;
+                    color:#000;
+                    border-bottom: 1px solid #DCDCDC;
+                }
+                .item-desc{
+                    div{
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 2px 0;
+                        color:#999;
+                    }
+                }
+            }
+            
+        }
+        .box:nth-child(2){
+            border-top:0.2rem solid #f5f5f5;
+            .box-item{
+                border-bottom: 1px solid #DCDCDC;
+            }
+        }
+        .box2{
+            width: 100%;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: .3rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        .box-history{
+            display: flex;
+            padding: .1rem 0;
+            align-items: center;
+            justify-content: center;
+            span{
+               font-size: .28rem; 
+               color:#6383FD;
+            }
+            img{
+                width: .14rem;
+                height: 0.23rem;
+                margin-left: .2rem;
+            }
+        }
+      }
+  }
+  footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0.4rem;
+      .footer-box{
+          width: 80%;
+          height: 0.8rem;
+          margin: 0 auto;
+          margin-top: .6rem;
+          line-height: 0.8rem;
+          border-radius: .8rem;
+          text-align: center;
+          background:linear-gradient(180deg,rgba(104,134,255,1) 0%,rgba(71,105,238,1) 100%);
+          span{
+              font-size: .3rem;
+              color:#fff;
+              font-weight: 600;
+          }
+      }
+  }
+}

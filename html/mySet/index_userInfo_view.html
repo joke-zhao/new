@@ -1,0 +1,78 @@
+<div id="app">
+	<div class="container">
+		<div class="enterprise-information-header">
+			<div class="enterprise-information-header-title"><span class="words">头像</span></div>
+			<div @click="submitImg" class="enterprise-information-header-image">
+				<div class="image"><img :src="photoUrl||'../../image/register/taxer@2x.png'" /></div>
+			</div>
+		</div>
+		<div class="enterprise-information-item">
+			<div class="enterprise-information-item-title">昵称</div>
+
+			<div class="enterprise-information-item-list">
+				<input type="text" placeholder="请填写新昵称" maxlength="7" v-model="userName">
+			</div>
+		</div>
+		<!-- <div class="enterprise-information-item">
+			<div class="enterprise-information-item-title">服务地址</div>
+
+			<div class="enterprise-information-item-list">
+				<div class="enterprise-information-item-list-img"><img src="../../image/enterprise_information/positio-i.png"></div>
+				<select name="selected" class="enterprise-information-item-list-address">
+					<option value="广州城投中关村e谷区块链孵化园" selected>广州城投中关村e谷区块链孵化园</option>
+					<option value="example">example（广州城投中关村e谷区块链孵化园）</option>
+				</select>
+			</div>
+		</div> -->
+		<!-- <div class="enterprise-information-item">
+			<div class="enterprise-information-item-title">服务类型</div>
+			<div class="enterprise-information-item-itemGroup">
+			<div class="enterprise-information-item-buttonGroup">
+					<a href="#"><div class="enterprise-information-item-buttonGroup-button">代理记账</div></a>
+					<a href="#"><div class="enterprise-information-item-buttonGroup-button">代理记账</div></a>
+			</div>
+			</div>
+		</div> -->
+		<!-- <div class="enterprise-information-item">
+			<div class="enterprise-information-item-title">资格认证</div>
+
+			<div class="enterprise-information-item-list">
+				<select name="selected">
+					<option value="已认证" selected>已认证</option>
+					<option value="example">example</option>
+				</select>
+			</div>
+		</div> -->
+
+		<div class="enterprise-information-item" @click="openSignature()">
+			<div class="enterprise-information-item-title">签名</div>
+			<div class="enterprise-information-item-list">{{sign}}</div>
+		</div>
+		<!-- <div class="enterprise-information-item">
+			<div class="enterprise-information-item-title">工龄</div>
+
+			<div class="enterprise-information-item-list">
+				<select name="selected">
+					<option value="5年" selected>5年</option>
+					<option value="example">example</option>
+				</select>
+			</div>
+		</div> -->
+		<!-- <div class="enterprise-information-item">
+			<div class="enterprise-information-item-title">个人简介</div>
+
+			<div class="enterprise-information-item-list">
+				<select name="selected">
+					<option value="十年从业经验十年从业经验十年从业经验" selected>十年从业经验十年从业经验十年从业经验..</option>
+					<option value="example">example</option>
+				</select>
+			</div>
+		</div> -->
+		<div class="footer">
+			<div @click="submit" class="footer-box">
+				保存
+			</div>
+		</div>
+	</div>
+    
+</div>

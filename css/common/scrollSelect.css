@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/* @name: 转为REM单位fn
+ * @ps: 默认宽度为750px
+ */
+/* @name: 上下左右居中 (未知高度)
+ * @ps: 需要设置父元素 display:table
+ */
+/* @name: 上下左右居中 （确定高度）*/
+/*
+ * @name: 文字溢出显示省略号
+ * @ps: 需要设置宽度
+ */
+/* @name: 强制不换行 */
+/* @name: 清除浮动 */
+/*
+ * @name:  三角形
+ * @param: $size  大小
+ * @param: $color 颜色
+ * @param: $type {string}  类型 (up || down || left || right || topleft || topright || bottomleft || bottomright)
+ */
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+body, html {
+  background: rgba(0, 0, 0, 0.3); }
+
+.ui-selectBlock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  width: 7.5rem;
+  height: 4.32rem;
+  background-color: #fff; }
+
+#ui-selector {
+  margin-top: .38rem;
+  margin-bottom: .3rem;
+  height: 2.64rem;
+  width: 7.5rem; }
+
+.ui-btn {
+  line-height: 1rem;
+  text-align: center;
+  font-size: .28rem;
+  color: #5f8ff2; }
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjcm9sbFNlbGVjdC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsa0JBQWlCO0FBQ2pCOztJQUVHO0FBQ0g7O0lBRUc7QUFDSCwwQkFBeUI7QUFDekI7OztJQUdHO0FBQ0gsbUJBQWtCO0FBQ2xCLGtCQUFpQjtBQUNqQjs7Ozs7SUFLRztBQUNILFVBQVM7QUFDVCxVQUFTO0FBQ1QsYUFBWTtBQUNaLFlBQVc7QUFDWCxZQUFXO0FBQ1gsV0FBVTtBQUNWLFlBQVc7QUFDWCxXQUFVO0FBQ1YsV0FBVTtBQUNWLFdBQVU7QUFDVixTQUFRO0FBQ1IsV0FBVTtBQUNWLFdBQVU7QUFDVixXQUFVO0FBQ1YsWUFBVztBQUNYO0VBQ0UsZ0NBQStCLEVBQUU7O0FBRW5DO0VBQ0UsaUJBQWdCO0VBQ2hCLFdBQVU7RUFDVixTQUFRO0VBQ1Isa0JBQWlCO0VBQ2pCLGVBQWM7RUFDZCxpQkFBZ0I7RUFDaEIsd0JBQXVCLEVBQUU7O0FBRTNCO0VBQ0Usb0JBQW1CO0VBQ25CLHNCQUFxQjtFQUNyQixpQkFBZ0I7RUFDaEIsZUFBYyxFQUFFOztBQUVsQjtFQUNFLG1CQUFrQjtFQUNsQixvQkFBbUI7RUFDbkIsbUJBQWtCO0VBQ2xCLGdCQUFlLEVBQUUiLCJmaWxlIjoiY29tbW9uL3Njcm9sbFNlbGVjdC5jc3MiLCJzb3VyY2VSb290IjoiLi4vc2Fzcy8ifQ== */

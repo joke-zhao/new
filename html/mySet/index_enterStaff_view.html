@@ -1,0 +1,9 @@
+<div id="enterprise-staff">
+    <div v-for="item in staffList" :key="item.id" class="enterprise-staff-item">
+        <div class="enterprise-staff-item-image">
+            <img :src="item.photoUrl ||'../../image/register/taxer@2x.png'">
+        </div>
+        <div class="enterprise-staff-item-name">{{item.nickname || '该用户未设置昵称'}}</div>
+        <div @click="openAuth(item.id,item.roleId)" class="enterprise-staff-item-permissionSetting">权限设置</div>
+    </div>
+</div>

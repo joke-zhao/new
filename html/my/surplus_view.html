@@ -1,0 +1,113 @@
+<div id="app">
+    <div class="surplus">
+        <div class="surplus-bg">
+            <img src="../../image/my/surplus.png" >
+            <div class="surplus-bg-surplus">
+                {{ balance.toFixed(2) }}
+            </div>
+        </div>
+        <div class="surplus-form">
+            <div class="surplus-form-record" @click="openList">
+                <div class="surplus-form-record-text">
+                    提现记录
+                </div>
+                <div class="surplus-form-record-back">
+
+                </div>
+            </div>
+            <div class="surplus-form-should" >
+                <div class="surplus-form-should-key">
+                    扣税
+                </div>
+                <div class="surplus-form-should-value">
+                    ¥{{ tax }}
+                </div>
+            </div>
+            <div class="surplus-form-gain">
+                <div class="surplus-form-gain-key">
+                    实际所得
+                </div>
+                <div class="surplus-form-gain-value">
+                    ¥{{ inputValue - tax }}
+                </div>
+            </div>
+            <div class="surplus-form-bind">
+                <div class="surplus-form-bind-img">
+                    <img src="../../image/my/wechat.png">
+                </div>
+                <div class="surplus-form-bind-text">
+                    提现至微信
+                </div>
+                <div class="surplus-form-bind-button" @click="phoneShow = true" v-show="vxPhone === ''">
+                    立即绑定
+                </div>
+            </div>
+            <div class="surplus-form-input">
+                <div class="surplus-form-input-text">
+                    提现金额
+                </div>
+                <div class="surplus-form-input-bottom">
+                    <div class="surplus-form-input-bottom-text">
+                        ¥
+                    </div>
+                    <div class="surplus-form-input-bottom-input">
+                        <input type="number" v-model="inputValue" @input="inputChange">
+                    </div>
+                </div>
+            </div>
+            <div class="surplus-form-explain">
+                提现限制说明+提现扣除项（扣税）说明
+            </div>
+        </div>
+        <div class="surplus-button" @click="cashOut">
+            提现
+        </div>
+    </div>
+    <!-- 支付方式弹出层 -->
+    <div class="popup-box">
+        <van-popup
+                v-model="payShow"
+                position="bottom"
+                :style="{ height: '40%' }"
+        >
+            <div class="box">
+                <div class="box-header">
+                    支付
+                </div>
+                <div class="box-main">
+                    <!-- <p>支付方式</p> -->
+                    <van-radio-group v-model="payFlag">
+                        <div
+                                v-for="item in payList"
+                                :key="item.payId"
+                                :class="{ 'main-item': true, 'select-pay': item.payId === payFlag }"
+                        >
+                            <div class="item-left">
+                                <img :src="item.icon" alt="" />
+                                <span>{{item.name}}</span>
+                            </div>
+                            <div class="item-rigth">
+                                <van-radio icon-size="0.33rem" :name="item.payId"></van-radio>
+                            </div>
+                        </div>
+                    </van-radio-group>
+                </div>
+                <div class="box-footer">
+                    <div class="footer">
+                        <div class="lefe-footer">
+                            应付金额：
+                            <span>￥{{totalPrice}}</span>
+                        </div>
+                        <div @click="handlePayType" class="right-footer">
+                            付款
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </van-popup>
+    </div>
+
+    <van-dialog v-model="phoneShow" title="绑定手机号码" show-cancel-button @confirm="updatePhone">
+        <van-field v-model="phoneNum" type="number" label="手机号码" placeholder="请输入手机号码" />
+    </van-dialog>
+</div>

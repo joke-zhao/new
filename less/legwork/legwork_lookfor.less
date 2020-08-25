@@ -1,0 +1,253 @@
+#app{
+  width: 100%;
+  height: 100%;
+  background: #F5F5F5;
+  .content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .advertisement{
+      width: 7.02rem;
+      height: 2.40rem;
+      background: #e3e3e3;
+      margin-top: .16rem;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .list{
+      width: 7.02rem;
+      height: 6.94rem;
+      background: #fff;
+      border-radius: .16rem;
+      margin-top: .2rem;
+      .list-item{
+        width: 100%;
+        height: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family:PingFang SC;
+        font-size:.28rem;
+        color:#222222;
+        .list-item-left{
+          width: 24%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          font-weight:400;
+          margin-left: .4rem;
+          //white-space: nowrap;
+          font-family:PingFang SC;
+          text-align: justify;
+          font-size:.28rem;
+          color:#222;
+          span{
+            display: inline-block;
+            padding-left: -100%;
+          }
+        }
+        .list-item-right{
+          font-size:.28rem;
+          margin-right: .41rem;
+          display: flex;
+          align-items: center;
+          &::after{
+            margin-left: .17rem;
+            content: '';
+            width: .14rem;
+            height: .14rem;
+            display: block;
+            border-right: .01rem solid #ddd;
+            border-top: .01rem solid #ddd;
+            transform: rotate(45deg);
+          }
+        }
+        .list-item-input{
+          margin-left: 0.74rem;
+          outline-style: none ;
+          border: 0;
+          padding: 0.13rem 0.14rem;
+          width: 100%;
+          font-size:0.3rem;
+          font-family:PingFang SC;
+          font-weight:400;
+          color:rgba(187,187,187,1);
+          outline:none;
+          border:none;
+          caret-color:#ccc; //修改光标颜色 一定要加 否则苹果手机无法输入
+          -webkit-user-select:auto!important; //苹果手机兼容
+          user-select:auto!important;
+        }
+
+      }
+      .list-item:first-child{
+        height: .9rem;
+      }
+      .list-line{
+        width: 100%;
+        height: .01rem;
+        background: #EEEEEE;
+      }
+    }
+    .btn-add-order{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 7.02rem;
+      height: .8rem;
+      background:linear-gradient(0deg,#6887FF 0%,#4769EE 100%);
+      border-radius:.16rem;
+      margin-top: .4rem;
+      font-size:.3rem;
+      font-family:PingFang SC;
+      font-weight:bold;
+      color:#FFFFFF;
+    }
+  }
+  .bottom-bar{
+    border-top:1px solid #E0E0E0;
+    width: 100%;
+    height: .98rem;
+    background: #fff;
+    position: fixed;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    .bottom-bar-item{
+      width: 33.3%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size:.2rem;
+      font-family:PingFang SC;
+      font-weight:400;
+      color:#999999;
+      &:nth-child(2){
+        color: #4769EE;
+      }
+      img{
+        width: .5rem;
+        height: .38rem;
+      }
+    }
+  }
+  footer {
+    width: 100%;
+    position: fixed;
+    bottom: 1.4rem;
+    .footer-box {
+      width: 80%;
+      height: 0.8rem;
+      margin: 0 auto;
+      // margin-top: .6rem;
+      line-height: 0.8rem;
+      border-radius: .8rem;
+      background: linear-gradient(180deg, rgba(104, 134, 255, 1) 0%, rgba(71, 105, 238, 1) 100%);
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      span {
+        font-size: .3rem;
+        color: #fff;
+        font-weight: 600;
+      }
+    }
+  }
+  .popup-box {
+
+    .box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      .box-header {
+        padding: .3rem 0;
+        font-size: .3rem;
+        font-weight: 600;
+        text-align: center;
+        border-bottom: 2px solid #f5f5f5;
+      }
+
+      .box-main {
+        padding: 0 .2rem;
+        p {
+          font-size: .28rem;
+          font-weight: 600;
+        }
+
+        .main-item {
+          box-sizing: border-box;
+          width: 100%;
+          height: 1rem;
+          margin-top: 0.2rem;
+          padding: 0 0.2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-radius: 5px;
+          font-size: .28rem;
+          color: #000;
+          border: 1px solid #fff;
+
+          .item-left {
+            display: flex;
+            align-items: center;
+            img {
+              margin-right: .2rem;
+              width: 0.48rem;
+              height: 0.39rem;
+            }
+          }
+        }
+
+        .main-item:last-child {
+          img {
+            width: 0.4rem;
+            height: 0.4rem;
+          }
+        }
+
+        /* 支付方式选中的样式 */
+        .select-pay {
+          border: 1px solid #1BA3E8;
+          background-color: #DEF4FF;
+        }
+      }
+
+      .box-footer {
+        position: absolute;
+        width: 100%;
+        height: .9rem;
+        bottom: 0;
+        .footer{
+          width: 100%;
+          height: 100%;
+          display: flex;
+
+          div{
+            flex:1;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .28rem;
+            span{
+              color:#FF0000;
+            }
+          }
+          div:last-child{
+            font-size: .3rem;
+            color:#fff;
+            font-weight: 600;
+            background:linear-gradient(0deg,rgba(104,135,255,1) 0%,rgba(71,105,238,1) 100%);
+          }
+        }
+      }
+    }
+  }
+}

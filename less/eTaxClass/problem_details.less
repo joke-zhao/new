@@ -1,0 +1,436 @@
+#app{
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // <!-- 问题 -->
+    .problem_header{
+        margin-top: .39rem;
+        width: 96%;
+        .title{
+            font-size: .32rem;
+            font-family:PingFang SC;
+            font-weight:500;
+            color:#333333;
+            line-height: .52rem;
+        }
+        .content{
+            margin-top: .39rem;
+            font-size:.28rem;
+            font-family:PingFang SC;
+            font-weight:400;
+            color:#333333;
+            line-height:.42rem;
+        }
+        .operation{
+            margin-top: .41rem;
+            display: flex;
+            width: 100%;
+            border-top: 1px solid #f5f5f5;
+            .writeAnswer{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 33%;
+                border-right: 1px solid #f5f5f5;
+                img{
+                    width: .3rem;
+                    height: .3rem;
+                }
+                span{
+                    margin-left: .15rem;
+                    font-size:.24rem;
+                    font-family:PingFang SC;
+                    font-weight:400;
+                    color:#333333;
+                    line-height:.42rem;
+                }
+            }
+            .focusOn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 33%;
+                border-right: 1px solid #f5f5f5;
+                img{
+                    width: .3rem;
+                    height: .3rem;
+                }
+                span{
+                    margin-left: .15rem;
+                    font-size:.24rem;
+                    font-family:PingFang SC;
+                    font-weight:400;
+                    color:#333333;
+                    line-height:.42rem;
+                }
+            }
+            .online{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 33%;
+                img{
+                    width: .3rem;
+                    height: .3rem;
+                }
+                span{
+                    margin-left: .15rem;
+                    font-size:.24rem;
+                    font-family:PingFang SC;
+                    font-weight:400;
+                    color:#333333;
+                    line-height:.42rem;
+                }
+            }
+        }
+    }
+
+    // 智能回答
+    .smart_answer{
+        margin-top: .4rem;
+        width: 96%;
+        padding-bottom: .23rem;
+        border-bottom: 1px solid #F5F5F5;
+        .title{
+            font-size:.3rem;
+            font-family:PingFang SC;
+            font-weight:bold;
+            color:#232323;
+            padding-bottom: .23rem;
+            border-bottom: 1px solid #F5F5F5;
+        }
+        .content{
+            margin-top: .4rem;
+            font-size:.28rem;
+            font-family:PingFang SC;
+            font-weight:400;
+            color:#333333;
+            line-height:.42rem;
+            span{
+                color: #4769EE;
+            }
+        }
+        .good{
+            line-height:.3rem;
+            display: flex;
+            justify-content: flex-end;
+            margin-left: auto;
+            img{
+                width: .3rem;
+                height: .3rem;
+            }
+            span{
+                font-size:.24rem;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:#808080;
+                line-height:.37rem;
+            }
+        }
+    }
+
+
+    // 账友回答
+    .friend_replied{
+        margin-top: .4rem;
+        width: 96%;
+        .title{
+            font-size:.3rem;
+            font-family:PingFang SC;
+            font-weight:bold;
+            color:#232323;
+            padding-bottom: .23rem;
+            border-bottom: 1px solid #F5F5F5;
+        }
+        .friend_all{
+            margin-top: .4rem;
+            .contents{
+                .user{
+                    display: flex;
+                    margin-top: .2rem;
+                    // justify-content: center;
+                    align-items: center;
+                    .photo{
+                        width: .9rem;
+                        height: .9rem;
+                        line-height:.37rem;
+                        // margin-top: -2.2rem;
+                        img{
+                            width: .9rem;
+                            height: .9rem;
+                            border-radius: 50%;
+                        }
+                    }
+                    .namedate{
+                        margin-left: .24rem;
+                        .name{
+                            font-size:.3rem;
+                            font-family:PingFang SC;
+                            font-weight:500;
+                            color:#222222;
+                            line-height:.37rem;
+                        }
+                        .date{
+                            margin-top: .16rem;
+                            font-size:.24rem;
+                            font-family:PingFang SC;
+                            font-weight:400;
+                            color:#999999;
+                            line-height:.37rem;
+                        }
+                    }
+                }
+                .content{
+                    display: flex;
+                    margin-top: .4rem;
+                    font-family:PingFang SC;
+                    color:#333333;
+                    font-size:.28rem;
+                    font-weight:400;
+                    line-height:.42rem;
+                    .contentspan{
+                        overflow : hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                    }
+                    // .getAll{
+                    //     margin-left: .2rem;
+                    //     color: #4769EE;
+                    // }
+                    .getAll{
+                        overflow : hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 100;
+                        -webkit-box-orient: vertical;
+                    }
+                }
+            }
+            .good{
+                margin-top: .4rem;
+                line-height:.3rem;
+                display: flex;
+                justify-content: flex-end;
+                margin-left: auto;
+                .caozuo{
+                    margin-left: .5rem;
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: .3rem;
+                        height: .3rem;
+                    }
+                    span{
+                        margin-left: .13rem;
+                        font-size:.24rem;
+                        font-family:PingFang SC;
+                        font-weight:400;
+                        color:#808080;
+                        line-height:.37rem;
+                    }
+                }
+            }
+            .more{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: .4rem;
+                img{
+                    width: .3rem;
+                    height: .3rem;
+                }
+            }
+            .comment_list{
+                margin-left: .7rem;
+                padding-bottom: .2rem;
+                border-bottom: 2px solid #F5F5F5;
+                .contents{
+                    .user{
+                        display: flex;
+                        margin-top: .2rem;
+                        // justify-content: center;
+                        align-items: center;
+                        .photo{
+                            width: .9rem;
+                            height: .9rem;
+                            line-height:.37rem;
+                            // margin-top: -2.2rem;
+                            img{
+                                width: .9rem;
+                                height: .9rem;
+                                border-radius: 50%;
+                            }
+                        }
+                        .namedate{
+                            margin-left: .24rem;
+                            .name{
+                                font-size:.3rem;
+                                font-family:PingFang SC;
+                                font-weight:500;
+                                color:#222222;
+                                line-height:.37rem;
+                            }
+                            .date{
+                                margin-top: .16rem;
+                                font-size:.24rem;
+                                font-family:PingFang SC;
+                                font-weight:400;
+                                color:#999999;
+                                line-height:.37rem;
+                            }
+                        }
+                    }
+                    .content{
+                        display: flex;
+                        margin-top: .4rem;
+                        font-family:PingFang SC;
+                        color:#333333;
+                        font-size:.28rem;
+                        font-weight:400;
+                        line-height:.42rem;
+                        .contentspan{
+                            overflow : hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 3;
+                            -webkit-box-orient: vertical;
+                        }
+                        // .getAll{
+                        //     margin-left: .2rem;
+                        //     color: #4769EE;
+                        // }
+                        .getAll{
+                            overflow : hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 100;
+                            -webkit-box-orient: vertical;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 弹窗
+    .popup{
+        // 积分打赏
+        .exceptional{
+            width: 100%;
+            height: 4.03rem;
+            text-align: center;
+            background-color: #fff;
+            position: fixed;
+            bottom: 0;
+            .title{
+                margin-top: .1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: .34rem;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:#000;
+                line-height: .42rem;
+                border-bottom: 1px solid #F5F5F5;
+                padding-bottom: .2rem;
+            }
+            .shuru{
+                margin-top: .1rem;
+                input{
+                    width: 2rem;
+                    height:.74rem;
+                    font-size: .34rem;
+                    font-family:PingFang SC;
+                    font-weight:400;
+                    color:#fff;
+                    text-align: center;
+                    line-height: .42rem;
+                    background-color: #5171F3;
+                    border:0px;
+                    border-radius:.1rem;
+                }
+                input::-webkit-input-placeholder{
+                    color:#fff;
+                }
+                input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+                    color:#fff;
+                }
+                input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+                    color:#fff;
+                }
+                input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+                    color:#fff;
+                }
+            }
+            .operation{
+                width: 100%;
+                display: flex;
+                margin-top: .68rem;
+                .close{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50%;
+                    height:.9rem;
+                    font-size: .3rem;
+                    font-family:PingFang SC;
+                    font-weight:bold;
+                    color:#9C9C9C;
+                    background-color: #F5F5F5;
+                }
+                .determine{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50%;
+                    height:.9rem;
+                    font-size: .3rem;
+                    font-family:PingFang SC;
+                    font-weight:bold;
+                    color:#fff;
+                    background-color: #5171F3;
+                }
+            }
+        }
+        .bottomSearch{
+            width: 100%;
+            height: 1rem;
+            position: fixed;
+            bottom: 1rem;
+            .van-search{
+                height: 2rem;
+                .van-cell{
+                    border: 1px solid #ccc;
+                }
+            }
+            .close{
+                position: fixed;
+                bottom:1.5rem;
+                right: .1rem;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                div{
+                    color: #808080;
+                    margin-left: .5rem;
+                    font-size: .3rem;
+                    text-align: center;
+                }
+                img{
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-left: auto;
+                    width: .35rem;
+                    height: .35rem;
+                }
+            }
+        }
+    }
+}

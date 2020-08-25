@@ -1,0 +1,74 @@
+<!-- 我的下级代理页面开始 -->
+<div id="app">
+  <header>
+    <div class="header-box">
+      <div class="box">
+        我的下级代理
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main-box">
+      <!-- 下级用户代理信息 -->
+      <div class="box-main">
+        <!-- 父列表项 -->
+        <div  v-for="(item,index) in sonList" :key="item.nickname" class="main-baba">
+        <!-- 列表项 -->
+        <div class="main-item">
+          <div class="item-left">
+            <img :src="item.imgUrl || '../../image/set-info/dog.png'" alt="">
+          </div>
+          <div class="item-right">
+            <!-- 点击查看用户下级 -->
+            <div @click="handleUserSon(index,item.isActive)" class="right-desc">
+              <div class="desc-name">{{item.nickname}}</div>
+              <div class="desc-address">
+                <span>{{item.agencyArea}}</span> 
+                <img v-if="item.isActive" class="img-next" src="../../image/set-info/next.png" alt="">
+                <img v-else class="img-right" src="../../image/set-info/right.png" alt="">
+              </div>
+            </div>
+            <div class="right-info">
+              <div class="info-MD">
+                <div class="MD-left">进货 MD</div>
+                <div class="MD-right">{{item.mdCount}}</div>
+              </div>
+              <div class="info-MD">
+                <div class="MD-left">剩余 MD</div>
+                <div class="MD-right">{{item.mdCount}}</div>
+              </div>
+            </div>
+          </div>
+          </div>
+            <!-- 弹出子项 -->
+          <div v-show="item.isActive" v-for="(item2,index) in item.agencyResult" :key="index" class='main-item'>
+            <!-- 空div 占位处理 -->
+            <div class="item-left"></div>
+            <div class="item-right">
+              <div class="item-rigth-son">
+                <div class="right-img-son">
+                  <img :src="item2.imgUrl || '../../image/set-info/dog.png'" alt="">
+                </div>
+                <div class="right-detail-son">
+                  <div class="detail-desc-son">
+                    <div class="desc-name-son">{{item2.nickname}}</div>
+                    <div class="desc-address-son">{{item2.agencyArea}}</div>
+                  </div>
+                  <div class="detail-info-son">
+                    <span>进货MD：{{item2.mdCount}}</span>
+                    <span>剩余MD：{{item2.mdCount}}</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div v-show="sonList.length === 0" class="main-baba2">
+          <span>暂无下级代理</span>
+        </div>
+        </div>
+        
+      </div>
+    </div>
+  </main>
+</div>

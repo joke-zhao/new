@@ -1,0 +1,241 @@
+/**css代码在此处开始*/
+#home-peo .header {
+  padding: 0 0.24rem;
+  height: 0.86rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home-peo .header .left {
+  height: 0.35rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home-peo .header .left .site {
+  width: 0.35rem;
+  height: 0.4rem;
+}
+#home-peo .header .left .address {
+  font-size: 0.28rem;
+  padding: 0 0.03rem;
+  font-weight: 500;
+}
+#home-peo .header .left .arrow {
+  margin-top: 0.12rem;
+  width: 0;
+  height: 0;
+  border: 0.08rem solid transparent;
+  border-top-color: #000;
+}
+#home-peo .header .right {
+  position: relative;
+  width: 0.4rem;
+  height: 0.35rem;
+  padding-right: 0.06rem;
+}
+#home-peo .header .right .news {
+  width: 0.34rem;
+  height: 0.35rem;
+}
+#home-peo .header .right .ts {
+  position: absolute;
+  width: 0.3rem;
+  height: 0.24rem;
+  background-color: #F64A38;
+  color: #fff;
+  text-align: center;
+  line-height: 0.24rem;
+  font-size: 0.18rem;
+  border-radius: 0.12rem;
+  right: -0.16rem;
+  top: -0.08rem;
+}
+#home-peo .job-nav {
+  border-top: 1px solid #EEEEEE;
+  height: 2.1rem;
+}
+#home-peo .job-nav .job-facilitator {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#home-peo .job-nav .job-facilitator li {
+  flex: 1;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#home-peo .job-nav .job-facilitator li img {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+}
+#home-peo .job-nav .job-facilitator li p {
+  padding-top: 0.11rem;
+  font-size: 0.24rem;
+}
+#home-peo .tieku {
+  height: 0.2rem;
+  background-color: #F5F5F5;
+}
+#home-peo .mapbox {
+  height: 3.6rem;
+  width: 100%;
+  background-color: lightyellow;
+}
+#home-peo .facilitator h3 {
+  margin-top: 0.3rem;
+  padding: 0 0.24rem;
+  line-height: 0.92rem;
+  height: 0.92rem;
+  font-weight: 600;
+  font-size: 0.3rem;
+  border-bottom: 0.01rem solid #c0c0c0;
+}
+#home-peo .facilitator h3 span {
+  font-size: 0.24rem;
+  float: right;
+}
+#home-peo .facilitator .revenue-ul {
+  width: 100%;
+  padding: 0 0.24rem;
+}
+#home-peo .facilitator .revenue-ul li {
+  height: 2.08rem;
+  padding: 0.24rem 0;
+  box-sizing: border-box;
+  border-bottom: 0.01rem solid #EEEEEE;
+}
+#home-peo .facilitator .revenue-ul li img {
+  float: left;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.1rem;
+}
+#home-peo .facilitator .revenue-ul li .details {
+  float: right;
+  width: 5.2rem;
+  height: 1.6rem;
+}
+#home-peo .facilitator .revenue-ul li .details .kj {
+  font-size: 0.28rem;
+}
+#home-peo .facilitator .revenue-ul li .details .grade {
+  margin: 0.05rem 0;
+  width: 5.2rem;
+  height: 0.25rem;
+  font-size: 0.24rem;
+  color: #808080;
+  display: flex;
+  align-items: center;
+}
+#home-peo .facilitator .revenue-ul li .details .grade .star {
+  width: 1.1rem;
+  height: 0.21rem;
+}
+#home-peo .facilitator .revenue-ul li .details .grade .star img {
+  width: 0.2rem;
+  height: 0.2rem;
+  float: left;
+}
+#home-peo .facilitator .revenue-ul li .details .grade .stance {
+  margin-left: 2.9rem;
+}
+#home-peo .facilitator .revenue-ul li .details p {
+  margin-bottom: 0.03rem;
+  font-size: 0.24rem;
+  color: #808080;
+}
+#home-peo .facilitator .revenue-ul li .details .dljz {
+  color: #808080;
+  font-size: 0.2rem;
+  width: 0.96rem;
+  height: 0.28rem;
+  border: 1px solid #808080;
+  text-align: center;
+  line-height: 0.28rem;
+  border-radius: 0.08rem;
+}
+#home-peo .revenue h3 {
+  padding: 0 0.24rem;
+  line-height: 0.92rem;
+  height: 0.92rem;
+  font-weight: 600;
+  font-size: 0.3rem;
+  border-bottom: 0.01rem solid #EEEEEE;
+}
+#home-peo .revenue h3 span {
+  font-size: 0.24rem;
+  float: right;
+}
+#home-peo .revenue .revenue-ul {
+  width: 100%;
+  padding: 0 0.24rem;
+}
+#home-peo .revenue .revenue-ul li {
+  height: 1.98rem;
+  padding: 0.24rem 0;
+  box-sizing: border-box;
+  border-bottom: 0.01rem solid #EEEEEE;
+}
+#home-peo .revenue .revenue-ul li img {
+  float: left;
+  width: 2.1rem;
+  height: 1.5rem;
+}
+#home-peo .revenue .revenue-ul li .details {
+  float: right;
+  width: 4.68rem;
+  height: 1.5rem;
+}
+#home-peo .revenue .revenue-ul li .details .de-news {
+  font-size: 0.28rem;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+#home-peo .revenue .revenue-ul li .details p {
+  padding-top: 0.22rem;
+  font-size: 0.24rem;
+  color: #808080;
+}
+#home-peo .revenue .revenue-ul li .details p span {
+  float: right;
+}
+#home-peo .bottomku {
+  height: 0.21rem;
+  background-color: #F5F5F5;
+}
+#home-peo .phone-kf {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-image: url(../../image/home-peo/phone-kf.png);
+  background-size: 100% 100%;
+  position: fixed;
+  right: 0.4rem;
+  top: 7.77rem;
+  font-size: 0.14rem;
+  color: #fff;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+#home-peo .wx-kf {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-image: url(../../image/home-peo/wx-kf.png);
+  background-size: 100% 100%;
+  position: fixed;
+  right: 0.4rem;
+  top: 8.94rem;
+  font-size: 0.14rem;
+  color: #fff;
+  text-align: center;
+  padding-top: 0.5rem;
+}

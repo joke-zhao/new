@@ -1,0 +1,28 @@
+/* 账户与安全页面样式 */
+#app {
+  font-size: 0.24rem;
+}
+#app .content-box {
+  width: 90%;
+  margin: 0 auto;
+}
+#app .content-box .box-item {
+  width: 100%;
+  height: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #DCDCDC;
+}
+#app .content-box .box-item .item-right {
+  display: flex;
+  align-items: center;
+}
+#app .content-box .box-item .item-right img {
+  width: 0.14rem;
+  height: 0.23rem;
+  margin-left: 0.3rem;
+}
+#app .content-box .box-item:last-child {
+  border: none;
+}

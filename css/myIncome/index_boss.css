@@ -1,0 +1,88 @@
+/* 我邀请的boss页面样式开始 */
+#app {
+  font-size: 0.24rem;
+  color: #000;
+}
+#app header {
+  width: 100%;
+  height: 2.3rem;
+  padding-top: 0.5rem;
+  background-image: url(../../image/set-info/myIncome.png);
+  background-size: 100% 2.3rem;
+}
+#app header .box {
+  width: 90%;
+  margin: 0 auto;
+  height: 0.44rem;
+  line-height: 0.44rem;
+  padding: 0 0.3rem;
+  font-size: 0.32rem;
+  color: #fff;
+  font-weight: 600;
+  border-left: 3px solid #fff;
+}
+#app main {
+  width: 100%;
+}
+#app main .main-box {
+  width: 100%;
+  margin-top: -0.5rem;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+}
+#app main .main-box .box-main {
+  width: 90%;
+  margin: 0 auto;
+}
+#app main .main-box .box-main .main-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2rem;
+  border-bottom: 1px solid #E5E5E5;
+}
+#app main .main-box .box-main .main-item .item-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+#app main .main-box .box-main .main-item .item-left img {
+  display: block;
+  width: 1.27rem;
+  height: 1.27rem;
+  border-radius: 1.27rem;
+}
+#app main .main-box .box-main .main-item .item-right {
+  flex: 3;
+}
+#app main .main-box .box-main .main-item .item-right .right-name {
+  padding: 0.1rem 0;
+  font-size: 0.3rem;
+  color: #000;
+}
+#app main .main-box .box-main .main-item .item-right .right-company {
+  clear: #999;
+}
+#app main .main-box .box-main .main-item .item-right .right-desc {
+  display: flex;
+  justify-content: space-between;
+}
+#app main .main-box .box-main .main-item .item-right .right-desc .desc-left {
+  color: #FCC92C;
+}
+#app main .main-box .box-main .main-item .item-right .right-desc .desc-right {
+  color: #999;
+}
+#app main .main-box .box-main .main-item:last-child {
+  border: none;
+}
+#app main .main-box .box-main .main-item2 {
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 0.3rem;
+  font-weight: 600;
+  text-align: center;
+}

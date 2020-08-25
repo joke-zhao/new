@@ -1,0 +1,235 @@
+#app {
+  width: 100%;
+  overflow-x: hidden;
+}
+#app .register {
+  width: 100%;
+}
+#app .register .register-upload {
+  padding: 0.24rem;
+  border-bottom: 0.01rem solid #f5f5f5;
+}
+#app .register .register-require {
+  padding-left: 0.16rem;
+  padding-right: 0.07rem;
+  color: #FF3D3D;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+}
+#app .register .register-title {
+  white-space: nowrap;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  padding-right: 0.2rem;
+}
+#app .register .register-area {
+  width: 100%;
+  display: flex;
+  height: 1rem;
+  align-items: center;
+  border-bottom: 0.01rem solid #f5f5f5;
+}
+#app .register .register-area .register-area-item {
+  white-space: nowrap;
+  width: 18%;
+  display: flex;
+  align-items: center;
+  padding-left: 0.3rem;
+}
+#app .register .register-area .register-area-item .register-area-item-text {
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+}
+#app .register .register-area .register-area-item .register-area-item-icon {
+  margin-left: 0.12rem;
+  width: 0.16rem;
+  height: 0.09rem;
+  background: url("../../image/commercial/down.png") no-repeat;
+  background-size: cover;
+}
+#app .register .register-tag {
+  width: 100%;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 0.01rem solid #f5f5f5;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#app .register .register-tag .register-tag-list {
+  padding-top: 0.3rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 0.2rem;
+  flex-wrap: wrap;
+}
+#app .register .register-tag .register-tag-list .register-tag-list-item {
+  margin-top: 0.1rem;
+  margin-left: 0.2rem;
+  box-sizing: border-box;
+  height: 50%;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  font-size: 0.28rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  border-radius: 0.24rem;
+  border: 0.01rem solid #222222;
+}
+#app .register .register-tag .register-tag-list .register-tag-list-item-selected {
+  border: 0.01rem solid #6887FF;
+  color: #6887FF;
+}
+#app .register .register-price {
+  width: 100%;
+  display: flex;
+  height: 1rem;
+  align-items: center;
+  border-bottom: 0.01rem solid #f5f5f5;
+}
+#app .register .register-price .register-price-text {
+  font-size: 0.34rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #F64A38;
+  padding-left: 0.34rem;
+}
+#app .register .register-price .register-price-explain {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+  padding-left: 0.15rem;
+}
+#app .register .register-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 0.24rem;
+  border-bottom: 0.01rem solid #f5f5f5;
+}
+#app .register .register-content .register-content-title {
+  width: 100%;
+  height: 1rem;
+  align-items: center;
+  display: flex;
+}
+#app .register .register-content .register-content-input {
+  width: 6.7rem;
+  height: 2.4rem;
+  background: #F5F5F5;
+  border-radius: 0.16rem;
+  margin-bottom: 0.24rem;
+}
+#app .register .register-content .register-content-input textarea {
+  resize: none;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  border: 0 none;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.16rem;
+  background: #f5f5f5;
+  padding: 0.2rem 0 0 0.2rem;
+  outline: none;
+  caret-color: #ccc;
+  -webkit-user-select: auto !important;
+  user-select: auto !important;
+}
+#app .register .register-material {
+  width: 100%;
+  padding-bottom: 0.24rem;
+  border-bottom: 0.01rem solid #f5f5f5;
+}
+#app .register .register-material .register-material-title {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  padding-left: 0.41rem;
+}
+#app .register .register-material .register-material-input {
+  width: 6.7rem;
+  height: 2.4rem;
+  background: #F5F5F5;
+  border-radius: 0.16rem;
+  margin-bottom: 0.24rem;
+  margin-left: 0.4rem;
+}
+#app .register .register-material .register-material-input textarea {
+  resize: none;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  border: 0 none;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.16rem;
+  background: #f5f5f5;
+  padding: 0.2rem 0 0 0.2rem;
+  outline: none;
+  caret-color: #ccc;
+  -webkit-user-select: auto !important;
+  user-select: auto !important;
+}
+#app .register .register-choose {
+  width: 100%;
+}
+#app .register .register-choose .register-choose-item {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+}
+#app .register .register-choose .register-choose-item .register-choose-item-check {
+  width: 0.4rem;
+  height: 0.4rem;
+  border: 0.02rem solid #BBBBBB;
+  border-radius: 50%;
+  margin-left: 0.4rem;
+}
+#app .register .register-choose .register-choose-item .register-choose-item-checked {
+  background: url("../../image/commercial/checked.png") no-repeat;
+  background-size: cover;
+  border: none;
+}
+#app .register .register-choose .register-choose-item .register-choose-item-text {
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  margin-left: 0.24rem;
+  border-bottom: 0.01rem solid #f5f5f5;
+}
+#app .register .register-divide {
+  width: 100%;
+  background: #f5f5f5;
+  height: 0.41rem;
+}
+#app .register .register-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 0.9rem;
+  background: linear-gradient(0deg, #6887FF 0%, #4769EE 100%);
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #fff;
+}

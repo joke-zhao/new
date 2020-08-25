@@ -1,0 +1,56 @@
+<div id="app">
+  <!-- 设置页面 -->
+  <div class="content">
+    <div @click="openSafety"  class="content-border">
+      <span>账号与安全</span>
+      <div><img src="../../image/set-info/right.png" alt=""></div>
+    </div>
+    <div @click="openUserInfo">
+      <span>个人信息</span>
+      <div><img src="../../image/set-info/right.png" alt=""></div>
+    </div>
+    <div @click="openEnterInfo">
+      <span>企业信息</span>
+      <div><img src="../../image/set-info/right.png" alt=""></div>
+    </div>
+    <div @click="openEnterStaff" class="content-border">
+      <span>查看企业员工</span>
+      <div><img src="../../image/set-info/right.png" alt=""></div>
+    </div>
+    <div>
+      <span>采购依据</span>
+      <div class="fontColor">
+        <van-dropdown-menu>
+          <van-dropdown-item v-model="value1" :options="poList" />
+        </van-dropdown-menu>
+      </div>
+    </div>
+    <div>
+      <span>销售依据</span>
+      <div class="fontColor">
+        <van-dropdown-menu>
+          <van-dropdown-item v-model="value2" :options="marketList" />
+        </van-dropdown-menu>
+      </div>
+    </div>
+    <div>
+      <span>报销方式</span>
+      <div class="fontColor">
+        <van-dropdown-menu>
+          <van-dropdown-item v-model="value3" :options="applyList" />
+        </van-dropdown-menu>
+      </div>
+    </div>
+    
+    <div v-if="roleId === '2' || roleId === '4'" class="content-border">
+      <span>自动审批</span>
+      <div>
+        <van-switch @change='changeAutoBtn' v-model="isActive"  size="0.48rem"  />
+      </div>
+    </div>
+    <div @click="outLogin">
+      <span>退出登录</span>
+      <div><img src="../../image/set-info/right.png" alt=""></div>
+    </div>
+  </div>
+</div>

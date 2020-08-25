@@ -1,0 +1,39 @@
+<div id="app">
+    <div class="divide"></div>
+    <div class="item-input-wapper">
+        <div class="item-input-title">
+            手机号
+        </div>
+        <input v-model="phone" type="text" placeholder="请输入手机号码">
+    </div>
+    <div class="line"></div>
+    <div class="item-input-wapper">
+        <div class="item-input-title">
+            验证码
+        </div>
+        <input v-model="sureNumber" type="text" placeholder="请输入验证码">
+        <div @click="handleGetCode" class="codeNumber">
+            {{codeDesc}}
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="item-input-wapper">
+        <div class="item-input-title">
+            新密码
+        </div>
+        <input v-model="password" type="password" placeholder="请输入新密码">
+    </div>
+    <div class="line"></div>
+    <div class="item-input-wapper">
+        <div class="item-input-title">
+            确认密码
+        </div>
+        <input v-model="newPassword" class="confirm-password" type="password" placeholder="请输入确认密码">
+    </div>
+    <div class="tips">
+        密码至少6个字符，必须是纯数字或者英文+数字
+    </div>
+    <div @click="submitReg" class="submit-wrapper">
+        <input type="button" class="btn-submit" value="提交">
+    </div>
+</div>

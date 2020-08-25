@@ -1,0 +1,53 @@
+#freelancerSettlement {
+  width: 100%;
+}
+#freelancerSettlement .settlement-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+#freelancerSettlement .settlement-img img {
+  height: 5rem;
+}
+#freelancerSettlement .situation-content-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 0.4rem;
+}
+#freelancerSettlement .situation-content-button .situation-save {
+  width: 6.04rem;
+  height: 0.8rem;
+  background: linear-gradient(180deg, #6886ff 0%, #4769ee 100%);
+  border-radius: 40px;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#freelancerSettlement .bottom_btns {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+#freelancerSettlement .bottom_btns .export {
+  height: 50%;
+  width: 100%;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}

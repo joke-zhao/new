@@ -1,0 +1,47 @@
+#app {
+  height: 100%;
+  padding: 0.2rem;
+}
+#app .card_item {
+  display: block;
+  height: 2.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.4rem;
+  border-radius: 8px;
+}
+#app .card_item:nth-child(n+2) {
+  margin-top: 0.2rem;
+}
+#app .card_item img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+#app .card_item .info {
+  display: flex;
+  color: #fff;
+  text-align: right;
+  justify-content: space-between;
+  align-items: center;
+}
+#app .card_item .info .info_text h4 {
+  font-size: 19px;
+  font-weight: 500;
+}
+#app .card_item .info .info_text p {
+  font-size: 14px;
+}
+#app .card_item .info img {
+  width: 0.49rem;
+  height: 0.49rem;
+}
+.card_taxer {
+  background: url('../../image/register/bg-blue@2x.png') center no-repeat;
+}
+.card_server {
+  background: url('../../image/register/bg-yellow@2x.png') center no-repeat;
+}
+.card_visitor {
+  background: url('../../image/register/bg-gray@2x.png') center no-repeat;
+}

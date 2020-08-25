@@ -1,0 +1,306 @@
+#accountsReceivable {
+  width: 100%;
+  position: relative;
+}
+#accountsReceivable .startTime-font {
+  display: flex;
+  font-size: 0.25rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000000;
+  opacity: 0.96;
+}
+#accountsReceivable .aTitle {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.35rem;
+  margin-top: 0.3rem;
+  margin-bottom: -0.5rem;
+}
+#accountsReceivable .company {
+  width: 100%;
+  height: 1rem;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+#accountsReceivable .company .company_name {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  height: 100%;
+}
+#accountsReceivable .company .company_name p {
+  font-size: 0.35rem;
+  color: #000;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#accountsReceivable .company .company_cny {
+  display: flex;
+  width: 25%;
+  align-items: center;
+  height: 100%;
+  flex-direction: row-reverse;
+  font-size: 0.2rem;
+  color: #000;
+}
+#accountsReceivable .datePick {
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 6.72rem;
+  height: 0.68rem;
+  border: 1px solid #7F7F7F;
+  border-radius: 0.04rem;
+  margin-left: 0.38rem;
+}
+#accountsReceivable .datePick .date-icon {
+  width: 0.25rem;
+  height: 0.26rem;
+  opacity: 0.8;
+}
+#accountsReceivable .datePick .spans {
+  width: 0.01rem;
+  height: 0.36rem;
+  border: 0.01rem solid #000000;
+  opacity: 0.3;
+  margin-left: 0.18rem;
+}
+#accountsReceivable .datePick .startTime {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  text-align: center;
+}
+#accountsReceivable .datePick .startTime .van-cell {
+  padding: 0rem;
+  opacity: 1;
+}
+#accountsReceivable .datePick .startTime .van-field__control {
+  text-align: center;
+  opacity: 1;
+}
+#accountsReceivable .datePick .startTime .startTime_title {
+  width: 0.7rem;
+  font-size: 0.2rem;
+}
+#accountsReceivable .datePick .endTime {
+  display: flex;
+}
+#accountsReceivable .datePick .endTime .van-cell {
+  padding: 0rem;
+  opacity: 1;
+}
+#accountsReceivable .datePick .endTime .van-field__control {
+  text-align: center;
+  opacity: 1;
+}
+#accountsReceivable .datePick .endTime .endTime_title {
+  width: 0.7rem;
+  font-size: 0.2rem;
+}
+#accountsReceivable .datePick > el-date-picker {
+  width: 40%;
+  height: 100%;
+}
+#accountsReceivable .picture {
+  height: 6rem;
+  width: 100%;
+  padding: 0 0.2rem;
+}
+#accountsReceivable .picture #myChart {
+  width: 100%;
+  height: 100%;
+}
+#accountsReceivable .picture #myChart2 {
+  width: 100%;
+  height: 100%;
+}
+#accountsReceivable .watchDetail_title {
+  height: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.3rem;
+  color: #000;
+  font-weight: 400;
+}
+#accountsReceivable .watchDetail_title img {
+  margin-right: 0.25rem;
+  height: 0.15rem;
+  width: 0.2rem;
+}
+#accountsReceivable .accountDetails {
+  width: 100%;
+  height: 1rem;
+}
+#accountsReceivable .accountDetails .accountDetails_content {
+  width: 100%;
+  padding: 0 0.2rem;
+  background-color: #F9F8F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.3rem;
+}
+#accountsReceivable .accountTitle {
+  width: 100%;
+  height: 1.25rem;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+#accountsReceivable .accountTitle .accountTitle_company {
+  width: 60%;
+  height: 100%;
+}
+#accountsReceivable .accountTitle .accountTitle_company .accountTitle_company_1 {
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.35rem;
+  font-weight: 600;
+}
+#accountsReceivable .accountTitle .accountTitle_company .accountTitle_company_2 {
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.3rem;
+  color: #000000;
+}
+#accountsReceivable .accountTitle .accountTitle_company .accountTitle_company_3 {
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.2rem;
+  color: #7f7f7f;
+  margin-top: -0.2rem;
+}
+#accountsReceivable .accountTitle .accountTitle_date {
+  width: 40%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+#accountsReceivable .accountTitle .accountTitle_date .accountTitle_month {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #7F7F7F;
+  border-radius: 0.04rem;
+  padding: 0.01rem;
+}
+#accountsReceivable .accountTitle .accountTitle_date .accountTitle_month img {
+  height: 0.15rem;
+  width: 0.2rem;
+  margin-top: 0.22rem;
+  margin-right: 0.3rem;
+}
+#accountsReceivable .accountTitle .accountTitle_date .accountTitle_month .van-cell {
+  padding: 0;
+}
+#accountsReceivable .accountTitle .accountTitle_date .accountTitle_month .van-field__control {
+  margin-top: 0.06rem;
+  text-align: center;
+}
+#accountsReceivable .accountTitle .accountTitle_date .accountTitle_date_1 {
+  font-size: 0.25rem;
+  width: 40%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.1rem;
+}
+#accountsReceivable .accountTitle .accountTitle_date el-date-picker {
+  width: 60%;
+}
+#accountsReceivable .watchDetail_content {
+  margin: 0 auto;
+  overflow-x: scroll;
+}
+#accountsReceivable .watchDetail_content #table {
+  overflow-x: scroll;
+  width: 200%;
+  font-size: 0.29rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#accountsReceivable .watchDetail_content #table .table-title {
+  font-size: 0.5rem;
+}
+#accountsReceivable .watchDetail_content #table .table-name {
+  font-size: 0.4rem;
+}
+#accountsReceivable .watchDetail_content #table .table-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#accountsReceivable .watchDetail_content #table .table-page-second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#accountsReceivable .watchDetail_content #table .table-box {
+  width: 100%;
+}
+#accountsReceivable .watchDetail_content #table .table-box table {
+  border-collapse: collapse;
+  border: 0px solid #999;
+}
+#accountsReceivable .watchDetail_content #table .table-box table td {
+  border-top: 0;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+  border-left: 0;
+}
+#accountsReceivable .watchDetail_content .signature {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 0.2rem;
+}
+#accountsReceivable .watchDetail_content .signature .signature-man {
+  width: 4rem;
+  font-size: 0.29rem;
+}
+#accountsReceivable .bottom_btns {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+#accountsReceivable .bottom_btns .export {
+  height: 50%;
+  width: 100%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}
+#accountsReceivable .bottom_btns .print {
+  height: 50%;
+  width: 100%;
+  background-color: #5172F3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}

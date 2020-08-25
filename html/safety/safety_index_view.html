@@ -1,0 +1,26 @@
+<div id="app">
+  <div class="content">
+    <div class="content-box">
+      <!-- 小项 -->
+      <div class="box-item">
+        <div class="item-left">ID</div>
+        <div class="item-right"><span>{{userId}}</span></div>
+      </div>
+      <!-- 小项 -->
+      <div @click="openChangePhone1" class="box-item">
+        <div class="item-left">手机号码</div>
+        <div class="item-right"><span>{{phone}}</span> <img src="../../image/set-info/right.png" alt=""></div>
+      </div>
+       <!-- 小项 -->
+       <div class="box-item">
+        <div class="item-left">绑定微信</div>
+        <div class="item-right"><span>未绑定</span> <img src="../../image/set-info/right.png" alt=""></div>
+      </div>
+       <!-- 小项 -->
+       <div @click="openChangePassword" class="box-item">
+        <div class="item-left">修改密码</div>
+        <div class="item-right"><img src="../../image/set-info/right.png" alt=""></div>
+      </div>
+    </div>
+  </div>
+</div>

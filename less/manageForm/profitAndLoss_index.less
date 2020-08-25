@@ -1,0 +1,366 @@
+#profitAndLoss{
+  width: 100%;
+  position: relative;
+
+  /* flex - 两边对齐 - 垂直居中 */
+  .flexSbC{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  };
+  /* flex - 垂直居中对齐 */
+  .flexCC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .startTime-font {
+    display: flex;
+    font-size: .25rem;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+    opacity: 0.96;
+  }
+
+  .company {
+    width: 100%;
+    height: 1rem;
+    padding: 0 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    .company_name {
+      display: flex;
+      align-items: center;
+      width: 75%;
+      height: 100%;
+      p{
+        font-size: 0.35rem;
+        color: #000;
+        font-weight: 600;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis
+      }
+    }
+
+    .company_cny {
+      display: flex;
+      width: 25%;
+      align-items: center;
+      height: 100%;
+      flex-direction: row-reverse;
+      font-size: 0.2rem;
+      color: #000;
+    }
+
+  }
+  .table_name{
+    //display: flex;
+    width: 100%;
+    font-size: 0.35rem;
+    //align-items: center;
+    text-align: center;
+    height: 100%;
+    font-weight: 600;
+
+  }
+  .datePick {
+
+    padding: 0 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 6.72rem;
+    height: .55rem;
+    border: 1px solid #000;
+    opacity:1;
+    border-radius: .04rem;
+    margin-left: .38rem;
+
+    .date-icon {
+      width: .25rem;
+      height: .26rem;
+      opacity: 0.8;
+    }
+
+    .spans {
+      width: .01rem;
+      height: .36rem;
+      border: .01rem solid rgba(0, 0, 0, 1);
+      opacity: 0.5;
+      margin-left: 0.18rem;
+    }
+    //选择日期
+    .startTime {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      text-align: center;
+
+
+      .van-cell {
+        padding: 0rem;
+        opacity: 1;
+      }
+
+      .van-field__control {
+        text-align: center;
+        opacity: 1;
+      }
+
+      .startTime_title {
+        width: 0.7rem;
+        font-size: 0.2rem;
+      }
+    }
+
+    .endTime {
+      display: flex;
+
+      .van-cell {
+        padding: 0rem;
+        opacity: 1;
+      }
+
+      .van-field__control {
+        text-align: center;
+        opacity: 1;
+      }
+
+      .endTime_title {
+        width: 0.7rem;
+        font-size: 0.2rem;
+      }
+    }
+
+    > el-date-picker {
+      width: 40%;
+      height: 100%;
+    }
+  }
+
+
+  .picture {
+    height: 6rem;
+    width: 100%;
+    padding: 0 0.2rem;
+    #myChart {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .watchDetail_title{
+    height: 1rem;
+    width: 100%;
+    padding: 0 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.3rem;
+    color: #000;
+    font-weight: 400;
+    img{
+      height: 0.25rem;
+      width: 0.25rem;
+      // margin-right: 0.25rem;
+    }
+  }
+  .accountDetails{
+    width: 100%;
+    height: 1rem;
+    .accountDetails_content{
+      width: 100%;
+      padding: 0 0.2rem;
+      background-color: #F9F8F8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.3rem;
+    }
+  }
+  .accountTitle{
+    width: 100%;
+    height: 1.25rem;
+    padding: 0 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    .accountTitle_company{
+      width: 60%;
+      height: 100%;
+      .accountTitle_company_1{
+        height: 50%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        font-size: 0.35rem;
+        font-weight: 600;
+      }
+      .accountTitle_company_2{
+        height: 50%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        font-size: 0.2rem;
+      }
+    }
+    .accountTitle_date {
+      width: 40%;
+      height: 50%;
+      display: flex;
+      justify-content: space-between;
+
+      .accountTitle_month {
+        display: flex;
+        justify-content: center;
+        border: 1px solid #000;
+        height: 0.56rem;
+        //padding: 0 auto;
+        //opacity:0.5;
+        border-radius: .05rem;
+        img {
+          width: 0.28rem;
+          height: 0.16rem;
+          margin-top: 0.22rem;
+          margin-right: 0.20rem;
+        }
+        .van-cell {
+          padding: 0;
+        }
+
+        .van-field__control {
+          margin-top: 0.05rem;
+          text-align: center;
+          padding: 0;
+        }
+      }
+
+      .accountTitle_date_1 {
+        font-size: 0.25rem;
+        width: 40%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.1rem;
+      }
+
+      el-date-picker {
+        width: 60%;
+      }
+    }
+  }
+  .watchDetail_content{
+    width: 100%;
+    padding: 0 0.2rem;
+    padding-bottom: 1rem;
+    margin:  0 auto;
+    font-size: 1rem;
+    // background-color: pink;
+
+    table{
+      width: 100%;
+      text-align: center;
+      font-size: .29rem;
+
+      thead{
+        //tr{
+        //  background-color: #E6F2FC;
+        //}
+        .table-title {
+          font-size: 0.5rem;
+
+        }
+
+        .table-name {
+          font-size: 0.4rem;
+        }
+
+        .table-page {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          //margin-right: 10%;
+          //height: .7rem;
+          .table-page-box{
+            //width: 20%;
+          }
+          .table-page-box-page{
+
+          }
+        }
+        .table-page-second{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          //margin-right: 10%;
+          //height: .7rem;
+          .table-page-box{
+            //width: 20%;
+          }
+        }
+
+      }
+    }
+  }
+
+  footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    .footer-box{
+      width: 100%;
+      height: .9rem;
+      display: flex;
+      div{
+        .flexCC();
+        flex:1;
+        font-size: .3rem;
+        color:#fff;
+        font-weight: 600;
+      }
+      .left-box{
+        background:linear-gradient(0deg,rgba(255,61,61,1) 0%,rgba(232,55,55,1) 100%);
+      }
+      .right-box{
+        background:linear-gradient(0deg,rgba(104,135,255,1) 0%,rgba(71,105,238,1) 100%);
+      }
+    }
+  }
+  .bottom_btns{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+    //z-index: 999;
+    //  margin-top: 0.3rem;
+    // position: absolute;
+    // bottom: 0;
+    //position:fixed;bottom:0;z-index:999;
+    .export{
+      height: 50%;
+      width: 100%;
+      background:linear-gradient(0deg,rgba(255,61,61,1) 0%,rgba(232,55,55,1) 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 0.3rem;
+    }
+    .print{
+      height: 50%;
+      width: 100%;
+      background:linear-gradient(0deg,rgba(104,135,255,1) 0%,rgba(71,105,238,1) 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 0.3rem;
+    }
+  }
+}

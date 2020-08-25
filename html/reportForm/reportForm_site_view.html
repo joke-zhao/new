@@ -1,0 +1,91 @@
+<div class="container">
+    <!--头部-->
+    <div class="header">
+        <!--公司名跟币种-->
+        <div class="center_around">
+            <div class="font_middle">{{companyName}}</div>
+            <div class="center" >
+                <van-cell style="padding: 0;width: 1.35rem">
+                    <van-field
+                        readonly
+                        clickable
+                        label="币种："
+                        label-class="font_small"
+                        label-width="0.80rem"
+                        style="padding: 0"
+                        :value="value"
+                        placeholder="CYN"
+                        @click="showPicker = true"
+                />
+                    <van-popup v-model="showPicker" round position="bottom">
+                        <van-picker
+                                show-toolbar
+                                :columns="columns"
+                                @cancel="showPicker = false"
+                                @confirm="onConfirm"
+                        />
+                    </van-popup>
+                </van-cell>
+            </div>
+        </div>
+        <!--日期选择-->
+        <div class="calendar">
+            <div class="calendar_box"><img class="icon" src="../../image/reportForm/date.png"></div>
+            <div class="spans"><span class="bord"></span></div>
+            <van-cell center class="cell" :value="startDate" @click="show = true" />
+            <span class="font_small center">至</span>
+            <van-cell center class="cell" :value="endDate" @click="show = true" />
+            <van-calendar v-model="show" type="range" @confirm="onConfirmDate" :min-date="minDate" />
+        </div>
+    </div>
+    <!--echart图表-->
+    <div class="picture">
+        <div id="myChart"></div>
+    </div>
+    <!--明细-->
+    <div class="detail">
+        <!--明细头部，控制下拉显示-->
+        <div class="detail_head">
+            <div class="font_detail">查看明细</div>
+            <img src=" ../../image/manageForm/arrow.png" alt="" @click="isShow=!isShow" v-show="isShow">
+            <img src=" ../../image/manageForm/arrow2.png" alt="" @click="isShow=!isShow" v-show="!isShow">
+        </div>
+        <!--明细内容-->
+        <div class="detail_content" v-show="isShow">
+            <table id="table1" border="1" class="table-box">
+                <thead>
+                    <tr>
+                        <th>项目</th>
+                        <th>面积</th>
+                        <th>租金</th>
+                        <th>坪效</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in list">
+                        <td style="text-align: center">{{item.date|resetMonth}}</td>
+                        <td style="text-align: right">{{item.qty|subMoney}}</td>
+                        <td style="text-align: right">{{item.up|subMoney}}</td>
+                        <td style="text-align: right">{{item.amt|subMoney}}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center">合计</td>
+                        <!--                    <td>人民币</td>-->
+                        <td style="text-align: right">{{resultSum.qtySum|subMoney}}</td>
+                        <td style="text-align: right">{{resultSum.upSum|subMoney}}</td>
+                        <td style="text-align: right">{{resultSum.px|subMoney}}</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <!--按钮组-->
+        <div class="bottom_btns">
+            <div class="export" @click="showShare = true">导出</div>
+            <van-share-sheet v-model="showShare" :options="options"
+                             @select="onSelect" title="选择导出方式"  />
+            <div class="print" @click="handlPrint">打印</div>
+        </div>
+    </div>
+</div>

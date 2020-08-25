@@ -1,0 +1,10 @@
+<div id="app">
+    <div class="customer">
+        <van-search v-model="customerName" placeholder="请输入客户名称搜索" @search="onSearch" @cancel="onCancel" />
+        <div class="customer-list">
+            <div class="customer-list-item" v-for="(item,index) in customerList" :key="index">
+                {{ item.name }}
+            </div>
+        </div>
+    </div>
+</div>

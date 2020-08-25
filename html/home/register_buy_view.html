@@ -1,0 +1,144 @@
+<div id="app">
+    <!-- 注册代办 - 纳税人端 - 购买 -->
+    <div class="buy">
+        <!-- 图片 -->
+        <div class="buy-image">
+            <van-swipe class="buy-image-content" :autoplay="3000" indicator-color="white">
+                <img v-if="imgList.length === 0" src="../../image/legwork/adver.png" style="max-height: 100%;max-width: 100%;">
+                <van-swipe-item v-if="imgList.length !== 0" v-for="(item,index) in imgList" :key="index" style="display: flex;justify-content: center;">
+                    <img :src="item" style="max-height: 100%;max-width: 100%;">
+                </van-swipe-item>
+            </van-swipe>
+            <!--<div class="buy-image-content"></div>-->
+        </div>
+        <!-- 表单 -->
+        <div class="buy-form">
+            <div class="buy-form-area">
+                <div class="buy-form-area-title">
+                    服务地区：
+                </div>
+                <!-- @click="show = true" -->
+                <div class="buy-form-area-button" >
+                    <div class="buy-form-area-button-text">
+                        {{ province }}
+                    </div>
+                    <div class="buy-form-area-button-more" ></div>
+                </div>
+                <!-- @click="show = true" -->
+                <div class="buy-form-area-button" >
+                    <div class="buy-form-area-button-text">
+                        {{ city }}
+                    </div>
+                    <div class="buy-form-area-button-more"></div>
+                </div>
+                <!-- @click="show = true" -->
+                <div class="buy-form-area-button">
+                    <div class="buy-form-area-button-text">
+                        {{ county }}
+                    </div>
+                    <div class="buy-form-area-button-more"></div>
+                </div>
+            </div>
+
+            <van-popup v-model="show" position="bottom" :style="{ height: '40%' }">
+                <van-area
+                        :area-list="areaList"
+                        @cancel="handleCancel"
+                        @confirm="handleConfirm"
+                />
+            </van-popup>
+
+            <div class="buy-form-service">
+                <div class="buy-form-service-title">
+                    选择服务：
+                </div>
+                <div class="buy-form-service-choose">
+                    <div class="buy-form-service-choose-item" v-for="(item,index) in serviceList" :key="index">
+                        <div class="buy-form-service-choose-item-key" @click="changeService(index)">
+                            <div class="buy-form-service-choose-item-key-check" :class="item.isChecked ? 'buy-form-service-choose-item-key-checked' : ''"></div>
+                            <div class="buy-form-service-choose-item-key-text">
+                                {{ item.typeId }}
+                            </div>
+                        </div>
+                        <div class="buy-form-service-choose-item-price">
+                            ￥{{ item.price }}
+                        </div>
+                    </div>
+                </div>
+                <div class="buy-form-service-bottom"></div>
+            </div>
+        </div>
+        <!-- 内容 -->
+        <div class="buy-content">
+            <div class="buy-content-title">
+                服务内容：
+            </div>
+            <div class="buy-content-area">
+                <div class="buy-content-area-text">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+        <!-- 多选项 -->
+        <div class="buy-choose">
+            <div class="buy-choose-item" v-for="(item,index) in chooseList" :key="index" @click="changeChoose(index)">
+                <div class="buy-choose-item-check" :class="item.isChecked ? 'buy-choose-item-checked' : ''"></div>
+                <div class="buy-choose-item-text">
+                    {{ item.name }}
+                </div>
+            </div>
+        </div>
+        <!-- 底部按钮 -->
+        <div class="buy-button">
+            <div class="buy-button-price">
+                ￥{{ price }}
+            </div>
+            <div class="buy-button-buy" @click="buy">
+                立即购买
+            </div>
+        </div>
+    </div>
+    <!-- 支付方式弹出层 -->
+    <div class="popup-box">
+        <van-popup
+                v-model="payShow"
+                position="bottom"
+                :style="{ height: '40%' }"
+        >
+            <div class="box">
+                <div class="box-header">
+                    支付
+                </div>
+                <div class="box-main">
+                    <!-- <p>支付方式</p> -->
+                    <van-radio-group v-model="payFlag">
+                        <div
+                                v-for="item in payList"
+                                :key="item.payId"
+                                :class="{ 'main-item': true, 'select-pay': item.payId === payFlag }"
+                        >
+                            <div class="item-left">
+                                <img :src="item.icon" alt="" />
+                                <span>{{item.name}}</span>
+                            </div>
+                            <div class="item-rigth">
+                                <van-radio icon-size="0.33rem" :name="item.payId"></van-radio>
+                            </div>
+                        </div>
+                    </van-radio-group>
+                </div>
+                <div class="box-footer">
+                    <div class="footer">
+                        <div class="lefe-footer">
+                            应付金额：
+                            <span>￥{{totalPrice}}</span>
+                        </div>
+                        <div @click="handlePayType" class="right-footer">
+                            付款
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </van-popup>
+    </div>
+</div>

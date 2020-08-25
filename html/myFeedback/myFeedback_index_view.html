@@ -1,0 +1,20 @@
+<!-- 反馈意见页面开始 -->
+<div id="app">
+  <header>
+    <div class="header-box">
+      <p>您的每一个建议，</p>
+      <p>都是我们对产品优化的方向和动力</p>
+    </div>
+  </header>
+  <main>
+    <div class="main-box">
+      <textarea maxlength="100" v-model="value" placeholder="快写下您的建议吧！"></textarea>
+      <span>{{strLength}}/100</span>
+    </div>
+  </main>
+  <footer>
+    <div @click='submit' class="footer-box">
+      <span>提交</span>
+    </div>
+  </footer>
+</div>

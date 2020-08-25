@@ -1,0 +1,103 @@
+<div id="app">
+	<div class="bg">
+		<div class="bg_text">
+			<div class="text">您是第一次开票，请填写纳税人信息</div>
+		</div>
+	</div>
+	<!-- 表单 -->
+	<div class="form">
+		<div class="from_item">
+			<div class="from_item_label">
+				商户地址
+			</div>
+			<div class="from_item_content arrow">
+				<div class="address"></div>
+			</div>
+		</div>
+		<div class="from_item">
+			<div class="from_item_label">
+				法人证件类型
+			</div>
+			<div class="from_item_content">
+				<input class="inp" type="text">
+			</div>
+		</div>
+		<div class="from_item">
+			<div class="from_item_label">
+				法人证件号码
+			</div>
+			<div class="from_item_content">
+				<input class="inp" type="text">
+			</div>
+		</div>
+		<div class="from_item">
+			<div class="from_item_label">
+				商户用户名
+			</div>
+			<div class="from_item_content">
+				<input class="inp" type="text">
+			</div>
+		</div>
+		<div class="from_item">
+			<div class="from_item_label">
+				商户手机号
+			</div>
+			<div class="from_item_content">
+				<input class="inp" type="text">
+			</div>
+		</div>
+		<div class="from_item">
+			<div class="from_item_label">
+				社会信用代码号
+			</div>
+			<div class="from_item_content">
+				<input class="inp" type="text">
+			</div>
+		</div>
+		<div class="from_item">
+			<div class="from_item_label">
+				法人姓名
+			</div>
+			<div class="from_item_content">
+				<input class="inp" type="text">
+			</div>
+		</div>
+		<div class="from_item">
+			<div class="from_item_label">
+				是否开通支付
+			</div>
+			<div class="from_item_content">
+				<div class="circle_wrap" :class="{active:isDredge}" @click='handleDredge'>
+					<div class="circle"></div>
+				</div>
+			</div>
+		</div>
+		<div class="from_item">
+			<div class="from_item_label">
+				开启名称
+			</div>
+			<div class="from_item_content">
+				<input class="inp" type="text">
+			</div>
+		</div>
+		<div class="from_item">
+			<div class="from_item_label">
+				银行账号
+			</div>
+			<div class="from_item_content">
+				<input class="inp" type="text">
+			</div>
+		</div>
+		<div class="from_item">
+			<div class="from_item_label">
+				银行行号
+			</div>
+			<div class="from_item_content">
+				<input class="inp" type="text">
+			</div>
+		</div>
+	</div>
+	<div class="btn">
+		保存
+	</div>
+</div>

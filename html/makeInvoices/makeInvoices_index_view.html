@@ -1,0 +1,203 @@
+<div id="app">
+    <div id="invoices-taxpayers">
+        <header class="invoices-taxpayers-header">
+            <div class="invoices-taxpayers-header-box">
+                <div class="invoices-taxpayers-header-box-line"></div>
+                <!-- 公司列表切换 -->
+                <div class="companyNameContent">
+                    <van-dropdown-menu>
+                        <!-- @change="changeCompany" -->
+                        <van-dropdown-item v-model="invoicingEntity.companyName" :options="OrgList" />
+                    </van-dropdown-menu>
+                </div>
+            </div>
+        </header>
+        <div class="invoices-taxpayers-info">
+            <!-- <div class="invoices-taxpayers-info-item">
+            <div class="invoices-taxpayers-info-item-title">开票公司</div>
+            <div class="invoices-taxpayers-info-item-searchBox">
+                <select @change="handleValue1" v-model="value1" class="invoices-taxpayers-info-item-content select-common-style">
+                    <option value="" disabled selected hidden>请选择开票公司</option>
+                    <option v-for="item in value1List" :key="item.id" :value="item.id" >{{item.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="invoices-taxpayers-info-item">
+            <div class="invoices-taxpayers-info-item-title">纳税人公司</div>
+            <div class="invoices-taxpayers-info-item-searchBox">
+                <select class="invoices-taxpayers-info-item-content select-common-style">
+                    <option value="" disabled selected hidden>请选择纳税人公司</option>
+                </select>
+            </div>
+        </div>
+        <div class="invoices-taxpayers-info-item">
+           <div class="invoices-taxpayers-info-item-title">单据编号</div>
+           <input placeholder="请填写单据编号" class="invoices-taxpayers-info-item-content"></input>
+        </div> -->
+            <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">单据编号</div>
+                <input placeholder="必填" v-model="invoicingEntity.documentNum" class="invoices-taxpayers-info-item-content "></input>
+            </div>
+            <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">单据日期</div>
+                <div @click="showDate = true" v-model="invoicingEntity.documentDate" class="invoices-taxpayers-info-item-content">{{dateVal | formatDate}}
+                </div>
+            </div>
+            <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">币种</div>
+                <!-- 币种 -->
+                <div class="invoices-taxpayers-info-item-content fontColor">
+                    <van-dropdown-menu>
+                        <van-dropdown-item v-model="invoicingEntity.currency" :options="currencyList" />
+                    </van-dropdown-menu>
+                </div>
+            </div>
+            <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">金额（含税）</div>
+                <div v-model="invoicingEntity.money" class="invoices-taxpayers-info-item-content">{{ invoicingEntity.money }}</div>
+            </div>
+            <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">发票类型</div>
+                <div class="invoices-taxpayers-info-item-content fontColor">
+                    <van-dropdown-menu>
+                        <van-dropdown-item v-model="invoicingEntity.invoiceType" :options="invoiceTypeList" />
+                    </van-dropdown-menu>
+                </div>
+            </div>
+            <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">介质类型</div>
+                <div class="invoices-taxpayers-info-item-content fontColor">
+                    <van-dropdown-menu>
+                        <van-dropdown-item v-model="invoicingEntity.mediaType" :options="mediumTypeList" />
+                    </van-dropdown-menu>
+                </div>
+            </div>
+            <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">购方名称</div>
+                <input placeholder="必填" v-model="invoicingEntity.buyName" class="invoices-taxpayers-info-item-content "></input>
+                <!-- <a href="#"><div class="invoices-taxpayers-info-item-search">搜索</div></a> -->
+            </div>
+            <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">购方税号</div>
+                <input placeholder="必填" v-model="invoicingEntity.buyTaxNum" class="invoices-taxpayers-info-item-content "></input>
+            </div>
+            <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">购方地址电话</div>
+                <input placeholder="普票可不填" v-model="invoicingEntity.buyAddressPhone" class="invoices-taxpayers-info-item-content "></input>
+                <!-- <a href="#"><div class="invoices-taxpayers-info-item-search">搜索</div></a> -->
+            </div>
+            <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">购方银行帐号</div>
+                <input placeholder="普票可不填" v-model="invoicingEntity.buyBankNum" class="invoices-taxpayers-info-item-content "></input>
+            </div>
+            <!-- <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">销方名称</div>
+                <input placeholder="必填" v-model="invoicingEntity.sellName" class="invoices-taxpayers-info-item-content "></input>
+            </div> -->
+            <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">销方税号</div>
+                <input placeholder="必填" v-model="invoicingEntity.sellTaxNum" class="invoices-taxpayers-info-item-content "></input>
+            </div>
+            <div class="invoices-taxpayers-info-item">
+                <div class="invoices-taxpayers-info-item-title">销方地址电话</div>
+                <input  v-model="invoicingEntity.sellAddressPhone" placeholder="可不填" class="invoices-taxpayers-info-item-content "></input>
+                <a href="#"></a>
+            </div>
+            <div class="invoices-taxpayers-info-item invoices-taxpayers-info-cancelBorder">
+                <div class="invoices-taxpayers-info-item-title">销方银行帐号</div>
+                <input placeholder="可不填" v-model="invoicingEntity.sellBankNum" class="invoices-taxpayers-info-item-content "></input>
+            </div>
+        </div>
+        <div class="invoices-taxpayers-goods">
+            <div class="invoices-taxpayers-goods-item invoices-taxpayers-goods-header">
+                <div class="invoices-taxpayers-goods-item-title font-style-bold">商品清单</div>
+                <!-- <div class="invoices-taxpayers-goods-item-content">
+                <div :class="[checkAll?'actives':'','invoices-taxpayers-goods-item-content-radio']"></div>
+                <span>全选</span>
+                <a href="#"><div class="invoices-taxpayers-goods-item-content-search">删除</div></a>
+            </div> -->
+            </div>
+            <div v-for="(item,index) in invoicingEntity.goods" :key="item.vid" class="invoices-taxpayers-goods-item">
+                <div class="invoices-taxpayers-goods-item-title">
+                    <!-- <div @click="getGooditem(index)" :class="[item.actives?'actives':'','invoices-taxpayers-goods-item-title-radio']"></div> -->
+                    <span>{{item.taxProductName}}</span>
+                </div>
+                <div class="invoices-taxpayers-goods-item-content">
+                    <div @click="modifyGooditem(index)" 
+                        class="invoices-taxpayers-goods-item-content-search invoices-taxpayers-goods-item-content-update">
+                        修改</div>
+                    <div @click="delGooditem(index)" class="invoices-taxpayers-goods-item-content-search">删除</div>
+                </div>
+            </div>
+            <div class="invoices-taxpayers-goods-add">
+                <span class="invoices-taxpayers-goods-add-icon">+</span>
+                <span @click="addGooditem" class="invoices-taxpayers-goods-add-content">添加商品</span>
+            </div>
+        </div>
+        <div class="invoices-taxpayers-bottom">
+            <!-- <div class="invoices-taxpayers-bottom-submitItems">提交清单</div> -->
+            <div @click="submitInvoices" class="invoices-taxpayers-bottom-submitInvoices">提交开票</div>
+        </div>
+    </div>
+    <!-- 添加商品弹框 -->
+    <van-popup round :style="{ height: '12rem',width:'80%'}" v-model="show">
+        <div class="popup-box">
+            <div class="popup-head">
+                <div>开票商品详情</div>
+            </div>
+            <div class="box-main">
+                <div class="main-item">
+                    <div class="main-item-title">税收商品名</div>
+                    <input class="main-item-content" v-model="goodsItem.taxProductName" placeholder="必填" type="text">
+                </div>
+                <div class="main-item">
+                    <div class="main-item-title">税收编码</div>
+                    <input class="main-item-content" v-model="goodsItem.taxCode" placeholder="必填" type="text">
+                </div>
+                <div class="main-item">
+                    <div class="main-item-title">商品名</div>
+                    <input class="main-item-content" v-model="goodsItem.productName" placeholder="必填" type="text">
+                </div>
+                <div class="main-item">
+                    <div class="main-item-title">规格型号</div>
+                    <input class="main-item-content" v-model="goodsItem.type" type="text">
+                </div>
+                <div class="main-item">
+                    <div class="main-item-title">计量单位</div>
+                    <input class="main-item-content" v-model="goodsItem.meas" type="text">
+                </div>
+                <div class="main-item">
+                    <div class="main-item-title">数量</div>
+                    <input class="main-item-content" v-model="goodsItem.size" type="text">
+                </div>
+                <div class="main-item">
+                    <div class="main-item-title">单价（含税）</div>
+                    <input class="main-item-content" v-model="goodsItem.unitPrice" type="text">
+                </div>
+                <div class="main-item">
+                    <div class="main-item-title">金额（含税）</div>
+                    <input class="main-item-content" v-model="goodsItem.money" placeholder="必填" type="text">
+                </div>
+                <div class="main-item">
+                    <div class="main-item-title">税率</div>
+                    <input class="main-item-content" v-model="goodsItem.taxRate" placeholder="必填" type="text">
+                </div>
+                <div class="main-item">
+                    <div class="main-item-title">税额</div>
+                    <input class="main-item-content" v-model="goodsItem.tax" type="text">
+                </div>
+                <div class="main-item">
+                    <div class="main-item-title">摘要</div>
+                    <input class="main-item-content" v-model="goodsItem.summary" type="text">
+                </div>
+            </div>
+            <div class="box-footer">
+                <div @click="confirmItem" class="f-left">确认</div>
+                <div class="f-middle"></div>
+                <div @click="closePopup" class="f-right">取消</div>
+            </div>
+        </div>
+    </van-popup>
+    <!-- 日期选择器 -->
+    <van-calendar :min-date="minDate" v-model="showDate" @confirm="onConfirm" />
+</div>

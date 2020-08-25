@@ -1,0 +1,35 @@
+/* 套餐历史样式开始 */
+#app {
+  font-size: 0.24rem;
+}
+#app main {
+  width: 100%;
+}
+#app main .main-box {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+}
+#app main .main-box .box {
+  border-top: 0.2rem solid #f5f5f5;
+}
+#app main .main-box .box .box-item {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0.2rem 0;
+}
+#app main .main-box .box .box-item .item-name {
+  padding-bottom: 0.1rem;
+  color: #000;
+  border-bottom: 1px solid #DCDCDC;
+}
+#app main .main-box .box .box-item .item-desc div {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0;
+  color: #999;
+}
+#app main .main-box .box:first-child {
+  border: none;
+}

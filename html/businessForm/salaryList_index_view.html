@@ -1,0 +1,55 @@
+<div id="salaryList">
+    <div class="company">
+        <div class="company_name">广州爪瓦科技有限公司</div>
+        <div class="company_cny">币种:（CNY）</div>
+
+    </div>
+    <div class="datePick">
+        <!-- <el-date-picker v-model="value1" type="daterange" range-separator="-" start-placeholder="开始日期"
+            end-placeholder="结束日期">
+        </el-date-picker> -->
+        <!-- <el-date-picker v-model="date1" type="month" placeholder="开始月">
+        </el-date-picker>
+        <div style="font-size: 0.2rem;width: 20%;text-align: center;">至</div>
+        <el-date-picker v-model="date2" type="month" placeholder="终止月">
+        </el-date-picker> -->
+        <van-cell title="选择日期区间" :value="date1" @click="show1 = true" />
+        <van-calendar v-model="show1" type="range" @confirm="onConfirm1" />
+    </div>
+
+    <div class="picture">
+        <div id="myChart"></div>
+    </div>
+    <!-- <div id="myChart" :style="{width: '300px', height: '300px'}"></div> -->
+    <div class="watchDetail_title">
+        <div>查看明细</div>
+        <img src="../../image/manageForm/more.png" alt="">
+    </div>
+    <div class="accountDetails">
+        <div class="accountDetails_content">应收账款明细</div>
+    </div>
+    <div class="accountTitle">
+        <div class="accountTitle_company">
+            <div class="accountTitle_company_1">广州爪瓦科技有限公司</div>
+            <div class="accountTitle_company_2">币种：（CNY）</div>
+        </div>
+        <div class="accountTitle_date">
+            <div class="accountTitle_date_1">月份</div>
+                <div class="accountTitle_date_2">
+                    <van-cell title="选择年月" :value="date2" @click="show2 = true" />
+                    <van-calendar v-model="show2"  @confirm="onConfirm2" />
+                </div>
+            <!-- <el-date-picker v-model="date3" type="month" placeholder="选择月">
+            </el-date-picker> -->
+           
+
+        </div>
+    </div>
+    <div class="watchDetail_content">
+        
+    </div>
+    <div class="bottom_btns">
+        <div class="export">导出</div>
+        <div class="print">打印</div>
+    </div>
+</div>

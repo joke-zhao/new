@@ -1,0 +1,187 @@
+<div id="app">
+    <div class="tabs-wrapper">
+        <div class="tabs">
+            <div class="tab_item" v-for='(item,index) in tabs' @click='toggleTab(index)' :key="item.id">
+                <div class="tab-item-inner" :class='{active:item.isActive}'>
+                    {{item.text}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tabs_content">
+        <div class="allOrder" v-show='tabs[0].isActive'>
+            <div class="allOrder_header">
+                <div class="company_name">广州爪瓦科技有限公司 ></div>
+                <div class="tradingStatus">交易成功</div>
+            </div>
+            <div class="allOrder_main">
+                <img src="" alt="">
+                <div class="allOrder_main_content">
+                    <div class="allOrder_main_content_header">
+                        <div class="allOrder_main_content_header_1">一般纳税人代理记账</div>
+                        <div class="allOrder_main_content_header_2">
+                            <div>总价：￥ <span>100</span> </div>
+                            <div>优惠：￥<span>0</span></div>
+                        </div>
+                    </div>
+                    <div class="allOrder_main_content_real">
+                        实付：￥<span>100</span>
+                    </div>
+                </div>
+            </div>
+            <div class="allOrder_header">
+                <div class="company_name">广州爪瓦科技有限公司 ></div>
+                <div class="tradingStatus">交易关闭</div>
+            </div>
+            <div class="allOrder_main">
+                <img src="" alt="">
+                <div class="allOrder_main_content">
+                    <div class="allOrder_main_content_header">
+                        <div class="allOrder_main_content_header_1">一般纳税人代理记账</div>
+                        <div class="allOrder_main_content_header_2">
+                            <div>总价：￥ <span>100</span> </div>
+                            <div>优惠：￥<span>0</span></div>
+                        </div>
+                    </div>
+                    <div class="allOrder_main_content_real">
+                        实付：￥<span>100</span>
+                    </div>
+                </div>
+            </div>
+            <div class="allOrder_header">
+                <div class="company_name">广州爪瓦科技有限公司 ></div>
+                <div class="tradingStatus">交易成功</div>
+            </div>
+            <div class="allOrder_main">
+                <img src="" alt="">
+                <div class="allOrder_main_content">
+                    <div class="allOrder_main_content_header">
+                        <div class="allOrder_main_content_header_1">一般纳税人代理记账</div>
+                        <div class="allOrder_main_content_header_2">
+                            <div>总价：￥ <span>100</span> </div>
+                            <div>优惠：￥<span>0</span></div>
+                        </div>
+                    </div>
+                    <div class="allOrder_main_content_real">
+                        实付：￥<span>100</span>
+                    </div>
+                </div>
+            </div>
+            <div class="allOrder_header">
+                <div class="company_name">广州爪瓦科技有限公司 ></div>
+                <div class="tradingStatus">交易成功</div>
+            </div>
+            <div class="allOrder_main">
+                <img src="" alt="">
+                <div class="allOrder_main_content">
+                    <div class="allOrder_main_content_header">
+                        <div class="allOrder_main_content_header_1">一般纳税人代理记账</div>
+                        <div class="allOrder_main_content_header_2">
+                            <div>总价：￥ <span>100</span> </div>
+                            <div>优惠：￥<span>0</span></div>
+                        </div>
+                    </div>
+                    <div class="allOrder_main_content_real">
+                        实付：￥<span>100</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="waitConfirm" v-show='tabs[1].isActive'>
+            <div class="waitConfirm_header">
+                <div class="company_name">广州爪瓦科技有限公司 ></div>
+                <div class="tradingStatus">等待确认</div>
+            </div>
+            <div class="waitConfirm_main">
+                <img src="" alt="">
+                <div class="waitConfirm_main_content">
+                    <div class="waitConfirm_main_content_header">
+                        <div class="waitConfirm_main_content_header_1">一般纳税人代理记账</div>
+                        <div class="waitConfirm_main_content_header_2">
+                            <div>总价：￥ <span>100</span> </div>
+                            <div>优惠：￥<span>0</span></div>
+                        </div>
+                    </div>
+                    <div class="waitConfirm_main_content_real">
+                        <div class="waitConfirm_main_content_real_1">分期</div>
+                        <span>已付：</span> ￥<span>40</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ongoing" v-show='tabs[2].isActive'>
+            <div class="ongoing_header">
+                <div class="company_name">广州爪瓦科技有限公司 ></div>
+                <div class="tradingStatus">进行中</div>
+            </div>
+            <div class="ongoing_main">
+                <img src="" alt="">
+                <div class="ongoing_main_content">
+                    <div class="ongoing_main_content_header">
+                        <div class="ongoing_main_content_header_1">一般纳税人代理记账</div>
+                        <div class="ongoing_main_content_header_2">
+                            <div>总价：￥ <span>100</span> </div>
+                            <div>优惠：￥<span>0</span></div>
+                        </div>
+                    </div>
+                    <div class="ongoing_main_content_real">
+                        <!-- 实付：￥<span>100</span> -->
+                        <div class="ongoing_main_content_real_1">分期</div>
+                        <span>已付：</span> ￥<span>40</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ongoing_orderDone" >
+                <div class="ongoing_orderDone_content">我已完成</div>
+            </div>
+            <div class="ongoing_header">
+                <div class="company_name">广州爪瓦科技有限公司 ></div>
+                <div class="tradingStatus">进行中</div>
+            </div>
+            <div class="ongoing_main">
+                <img src="" alt="">
+                <div class="ongoing_main_content">
+                    <div class="ongoing_main_content_header">
+                        <div class="ongoing_main_content_header_1">一般纳税人代理记账</div>
+                        <div class="ongoing_main_content_header_2">
+                            <div>总价：￥ <span>100</span> </div>
+                            <div>优惠：￥<span>0</span></div>
+                        </div>
+                    </div>
+                    <div class="ongoing_main_content_real">
+                        <!-- 实付：￥<span>100</span> -->
+                        <div class="ongoing_main_content_real_1">分期</div>
+                        <span>已付：</span> ￥<span>40</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ongoing_orderDone" >
+                <div class="ongoing_orderDone_content">我已完成</div>
+            </div>
+            <div class="ongoing_header">
+                <div class="company_name">广州爪瓦科技有限公司 ></div>
+                <div class="tradingStatus">进行中</div>
+            </div>
+            <div class="ongoing_main">
+                <img src="" alt="">
+                <div class="ongoing_main_content">
+                    <div class="ongoing_main_content_header">
+                        <div class="ongoing_main_content_header_1">一般纳税人代理记账</div>
+                        <div class="ongoing_main_content_header_2">
+                            <div>总价：￥ <span>100</span> </div>
+                            <div>优惠：￥<span>0</span></div>
+                        </div>
+                    </div>
+                    <div class="ongoing_main_content_real">
+                        <!-- 实付：￥<span>100</span> -->
+                        <div class="ongoing_main_content_real_1">分期</div>
+                        <span>已付：</span> ￥<span>40</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ongoing_orderDone" >
+                <div class="ongoing_orderDone_content">我已完成</div>
+            </div>
+        </div>
+    </div>
+</div>

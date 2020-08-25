@@ -1,0 +1,17 @@
+<div id="app">
+    <div class="detail">
+        <div class="detail-title">
+            {{ consultData.title }}
+        </div>
+        <div class="detail-sub">
+            <div class="detail-sub-date">
+                {{ consultData.creatTime | dateFormat }}
+            </div>
+            <div class="detail-sub-province">
+                {{ consultData.province  }}
+            </div>
+        </div>
+        <div class="detail-content" v-html="consultData.content"></div>
+    </div>
+
+</div>

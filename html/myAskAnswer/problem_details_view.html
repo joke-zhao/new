@@ -1,0 +1,150 @@
+<!-- 问题详情页面 -->
+<div id="app">
+    <!-- 问题 -->
+    <div class="problem_header">
+        <div class="title">{{problems.title}}</div>
+        <div class="content">{{problems.content}}</div>
+        <div class="operation">
+            <div class="writeAnswer"  @click="popupExceptional(1,2)">
+                <img src="../../image/eTaxClass/huida.png" alt="" />
+                <span>写回答</span>
+            </div>
+            <div class="focusOn" @click="createBeatConcern">
+                <img src="../../image/eTaxClass/guanzhu.png" alt="" />
+                <span>{{focusLabel}}</span>
+            </div>
+            <div class="online">
+                <img src="../../image/eTaxClass/kefu.png" alt="" />
+                <span>在线咨询</span>
+            </div>
+        </div>
+    </div>
+    <div style="padding-top: .2rem;width:100%;border-bottom: .2rem solid #F5F5F5;"></div>
+    <!-- 智能回答 -->
+    <div class="smart_answer">
+        <div class="title">智能回答(3)</div>
+        <div class="content">
+            根据《社会保险法》和《住房公积金管理条例》规定，企业必须给职工缴足“五险一金”，即养老保险、医疗保险、失业保险、工伤保险、生育保险... <span>展开全部</span>
+        </div>
+        <div class="good">
+            <img src="../../image/eTaxClass/dianzan.png"><span>81</span>
+        </div>
+    </div>
+
+    <div style="padding-top: .2rem;width:100%;border-bottom: .2rem solid #F5F5F5;"></div>
+
+    <!-- 账友回答 -->
+    <div class="friend_replied">
+        <div class="title">账友回答({{problems.sum}})</div>
+        <div class="friend_all" v-for="(item,index) in friendList" :key="index">
+            <div class="contents">
+                <div class="user">
+                    <div class="photo">
+                        <img :src="item.userPhoto" />
+                    </div>
+                    <div class="namedate">
+                        <div class="name">{{item.userName}}</div>
+                        <div class="date">{{item.creatTime |formatDate}}</div>
+                    </div>
+                </div>
+                <div class="content">
+                    <span class="contentspan" @click="getAll(index)"
+                        :class="{'getAll':1===item.id}">{{item.content}}</span>
+                    <!-- <span class="getAll">展开全部</span> -->
+                </div>
+            </div>
+            <div class="good">
+                <div class="caozuo" @click="popupExceptional(item.userId,1)">
+                    <img src="../../image/eTaxClass/pinglun.png"><span>打赏积分</span>
+                </div>
+                <div class="caozuo" @click="popupExceptional(item.id,3)">
+                    <img src="../../image/eTaxClass/dashang.png"><span>评论</span>
+                </div>
+                <div class="caozuo">
+                    <!-- 点赞 ： 1为已点赞  2为未点赞 -->
+                    <img v-if="item.status === 1" @click="createBeatUserLike(item.id)"
+                        src="../../image/eTaxClass/dianzan.png" />
+                    <img v-if="item.status === 2" @click="createBeatUserLike(item.id)"
+                        src="../../image/eTaxClass/weidianzan.png" />
+                    <span>{{item.start}}</span>
+                </div>
+            </div>
+            <!-- 回答的评论 子级 -->
+            <div class="comment_list" v-if="ReplyIndex === index && comment_list === true">
+                <!-- v-show="comment_list" -->
+                <div class="contents" v-for = "(reply,index) in ReplyList" :key="index">
+                    <div class="user">
+                        <div class="photo">
+                            <img :src="reply.senderPhoto" />
+                        </div>
+                        <div class="namedate">
+                            <div class="name">{{reply.senderName}}</div>
+                            <div class="date">{{reply.creatTime |formatDate}}</div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <span class="contentspan" @click="getReplyAll(index)" :class="{'getAll':1===reply.id}">{{reply.content}}</span>
+                        <!-- <span class="getAll">展开全部</span> -->
+                    </div>
+                </div>
+            </div>
+            <div class="more" @click="selectCommentReply(item.id,index)" :index="index">
+                <img v-if="moreImg === 1" src="../../image/eTaxClass/more.png" />
+                <img v-if="moreImg === 2 && ReplyIndex === index" src="../../image/eTaxClass/closemore.png" />
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 写回答 -->
+    <div class="popup" v-show="show2">
+        <van-overlay :show="show2">
+            <div class="bottomSearch">
+                <div class="close" @click="show2 = false">
+                    <div>写回答</div>
+                    <img src="../../image/eTaxClass/close.png" />
+                </div>
+                <van-search v-model="writeAnswer" background="#F5F5F5" show-action placeholder="说点什么吧..."
+                    left-icon="none" @search="createWriteAnswer">
+                    <template #action>
+                        <div @click="createWriteAnswer">发表</div>
+                    </template>
+                </van-search>
+            </div>
+        </van-overlay>
+    </div>
+    <!-- 评论弹框 -->
+    <div class="popup" v-show="show3">
+        <van-overlay :show="show3">
+            <div class="bottomSearch">
+                <div class="close" @click="show3 = false">
+                    <div>发表评论</div>
+                    <img src="../../image/eTaxClass/close.png" />
+                </div>
+                <van-search v-model="comments" background="#F5F5F5" show-action placeholder="说点什么吧..."
+                    left-icon="none" @search="createComments">
+                    <template #action>
+                        <div @click="createComments">发表</div>
+                    </template>
+                </van-search>
+            </div>
+        </van-overlay>
+    </div>
+    <!-- 积分打赏弹框 -->
+    <div class="popup" v-show="show">
+        <van-overlay :show="show">
+            <div class="exceptional">
+                <div class="title">
+                    打赏积分
+                </div>
+                <div class="shuru">
+                    <input type="number" v-model="exceptional" placeholder="输入积分" oninput="if(value.length>5)value=value.slice(0,5)"/>
+                </div>
+                <div class="operation">
+                    <div class="close" @click="show = false">取消</div>
+                    <div class="determine" @click="sendIntegral">打赏积分</div>
+                </div>
+            </div>
+        </van-overlay>
+    </div>
+</div>

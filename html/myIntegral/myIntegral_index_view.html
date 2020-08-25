@@ -1,0 +1,36 @@
+<!-- 反馈意见页面开始 -->
+<div id="app">
+  <header>
+    <div class="header-box">
+      <div class="box-cneter">
+        <div class="c-number">
+          <span>{{integralTotal}}</span>
+        </div>
+        <div class="c-name">
+          <span>当前积分</span>
+        </div>
+        <div @click="openRule" class="c-rule">
+          <span>积分规则</span>
+          <img src="../../image/set-info/right2.png" alt="">
+        </div>
+      </div>
+      </div>
+  </header>
+  <main>
+    <div class="main-box">
+      <div class="box">
+        <!-- 积分列表项 -->
+      <div v-for="item in integralList" :key="item.id" class="box-item">
+        <div class="item-left">
+          <div class="l-name">{{item.type}}</div>
+          <div class="l-time">{{item.createTime | formatDate}}</div>
+        </div>
+        <div class="item-right">
+          <span v-if="item.integral > 0" class="span1">+{{item.integral}}</span>
+          <span v-else class="span1">+{{item.integral}}</span>
+        </div>
+      </div>
+      </div>
+    </div>
+  </main>
+</div>

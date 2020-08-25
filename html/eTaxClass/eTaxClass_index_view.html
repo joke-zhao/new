@@ -1,0 +1,164 @@
+<div id="app">
+    <!-- e税学堂页面开始 -->
+    <div class="header" :class="{tabBottom:flag===1}">
+        <div class="tab">
+            <div class="tab1" @click="handleTab(1)" :class="flag === 1 ?'h-right':'h-left'">e税学堂</div>
+            <div class="tab2" @click="handleTab(2)" :class="flag === 2 ?'h-right':'h-left'">问答社区</div>
+        </div>
+        <div class="banner">
+            <!-- e税学堂banner -->
+            <img v-if="flag === 1" src="../../image/eTaxClass/banner.png" alt />
+
+            <!-- 回答社区搜索框 -->
+            <van-search v-if="flag === 2" show-action v-model="searchVal" background="none" shape="round"
+                @search="onSearch" placeholder="请输入搜索关键词">
+                <template #action>
+                    <div @click="onSearch" style="color: #fff;font-size:.28rem;">搜索</div>
+                </template>
+            </van-search>
+        </div>
+    </div>
+    <!-- 精品课程 -->
+    <div class="center" v-if="flag === 1">
+        <div class="title">精品课程</div>
+        <div class="levelTab">
+            <div class="level" :class="{clickLevel:cindex===index}" v-for="(item,index) in classTypeList" :key="index"
+                @click="getCourseByType(item.name,index)">
+                {{item.name}}</div>
+        </div>
+        <div class="class" v-for="(item,index) in classList" :key="index" @click="openClassDetails(item.id)">
+            <div class="cover">
+                <img :src=item.imageUrl alt />
+            </div>
+            <div class="classMsg">
+                <div class="classTitle">{{item.name}}</div>
+                <div class="msg">
+                    <div class="money">¥{{item.money}}</div>
+                    <div class="people">{{item.studySum}}人已学</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 电子书 -->
+    <div class="center" v-if="flag === 1">
+        <div class="title">电子书</div>
+        <div class="levelTab">
+            <div class="level" :class="{clickLevel:bindex===index}" v-for="(item,index) in bookTypeList" :key="index"
+                @click="getTxtByType(item.name,index)">
+                {{item.name}}</div>
+        </div>
+        <div class="book" v-for="(item,index) in bookList" :key="index" @click="openBookDetails(item.id)">
+            <div class="cover">
+                <img :src=item.imageUrl alt />
+            </div>
+            <div class="bookMsg">
+                <div class="bookTitle">{{item.name}}</div>
+                <div class="bookIntroduce">{{item.introduction}}</div>
+                <div class="bookAuthor">{{item.author}}</div>
+                <div class="msg">
+                    <div class="money">¥{{item.money}}</div>
+                    <div class="people">{{item.studySum}}人已学</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 回答社区  标题 -->
+    <div class="answer" v-if="flag === 2">
+        <!-- 热门 and 最新标签 -->
+        <div class="levelTab">
+            <div class="level" v-for="(item,index) in hotnewTab" :key="index" :class="{clickLevel:hotAndnew===index}"
+                @click="selectHotorNew(index)">{{item.name}}</div>
+            <div class="level" v-if="hotAndnew===2" :class="{clickLevel:hotAndnew===2}"
+            @click="selectHotorNew(index)">搜索结果</div>
+        </div>
+        <!-- 问题 hotAndnew: 0,//热门标签为0  最新标签为1 搜索出来的列表为2-->
+        <!-- 热门 -->
+        <div class="problem" v-if="hotAndnew===0" v-for="(item,index) in HotList" :key="index" @click="openProblemDetails(item.id)">
+            <div class="problemHeader">
+                <div class="title">
+                    {{item.title}}
+                </div>
+                <div class="headPhoto">
+                    <img :src=item.photo alt />
+                    <div class="userName">
+                        {{item.userName}}
+                    </div>
+                </div>
+            </div>
+            <div class="problemContent">
+                {{item.content}}
+            </div>
+            <div class="problemDate">
+                <div class="date">
+                    {{item.creatTime|formatDate}}
+                </div>
+                <div class="answerNum">
+                    {{item.sum}}个回答
+                </div>
+            </div>
+            <!-- <div class="reply">
+                <div class="content">
+                    <img src="../../image/eTaxClass/reply.png" /><span class="name">李先生：</span><span class="neirong">ssssss</span>
+                </div>
+                <div class="date">
+                    2020-02-02
+                </div>
+            </div>
+            <div class="more" @click="reply === true">
+                展开回答<img src="../../image/eTaxClass/more.png" alt />
+            </div> -->
+        </div>
+        <!-- 最新 -->
+        <div class="problem" v-if="hotAndnew===1" v-for="(item,index) in NewList" :key="index" @click="openProblemDetails(item.id)">
+            <div class="problemHeader">
+                <div class="title">
+                    {{item.title}}
+                </div>
+                <div class="headPhoto">
+                    <img :src=item.photo alt />
+                    <div class="userName">
+                        {{item.userName}}
+                    </div>
+                </div>
+            </div>
+            <div class="problemContent">
+                {{item.content}}
+            </div>
+            <div class="problemDate">
+                <div class="date">
+                    {{item.creatTime|formatDate}}
+                </div>
+                <div class="answerNum">
+                    {{item.sum}}个回答
+                </div>
+            </div>
+        </div>
+        <!-- 搜索出来的 -->
+        <div class="problem" v-if="hotAndnew===2" v-for="(item,index) in searchList" :key="index" @click="openProblemDetails(item.id)">
+            <div class="problemHeader">
+                <div class="title">
+                    {{item.title}}
+                </div>
+                <div class="headPhoto">
+                    <img :src=item.photo alt />
+                    <div class="userName">
+                        {{item.userName}}
+                    </div>
+                </div>
+            </div>
+            <div class="problemContent">
+                {{item.content}}
+            </div>
+            <div class="problemDate">
+                <div class="date">
+                    {{item.creatTime|formatDate}}
+                </div>
+                <div class="answerNum">
+                    {{item.sum}}个回答
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div id="app">
+    <div class="head">
+        <div class="head_title">
+            <input class="tips-left" type="text" placeholder="请输入标题" v-model="titles" maxlength="30">
+        </div>
+        <div class="head_tip">
+            <div class="row_right">{{titlecount}}/30</div>
+        </div>
+    </div>
+    <div class="text_area">
+        <textarea class="tips-left" maxlength="200" v-model="content" placeholder="详细描述一下，这样回答会更准确哦">
+        </textarea>
+        <div class="head_tip">
+            <div class="row_right">{{contentcount}}/200</div>
+        </div>
+    </div>
+    <div class="btn_box" @click="createProblem">
+        <div class="btn">发布</div>
+    </div>
+</div>

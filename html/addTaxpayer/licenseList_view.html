@@ -1,0 +1,43 @@
+<!-- 单据审批页面开始 -->
+<div id="app">
+    <main>
+      <div class="main-box">
+        <div class="box-bills">
+          <!-- 每一项 -->
+          <div v-for="(item,index) in dataList" :ket="item.id" class="bills-item">
+           <div class="item-box"  @click="openAddTaxpayer(item,index)" >
+            <div class="item-img">
+              <img :src="item.businessUrl" alt="">
+            </div>
+            <div  class="item-desc">
+              <div class="desc-name">{{item.name}}</div>
+              <div class="desc-number">
+                <span>法人姓名：{{item.legalPeople}}</span>
+              </div>
+              <div class="desc-type">
+                <span>执照号码：{{item.creditCode}}</span>
+              </div>
+              <div class="desc-status">
+                <!-- <span>{{item.status }}</span> -->
+              </div>
+            </div>
+           </div>
+            <div class="item-check">
+              <!-- <van-checkbox v-model="checked" icon-size="0.3rem"></van-checkbox> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- <footer>
+      <div class="footer-box">
+        <div class="box-btn">
+          <van-checkbox v-model="checked" icon-size="0.4rem">全选</van-checkbox>
+        </div>
+        <div class="box-btn">驳回</div>
+        <div class="box-btn">通过</div>
+      </div>
+    </footer> -->
+   
+  </div>
+  

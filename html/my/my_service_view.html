@@ -1,0 +1,36 @@
+<div id="app">
+    <div class="service">
+        <div class="service-list">
+            <div  v-for="(item,index) in list" :key="index">
+                <div class="service-list-item">
+                    <div class="service-list-item-img">
+                        <img :src="item.imageUrl.charAt(item.imageUrl.length - 1) === ';' ? item.imageUrl.split(';')[0] : ''" style="width: 100%;height: 100%;">
+                    </div>
+                    <div class="service-list-item-right">
+                        <div class="service-list-item-right-title">
+                            注册代办
+                        </div>
+                        <div class="service-list-item-right-company">
+                            {{ item.serverTypeId }}
+                        </div>
+                        <div class="service-list-item-right-bottom">
+                            <div class="service-list-item-right-bottom-price">
+                                ¥{{ item.money }}
+                            </div>
+                            <div class="service-list-item-right-bottom-delete" @click="deleteItem(index)">
+                                删除
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-list-line"></div>
+            </div>
+        </div>
+    </div>
+    <van-dialog v-model="dialogShow"
+                title="确定删除吗？"
+                @confirm="deleteConfirm"
+                @cancel="deleteCancel"
+                show-cancel-button>
+    </van-dialog>
+</div>

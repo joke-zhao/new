@@ -1,0 +1,104 @@
+<div id="app">
+    <div class="divide"></div>
+    <div class="item-form-title">
+        <div class="blue-point"></div>
+        <div class="title-content">
+            您所在的公司
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="item-form-input">
+        <img src="../../image/register/company.png" class="icon-company">
+        <input @input="delayed" type="text" v-model="unitName" placeholder="请输入公司名称">
+        <img src="../../image/register/more.png" class="icon-more">
+    </div>
+    <div class="searchBox">
+        <van-popup v-model="showPicker" round position="bottom">
+            <van-picker
+              show-toolbar
+              :columns="columns"
+              @cancel="showPicker = false"
+              @confirm="onConfirm"
+            />
+          </van-popup>
+    </div>
+    <div class="divide"></div>
+    <div class="item-form-title">
+        <div class="blue-point"></div>
+        <div class="title-content">
+            选择角色
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="item-form-input  item-desc fontColor">
+        <img src="../../image/register/user.png" class="icon-company">
+        <van-dropdown-menu class="option_class">
+            <van-dropdown-item v-model="id" :options="option1" />
+        </van-dropdown-menu>
+        <img src="../../image/register/more.png" class="icon-more">
+    </div>
+    <div class="divide"></div>
+    <div class="item-form-title">
+        <div class="blue-point"></div>
+        <div class="title-content">
+            公司服务地址
+        </div>
+    </div>
+    <div class="line"></div>
+    <div @click="show = true" class="item-form-input">
+      <img src="../../image/register/area.png" alt="" class="icon-company">
+      <input  v-model="address2" type="text" disabled="disabled" placeholder="请选择所在地区" class="item-content-input">
+    </div>
+    <!-- 省市区三级联动 -->
+<van-popup v-model="show" position="bottom" :style="{ height: '40%' }">
+  <van-area
+    :area-list="areaList"
+    @cancel="handleCancel"
+    @confirm="handleConfirm"
+  />
+</van-popup>
+    <div class="divide"></div>
+    <div class="item-form-title">
+        <div class="blue-point"></div>
+        <div class="title-content">
+            为方便您的使用，请绑定手机号码
+        </div>
+    </div>
+    
+    <div class="line"></div>
+    <div class="item-form-input">
+        <img src="../../image/register/user.png" class="icon-company">
+        <input type="text" maxlength="7" v-model="nickName" placeholder="请输入用户昵称">
+    </div>
+    <div class="line"></div>
+    <div class="item-form-input">
+        <img src="../../image/register/mobile.png" class="icon-company">
+        <input type="text" maxlength="11" v-model="phone" placeholder="请输入手机号码">
+    </div>
+    <div class="line"></div>
+    <div class="item-form-input">
+        <img src="../../image/register/code.png" class="icon-company">
+        <input maxlength="6" type="text" v-model="sureNumber" placeholder="请输入验证码">
+        <div class="get-code" @click="handleGetCode">{{codeDesc}}</div>
+    </div>
+    <div class="line"></div>
+    <div class="item-form-input">
+        <img src="../../image/register/password.png" class="icon-company">
+        <input maxlength="12" type="password" v-model="password" placeholder="请输入6-12位密码">
+    </div>
+    <div class="line"></div>
+    <div class="item-form-input">
+        <img src="../../image/register/invite.png" class="icon-company">
+        <input v-model="invitedCode" placeholder="请输入邀请码（非必填）">
+    </div>
+    <div class="agree-wrapper">
+        <input @click="submitReg" type="button" value="同意协议并注册" class="btn-agree">
+        <div class="click-text">
+            注册即代表您同意《<span class="blue-text">用户服务协议</span>》和《<span class="blue-text">隐私协议</span>》
+        </div>
+        <div class="wechat-wrapper">
+            <img src="../../image/register/wechat.png" class="wechat-icon">
+            <div class="wechat-text">微信注册</div>
+        </div>
+    </div>
+</div>

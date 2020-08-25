@@ -1,0 +1,138 @@
+<div id="app">
+  <!-- 头部数据筛选区 -->
+  <header>
+    <div class="header-box">
+      <div class="box-name">
+        <div class="left-name">{{companyName}}</div>
+        <!-- <div class="right-name">币种:（CNY）</div> -->
+      </div>
+      <div class="box-date">
+        <div class="left-date">
+          <img src="../../image/manageForm/date.png" alt="" />
+        </div>
+        <div class="right-date">
+          <div @click="handlStartDate" class="date-YM">
+            <span v-if="!startDate">请选择起始年月日</span>
+            <span v-else style="font-size: .28rem;">{{startDate}}</span>
+          </div>
+          <span>至</span>
+          <div @click="handlEndDate" class="date-YM">
+            <span v-if="!endDate">请选择截止年月日</span>
+            <span v-else style="font-size: .28rem;">{{endDate}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="box-subject">
+        <div class="left-subject">凭证号码</div>
+        <!-- <div class="right-subject">
+          <van-dropdown-menu>
+            <van-dropdown-item v-model="value1" :options="option1" />
+          </van-dropdown-menu>
+          <span>至</span>
+          <van-dropdown-menu>
+            <van-dropdown-item v-model="value1" :options="option1" />
+          </van-dropdown-menu>
+        </div> -->
+        <div class="right-subject">
+            <input v-model="acco" class="inputStyle" type="text">
+            <span>至</span>
+            <input v-model="acct" class="inputStyle" type="text">
+        </div>
+      </div>
+      
+    </div>
+  </header>
+  <!-- 表格数据展示区 -->
+  <main>
+    <div v-for="(first,index) in itemList" :key="index"  id="main" class="newMain-box">
+      <div class="main-box">
+        <div class="t-header">
+          <span>记账凭证</span>
+        </div>
+        <div class="t-nav">
+          <div>凭证日期</div>
+          <div>{{first.date}}</div>
+          <div>凭证号码</div>
+          <div>{{first.vohNo}}</div>
+        </div>
+        <div class="t-nav">
+          <div>核算单位</div>
+          <p>{{first.comp}}</p>
+        </div>
+        <div class="t-main">
+          <div class="m-header">
+            <div class="item4">摘要</div>
+            <div class="item3">会计科目</div>
+            <div class="item2">币别</div>
+            <div class="item4">项目</div>
+            <div class="item4">借方金额</div>
+            <div class="item4">贷方金额</div>
+          </div>
+          <div class="m-body">
+            <div v-for="(second,i) in first.vdtlDtos" :key="i" class="b-item">
+              <div class="item4">{{second.accRem}}</div>
+              <div class="item3">{{second.makNo}}</div>
+              <div class="item2">{{second.curId}}</div>
+              <div class="item4">{{second.obj}}</div>
+              <div class="item4"><span v-show="second.dc =='D'">{{second.amtn}}</span></div>
+              <div class="item4"><span v-show="second.dc =='C'">{{second.amtn}}</span></div>
+            </div>
+            <div class="b-info" v-if="itemList.length == 0">
+              暂无列表项数据
+            </div>
+          </div>
+        </div>
+        <div class="t-footer">
+          <span>制单人：{{first.USR}}</span>
+          <span>过账人：{{first.posMan}}</span>
+          <span>审核人：{{first.chkMan}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="searchInfo" v-if="itemList.length === 0">选择查询信息后，点击下方 <span style="color:#486aef">蓝色按钮</span> 查询</div>   
+  </main>
+  <!-- 底部操作区 -->
+  <footer>
+    <div class="footer-box">
+      <div @click="showShare = true" class="left-box">
+        导出
+      </div>
+      <div @click="handlSearch" class="right-box">
+        查询
+      </div>
+    </div>
+  </footer>
+  <!-- 操作弹框 -->
+  <van-share-sheet
+    v-model="showShare"
+    :options="options"
+    @select="onSelect"
+    title="选择导出方式"
+  />
+  <!-- 开始日期弹框 -->
+  <van-popup v-model="showDateStart" round position="bottom">
+    <van-datetime-picker
+      v-model="currentDate"
+      type="date"
+      title="选择年月日"
+      :min-date="minDate"
+      :max-date="maxDate"
+      @confirm="openStartDate"
+      @cancel="closeStartDate"
+      :formatter="formatter"
+    />
+  </van-popup>
+  <!-- 结束日期弹框 -->
+  <van-popup v-model="showDateEnd" round position="bottom">
+    <van-datetime-picker
+      v-model="currentDate"
+      type="date"
+      title="选择年月日"
+      :min-date="minEndData"
+      :max-date="maxDate"
+      @confirm="openEndDate"
+      @cancel="closeEndDate"
+      :formatter="formatter"
+    />
+  </van-popup>
+</div>

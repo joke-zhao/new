@@ -1,0 +1,203 @@
+/* 单据审批样式开始 */
+#app {
+  font-size: 0.28rem;
+  color: #000;
+  width: 100%;
+}
+/* #app header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+#app header .header-box {
+  width: 100%;
+  height: 1.12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+#app header .header-box .box-search {
+  width: 65%;
+  height: 0.72rem;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 0.72rem;
+  background-color: #F5F5F5;
+}
+#app header .header-box .box-search .search-icon {
+  width: 0.3rem;
+  height: 0.3rem;
+  margin-right: 10px;
+}
+#app header .header-box .box-search .search-input {
+  width: 100%;
+  font-size: 0.26rem;
+}
+#app header .header-box .box-bth {
+  padding-left: 10px;
+}
+#app header .header-bottom {
+  width: 100%;
+  height: 0.2rem;
+  background-color: #f5f5f5;
+} */
+#app main {
+  width: 100%;
+  padding-bottom: 0.9rem;
+}
+#app main .box-nav {
+  height: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  background-color: #fff;
+  border-bottom: 1px solid #f5f5f5;
+}
+#app main .box-nav .nav-text {
+  font-size: 0.3rem;
+}
+#app main .box-nav .nav-text span {
+  font-weight: 600;
+}
+#app main .box-nav .nav-news {
+  font-size: 0.28rem;
+  color: #FF3D3D;
+}
+#app main .box-bills {
+  background-color: #fff;
+}
+#app main .box-bills .bills-item {
+  width: 100%;
+  height: 2.08rem;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  border-bottom: 1px solid #f5f5f5;
+}
+#app main .box-bills .bills-item .item-box {
+  display: flex;
+}
+#app main .box-bills .bills-item .item-img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+#app main .box-bills .bills-item .item-desc {
+  width: 4.4rem;
+  height: 1.6rem;
+  padding: 0 15px;
+}
+#app main .box-bills .bills-item .item-desc > div {
+  font-size: 0.24rem;
+  color: #999;
+}
+#app main .box-bills .bills-item .item-desc .desc-name {
+  font-size: 0.28rem;
+  color: #000;
+}
+#app main .box-bills .bills-item .item-check {
+  width: 0.3rem;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+}
+#app footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+#app footer .footer-box {
+  display: flex;
+}
+#app footer .footer-box .box-btn {
+  height: 0.9rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 500;
+}
+#app footer .footer-box .box-btn:nth-child(1) {
+  color: #000;
+  background-color: #F5F5F5;
+}
+#app footer .footer-box .box-btn:nth-child(2) {
+  background: linear-gradient(0deg, #ff3d3d 0%, #e83737 100%);
+}
+#app footer .footer-box .box-btn:nth-child(3) {
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+}
+#app .popup-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#app .popup-box .box-main > div {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+#app .popup-box .box-main .m-title {
+  font-size: 0.34rem;
+  font-weight: 500;
+  padding: 0.4rem 0;
+}
+#app .popup-box .box-main .m-name {
+  position: relative;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  background-color: #f5f5f5;
+  margin-bottom: 0.4rem;
+  border-radius: 5px;
+}
+#app .popup-box .box-main .m-name input {
+  text-align: center;
+}
+#app .popup-box .box-main .m-name img {
+  position: absolute;
+  top: 0.28rem;
+  right: 1rem;
+  width: 0.24rem;
+  height: 0.15rem;
+}
+#app .popup-box .box-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0.9rem;
+  display: flex;
+  font-size: 0.3rem;
+}
+#app .popup-box .box-footer .f-left {
+  border-top: 1px solid #f5f5f5;
+  flex: 1;
+  text-align: center;
+  line-height: 0.9rem;
+}
+#app .popup-box .box-footer .f-right {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+  line-height: 0.9rem;
+}
+#app input {
+  width: 100%;
+  height: 100%;
+  outline-style: none;
+  border: none;
+  color: #000;
+  border-radius: 5px;
+  background-color: #F5F5F5;
+  caret-color: #000;
+  -webkit-user-select: auto !important;
+  user-select: auto !important;
+}
+#app img {
+  width: 100%;
+  height: 100%;
+}

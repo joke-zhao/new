@@ -1,0 +1,110 @@
+<!-- 全部套餐页面开始 -->
+<div id="app">
+  <!-- 套餐外部容器 - 此div内为轮播数据 -->
+  <div class="swiper-container" id="swiper">
+    <!-- 前进后退按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <!-- 轮播项 利用轮播图做单页面滑动切换 -->
+    <div class="swiper-wrapper">
+      <div
+        v-for="item in packageList"
+        :key="item.id"
+        class="container-box swiper-slide"
+      >
+        <!-- 套餐介绍 -->
+        <div class="box-header">
+          <div class="h-name">{{item.packageName}}</div>
+          <div class="h-serve">{{item.packageDesc}}</div>
+          <div class="h-rule">
+            <div class="rule-left">
+              <span>分享赚钱</span>
+              <img src="../../image/set-info/myPackage5.png" alt="" />
+            </div>
+            <div @click="openRule" class="rule-right">佣金规则</div>
+          </div>
+        </div>
+        <!-- 套餐价格 -->
+        <div class="box-main">
+          <div class="main">
+            <div class="main-item">
+              <div class="item-price"><span>￥{{item.packagePrice}}</span></div>
+              <div class="item-timer"><span>/{{item.useMonth}}个月</span></div>
+              <div class="item-convent">
+                <span>¥{{(item.packagePrice/item.useMonth/30).toFixed(2)}}/天</span>
+              </div>
+            </div>
+          </div>
+
+        <!-- 套餐详情 -->
+        <div class="main-desc">
+          <!-- 套餐说明 -->
+          <div class="desc-explain">
+            <div><span>上传单据</span><div class="aaa">{{item.uploadCount}}张/月，超出部分按1元/张收费</div></div>
+            <div><span class="text-width">报税</span><div class="aaa">报税{{item.reportCount}}次/月</div></div>
+          </div>
+          <!-- 公司列表 -->
+          <div class="desc-company">
+            <p>请选择公司购买套餐</p>
+           <div>
+            <van-checkbox-group v-model="companyIdList">
+              <van-checkbox v-for="item in OrgList" :key="item.value" :name="item.value" icon-size="0.33rem">{{item.text}}</van-checkbox>
+            </van-checkbox-group>
+           </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 购买 -->
+  <footer>
+    <!-- 唤起支付弹窗 -->
+    <div @click="handlePay" class="footer-box">
+      <span>立即购买</span>
+    </div>
+  </footer>
+  <!-- 支付方式弹出层 -->
+  <div class="popup-box">
+    <van-popup
+      v-model="payShow"
+      position="bottom"
+      :style="{ height: '40%' }"
+    >
+      <div class="box">
+        <div class="box-header">
+          支付
+        </div>
+        <div class="box-main">
+          <!-- <p>支付方式</p> -->
+          <van-radio-group v-model="payFlag">
+            <div
+              v-for="item in payList"
+              :key="item.payId"
+              :class="{ 'main-item': true, 'select-pay': item.payId === payFlag }"
+            >
+              <div class="item-left">
+                <img :src="item.icon" alt="" />
+                <span>{{item.name}}</span>
+              </div>
+              <div class="item-rigth">
+                <van-radio icon-size="0.33rem" :name="item.payId"></van-radio>
+              </div>
+            </div>
+          </van-radio-group>
+        </div>
+        <div class="box-footer">
+          <div class="footer">
+            <div class="lefe-footer">
+              应付金额：
+              <span>￥{{totalPrice}}</span>
+            </div>
+            <div @click="handlePayType" class="right-footer">
+              付款
+            </div>
+          </div>
+        </div>
+      </div>
+    </van-popup>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+/**css代码在此处开始*/
+#app .facilitator .revenue-ul {
+  width: 100%;
+  padding: 0 0.24rem;
+}
+#app .facilitator .revenue-ul li {
+  height: 2.08rem;
+  padding: 0.24rem 0;
+  box-sizing: border-box;
+  border-bottom: 0.01rem solid #EEEEEE;
+}
+#app .facilitator .revenue-ul li img {
+  float: left;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.1rem;
+}
+#app .facilitator .revenue-ul li .details {
+  float: right;
+  width: 5.2rem;
+  height: 1.6rem;
+}
+#app .facilitator .revenue-ul li .details .kj {
+  font-size: 0.28rem;
+}
+#app .facilitator .revenue-ul li .details .grade {
+  margin: 0.05rem 0;
+  width: 5.2rem;
+  height: 0.25rem;
+  font-size: 0.24rem;
+  color: #808080;
+  display: flex;
+  align-items: center;
+}
+#app .facilitator .revenue-ul li .details .grade .star {
+  width: 1.1rem;
+  height: 0.21rem;
+}
+#app .facilitator .revenue-ul li .details .grade .star img {
+  width: 0.2rem;
+  height: 0.2rem;
+  float: left;
+}
+#app .facilitator .revenue-ul li .details .grade .stance {
+  margin-left: 2.9rem;
+}
+#app .facilitator .revenue-ul li .details .grade .jl {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+#app .facilitator .revenue-ul li .details p {
+  margin-bottom: 0.03rem;
+  font-size: 0.24rem;
+  color: #808080;
+}
+#app .facilitator .revenue-ul li .details .dljz {
+  display: flex;
+  flex-direction: row;
+  height: 0.28rem;
+  width: 1.1rem;
+  text-align: center;
+  line-height: 0.28rem;
+  color: #808080;
+  font-size: 0.2rem;
+  border: 1px solid #808080;
+  border-radius: 0.08rem;
+}

@@ -1,0 +1,714 @@
+<!-- 单据审批详情页面开始 -->
+<div id="app">
+    <header v-show="printShow">
+        <div @click="handleImgUrl" class="header-box">
+            <img :src="billData.imgUrl || '../../image/home/swiper.png'" alt="" />
+        </div>
+    </header>
+    <!--startprint-->
+    <main id="main" ref="printCont">
+        <!-- 主表格类型2 银行 -->
+        <div v-show="billType === 'BANK'" class="mian-box2">
+            <div class="box-table">
+                <!-- 表头 -->
+                <div class="t-header">
+                    <div class="h-date">
+                        <span>单据日期：{{billData.date | formatDate}}</span>
+                    </div>
+                    <div class="h-type">
+                        <span>币种：{{billData.currency}}</span>
+                    </div>
+                    <div class="h-number">
+                        <span>单据编号：{{billData.transaction}}</span>
+                    </div>
+                </div>
+                <!-- 表身 -->
+                <div class="t-body">
+                    <div class="b-header">
+                        <div class="h-box">
+                            <div class="box-left">
+                                付款人
+                            </div>
+                            <div class="box-right">
+                                <div class="right-item">
+                                    <div class="item-name">公司名称</div>
+                                    <div class="item-desc">{{billData.payeeName}}</div>
+                                </div>
+                                <div class="right-item">
+                                    <div class="item-name">银行账号</div>
+                                    <div class="item-desc">{{billData.payeeAccount}}</div>
+                                </div>
+                                <div class="right-item">
+                                    <div class="item-name">开户银行</div>
+                                    <div class="item-desc">{{billData.payeeBank}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="h-box">
+                            <div class="box-left">
+                                收款人
+                            </div>
+                            <div class="box-right">
+                                <div class="right-item">
+                                    <div class="item-name">公司名称</div>
+                                    <div class="item-desc">{{billData.acceptName}}</div>
+                                </div>
+                                <div class="right-item">
+                                    <div class="item-name">银行账号</div>
+                                    <div class="item-desc">{{billData.acceptAccount}}</div>
+                                </div>
+                                <div class="right-item">
+                                    <div class="item-name">开户银行</div>
+                                    <div class="item-desc">{{billData.acceptBank}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-main">
+                        <div class="m-box">
+                            <div class="box-left">金额</div>
+                            <div class="box-right">{{billData.money}}</div>
+                        </div>
+                        <div class="m-box">
+                            <div class="box-left">用途</div>
+                            <div class="box-right">{{billData.use}}</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 签名 -->
+                <div class="t-footer">
+                    <div class="f-sign">
+                        <span>制单人:</span>
+                        <img :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                    <div class="f-sign">
+                        <span>审核人:</span>
+                        <img :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                    <div class="f-sign">
+                        <span>审批人:</span>
+                        <img :src="userSign ? userSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 主表格类型1 财政 -->
+        <div v-show="billType === 'FINANCIAL'" class="mian-box">
+            <div class="box-table">
+                <!-- 表头 -->
+                <div class="t-header">
+                    <div class="h-date">
+                        <span>单据日期：{{billData.date | formatDate}}</span>
+                    </div>
+                    <div class="h-type">
+                        <span>币种：{{billData.currency}}</span>
+                    </div>
+                    <div class="h-number">
+                        <span>单据编号：{{billData.num}}</span>
+                    </div>
+                </div>
+                <!-- 表身 -->
+                <div class="t-body">
+                    <div class="b-info">
+                        <div class="info-item1"><span>购买方名称</span></div>
+                        <div class="info-item2">{{billData.payment}}</div>
+                        <div class="info-item1"><span>销售方名称</span></div>
+                        <div class="info-item2">{{billData.accept}}</div>
+                    </div>
+                    <div class="b-info">
+                        <div class="info-item1"><span>金额</span></div>
+                        <div class="info-item2">{{billData.totalMoney}}</div>
+                        <div class="info-item1"><span></span></div>
+                        <div class="info-item2"></div>
+                      </div>
+                    <div class="b-name">
+                        <div class="name-item1">
+                            <span>货物或应税劳务、服务名称</span>
+                        </div>
+                        <div class="name-item2">
+                            <span>规格型号</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>单位</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>数量</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>单价</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>金额</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>税率</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>税额</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>摘要</span>
+                        </div>
+                    </div>
+                    <div v-for="(item,index) in billData.itemList" :key="index" class="b-desc">
+                        <div class="name-item1">
+                            {{item.serviceName}}
+                        </div>
+                        <div class="name-item2">
+                            {{item.model}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.unit}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.number}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.price}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.money}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.tax}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.taxMoney}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.note}}
+                        </div>
+                    </div>
+                </div>
+                <!-- 签名 -->
+                <div class="t-footer">
+                    <div class="f-sign">
+                        <span>制单人:</span>
+                        <img :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                    <div class="f-sign">
+                        <span>审核人:</span>
+                        <img :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                    <div class="f-sign">
+                        <span>审批人:</span>
+                        <img :src="userSign ? userSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 主表格类型1 海关 -->
+        <div v-show="billType === 'CUSTOMS'" class="mian-box">
+            <div class="box-table">
+                <!-- 表头 -->
+                <div class="t-header">
+                    <div class="h-date">
+                        <span>单据日期：{{billData.date | formatDate}}</span>
+                    </div>
+                    <div class="h-type">
+                        <span>币种：{{billData.currency}}</span>
+                    </div>
+                    <div class="h-number">
+                        <span>单据编号：{{billData.number}}</span>
+                    </div>
+                </div>
+                <!-- 表身 -->
+                <div class="t-body">
+                    <div class="b-info">
+                        <div class="info-item1"><span>购买方名称</span></div>
+                        <div class="info-item2">{{billData.name}}</div>
+                        <div class="info-item1"><span>销售方名称</span></div>
+                        <div class="info-item2">{{billData.revenue}}</div>
+                    </div>
+                    <div class="b-info">
+                        <div class="info-item1"><span>金额</span></div>
+                        <div class="info-item2">{{billData.totalMoney}}</div>
+                        <div class="info-item1"><span></span></div>
+                        <div class="info-item2"></div>
+                      </div>
+                    <div class="b-name">
+                        <div class="name-item2">
+                            <span>货物或应税劳务、服务名称</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>单位</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>数量</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>金额</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>税额</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>税率</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>摘要</span>
+                        </div>
+                    </div>
+                    <div v-for="(item,index) in billData.itemList" :key="index" class="b-desc">
+                        <div class="name-item2">
+                            {{item.goods}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.unit}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.num}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.price}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.taxPrice}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.taxRatio}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.note}}
+                        </div>
+                    </div>
+                </div>
+                <!-- 签名 -->
+                <div class="t-footer">
+                    <div class="f-sign">
+                        <span>制单人:</span>
+                        <img :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                    <div class="f-sign">
+                        <span>审核人:</span>
+                        <img :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                    <div class="f-sign">
+                        <span>审批人:</span>
+                        <img :src="userSign ? userSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- 主表格类型1 发票 -->
+         <div v-show="billType === 'INVOICE'" class="mian-box">
+            <div class="box-table">
+                <!-- 表头 -->
+                <div class="t-header">
+                    <div class="h-date">
+                        <span>单据日期：{{billData.date | formatDate}}</span>
+                    </div>
+                    <div class="h-type">
+                        <span>币种：{{billData.curId}}</span>
+                    </div>
+                    <div class="h-number">
+                        <span>单据编号：{{billData.invoiceNum}}</span>
+                    </div>
+                </div>
+                <!-- 表身 -->
+                <div class="t-body">
+                    <div class="b-info">
+                        <div class="info-item1"><span>购买方名称</span></div>
+                        <div class="info-item2">{{billData.buyName}}</div>
+                        <div class="info-item1"><span>销售方名称</span></div>
+                        <div class="info-item2">{{billData.saleName}}</div>
+                    </div>
+                    <div class="b-info">
+                        <div class="info-item1"><span>金额</span></div>
+                        <div class="info-item2">{{billData.totalMoney}}</div>
+                        <div class="info-item1"><span></span></div>
+                        <div class="info-item2"></div>
+                      </div>
+                    <div class="b-name">
+                        <div class="name-item1">
+                            <span>货物或应税劳务、服务名称</span>
+                        </div>
+                        <div class="name-item2">
+                            <span>规格型号</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>单位</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>数量</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>单价</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>金额</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>税率</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>税额</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>摘要</span>
+                        </div>
+                    </div>
+                    <div v-for="(item,index) in billData.itemList" :key="index" class="b-desc">
+                        <div class="name-item1">
+                            {{item.serviceName}}
+                        </div>
+                        <div class="name-item2">
+                            {{item.model}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.unit}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.number}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.price}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.money}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.tax}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.taxMoney}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.note}}
+                        </div>
+                    </div>
+                </div>
+                <!-- 签名 -->
+                <div class="t-footer">
+                    <div class="f-sign">
+                        <span>制单人:</span>
+                        <img :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                    <div class="f-sign">
+                        <span>审核人:</span>
+                        <img :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                    <div class="f-sign">
+                        <span>审批人:</span>
+                        <img :src="userSign ? userSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 主表格类型1 发票-销货单 -->
+        <div v-show="billType === 'SaleGoods'" class="mian-box">
+            <div class="box-table">
+                <!-- 表头 -->
+                <div class="t-header">
+                    <div class="h-date">
+                        <span>单据日期：{{billData.date | formatDate}}</span>
+                    </div>
+                    <div class="h-type">
+                        <span>币种：{{billData.curId}}</span>
+                    </div>
+                    <div class="h-number">
+                        <span>单据编号：{{billData.invoiceNum}}</span>
+                    </div>
+                </div>
+                <!-- 表身 -->
+                <div class="t-body">
+                    <div class="b-info">
+                        <div class="info-item1"><span>购买方名称</span></div>
+                        <div class="info-item2">{{billData.buyName}}</div>
+                        <div class="info-item1"><span>销售方名称</span></div>
+                        <div class="info-item2">{{billData.saleName}}</div>
+                    </div>
+                    <div class="b-info">
+                        <div class="info-item1"><span>金额</span></div>
+                        <div class="info-item2">{{billData.totalMoney}}</div>
+                        <div class="info-item1"><span></span></div>
+                        <div class="info-item2"></div>
+                      </div>
+                    <div class="b-name">
+                        <div class="name-item1">
+                            <span>货物或应税劳务、服务名称</span>
+                        </div>
+                        <div class="name-item2">
+                            <span>规格型号</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>单位</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>数量</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>单价</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>金额</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>税率</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>税额</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>摘要</span>
+                        </div>
+                    </div>
+                    <div v-for="(item,index) in billData.itemList" :key="index" class="b-desc">
+                        <div class="name-item1">
+                            {{item.serviceName}}
+                        </div>
+                        <div class="name-item2">
+                            {{item.model}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.unit}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.number}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.price}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.money}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.tax}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.taxMoney}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.note}}
+                        </div>
+                    </div>
+                </div>
+                <!-- 签名 -->
+                <div class="t-footer">
+                    <div class="f-sign">
+                        <span>制单人:</span>
+                        <img :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                    <div class="f-sign">
+                        <span>审核人:</span>
+                        <img :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                    <div class="f-sign">
+                        <span>审批人:</span>
+                        <img :src="userSign ? userSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 主表格类型1 发票-进货单 -->
+        <div v-show="billType === 'Stock'" class="mian-box">
+            <div class="box-table">
+                <!-- 表头 -->
+                <div class="t-header">
+                    <div class="h-date">
+                        <span>单据日期：{{billData.date | formatDate}}</span>
+                    </div>
+                    <div class="h-type">
+                        <span>币种：{{billData.curId}}</span>
+                    </div>
+                    <div class="h-number">
+                        <span>单据编号：{{billData.invoiceNum}}</span>
+                    </div>
+                </div>
+                <!-- 表身 -->
+                <div class="t-body">
+                    <div class="b-info">
+                        <div class="info-item1"><span>购买方名称</span></div>
+                        <div class="info-item2">{{billData.buyName}}</div>
+                        <div class="info-item1"><span>销售方名称</span></div>
+                        <div class="info-item2">{{billData.saleName}}</div>
+                    </div>
+                    <div class="b-info">
+                        <div class="info-item1"><span>金额</span></div>
+                        <div class="info-item2">{{billData.totalMoney}}</div>
+                        <div class="info-item1"><span></span></div>
+                        <div class="info-item2"></div>
+                      </div>
+                    <div class="b-name">
+                        <div class="name-item1">
+                            <span>货物或应税劳务、服务名称</span>
+                        </div>
+                        <div class="name-item2">
+                            <span>规格型号</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>单位</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>数量</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>单价</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>金额</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>税率</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>税额</span>
+                        </div>
+                        <div class="name-item3">
+                            <span>摘要</span>
+                        </div>
+                    </div>
+                    <div v-for="(item,index) in billData.itemList" :key="index" class="b-desc">
+                        <div class="name-item1">
+                            {{item.serviceName}}
+                        </div>
+                        <div class="name-item2">
+                            {{item.model}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.unit}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.number}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.price}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.money}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.tax}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.taxMoney}}
+                        </div>
+                        <div class="name-item3">
+                            {{item.note}}
+                        </div>
+                    </div>
+                </div>
+                <!-- 签名 -->
+                <div class="t-footer">
+                    <div class="f-sign">
+                        <span>制单人:</span>
+                        <img :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                    <div class="f-sign">
+                        <span>审核人:</span>
+                        <img :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                    <div class="f-sign">
+                        <span>审批人:</span>
+                        <img :src="userSign ? userSign :'../../image/legwork/adver.png'" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 主表格类型1 手工单据 -->
+    <div v-show="billType === 'Other'" class="mian-box">
+        <div class="box-table">
+          <!-- 表头 -->
+          <div class="t-header">
+            <div class="h-date">
+              <span>单据日期：{{billData.date | formatDate}}</span>
+            </div>
+            <div class="h-type">
+              <span>币种：{{billData.curId}}</span>
+            </div>
+            <div class="h-number">
+              <span>单据编号：{{billData.invoiceNum}}</span>
+            </div>
+          </div>
+          <!-- 表身 -->
+          <div class="t-body">
+            <div class="b-info">
+              <div class="info-item1"><span>机构名称</span></div>
+              <div class="info-item2">{{billData.buyName}}</div>
+              <div class="info-item1"><span>销售方名称</span></div>
+              <div class="info-item2">{{billData.saleName}}</div>
+            </div>
+            <div class="b-name">
+              <div class="name-item2">
+                <span>费用代码</span>
+              </div>
+              <div class="name-item3">
+                <span>单位</span>
+              </div>
+              <div class="name-item3">
+                <span>数量</span>
+              </div>
+              <div class="name-item3">
+                <span>单价</span>
+              </div>
+              <div class="name-item3">
+                <span>金额</span>
+              </div>
+              <div class="name-item2">
+                <span>摘要</span>
+              </div>
+            </div>
+            <div
+              v-for="(item,index) in billData.itemList"
+              :key="index"
+              class="b-desc"
+            >
+              <div class="name-item2">
+                {{item.codeView}}
+              </div>
+              <div class="name-item3">
+                {{item.unit}}
+              </div>
+              <div class="name-item3">
+                {{item.number}}
+              </div>
+              <div class="name-item3">
+                {{item.price}}
+              </div>
+              <div class="name-item3">
+                {{item.money}}
+              </div>
+              <div class="name-item2">
+                  {{item.note}}
+              </div>
+            </div>
+          </div>
+          <!-- 签名 -->
+          <div class="t-footer">
+            <div class="f-sign">
+              <span>制单人:</span>
+              <img
+                :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'"
+                alt=""
+              />
+            </div>
+            <div class="f-sign">
+              <span>审核人:</span>
+              <img
+                :src="billData.makeUserSign ? billData.makeUserSign :'../../image/legwork/adver.png'"
+                alt=""
+              />
+            </div>
+            <div class="f-sign">
+              <span>审批人:</span>
+              <img
+                :src="userSign ? userSign :'../../image/legwork/adver.png'"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--endprint-->
+    <footer v-show="printShow">
+        <div class="footer-box">
+            <div class="box-item2">
+                <span>导出</span>
+            </div>
+            <div class="box-item2">
+                <span>打印</span>
+            </div>
+        </div>
+    </footer>
+</div>

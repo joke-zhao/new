@@ -1,0 +1,83 @@
+#app {
+  width: 100%;
+  background: #f0f0f0;
+  height: 100%;
+  overflow-y: scroll;
+}
+#app .consult-wrapper {
+  width: 100%;
+}
+#app .consult-wrapper .consult-tabs {
+  background: #fff;
+  width: 100%;
+  height: 0.9rem;
+  display: flex;
+}
+#app .consult-wrapper .consult-tabs .consult-tabs-item {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.32rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #222222;
+}
+#app .consult-wrapper .consult-tabs .consult-tabs-item-active {
+  color: #4769EE;
+  border-bottom: 0.06rem solid #4769EE;
+  box-sizing: border-box;
+}
+#app .consult-list {
+  width: 100%;
+  margin-top: 0.21rem;
+  background: #fff;
+}
+#app .consult-list .consult-list-item {
+  width: 100%;
+  height: 1.98em;
+  display: flex;
+}
+#app .consult-list .consult-list-item .consult-list-item-img {
+  margin-top: 0.24em;
+  margin-left: 0.24em;
+  width: 2.1rem;
+  height: 1.5rem;
+  background: red;
+}
+#app .consult-list .consult-list-item .consult-list-item-right {
+  margin-left: 0.24rem;
+}
+#app .consult-list .consult-list-item .consult-list-item-right .consult-list-item-right-title {
+  width: 4.68rem;
+  height: 0.76rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 0.42rem;
+  margin-top: 0.26rem;
+  /* 文字超过两行省略号 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+#app .consult-list .consult-list-item .consult-list-item-right .consult-list-item-right-bottom {
+  width: 4.68rem;
+  margin-top: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+  line-height: 0.37rem;
+}
+#app .consult-list .consult-list-line {
+  width: 7.02rem;
+  height: 0.01rem;
+  background: #EEEEEE;
+  margin-left: 0.24rem;
+}

@@ -1,0 +1,255 @@
+/* 全部套餐页面样式开始 */
+#app {
+  font-size: 0.24rem;
+  /* 处理按钮样式 */
+  /* 支付方式弹吃层 */
+}
+#app .swiper-button-prev {
+  left: 0.8rem;
+  right: auto;
+  background-image: url(../../image/set-info/myPackageLeft.png);
+}
+#app .swiper-button-next {
+  right: 0.8rem;
+  left: auto;
+  background-image: url(../../image/set-info/myPackageRight.png);
+}
+#app .swiper-button-prev,
+#app .swiper-button-next {
+  width: 0.27rem;
+  height: 0.43rem;
+  top: 20%;
+  background-size: 0.27rem 0.43rem;
+}
+#app .container-box {
+  width: 100%;
+  /* 头部描述去 */
+  /* 价格区 */
+}
+#app .container-box .box-header {
+  box-sizing: border-box;
+  width: 100%;
+  height: 3.6rem;
+  padding: 0.6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-image: url(../../image/set-info/myPackage3.png);
+  background-size: 100% 3.6rem;
+}
+#app .container-box .box-header .h-name {
+  font-size: 0.3rem;
+  color: #fff;
+  font-weight: 600;
+}
+#app .container-box .box-header .h-serve {
+  color: #fff;
+}
+#app .container-box .box-header .h-rule {
+  width: 5.6rem;
+  height: 0.46rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.46rem;
+  background-image: url(../../image/set-info/myPackage4.png);
+  background-size: 100% 0.46rem;
+}
+#app .container-box .box-header .h-rule .rule-left {
+  display: flex;
+  align-items: center;
+}
+#app .container-box .box-header .h-rule .rule-left span {
+  color: #536DED;
+  padding: 0 0.4rem;
+}
+#app .container-box .box-header .h-rule .rule-left img {
+  width: 0.64rem;
+  height: 0.23rem;
+}
+#app .container-box .box-header .h-rule .rule-right {
+  width: 1.4rem;
+  height: 0.46rem;
+  line-height: 0.46rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.46rem;
+  background-color: #ffb905;
+  box-shadow: -5px 0px 20px 0px #bb4a8c;
+}
+#app .container-box .box-main {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: -0.4rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  padding: 5px;
+  /* 详情区 */
+}
+#app .container-box .box-main .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 1.8rem;
+  border-radius: 0.4rem;
+  background: linear-gradient(0deg, #ff501b 0%, #ff8e40 100%);
+}
+#app .container-box .box-main .main .main-item {
+  display: flex;
+}
+#app .container-box .box-main .main .main-item .item-price span {
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: 600;
+}
+#app .container-box .box-main .main .main-item .item-timer {
+  position: relative;
+  width: 1.6rem;
+}
+#app .container-box .box-main .main .main-item .item-timer span {
+  position: absolute;
+  bottom: 0.2rem;
+  left: 0.2rem;
+  font-size: 0.36rem;
+  color: #FFED3F;
+  font-weight: 500;
+}
+#app .container-box .box-main .main .main-item .item-convent {
+  width: 1.5rem;
+  height: 0.6rem;
+  background-image: url(../../image/set-info/myPackage7.png);
+  background-size: 100% 0.6rem;
+  text-align: center;
+  color: #FF4D1A;
+}
+#app .container-box .box-main .main-desc {
+  background-color: #fff;
+  padding: 0.2rem;
+}
+#app .container-box .box-main .main-desc .desc-explain {
+  padding: 0.1rem 0;
+}
+#app .container-box .box-main .main-desc .desc-explain div {
+  display: flex;
+  align-items: center;
+  color: #999;
+}
+#app .container-box .box-main .main-desc .desc-explain div span {
+  color: #000;
+  font-size: 0.28rem;
+}
+#app .container-box .box-main .main-desc .desc-explain div .text-width {
+  letter-spacing: 2em;
+  margin-right: -2em;
+}
+#app .container-box .box-main .main-desc .desc-explain div p {
+  margin-left: 0.2rem;
+}
+#app .container-box .box-main .main-desc .desc-company > div {
+  overflow: auto;
+  height: 3rem;
+}
+#app .container-box .box-main .main-desc .desc-company p {
+  font-size: 0.28rem;
+  font-weight: 500;
+  border-bottom: 1px solid #f5f5f5;
+}
+#app footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0.4rem;
+}
+#app footer .footer-box {
+  width: 80%;
+  height: 0.8rem;
+  margin: 0 auto;
+  line-height: 0.8rem;
+  border-radius: 0.8rem;
+  text-align: center;
+  background: linear-gradient(180deg, #6886ff 0%, #4769ee 100%);
+}
+#app footer .footer-box span {
+  font-size: 0.3rem;
+  color: #fff;
+  font-weight: 600;
+}
+#app .popup-box .box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#app .popup-box .box .box-header {
+  padding: 0.3rem 0;
+  font-size: 0.3rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 2px solid #f5f5f5;
+}
+#app .popup-box .box .box-main {
+  padding: 0 0.2rem;
+  /* 支付方式选中的样式 */
+}
+#app .popup-box .box .box-main p {
+  font-size: 0.28rem;
+  font-weight: 600;
+}
+#app .popup-box .box .box-main .main-item {
+  box-sizing: border-box;
+  width: 100%;
+  height: 1rem;
+  margin-top: 0.2rem;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 0.28rem;
+  color: #000;
+  border: 1px solid #fff;
+}
+#app .popup-box .box .box-main .main-item .item-left {
+  display: flex;
+  align-items: center;
+}
+#app .popup-box .box .box-main .main-item .item-left img {
+  margin-right: 0.2rem;
+  width: 0.48rem;
+  height: 0.39rem;
+}
+#app .popup-box .box .box-main .main-item:last-child img {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+#app .popup-box .box .box-main .select-pay {
+  border: 1px solid #1BA3E8;
+  background-color: #DEF4FF;
+}
+#app .popup-box .box .box-footer {
+  position: absolute;
+  width: 100%;
+  height: 0.9rem;
+  bottom: 0;
+}
+#app .popup-box .box .box-footer .footer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#app .popup-box .box .box-footer .footer div {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.28rem;
+}
+#app .popup-box .box .box-footer .footer div span {
+  color: #FF0000;
+}
+#app .popup-box .box .box-footer .footer div:last-child {
+  font-size: 0.3rem;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+}

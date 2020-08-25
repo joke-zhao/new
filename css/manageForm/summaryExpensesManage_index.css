@@ -1,0 +1,153 @@
+#summaryExpensesManage {
+  width: 100%;
+  position: relative;
+}
+#summaryExpensesManage .company {
+  width: 100%;
+  height: 1rem;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+#summaryExpensesManage .company .company_name {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  height: 100%;
+  font-size: 0.35rem;
+  color: #000;
+  font-weight: 600;
+}
+#summaryExpensesManage .company .company_cny {
+  display: flex;
+  width: 25%;
+  align-items: center;
+  height: 100%;
+  flex-direction: row-reverse;
+  justify-content: center;
+  font-size: 0.2rem;
+  color: #000;
+}
+#summaryExpensesManage .datePick {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#summaryExpensesManage .picture {
+  height: 6rem;
+  width: 100%;
+  padding: 0 0.2rem;
+}
+#summaryExpensesManage .picture #myChart {
+  width: 100%;
+  height: 100%;
+}
+#summaryExpensesManage .watchDetail_title {
+  height: 1rem;
+  width: 100%;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.3rem;
+  color: #000;
+  font-weight: 400;
+}
+#summaryExpensesManage .watchDetail_title img {
+  height: 0.25rem;
+  width: 0.25rem;
+}
+#summaryExpensesManage .accountDetails {
+  width: 100%;
+  height: 1rem;
+}
+#summaryExpensesManage .accountDetails .accountDetails_content {
+  width: 100%;
+  padding: 0 0.2rem;
+  background-color: #F9F8F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.3rem;
+}
+#summaryExpensesManage .accountTitle {
+  width: 100%;
+  height: 1.25rem;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+#summaryExpensesManage .accountTitle .accountTitle_company {
+  width: 60%;
+  height: 100%;
+}
+#summaryExpensesManage .accountTitle .accountTitle_company .accountTitle_company_1 {
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.35rem;
+  font-weight: 600;
+}
+#summaryExpensesManage .accountTitle .accountTitle_company .accountTitle_company_2 {
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.2rem;
+}
+#summaryExpensesManage .accountTitle .accountTitle_date {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#summaryExpensesManage .accountTitle .accountTitle_date .accountTitle_date_1 {
+  font-size: 0.4rem;
+  width: 40%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.1rem;
+}
+#summaryExpensesManage .accountTitle .accountTitle_date .accountTitle_date_2 {
+  width: 60%;
+}
+#summaryExpensesManage .watchDetail_content {
+  height: 4rem;
+  padding: 0 0.2rem;
+  margin: 0 auto;
+}
+#summaryExpensesManage .bottom_btns {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+#summaryExpensesManage .bottom_btns .export {
+  height: 50%;
+  width: 100%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}
+#summaryExpensesManage .bottom_btns .print {
+  height: 50%;
+  width: 100%;
+  background-color: #5172F3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}

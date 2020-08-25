@@ -1,0 +1,232 @@
+#placeList {
+  width: 100%;
+  position: relative;
+}
+#placeList .company {
+  width: 95%;
+  height: 1rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+#placeList .company .company_name {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  height: 100%;
+  font-size: 0.35rem;
+  color: #000;
+  font-weight: 600;
+}
+#placeList .company .company_cny {
+  display: flex;
+  width: 25%;
+  align-items: center;
+  height: 100%;
+  flex-direction: row-reverse;
+  font-size: 0.2rem;
+  color: #000;
+}
+#placeList .datePick {
+  width: 95%;
+  height: 0.6rem;
+  display: flex;
+  margin: 0 auto;
+  border-radius: 0.1rem;
+  border: solid 0.01rem #7F7F7F;
+  align-items: center;
+}
+#placeList .datePick .imgWrap {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#placeList .datePick .imgWrap img {
+  width: 0.3rem;
+  height: 0.3rem;
+}
+#placeList .datePick .datePick_line {
+  width: 0.01rem;
+  height: 80%;
+  background-color: #B2B2B2;
+}
+#placeList .datePick .datePick_content {
+  height: 100%;
+  width: 42%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.2rem;
+  color: #A3A3A3;
+}
+#placeList .datePick .datePick_word {
+  font-size: 0.2rem;
+  color: #A3A3A3;
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#placeList .picture {
+  height: 6rem;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 0.2rem;
+}
+#placeList .picture #myChart {
+  width: 100%;
+  height: 100%;
+}
+#placeList .watchDetail_title {
+  height: 1rem;
+  width: 95%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.3rem;
+  color: #000;
+  font-weight: 400;
+}
+#placeList .watchDetail_title img {
+  height: 0.2rem;
+  width: 0.2rem;
+}
+#placeList .accountDetails {
+  width: 100%;
+  margin: 0 auto;
+  height: 0.5rem;
+}
+#placeList .accountDetails .accountDetails_content {
+  width: 100%;
+  background-color: #F9F8F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.3rem;
+}
+#placeList .accountTitle {
+  width: 95%;
+  height: 2rem;
+  margin: 0 auto;
+}
+#placeList .accountTitle .accountTitle_company {
+  width: 100%;
+  height: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#placeList .accountTitle .accountTitle_company .accountTitle_company_1 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.35rem;
+  font-weight: 600;
+}
+#placeList .accountTitle .accountTitle_company .accountTitle_company_2 {
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.2rem;
+}
+#placeList .accountTitle .accountTitle_date {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+#placeList .accountTitle .accountTitle_date .accountTitle_date_img {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#placeList .accountTitle .accountTitle_date .accountTitle_date_img img {
+  width: 0.3rem;
+  height: 0.3rem;
+}
+#placeList .accountTitle .accountTitle_date .accountTitle_date_1 {
+  font-size: 0.25rem;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#placeList .accountTitle .accountTitle_date .accountTitle_date_2 {
+  font-size: 0.25rem;
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#placeList .watchDetail_content {
+  width: 95%;
+  margin: 0 auto;
+  font-size: 0.2rem;
+  margin-bottom: 2rem;
+}
+#placeList .watchDetail_content .watchDetail_content_table {
+  width: 100%;
+  font-size: 0.2rem;
+  border-collapse: collapse;
+  border: 0.01rem solid #A3A3A3;
+  margin-bottom: 1rem;
+}
+#placeList .watchDetail_content .watchDetail_content_table caption {
+  caption-side: top;
+  font-size: 0.25rem;
+  font-weight: 500;
+}
+#placeList .watchDetail_content .watchDetail_content_table .watchDetail_content_table_content {
+  width: 100%;
+  height: 1rem;
+}
+#placeList .watchDetail_content .watchDetail_content_table .watchDetail_content_table_content .watchDetail_content_table_content_1 {
+  border: 0.01rem solid #A3A3A3;
+  height: 100%;
+  width: 20%;
+  text-align: center;
+}
+#placeList .bottom_btns {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  margin-top: 1rem;
+}
+#placeList .bottom_btns .export {
+  height: 100%;
+  width: 50%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}
+#placeList .bottom_btns .print {
+  height: 100%;
+  width: 50%;
+  background-color: #5172F3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}

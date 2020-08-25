@@ -1,0 +1,231 @@
+<!--序时簿-->
+<div id="xuShiBu">
+    <!--    头部-->
+    <!--    以下部分不可以滑动-->
+    <div class="company">
+        <!--        公司名-->
+        <div class="company-top">
+            <div class="company_name">{{companyName}}</div>
+        </div>
+        <!--        选择科目级别-->
+        <div class="level">
+            <div class="level-font">科目级别</div>
+            <div class="level-pick" style="height: .7rem;">
+                <div class="startTime" >
+                    <div class="startTime">
+                        <!--            <div class="startTime_title">起始</div>-->
+                        <van-field
+                                readonly
+                                clickable
+                                :value="level1"
+                                @click="showLevelPicker1 = true"
+                        />
+                        <van-popup style="opacity:1" v-model="showLevelPicker1" position="bottom">
+                            <van-picker
+                                    show-toolbar
+                                    :columns="levelColumns"
+                                    @cancel="showLevelPicker1 = false"
+                                    @confirm="onLevel1"
+                            />
+                        </van-popup>
+                    </div>
+                    <div class="startTime-font" style="padding-top: .04rem">至</div>
+                    <div class="endTime">
+                        <!--            <div class="endTime_title">结束</div>-->
+                        <van-field
+                                readonly
+                                clickable
+                                :value="level2"
+                                @click="showLevelPicker2 = true"
+                        />
+                        <van-popup style="opacity:1" v-model="showLevelPicker2" position="bottom">
+                            <van-picker
+                                    show-toolbar
+                                    :columns="levelColumns2"
+                                    @cancel="showLevelPicker2 = false"
+                                    @confirm="onLevel2"
+                            />
+                        </van-popup>
+                    </div>
+<!--                    <van-field-->
+<!--                            readonly-->
+<!--                            clickable-->
+<!--                            :value="level"-->
+<!--                            @click="showLevelPicker1 = true"-->
+<!--                    />-->
+<!--                    <van-popup style="opacity:1" v-model="showLevelPicker1" position="bottom">-->
+<!--                        <van-picker-->
+<!--                                show-toolbar-->
+<!--                                :columns="levelColumns"-->
+<!--                                @cancel="showLevelPicker1 = false"-->
+<!--                                @confirm="onLevel1"-->
+<!--                        />-->
+<!--                    </van-popup>-->
+                </div>
+            </div>
+            <div class="company_cny">币种:（CNY）</div>
+        </div>
+        <!--        选择科目-->
+        <div class="subject">
+            <div class="subject-font">科&emsp;&emsp;目</div>
+            <!--            选择器-->
+            <div class="subject-pick">
+                <div class="startTime">
+                    <van-field
+                            readonly
+                            clickable
+                            :value="subject1"
+                            @click="showSubjectPicker1 = true"
+                    />
+                    <van-popup style="opacity:1" v-model="showSubjectPicker1" position="bottom">
+                        <van-picker
+                                show-toolbar
+                                :columns="accNoList"
+                                @cancel="showLevelPicker1 = false"
+                                @confirm="onsubject1"
+                        />
+                    </van-popup>
+                </div>
+                <div class="startTime-font">至</div>
+                <div class="endTime">
+                    <van-field
+                            readonly
+                            clickable
+                            :value="subject2"
+                            @click="showSubjectPicker2 = true"
+                    />
+                    <van-popup style="opacity:1" v-model="showSubjectPicker2" position="bottom">
+                        <van-picker
+                                show-toolbar
+                                :columns="accNoList"
+                                @cancel="showSubjectPicker2 = false"
+                                @confirm="onsubject2"
+                        />
+                    </van-popup>
+                </div>
+            </div>
+        </div>
+        <!--    时间选择段-->
+        <div class="datePick">
+            <div class="date-icon">
+                <img src="../../image/manageForm/date.png" alt="">
+            </div>
+            <span class="spans"></span>
+            <div class="startTime">
+                <van-field
+                        readonly
+                        clickable
+                        name="datetimePicker"
+                        :value="startTime"
+                        placeholder="请选择开始年月日"
+                        @click="showPicker1 = true"
+                />
+                <van-popup style="opacity:1" v-model="showPicker1" position="bottom">
+                    <van-datetime-picker
+                            v-model="currentDate"
+                            type="date"
+                            title="开始年月"
+                            :min-date="yearMinDate"
+                            :max-date="yearMaxDate"
+              
+                            @confirm="onPicker1"
+                            @cancel="showPicker1 = false"
+                    />
+                </van-popup>
+            </div>
+            <div class="startTime-font">至</div>
+            <div class="endTime">
+                <van-field
+                        readonly
+                        clickable
+                        name="datetimePicker"
+                        :value="endTime"
+                        placeholder="请选择结束年月日"
+                        @click="showPicker2 = true"
+                />
+                <van-popup v-model="showPicker2" position="bottom">
+                    <van-datetime-picker
+                            v-model="currentDate"
+                            type="date"
+                            title="结束年月"
+                            :min-date="yearMinDate"
+                            :max-date="yearMaxDate"
+                          
+                            @confirm="onPicker2"
+                            @cancel="showPicker2 = false"
+                    />
+                </van-popup>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="watchDetail_title" v-on:click="Show()"  >
+        <div >查看明细</div>
+        <img v-bind:src="moreImg" style="width: 0.24rem;height: 0.15rem;" v-show="isShowImg" alt="">
+        <img v-bind:src="packUpMore" style="width: 0.24rem;height: 0.15rem;" v-show="!isShowImg" alt="">
+    </div>
+
+    <div class="isShow" v-show="isShow">
+        <!--startprint-->
+        <div class="watchDetail_content" style="overflow-x: scroll;">
+            <table border="1" cellspacing="0"
+                   style="text-align: center;height: 100%;margin: 0 auto;">
+                <thead>
+                <tr>
+                    <td colspan="12">{{companyName}}序时簿</td>
+                </tr>
+                <tr>
+                    <td>期间</td>
+                    <td>日期</td>
+                    <td>凭证字号</td>
+                    <td>摘要</td>
+                    <td>科目代码</td>
+                    <td>科目名称</td>
+                    <td>核算项目</td>
+                    <td>币别</td>
+                    <td>汇率</td>
+                    <td>原币金额</td>
+                    <td>借方金额</td>
+                    <td>贷方金额</td>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr v-for="(item, index) in palList" :key="index">
+                    <td style="white-space:nowrap;text-align: center;">{{item.period}}</td>
+                    <td style="text-align: center;">{{item.vohDat}}</td>
+                    <td style="text-align: center;">{{item.makNo}}</td>
+                    <td style="text-align: left;">{{item.accRem}}</td>
+                    <td style="text-align: center;">{{item.accNO}}</td>
+                    <td style="text-align: center;">{{item.name}}</td>
+                    <!-- 往来单位objName -->
+                    <td style="text-align: center;">{{item.objName}}</td>
+                    <td v-if="item.curId === ''" style="text-align: center;">RMB</td>
+                    <td v-else style="text-align: center;">{{item.curId}}</td>
+                    <td style="text-align: center;">{{item.excRto}}</td>
+                    <td style="text-align: right;">{{item.amtn}}</td>
+                    <td style="text-align: right;" v-if="item.dc === 'D'"></td>
+                    <td v-else style="text-align: right;">{{item.amtn}}</td>
+                    <td style="text-align: right;" v-if="item.dc === 'C'"></td>
+                    <td v-else style="text-align: right;">{{item.amtn}}</td>
+
+                </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+        <!--endprint-->
+
+    </div>
+<!--    <van-pagination v-model="currentPage" :page-count="pages" mode="simple" @change="change" />-->
+    <div class="bottom_btns">
+        <div @click="showShare = true" class="export">导出</div>
+        <van-share-sheet v-model="showShare" :options="options"
+                         @select="onSelect" title="选择导出方式"  />
+        <div @click="handlPrint" class="print">打印</div>
+    </div>
+
+    
+</div>

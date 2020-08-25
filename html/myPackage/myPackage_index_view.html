@@ -1,0 +1,42 @@
+<!-- 我的套餐页面开始 -->
+<div id="app">
+  <header>
+    <div class="header-box">
+      <div class="box-name">拍账王</div>
+      <div class="box-desc">告别乱账  从账王开始</div>
+      <div class="box-small">开启一年工作新体验</div>
+    </div>
+  </header>
+  <main>
+    <div class="main-box">
+        <!-- 套餐订单项 -->
+      <div v-for="item in packageList" :key="item.id" class="box">
+        <div class="box-item">
+          <div class="item-name">
+            <p>{{item.companyNames}}</p>
+            <p>当前套餐：{{item.packageName}}</p>
+          </div>
+          <div class="item-desc">
+            <div><span>做账</span><span>识别单据{{item.receipts}}张/月，超出部分每张收取0.01元</span></div>
+            <div><span>报税</span><span>{{item.declare}}次/月</span></div>
+            <!-- <div><span>提问</span><span>50次/月</span></div>
+            <div><span>课程</span><span>30次/月</span></div> -->
+            <div><span>到期时间</span><span>{{item.expireDate|formatDate}}</span></div>
+          </div>
+        </div>
+      </div>
+      <div v-show="packageList.length === 0" class="box2">
+        <span>暂无套餐购买历史</span>
+      </div>
+      <div v-show="packageList.length !== 0" @click="openHistory" class="box-history">
+        <span>购买历史</span>
+        <img src="../../image/set-info/myPackage_history.png" alt="">
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div @click="openAll" class="footer-box">
+      <span>全部套餐</span>
+    </div>
+  </footer>
+</div>

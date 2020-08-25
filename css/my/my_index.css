@@ -1,0 +1,318 @@
+/**css代码在此处开始*/
+#freelance .userinfo {
+  height: 2.9rem;
+  background-image: url(../../image/user/userinfo.png);
+  background-size: 100% 100%;
+  padding: 0 0.24rem;
+}
+#freelance .userinfo .head-shot {
+  margin-top: 0.52rem;
+  margin-right: 0.22rem;
+  float: left;
+  height: 1.2rem;
+  width: 1.2rem;
+  border: 0.02rem solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#freelance .userinfo .head-shot img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+#freelance .userinfo .personal {
+  margin-top: 0.74rem;
+  float: left;
+  color: #fff;
+  height: 1rem;
+}
+#freelance .userinfo .personal h3 {
+  font-size: 0.4rem;
+}
+#freelance .userinfo .personal h3 span {
+  display: inline-block;
+  border: 0.01rem solid #fff;
+  width: 1.2rem;
+  height: 0.26rem;
+  font-size: 0.18rem;
+  text-align: center;
+  line-height: 0.26rem;
+  border-radius: 0.13rem;
+}
+#freelance .userinfo .personal p {
+  font-size: 0.24rem;
+}
+#freelance .userinfo .inform {
+  position: relative;
+  margin-top: 0.3rem;
+  float: right;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: rgba(0, 0, 0, 0.21);
+  border-radius: 50%;
+  text-align: center;
+}
+#freelance .userinfo .inform img {
+  margin-top: 0.17rem;
+  width: 0.34rem;
+  height: 0.35rem;
+}
+#freelance .userinfo .inform .ts {
+  position: absolute;
+  width: 0.3rem;
+  height: 0.24rem;
+  background-color: #F64A38;
+  color: #fff;
+  text-align: center;
+  line-height: 0.24rem;
+  font-size: 0.18rem;
+  border-radius: 0.12rem;
+  right: 0.01rem;
+  top: 0.08rem;
+}
+#freelance .asset {
+  height: 3rem;
+  position: relative;
+  padding: 0 0.24rem;
+}
+#freelance .asset .combo {
+  width: 7.02rem;
+  height: 1.8rem;
+  border-radius: 0.16rem;
+  background-color: #fff;
+  position: absolute;
+  bottom: 1.6rem;
+  box-shadow: 0rem 0rem 0.1rem royalblue;
+}
+#freelance .asset .combo .left-box {
+  float: left;
+  width: 3.77rem;
+  margin-left: 0.24rem;
+  margin-top: 0.33rem;
+}
+#freelance .asset .combo .left-box img {
+  display: block;
+  width: 3.77rem;
+  height: 0.36rem;
+}
+#freelance .asset .combo .left-box p {
+  font-size: 0.22rem;
+  width: 3.8rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
+}
+#freelance .asset .combo .left-box span {
+  display: block;
+  width: 1.32rem;
+  height: 0.34rem;
+  font-size: 0.22rem;
+  border-radius: 0.17rem;
+  background-color: #F64A38;
+  color: #fff;
+  text-align: center;
+  line-height: 0.34rem;
+}
+#freelance .asset .combo .right-img {
+  float: right;
+  margin-top: 0.18rem;
+  margin-right: 0.1rem;
+  width: 2.73rem;
+  height: 1.44rem;
+}
+#freelance .asset .wealth {
+  position: absolute;
+  bottom: 0;
+  height: 1.6rem;
+  padding-bottom: 0.39rem;
+  padding-top: 0.48rem;
+}
+#freelance .asset .wealth li {
+  text-align: center;
+  float: left;
+  width: 2.36rem;
+  height: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#freelance .asset .wealth li span {
+  font-weight: 700;
+  font-size: 0.38rem;
+}
+#freelance .asset .wealth li p {
+  font-size: 0.24rem;
+}
+#freelance .asset .wealth li + li {
+  border-left: 0.01rem solid #999;
+}
+#freelance .tieku {
+  height: 0.2rem;
+  background-color: #F5F5F5;
+}
+#freelance .myorder {
+  height: 2.57rem;
+}
+#freelance .myorder h3 {
+  padding: 0 0.24rem;
+  line-height: 0.92rem;
+  height: 0.92rem;
+  font-weight: 600;
+  font-size: 0.3rem;
+  border-bottom: 0.01rem solid #c0c0c0;
+}
+#freelance .myorder h3 span {
+  font-size: 0.24rem;
+  float: right;
+}
+#freelance .myorder .orderinfo {
+  height: 1.64rem;
+  display: flex;
+}
+#freelance .myorder .orderinfo li {
+  flex: 1;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#freelance .myorder .orderinfo li img {
+  width: 0.58rem;
+  height: 0.58rem;
+}
+#freelance .myorder .orderinfo li p {
+  font-size: 0.26rem;
+}
+#freelance .propagandize {
+  height: 2.2rem;
+  padding: 0.2rem 0.2rem 0.15rem;
+}
+#freelance .propagandize .propagandize-img1 {
+  width: 3.45rem;
+  height: 1.8rem;
+  border-radius: 0.15rem;
+  float: left;
+}
+#freelance .propagandize .propagandize-img1 img {
+  width: 100%;
+  height: 100%;
+}
+#freelance .propagandize .propagandize-img2 {
+  width: 3.45rem;
+  height: 1.8rem;
+  border-radius: 0.15rem;
+  float: right;
+}
+#freelance .propagandize .propagandize-img2 img {
+  width: 100%;
+  height: 100%;
+}
+#freelance .mypayqqcom h3 {
+  padding: 0 0.24rem;
+  line-height: 0.92rem;
+  height: 0.92rem;
+  font-weight: 600;
+  font-size: 0.3rem;
+  border-bottom: 0.01rem solid #c0c0c0;
+}
+#freelance .mypayqqcom .service {
+  display: flex;
+  flex-wrap: wrap;
+}
+#freelance .mypayqqcom .service li {
+  width: 25%;
+  height: 1.64rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px dashed #EEEEEE;
+}
+#freelance .mypayqqcom .service li img {
+  width: 0.58rem;
+  height: 0.58rem;
+}
+#freelance .mypayqqcom .service li p {
+  font-size: 0.26rem;
+}
+#freelance .mypayqqcom .service li:nth-child(n+9) {
+  border: none;
+}
+#freelance .tiemi {
+  height: 0.41rem;
+  background-color: #F5F5F5;
+}
+#freelance .share-dialog {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#freelance .share-dialog .share-dialog-window {
+  width: 6.1rem;
+  height: 3.14rem;
+  background: #fff;
+  border-radius: 0.16rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#freelance .share-dialog .share-dialog-window .share-dialog-window-text {
+  width: 100%;
+  height: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.38rem;
+}
+#freelance .share-dialog .share-dialog-window .share-dialog-window-text .share-dialog-window-text-content {
+  font-size: 0.34rem;
+  margin-left: 0.48rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+}
+#freelance .share-dialog .share-dialog-window .share-dialog-window-text .share-dialog-window-text-close {
+  width: 0.24rem;
+  height: 0.24rem;
+  margin-right: 0.44rem;
+}
+#freelance .share-dialog .share-dialog-window .share-dialog-window-text .share-dialog-window-text-close img {
+  width: 100%;
+  height: 100%;
+}
+#freelance .share-dialog .share-dialog-window .share-dialog-window-list {
+  width: 60%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+#freelance .share-dialog .share-dialog-window .share-dialog-window-list .share-dialog-window-list-item {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#freelance .share-dialog .share-dialog-window .share-dialog-window-list .share-dialog-window-list-item .share-dialog-window-list-item-img {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+#freelance .share-dialog .share-dialog-window .share-dialog-window-list .share-dialog-window-list-item .share-dialog-window-list-item-img img {
+  width: 100%;
+  height: 100%;
+}
+#freelance .share-dialog .share-dialog-window .share-dialog-window-list .share-dialog-window-list-item .share-dialog-window-list-item-text {
+  margin-top: 0.17rem;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+}

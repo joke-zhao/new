@@ -1,0 +1,209 @@
+<div id="accountsReceivable">
+    <!--    头部-->
+<!--开始-->
+    <div class="company">
+        <div class="company_name"><p>{{companyName}}</p></div>
+        <div class="company_cny">币种:（CNY）</div>
+    </div>
+
+<!--    &lt;!&ndash;    时间选择段&ndash;&gt;-->
+<!--    <div class="datePick">-->
+<!--        <div class="date-icon">-->
+<!--            <img src="../../image/manageForm/date.png" alt="">-->
+<!--        </div>-->
+<!--        <span class="spans"></span>-->
+<!--        <div class="startTime">-->
+<!--            &lt;!&ndash;            <div class="startTime_title">起始</div>&ndash;&gt;-->
+<!--            <van-field-->
+<!--                    readonly-->
+<!--                    clickable-->
+<!--                    name="datetimePicker"-->
+<!--                    :value="startTime"-->
+<!--                    placeholder="请选择开始年月"-->
+<!--                    @click="showPicker1 = true"-->
+<!--            />-->
+<!--            <van-popup style="opacity:1" v-model="showPicker1" position="bottom">-->
+<!--                <van-datetime-picker-->
+<!--                        v-model="currentDate"-->
+<!--                        type="year-month"-->
+<!--                        title="开始年月"-->
+<!--                        :min-date="yearMinDate"-->
+<!--                        :max-date="yearMaxDate"-->
+<!--                        :formatter="formatter"-->
+<!--                        @confirm="onStart"-->
+<!--                        @cancel="showPicker1 = false"-->
+<!--                />-->
+<!--            </van-popup>-->
+<!--        </div>-->
+<!--        <div class="startTime-font">至</div>-->
+<!--        <div class="endTime">-->
+<!--            &lt;!&ndash;            <div class="endTime_title">结束</div>&ndash;&gt;-->
+<!--            <van-field-->
+<!--                    readonly-->
+<!--                    clickable-->
+<!--                    name="datetimePicker"-->
+<!--                    :value="endTime"-->
+<!--                    placeholder="请选择结束年月"-->
+<!--                    @click="showPicker2 = true"-->
+<!--            />-->
+<!--            <van-popup v-model="showPicker2" position="bottom">-->
+<!--                <van-datetime-picker-->
+<!--                        v-model="currentDate"-->
+<!--                        type="year-month"-->
+<!--                        title="结束年月"-->
+<!--                        :min-date="yearMinDate"-->
+<!--                        :max-date="yearMaxDate"-->
+<!--                        :formatter="formatter"-->
+<!--                        @confirm="onEnd"-->
+<!--                        @cancel="showPicker2 = false"-->
+<!--                />-->
+<!--            </van-popup>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="aTitle">销管研制费用汇总表</div>-->
+<!--    &lt;!&ndash;echarts  图表&ndash;&gt;-->
+<!--    <div class="picture">-->
+<!--        <div id="myChart"></div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; <div id="myChart" :style="{width: '300px', height: '300px'}"></div> &ndash;&gt;-->
+<!--    <div class="watchDetail_title">-->
+<!--        <div>查看明细</div>-->
+<!--        <img src=" ../../image/manageForm/arrow.png" alt="" @click="isShow=!isShow" v-show="isShow">-->
+<!--        <img src=" ../../image/manageForm/arrow2.png" alt="" @click="isShow=!isShow" v-show="!isShow">-->
+<!--    </div>-->
+
+<!--   结束-->
+    <!--    打印  导出-->
+    <div class="bottom_btns">
+        <div @click="showShare = true" class="export">导出</div>
+        <van-share-sheet v-model="showShare" :options="options"
+                         @select="onSelect" title="选择导出方式"  />
+        <div @click="handlPrint" class="print">打印</div>
+    </div>
+    <!--    点击显示隐藏-->
+    <div class="showTable" v-show="isShow">
+        <div class="accountDetails">
+            <div class="accountDetails_content">{{companyName}}</div>
+        </div>
+        <div class="accountTitle">
+            <div class="accountTitle_company">
+                <!--                <div class="accountTitle_company_1">{{companyName}}</div>-->
+                <div class="accountTitle_company_2">销管研制费用汇总表</div>
+                <div class="accountTitle_company_3">币种:（CNY）</div>
+            </div>
+            <div class="accountTitle_date">
+                <div class="accountTitle_date_1">月份</div>
+                <div class="accountTitle_month">
+                    <!--                底部选择日期-->
+                    <van-field
+                            readonly
+                            clickable
+                            name="datetimePicker"
+                            :value="value"
+                            placeholder="点击选择时间"
+                            @click="showPicker = true"
+                    />
+                    <van-popup v-model="showPicker" position="bottom">
+                        <van-datetime-picker
+                                v-model="currentDate"
+                                type="year-month"
+                                title="选择年月"
+                                :min-date="minDate"
+                                :max-date="maxDate"
+                                :formatter="formatter"
+                                @confirm="onConfirm"
+                                @cancel="showPicker = false"
+                        />
+                    </van-popup>
+                    <img src="../../image/manageForm/more.png" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div style="padding: 0 .3rem">
+            <div class="watchDetail_content">
+                <table id="table">
+                    <tr>
+                        <td>
+                            <div class="table-title">销管研制费用汇总表</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="table-page">
+                                <div class="table-page-box" style="color: #FFFFFF">第1页/共1页</div>
+                                <div class="table-page-box">
+                                    时间：{{startTime.substring(0,4)}}年{{endTime.substring(5,7)}}月
+                                </div>
+                                <div class="table-page-box">第1页/共1页</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class="table-page-second">
+                            <div class="table-page-box">单位名称：{{companyName}}</div>
+                            <div class="table-page-box">币别：人民币</div>
+                        </div>
+                    </tr>
+                    <tr>
+                        <td>
+                            <!--            主表格-->
+                            <table border="1" class="table-box">
+                                <thead>
+                                <tr>
+                                    <th style="white-space:nowrap">科目</th>
+                                    <th style="white-space:nowrap">本月数</th>
+                                    <th style="white-space:nowrap">上月数</th>
+                                    <th style="white-space:nowrap">本年累计数</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!--            循环list-->
+                                <tr v-for="(item, index) in incomeMonthList" :key="index">
+                                    <td style="text-align: left">{{item.accName}}</td>
+                                    <td style="text-align: right;white-space:nowrap">{{item.thisMonth==0?'':item.thisMonth}}</td>
+                                    <td style="text-align: right;white-space:nowrap">{{item.lastMonth==0?'':item.lastMonth}}</td>
+                                    <td style="text-align: right;white-space:nowrap">{{item.thisYear==0?'':item.thisYear}}</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="signature">
+                                <div class="signature-man">制单人：</div>
+                                <div class="signature-man">打印人：</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+<!--        旧-->
+<!--        <div class="watchDetail_content">-->
+<!--            <table id="table" border="1" class="table-box">-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th style="width: 2.8rem;white-space:nowrap">科目</th>-->
+<!--                    <th style="width: 1.3rem;white-space:nowrap">本月数</th>-->
+<!--                    <th style="width: 1.3rem;white-space:nowrap">上月数</th>-->
+<!--                    <th style="width: 2rem;white-space:nowrap">本年累计数</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                &lt;!&ndash;            循环list&ndash;&gt;-->
+<!--                <tr v-for="(item, index) in incomeMonthList" :key="index">-->
+<!--                    <td>{{item.accName}}</td>-->
+<!--                    <td style="text-align: right">{{item.thisMonth==0?'':item.thisMonth}}</td>-->
+<!--                    <td style="text-align: right">{{item.lastMonth==0?'':item.lastMonth}}</td>-->
+<!--                    <td style="text-align: right">{{item.thisYear==0?'':item.thisYear}}</td>-->
+<!--                </tr>-->
+
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </div>-->
+    </div>
+</div>

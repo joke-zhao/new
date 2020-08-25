@@ -1,0 +1,117 @@
+<div id="register">
+  <div class="divide"></div>
+  <div class="item-identity">
+    <div class="item-title-wrapper">
+      <div class="item-title-blue-point"></div>
+      <div class="item-title-text">您的身份</div>
+    </div>
+    <div class="line"></div>
+
+    <div class="item-content-wrapper">
+      <div @click="changeSysRole('3')" class="item-content">
+        <div  :class="[id === '3' ? 'test1_active' : 'test1']"></div>
+        服务商公司老板/员工</div>
+      <div class="line"></div>
+      <div @click="changeSysRole('5')" class="item-content">
+        <div :class="[id === '5' ? 'test1_active' : 'test1']"></div>
+        账小二
+      </div>
+    </div>
+  </div>
+  <div class="divide"></div>
+  <div class="item-company">
+    <div class="item-title-wrapper">
+      <div class="item-title-blue-point"></div>
+      <div class="item-title-text">您所在的公司</div>
+    </div>
+    <div class="line"></div>
+    <div class="item-content-wrapper">
+      <img src="../../image/register/company.png" alt="" class="icon-company">
+      <input v-model="unitName" @input="delayed" type="text" placeholder="请输入公司名称" class="item-content-input">
+      <img src="../../image/register/more.png" alt="" class="icon-more">
+    </div>
+    <div class="searchBox">
+      <van-popup v-model="showPicker" round position="bottom">
+          <van-picker
+            show-toolbar
+            :columns="columns"
+            @cancel="showPicker = false"
+            @confirm="onConfirm"
+          />
+        </van-popup>
+  </div>
+  </div>
+  <div class="divide"></div>
+  <div class="item-company">
+    <div class="item-title-wrapper">
+      <div class="item-title-blue-point"></div>
+      <div class="item-title-text">公司服务地址</div>
+    </div>
+    <div class="line"></div>
+       <div class="item-content-wrapper" @click="openbMap">
+      <img src="../../image/register/address.png" alt="" class="icon-address">
+      <input v-model="address" type="text" placeholder="请选择服务地址" class="item-content-input">
+      <img src="../../image/register/right.png" alt="" class="icon-right">
+    </div>
+    <div class="line"></div>
+    <div @click="show = true" class="item-content-wrapper">
+      <img src="../../image/register/area.png" alt="" class="icon-code">
+      <input  v-model="address2" type="text" disabled="disabled" placeholder="请选择所在地区" class="item-content-input">
+      <img src="../../image/register/right.png" alt="" class="icon-right">
+    </div>
+    <!-- 省市区三级联动 -->
+<van-popup v-model="show" position="bottom" :style="{ height: '40%' }">
+  <van-area
+    :area-list="areaList"
+    @cancel="handleCancel"
+    @confirm="handleConfirm"
+  />
+</van-popup>
+  </div>
+  <div class="divide"></div>
+  <div class="item-company">
+    <div class="item-title-wrapper">
+      <div class="item-title-blue-point"></div>
+      <div class="item-title-text">为方便您的使用，请绑定手机号码</div>
+    </div>
+    <div class="line"></div>
+    <div class="item-content-wrapper">
+      <img src="../../image/register/user.png" alt="" class="icon-code">
+      <input maxlength="7" v-model="nickName" type="text" placeholder="请输入用户昵称" class="item-content-input">
+    </div>
+    <div class="line"></div>
+    <div class="item-content-wrapper">
+      <img src="../../image/register/mobile.png" alt="" class="icon-mobile">
+      <input maxlength="11" v-model="phone" type="text" placeholder="请输入手机号码" class="item-content-input">
+    </div>
+    <div class="line"></div>
+    <div class="item-content-wrapper">
+      <img src="../../image/register/code.png" alt="" class="icon-code">
+      <input maxlength="6" v-model="sureNumber" type="text" placeholder="请输入验证码" class="item-content-input">
+      <div class="item-content-code">
+        <div @click="handleGetCode" class="item-content-code-text">
+          {{codeDesc}}
+        </div>
+      </div>
+  </div>
+    <div class="line"></div>
+    <div class="item-content-wrapper">
+      <img src="../../image/register/password.png" alt="" class="icon-password">
+      <input maxlength="12"  v-model="password" type="password" placeholder="请输入6-12位密码" class="item-content-input">
+    </div>
+    <div class="line"></div>
+    <div class="item-content-wrapper">
+      <img src="../../image/register/invite.png" alt="" class="icon-invite">
+      <input type="text" placeholder="请输入邀请码（非必填）" v-model="invitedCode" class="item-content-input">
+    </div>
+  </div>
+  <div class="bottom">
+    <div @click="submitReg" class="bottom-button">同意协议并注册</div>
+    <div class="bottom-text">注册即代表您同意<span>《用户服务协议》</span>和 <span>《隐私协议》</span></div>
+    <div class="bottom-wechat">
+      <img src="../../image/register/wechat.png" alt="" class="icon-wechat">
+      <div class="bottom-wechat-text">微信注册</div>
+    </div>
+
+  </div>
+</div>

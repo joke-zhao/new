@@ -1,0 +1,205 @@
+<!-- 单据详情页面开始 -->
+<div id="app">
+  <main>
+    <div class="main-box">
+      <!-- 存货单据识别内容 -->
+      <div class="box-bills">
+       <!-- 每个item代表一行 -->
+       <!-- --------------- -->
+       <div class="bills-item">
+         <div class="item-name item-color">
+           <span>机构名称</span>
+         </div>
+         <div class="item-desc item-color">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="companyName" :options="OrgList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more2.png" alt="">
+          </div>
+         </div>
+       </div> 
+       <!-- --------------- -->
+       <!-- <div class="bills-item">
+        <div class="item-name">
+          <span>单据编号</span>
+        </div>
+        <div class="item-desc">
+          <input placeholder="请手动填写单据编号" v-model="billData.invoiceNum" type="text">
+        </div>
+      </div> -->
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>单据日期</span>
+        </div>
+          <div @click="showDate = true" class="item-desc">
+            <span v-if="!billData.date">请选择单据日期</span>
+            <span>{{billData.date | formatDate}}</span>
+          </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>会计科目</span>
+        </div>
+        <div class="item-desc fontColor">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item @change="changeClass" v-model="billData.accNo" :options="classList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div v-show="classShow" class="bills-item">
+        <div class="item-name">
+          <span>变动账户</span>
+        </div>
+        <div class="item-desc">
+          <input @input="delayedAccount" v-model="billData.bankName" type="text">
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div v-show="classShow" class="bills-item">
+        <div class="item-name">
+          <span>账户号码</span>
+        </div>
+        <div class="item-desc">
+         <span>{{billData.idCode}}</span>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span class="text_two">币别</span>
+        </div>
+        <div class="item-desc fontColor">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.curId" :options="curList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>所属项目</span>
+        </div>
+        <div class="item-desc fontColor">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.project" :options="proList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>所属部门</span>
+        </div>
+        <div class="item-desc fontColor">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.dept" :options="proList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- --------------- -->
+      <div class="bills-item">
+        <div class="item-name">
+          <span>成本属性</span>
+        </div>
+        <div class="item-desc fontColor">
+          <div>
+            <van-dropdown-menu>
+              <van-dropdown-item v-model="billData.attr" :options="attrList" />
+            </van-dropdown-menu>
+          <img src="../../image/review/more.png" alt="">
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- 单据修改表格 -->
+      <div class="box-table">
+        <div class="table-item">
+          <div class="table-itemName">
+            <div class="item-select">
+              <span>选择</span>
+            </div>
+            <div class="item-textBig">
+              <span>费用代码</span>
+            </div>
+            <div class="item-textBig">
+              <span>金额</span>
+            </div>
+            <div class="item-textBig">
+              <span>摘要</span>
+            </div>
+          </div>
+          <!-- 此处为增加、删除、修改行 -->
+          <div v-for="(item,index) in billData.itemList" :key="item.vid" class="table-itemDesc">
+            <div @click="seletLine(index)" class="item-select">
+              <div :class="[item.flag ? 'active_select' : 'active']"></div>
+            </div>
+            <div class="item-textBig">
+              <input @input="delayedCost(item.codeView,index)" v-model="item.codeView" type="text">
+            </div>
+            <div class="item-textBig">
+              <input v-model="item.money" oninput="value=value.replace(/[^\d\.]/g,'')" type="text">
+            </div>
+            <div class="item-textBig">
+              <input v-model="item.note" type="text">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </main>
+  <!-- ++++单据操作按钮++++ -->
+  <footer>
+    <div class="footer-box">
+      <div @click='addLine' class="box-add">
+        <img src="../../image/review/add.png" alt="">
+        <span>增加行</span>
+      </div>
+      <div @click="delLine" class="box-del">
+        <img src="../../image/review/del.png" alt="">
+        <span>删除行</span>
+      </div>
+      <div class="box-submit" @click="submit">提交</div>
+    </div>
+  </footer>
+  </van-popup>
+  <!-- 日期选择器 -->
+  <van-calendar :min-date="minDate" v-model="showDate" @confirm="onConfirm" />
+  <!-- 费用代码弹出层 -->
+  <div class="searchBox">
+    <van-popup v-model="showCost" round position="bottom">
+        <van-picker
+          show-toolbar
+          :columns="costList"
+          @cancel="showCost = false"
+          @confirm="onCost"
+        />
+      </van-popup>
+</div>
+<!-- 变动账户弹出层 -->
+<div class="searchBox">
+  <van-popup v-model="showAccount" round position="bottom">
+      <van-picker
+        show-toolbar
+        :columns="accountList"
+        @cancel="showAccount = false"
+        @confirm="onAccount"
+      />
+    </van-popup>
+</div>
+</div>

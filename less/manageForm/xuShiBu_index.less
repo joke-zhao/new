@@ -1,0 +1,451 @@
+#xuShiBu {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  .startTime-font {
+    display: flex;
+    font-size: .25rem;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+    opacity: 0.96;
+  }
+  //
+  //.aTitle {
+  //  display: flex;
+  //  justify-content: center;
+  //  font-weight: 600;
+  //  font-size: 0.35rem;
+  //  margin-top: 0.3rem;
+  //  margin-bottom: -.5rem;
+  //}
+
+  .company {
+    width: 100%;
+    //height: 1rem;
+    // background-color: pink;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: .28rem;
+    // align-items: center;
+    .company-top {
+      margin-top: .42rem;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      .company_name {
+        display: flex;
+        //width: 75%;
+        height: 100%;
+        font-size: 0.35rem;
+        color: #000;
+        font-weight: 600;
+
+      }
+    }
+
+    //科目级别
+    .level {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: left;
+      align-items: center;
+      //height: .6rem;
+      height: .68rem;
+      //opacity:0.5;
+      //margin-left: .38rem;
+      margin-top: .3rem;
+
+      .level-font {
+        font-size: 0.35rem;
+        color: #000;
+        font-family: PingFang SC;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+        //font-weight: 600;
+      }
+
+      //科目级别选择
+      .level-pick {
+        //height: .6rem;
+        padding: 0 0.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1.72rem;
+        height: .68rem;
+        border: 1px solid #7F7F7F;
+        //opacity:0.5;
+        border-radius: .04rem;
+        margin-left: .38rem;
+
+        .date-icon {
+          width: .25rem;
+          height: .26rem;
+          opacity: 0.8;
+        }
+
+        .spans {
+          width: .01rem;
+          height: .36rem;
+          border: .01rem solid rgba(0, 0, 0, 1);
+          opacity: 0.3;
+          margin-left: 0.18rem;
+        }
+
+        //选择日期
+        .startTime {
+          display: flex;
+          flex-flow: row;
+          justify-content: center;
+          text-align: center;
+
+
+          .van-cell {
+            padding: 0rem;
+            opacity: 1;
+          }
+
+          .van-field__control {
+            text-align: center;
+            opacity: 1;
+          }
+
+          .startTime_title {
+            width: 0.7rem;
+            font-size: 0.2rem;
+          }
+        }
+
+        .endTime {
+          display: flex;
+
+          .van-cell {
+            padding: 0rem;
+            opacity: 1;
+          }
+
+          .van-field__control {
+            text-align: center;
+            opacity: 1;
+          }
+
+          .endTime_title {
+            width: 0.7rem;
+            font-size: 0.2rem;
+          }
+        }
+
+        > el-date-picker {
+          width: 40%;
+          height: 100%;
+        }
+      }
+
+      //  币种
+      .company_cny {
+        //display: flex;
+        //justify-content: flex-end;
+        //margin-left: ;
+        width: 45%;
+        text-align: right;
+        font-size: 0.24rem;
+        color: #000;
+        font-family: PingFang SC;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+      }
+    }
+
+    //科目
+    .subject {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: left;
+      align-items: center;
+      //height: .6rem;
+      //width: 6.72rem;
+      height: .68rem;
+      //opacity:0.5;
+      //margin-left: .38rem;
+      margin-top: .3rem;
+
+      .subject-font {
+        font-size: 0.35rem;
+        color: #000;
+        font-family: PingFang SC;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+        //font-weight: 600;
+      }
+
+      //科目级别选择
+      .subject-pick {
+        //height: .6rem;
+        padding: 0 0.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 4.93rem;
+        height: .68rem;
+        border: 1px solid #7F7F7F;
+        //opacity:0.5;
+        border-radius: .04rem;
+        margin-left: .38rem;
+
+        .date-icon {
+          width: .25rem;
+          height: .26rem;
+          opacity: 0.8;
+        }
+
+        .spans {
+          width: .01rem;
+          height: .36rem;
+          border: .01rem solid rgba(0, 0, 0, 1);
+          opacity: 0.3;
+          margin-left: 0.18rem;
+        }
+
+        //选择日期
+        .startTime {
+          display: flex;
+          flex-flow: row;
+          justify-content: center;
+          text-align: center;
+
+
+          .van-cell {
+            padding: 0rem;
+            opacity: 1;
+          }
+
+          .van-field__control {
+            text-align: center;
+            opacity: 1;
+          }
+
+          .startTime_title {
+            width: 0.7rem;
+            font-size: 0.2rem;
+          }
+        }
+
+        .endTime {
+          display: flex;
+
+          .van-cell {
+            padding: 0rem;
+            opacity: 1;
+          }
+
+          .van-field__control {
+            text-align: center;
+            opacity: 1;
+          }
+
+          .endTime_title {
+            width: 0.7rem;
+            font-size: 0.2rem;
+          }
+        }
+
+        > el-date-picker {
+          width: 40%;
+          height: 100%;
+        }
+      }
+
+      //  币种
+      .company_cny {
+        //display: flex;
+        //justify-content: flex-end;
+        //margin-left: ;
+        width: 45%;
+        text-align: right;
+        font-size: 0.24rem;
+        color: #000;
+        font-family: PingFang SC;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+      }
+    }
+  }
+
+
+  //日期选择
+  .datePick {
+    //height: .6rem;
+    padding: 0 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 6.72rem;
+    height: .68rem;
+    border: 1px solid #7F7F7F;
+    //opacity:0.5;
+    border-radius: .04rem;
+    //margin-left: .38rem;
+    margin-top: .3rem;
+
+    .date-icon {
+      width: .25rem;
+      height: .26rem;
+      opacity: 0.8;
+    }
+
+    .spans {
+      width: .01rem;
+      height: .36rem;
+      border: .01rem solid rgba(0, 0, 0, 1);
+      opacity: 0.3;
+      margin-left: 0.18rem;
+    }
+
+    //选择日期
+    .startTime {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      text-align: center;
+
+
+      .van-cell {
+        padding: 0rem;
+        opacity: 1;
+      }
+
+      .van-field__control {
+        text-align: center;
+        opacity: 1;
+      }
+
+      .startTime_title {
+        width: 0.7rem;
+        font-size: 0.2rem;
+      }
+    }
+
+    .endTime {
+      display: flex;
+
+      .van-cell {
+        padding: 0rem;
+        opacity: 1;
+      }
+
+      .van-field__control {
+        text-align: center;
+        opacity: 1;
+      }
+
+      .endTime_title {
+        width: 0.7rem;
+        font-size: 0.2rem;
+      }
+    }
+
+    > el-date-picker {
+      width: 40%;
+      height: 100%;
+    }
+  }
+
+  
+
+  .watchDetail_title{
+    height: 1rem;
+    width: 100%;
+    padding: 0 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.3rem;
+    color: #000;
+    font-weight: 400;
+    img{
+      height: 0.25rem;
+      width: 0.25rem;
+      // margin-right: 0.25rem;
+    }
+  }
+  .watchDetail_content{
+    width: 100%;
+    padding: 0;
+    //padding-bottom: 1rem;
+    margin:  0 auto;
+    overflow: scroll;
+    table{
+      width: 300%;
+      text-align: left;
+      font-size: .29rem;
+      thead{
+        tr{
+          //background-color: #E6F2FC;
+          td{
+            white-space: nowrap;
+            padding-left: .1rem;
+            padding-right: .1rem;
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            white-space: nowrap;
+            padding-left: .1rem;
+            padding-right: .1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom_btns{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+    //z-index: 999;
+    //  margin-top: 0.3rem;
+    // position: absolute;
+    // bottom: 0;
+    //position:fixed;bottom:0;z-index:999;
+    .export{
+      height: 50%;
+      width: 100%;
+      background:linear-gradient(0deg,rgba(255,61,61,1) 0%,rgba(232,55,55,1) 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 0.3rem;
+    }
+    .print{
+      height: 50%;
+      width: 100%;
+      background:linear-gradient(0deg,rgba(104,135,255,1) 0%,rgba(71,105,238,1) 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 0.3rem;
+    }
+  }
+
+}
+
+//.accounts{
+//  width: 6.55rem;
+//  height: 3.92rem;
+//  margin:5.345rem 0.275rem 1.03rem 0.2rem;
+//  boder:1px #A7A7A7 solid;
+//}

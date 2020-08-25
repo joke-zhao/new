@@ -1,0 +1,576 @@
+#app {
+  font-size: 0.24rem;
+  color: #000;
+  box-sizing: border-box;
+  /* flex - 两边对齐 - 垂直居中 */
+  /* flex - 垂直居中对齐 */
+}
+#app .flexSbC {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app .flexCC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app header {
+  background-color: #fff;
+}
+#app header .header-box {
+  padding: 0.3rem;
+}
+#app header .header-box .box-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app header .header-box .box-name .left-name {
+  flex: 3;
+  font-size: 0.3rem;
+  font-weight: 600;
+}
+#app header .header-box .box-name .right-name {
+  flex: 1;
+}
+#app header .header-box .box-date {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 0.48rem;
+  padding: 5px 0;
+  margin: 0.3rem 0;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+#app header .header-box .box-date .left-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  border-right: 1px solid #000;
+}
+#app header .header-box .box-date .left-date img {
+  width: 0.26rem;
+  height: 0.28rem;
+}
+#app header .header-box .box-date .right-date {
+  display: flex;
+  width: 90%;
+}
+#app header .header-box .box-date .right-date .date-YM {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app header .header-box .box-date .right-date span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app header .header-box .box-title {
+  width: 100%;
+  font-size: 0.35rem;
+  text-align: center;
+}
+#app header .header-box .box-title span {
+  font-weight: 600;
+}
+#app main .main-box {
+  box-sizing: border-box;
+  min-height: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* .echart-box:last-child{
+                border: none;
+            } */
+}
+#app main .main-box .echart-box {
+  width: 49.99%;
+}
+#app main .searchInfo {
+  width: 100%;
+  margin-top: 0.2rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.32rem;
+  text-align: center;
+  background-color: #fff;
+  border-top: 0.2rem solid #f5f5f5;
+}
+#app menu {
+  padding-bottom: 0.9rem;
+  border-top: 5px solid #f5f5f5;
+}
+#app menu .menu-box {
+  width: 90%;
+  margin: 0 auto;
+}
+#app menu .menu-box .box-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 0.7rem;
+  font-size: 0.28rem;
+}
+#app menu .menu-box .box-title .right-title {
+  width: 0.24rem;
+  height: 0.15rem;
+}
+#app menu .menu-box .box-content {
+  /* 啊啊啊 */
+  /* 啊啊啊 */
+}
+#app menu .menu-box .box-content .content-header1 {
+  height: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.3rem;
+  background-color: #F9F8F8;
+}
+#app menu .menu-box .box-content .content-header2 {
+  height: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.35rem;
+  font-weight: 600;
+}
+#app menu .menu-box .box-content .content-header3 {
+  padding: 0.2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.28rem;
+}
+#app menu .menu-box .box-content .content-header3 .content {
+  flex: 3;
+}
+#app menu .menu-box .box-content .content-header3 .content span {
+  font-weight: 600;
+}
+#app menu .menu-box .box-content .content-header3 .header3 {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app menu .menu-box .box-content .content-header3 .header3 .search-data {
+  width: 1.75rem;
+  height: 0.47rem;
+  padding: 0 0.1rem;
+  border: 1px solid #000;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app menu .menu-box .box-content .content-header3 .header3 .search-data img {
+  width: 0.24rem;
+  height: 0.15rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 {
+  border: 0.01rem solid #000;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_name {
+  display: flex;
+  height: 0.8rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_name .project1_name_1 {
+  width: 76%;
+  font-size: 0.3rem;
+  border-right: 0.01rem solid #000;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_name .project1_name_1 .project1_name_1_wrap {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_name .project1_name_1 .project1_name_1_wrap .project1_name_1_first {
+  font-size: 0.3rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_name .project1_name_1 .project1_name_1_wrap .project1_name_1_second {
+  font-size: 0.3rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_name .project1_name_2 {
+  width: 24%;
+  font-size: 0.3rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_content1 {
+  display: flex;
+  height: 0.5rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_content1 .project1_content1_1 {
+  width: 76%;
+  font-size: 0.2rem;
+  border-right: 0.01rem solid #000;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: red;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_content1 .project1_content1_2 {
+  width: 24%;
+  font-size: 0.3rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_content2 {
+  display: flex;
+  height: 0.7rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_content2 .project1_content2_1 {
+  width: 76%;
+  font-size: 0.2rem;
+  border-right: 0.01rem solid #000;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 0.25rem;
+  box-sizing: border-box;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_content2 .project1_content2_2 {
+  width: 24%;
+  font-size: 0.3rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_content3 {
+  display: flex;
+  height: 0.7rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_content3 .project1_content3_1 {
+  width: 76%;
+  font-size: 0.2rem;
+  border-right: 0.01rem solid #000;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 0.5rem;
+  box-sizing: border-box;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_content3 .project1_content3_2 {
+  width: 24%;
+  font-size: 0.3rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_content4 {
+  display: flex;
+  height: 0.7rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_content4 .project1_content4_1 {
+  width: 76%;
+  font-size: 0.2rem;
+  border-right: 0.01rem solid #000;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 1.2rem;
+  box-sizing: border-box;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .project1_content4 .project1_content4_2 {
+  width: 24%;
+  font-size: 0.3rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .total {
+  display: flex;
+  height: 0.7rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .total .total_1 {
+  width: 76%;
+  font-size: 0.2rem;
+  border-right: 0.01rem solid #000;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app menu .menu-box .box-content .watchDetail_content .project1 .total .total_2 {
+  width: 24%;
+  font-size: 0.3rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 {
+  border: 0.01rem solid #000;
+  margin-top: 0.2rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_name {
+  display: flex;
+  height: 0.8rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_name .project1_name_1 {
+  width: 76%;
+  font-size: 0.3rem;
+  border-right: 0.01rem solid #000;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_name .project1_name_1 .project1_name_1_wrap {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_name .project1_name_1 .project1_name_1_wrap .project1_name_1_first {
+  font-size: 0.3rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_name .project1_name_1 .project1_name_1_wrap .project1_name_1_second {
+  font-size: 0.3rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_name .project1_name_2 {
+  width: 24%;
+  font-size: 0.3rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_content1 {
+  display: flex;
+  height: 0.7rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_content1 .project1_content1_1 {
+  width: 76%;
+  font-size: 0.2rem;
+  border-right: 0.01rem solid #000;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: red;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_content1 .project1_content1_2 {
+  width: 24%;
+  font-size: 0.3rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_content2 {
+  display: flex;
+  height: 0.7rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_content2 .project1_content2_1 {
+  width: 76%;
+  font-size: 0.2rem;
+  border-right: 0.01rem solid #000;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 0.25rem;
+  box-sizing: border-box;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_content2 .project1_content2_2 {
+  width: 24%;
+  font-size: 0.3rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_content3 {
+  display: flex;
+  height: 0.7rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_content3 .project1_content3_1 {
+  width: 76%;
+  font-size: 0.2rem;
+  border-right: 0.01rem solid #000;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 0.5rem;
+  box-sizing: border-box;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_content3 .project1_content3_2 {
+  width: 24%;
+  font-size: 0.3rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_content4 {
+  display: flex;
+  height: 0.7rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_content4 .project1_content4_1 {
+  width: 76%;
+  font-size: 0.2rem;
+  border-right: 0.01rem solid #000;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 1.2rem;
+  box-sizing: border-box;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .project1_content4 .project1_content4_2 {
+  width: 24%;
+  font-size: 0.3rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .total {
+  display: flex;
+  height: 0.7rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .total .total_1 {
+  width: 76%;
+  font-size: 0.2rem;
+  border-right: 0.01rem solid #000;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app menu .menu-box .box-content .watchDetail_content .project2 .total .total_2 {
+  width: 24%;
+  font-size: 0.3rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+#app menu .menu-box .box-content .watchDetail_content table {
+  border: 1px black solid;
+  border-collapse: collapse;
+}
+#app menu .menu-box .box-content .watchDetail_content .curAsset {
+  width: 100%;
+}
+#app menu .menu-box .box-content .watchDetail_content .curAsset .curAsset-head {
+  font-size: 0.2rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .curAsset .curAsset-head th {
+  font-size: 0.3rem;
+  text-align: center;
+  height: 0.8rem;
+  border: 1px black solid;
+}
+#app menu .menu-box .box-content .watchDetail_content .curAsset .curAsset-body {
+  font-size: 0.2rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .curAsset .curAsset-body td {
+  height: 0.8rem;
+  border: 1px black solid;
+  padding-left: 0.25rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .curAsset .curAsset-body td:last-child {
+  height: 0.8rem;
+  border: 1px black solid;
+  padding-right: 0.1rem;
+  text-align: right;
+}
+#app menu .menu-box .box-content .watchDetail_content .curAsset .curAsset-body .padding-level_0 {
+  padding-left: 0;
+  color: red;
+}
+#app menu .menu-box .box-content .watchDetail_content .curAsset .curAsset-body .padding-level_1 {
+  padding-left: 0.5rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .curAsset .curAsset-body .padding-level_2 {
+  padding-left: 1.2rem;
+}
+#app menu .menu-box .box-content .watchDetail_content .curAsset .curAsset-body .curAsset-body_content {
+  width: 24%;
+}
+#app menu .menu-box .box-content .watchDetail_content .marginTable {
+  margin-top: 0.2rem;
+}
+#app footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+#app footer .footer-box {
+  width: 100%;
+  height: 0.9rem;
+  display: flex;
+}
+#app footer .footer-box div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-size: 0.3rem;
+  color: #fff;
+  font-weight: 600;
+}
+#app footer .footer-box .left-box {
+  background: linear-gradient(0deg, #ff3d3d 0%, #e83737 100%);
+}
+#app footer .footer-box .right-box {
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+}

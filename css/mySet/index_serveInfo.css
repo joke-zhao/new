@@ -1,0 +1,83 @@
+#app {
+  width: 100%;
+  font-size: 0.22rem;
+  color: #000;
+  /* 底部保存 */
+}
+#app .container .container-box {
+  width: 90%;
+  margin: 0 auto;
+  /* 处理头像 */
+}
+#app .container .container-box .box-item {
+  width: 100%;
+  height: 1.5rem;
+  border-bottom: 1px solid #E5E5E5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app .container .container-box .box-item .item-right img {
+  width: 0.14rem;
+  height: 0.23rem;
+}
+#app .container .container-box .box-item .item-left {
+  width: 80%;
+  /* 左侧下方不同的内容块 */
+}
+#app .container .container-box .box-item .item-left .left-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.15rem 0;
+  font-size: 0.28rem;
+  /* 地图icon */
+  /* 服务类型的标签 */
+}
+#app .container .container-box .box-item .item-left .left-box img {
+  margin-right: 0.2rem;
+  width: 0.31rem;
+  height: 0.37rem;
+}
+#app .container .container-box .box-item .item-left .left-box .box-tag {
+  width: 1.5rem;
+  height: 0.45rem;
+  margin-right: 0.1rem;
+  line-height: 0.45rem;
+  border-radius: 0.45rem;
+  font-size: 0.24rem;
+  color: #fff;
+  text-align: center;
+  background-color: #6383FD;
+}
+#app .container .container-box .box-item:first-child img {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+}
+#app input {
+  outline-style: none;
+  border: 0;
+  padding: 0.15rem 0;
+  width: 100%;
+  font-size: 0.28rem;
+  color: #000;
+  caret-color: #000;
+  user-select: auto !important;
+  -webkit-user-select: auto !important;
+}
+#app .footer {
+  margin-top: 0.2rem;
+}
+#app .footer .footer-box {
+  width: 90%;
+  height: 0.8rem;
+  margin: 0 auto;
+  line-height: 0.8rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.3rem;
+  color: #fff;
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+  border-radius: 10px;
+}

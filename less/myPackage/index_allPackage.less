@@ -1,0 +1,296 @@
+/* 全部套餐页面样式开始 */
+#app {
+    font-size: .24rem;
+
+    /* 处理按钮样式 */
+    .swiper-button-prev {
+        left: 0.8rem;
+        right: auto;
+        background-image: url(../../image/set-info/myPackageLeft.png);
+    }
+
+    .swiper-button-next {
+        right: 0.8rem;
+        left: auto;
+        background-image: url(../../image/set-info/myPackageRight.png);
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 0.27rem;
+        height: 0.43rem;
+        top: 20%;
+        background-size: 0.27rem 0.43rem;
+    }
+
+    .container-box {
+        width: 100%;
+        /* 头部描述去 */
+        .box-header {
+            box-sizing: border-box;
+            width: 100%;
+            height: 3.6rem;
+            padding: 0.6rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            background-image: url(../../image/set-info/myPackage3.png);
+            background-size: 100% 3.6rem;
+
+            .h-name {
+                font-size: .3rem;
+                color: #fff;
+                font-weight: 600;
+            }
+
+            .h-serve {
+                color: #fff;
+            }
+
+            .h-rule {
+                width: 5.6rem;
+                height: 0.46rem;
+                display: flex;
+                justify-content: space-between;
+                border-radius: .46rem;
+                background-image: url(../../image/set-info/myPackage4.png);
+                background-size: 100% .46rem;
+
+                .rule-left {
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        color: #536DED;
+                        padding: 0 0.4rem;
+                    }
+
+                    img {
+                        width: 0.64rem;
+                        height: 0.23rem;
+                    }
+                }
+
+                .rule-right {
+                    width: 1.4rem;
+                    height: 0.46rem;
+                    line-height: 0.46rem;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: .46rem;
+                    background-color: #ffb905;
+                    box-shadow: -5px 0px 20px 0px #bb4a8c;
+                }
+            }
+        }
+
+        /* 价格区 */
+        .box-main {
+            box-sizing: border-box;
+            width: 100%;
+            margin-top: -0.4rem;
+            border-radius: .5rem;
+            background-color: #fff;
+            padding: 5px;
+
+            .main {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 1.8rem;
+                border-radius: .4rem;
+                background: linear-gradient(0deg, rgba(255, 80, 27, 1) 0%, rgba(255, 142, 64, 1) 100%);
+
+                .main-item {
+                    display: flex;
+
+                    .item-price {
+                        span {
+                            font-size: .8rem;
+                            color: #fff;
+                            font-weight: 600;
+                        }
+                    }
+
+                    .item-timer {
+                        position: relative;
+                        width: 1.6rem;
+
+                        span {
+                            position: absolute;
+                            bottom: .2rem;
+                            left: 0.2rem;
+                            font-size: .36rem;
+                            color: #FFED3F;
+                            font-weight: 500;
+                        }
+                    }
+
+                    .item-convent {
+                        width: 1.5rem;
+                        height: 0.6rem;
+                        background-image: url(../../image/set-info/myPackage7.png);
+                        background-size: 100% 0.6rem;
+                        text-align: center;
+                        color: #FF4D1A;
+                    }
+                }
+            }
+
+            /* 详情区 */
+            .main-desc {
+                background-color: #fff;
+                padding: .2rem;
+                .desc-explain{
+                    padding: 0.1rem 0;
+                    div{
+                        display: flex;
+                        align-items: center;
+                        color:#999;
+                        span{
+                            color:#000;
+                            font-size: .28rem;
+                        }
+                        .text-width{
+                            letter-spacing: 2em;
+                            margin-right: -2em;
+                        }
+                        .aaa{
+                            margin-left: .2rem;
+                        }
+                    }
+                }
+                .desc-company {
+                    >div{ 
+                    overflow: auto;
+                    height: 3rem;
+                    }
+                    p{
+                        font-size: .28rem;
+                        font-weight: 500;
+                        border-bottom: 1px solid #f5f5f5;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0.4rem;
+        .footer-box {
+            width: 80%;
+            height: 0.8rem;
+            margin: 0 auto;
+            // margin-top: .6rem;
+            line-height: 0.8rem;
+            border-radius: .8rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(104, 134, 255, 1) 0%, rgba(71, 105, 238, 1) 100%);
+
+            span {
+                font-size: .3rem;
+                color: #fff;
+                font-weight: 600;
+            }
+        }
+    }
+
+    /* 支付方式弹吃层 */
+    .popup-box {
+
+        .box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            .box-header {
+                padding: .3rem 0;
+                font-size: .3rem;
+                font-weight: 600;
+                text-align: center;
+                border-bottom: 2px solid #f5f5f5;
+            }
+
+            .box-main {
+                padding: 0 .2rem;
+                p {
+                    font-size: .28rem;
+                    font-weight: 600;
+                }
+
+                .main-item {
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 1rem;
+                    margin-top: 0.2rem;
+                    padding: 0 0.2rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 5px;
+                    font-size: .28rem;
+                    color: #000;
+                    border: 1px solid #fff;
+
+                    .item-left {
+                        display: flex;
+                        align-items: center;
+                        img {
+                            margin-right: .2rem;
+                            width: 0.48rem;
+                            height: 0.39rem;
+                        }
+                    }
+                }
+
+                .main-item:last-child {
+                    img {
+                        width: 0.4rem;
+                        height: 0.4rem;
+                    }
+                }
+
+                /* 支付方式选中的样式 */
+                .select-pay {
+                    border: 1px solid #1BA3E8;
+                    background-color: #DEF4FF;
+                }
+            }
+
+            .box-footer {
+                position: absolute;
+                width: 100%;
+                height: .9rem;
+                bottom: 0;
+                .footer{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    
+                div{
+                    flex:1;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: .28rem;
+                    span{
+                        color:#FF0000;
+                    }
+                }
+                div:last-child{
+                    font-size: .3rem;
+                    color:#fff;
+                    font-weight: 600;
+                    background:linear-gradient(0deg,rgba(104,135,255,1) 0%,rgba(71,105,238,1) 100%);
+                }
+                }
+            }
+        }
+    }
+}

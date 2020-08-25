@@ -1,0 +1,25 @@
+#commercial ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#commercial ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 10%;
+  margin-top: 0.5rem;
+}
+#commercial ul li img {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+}
+#commercial ul li p {
+  padding-top: 0.11rem;
+  font-size: 0.24rem;
+  color: #222222;
+}

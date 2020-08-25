@@ -1,0 +1,55 @@
+<div id="app">
+    <!-- 列表 -->
+    <div class="list">
+        <!-- 列表项 -->
+        <div v-for="item in list" class="list-item">
+            <!-- 列表项主内容 -->
+            <div class="list-item-main">
+                <div class="list-item-main-img">
+                    <img :src="item.sendUserImg">
+                </div>
+                <div @click="openReceipt(item)" class="list-item-main-list">
+                    <div class="list-item-main-list-item">
+                        取货地址：{{item.pickupAddress|subText}}
+                    </div>
+                    <div class="list-item-main-list-item">
+                        送货地址：{{item.deliveryAddress|subText}}
+                    </div>
+                    <div class="list-item-main-list-item">
+                        取货时间：{{item.deliveryDate|formatDate}}
+                    </div>
+                </div>
+            </div>
+            <!-- 列表项线 -->
+            <div class="list-item-line"></div>
+            <!-- 列表项底部内容 -->
+            <div class="list-item-bottom">
+                <div class="list-item-bottom-fee">
+                    <div class="list-item-bottom-fee-title">
+                        跑腿费
+                    </div>
+                    <div class="list-item-bottom-fee-money">
+                        ￥{{item.cost}}
+                    </div>
+                </div>
+                <div class="list-item-bottom-location">
+                    距您当前位置  {{item.pickupDistance|pointSub}}km
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-bar">
+        <div class="bottom-bar-item">
+            <img src="../../image/legwork/help_on.png">
+            帮人跑
+        </div>
+        <div @click="openLookfor" class="bottom-bar-item">
+            <img src="../../image/legwork/lookfor_no.png">
+            找人跑
+        </div>
+        <div @click="openOrder" class="bottom-bar-item">
+            <img src="../../image/legwork/order_no.png">
+            我的订单
+        </div>
+    </div>
+</div>

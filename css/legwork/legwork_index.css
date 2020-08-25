@@ -1,0 +1,125 @@
+#app {
+  width: 100%;
+  height: 100%;
+}
+#app .list {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #F5F5F5;
+  padding-bottom: 1.02rem;
+}
+#app .list .list-item {
+  margin-top: 0.2rem;
+  width: 7.02rem;
+  height: 2.73rem;
+  background: #FFFFFF;
+  border-radius: 0.16rem;
+}
+#app .list .list-item .list-item-main {
+  width: auto;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  margin-left: 0.24rem;
+}
+#app .list .list-item .list-item-main .list-item-main-img {
+  width: 1.4rem;
+  height: 1.4rem;
+  background: #E0E0E0;
+  border-radius: 50%;
+}
+#app .list .list-item .list-item-main .list-item-main-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+#app .list .list-item .list-item-main .list-item-main-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 5.14rem;
+  height: 1.17rem;
+  margin-left: 0.24rem;
+}
+#app .list .list-item .list-item-main .list-item-main-list .list-item-main-list-item {
+  width: 100%;
+  font-size: 0.26rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+}
+#app .list .list-item .list-item-line {
+  width: 100%;
+  height: 0.01rem;
+  background: #EEEEEE;
+}
+#app .list .list-item .list-item-bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 0.72rem;
+}
+#app .list .list-item .list-item-bottom .list-item-bottom-fee {
+  width: 1.61rem;
+  height: 0.28rem;
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  line-height: 0.37rem;
+}
+#app .list .list-item .list-item-bottom .list-item-bottom-fee .list-item-bottom-fee-title {
+  margin-left: 0.24rem;
+  font-size: 0.24rem;
+}
+#app .list .list-item .list-item-bottom .list-item-bottom-fee .list-item-bottom-fee-money {
+  font-size: 0.34rem;
+  color: #FF3D3D;
+}
+#app .list .list-item .list-item-bottom .list-item-bottom-location {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+  line-height: 0.37rem;
+  margin-right: 0.23rem;
+}
+#app .bottom-bar {
+  border: 1px solid #E0E0E0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 0.98rem;
+  background: #fff;
+  position: fixed;
+  display: flex;
+  left: 0;
+  bottom: 0;
+}
+#app .bottom-bar .bottom-bar-item {
+  width: 33.3%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 0.2rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999999;
+}
+#app .bottom-bar .bottom-bar-item:first-child {
+  color: #4769EE;
+}
+#app .bottom-bar .bottom-bar-item img {
+  width: 0.5rem;
+  height: 0.38rem;
+}

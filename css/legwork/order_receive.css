@@ -1,0 +1,110 @@
+#app {
+  height: 100%;
+  background: #F5F5F5;
+}
+#app .content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#app .content .list {
+  margin-top: 0.24rem;
+  width: 7.02rem;
+  height: 8.08rem;
+  background: #FFFFFF;
+  border-radius: 0.16rem;
+}
+#app .content .list .list-item-head {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2rem;
+}
+#app .content .list .list-item-head .list-item-head-img {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50% ;
+  background: #e3e3e3;
+  margin-left: 0.24rem;
+}
+#app .content .list .list-item-head .list-item-head-text {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 0.24rem;
+}
+#app .content .list .list-item-head .list-item-head-text .list-item-head-text-name {
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  line-height: 0.46rem;
+}
+#app .content .list .list-item-head .list-item-head-text .list-item-head-text-phone {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #808080;
+  line-height: 0.46rem;
+}
+#app .content .list .list-item-head .list-item-head-tag {
+  width: 1.4rem;
+  height: 0.6rem;
+  border: 1px solid #F64A38;
+  border-radius: 0.1rem;
+  margin-left: 1.33rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #F64A38;
+  line-height: 0.37rem;
+}
+#app .content .list .list-line {
+  width: 100%;
+  height: 0.01rem;
+  background: #F5F5F5;
+}
+#app .content .list .list-item {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+#app .content .list .list-item .list-item-content {
+  margin-left: 0.42rem;
+  font-size: 0.26rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  line-height: 0.37rem;
+}
+#app .content .list .list-item .list-item-content .list-item-content-money {
+  font-size: 0.36rem;
+  color: #FF3D3D;
+}
+#app .content .list .list-inner-line {
+  width: 6.22rem;
+  height: 0.01rem;
+  background: #F5F5F5;
+  margin-left: 0.4rem;
+}
+#app .content .receipt-button {
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.02rem;
+  height: 0.8rem;
+  background: linear-gradient(0deg, #6887FF 0%, #4769EE 100%);
+  border-radius: 0.16rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FFFFFF;
+}

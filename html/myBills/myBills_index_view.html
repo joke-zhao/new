@@ -1,0 +1,120 @@
+<!-- 单据审批页面开始 -->
+<div id="app">
+  <header>
+    <div class="header-tab">
+      <div @click="handleTab(1)" class="tabl">
+        <span>我的单据</span>
+        <div :class=" flag===1 ? 'active' : '' "></div>
+      </div>
+      <div @click="handleTab(2)" class="tab2">
+        <span>开票历史</span>
+        <div :class=" flag===2 ? 'active' : '' "></div>
+      </div>
+    </div>
+    <!-- <div class="header-box">
+      <div class="box-search">
+        <div class="search-icon">
+          <img src="../../image/review/sousuo.png" alt="">
+        </div>
+        <div class="search-input">
+          <input type="text" placeholder="请输入客户名称">
+        </div>
+      </div>
+      <div class="box-bth">
+        <span @click="openPopup">更多筛选</span>
+      </div>
+    </div> -->
+    <div class="header-bottom"></div>
+  </header>
+  <main>
+    <div class="main-box">
+      <div v-show="flag === 1">
+        <div class="box-nav">
+          <div class="nav-text">
+            <span>我的单据列表</span>
+          </div>
+          <div class="nav-news">
+            <span style="color:#4769EE"> {{total}}</span>
+          </div>
+        </div>
+        <div class="box-bills">
+          <!-- 每一项 -->
+          <div v-for="(item,i) in examineList" :ket="item.id" class="bills-item">
+            <div @click="openDetails(item.id,item.type)" class="item-box">
+              <div class="item-img">
+                <img :src="item.imgUrl || '../../image/login/logo1.png'" alt="">
+              </div>
+              <div class="item-desc">
+                <div class="desc-name">{{item.companyName}}</div>
+                <div class="desc-number">
+                  <span>单据编号：{{item.number}}</span>
+                </div>
+                <div class="desc-type">
+                  <span>单据类型：{{item.type | billFilter}}</span>
+                </div>
+                <div class="desc-status">
+                  <span>单据日期：{{item.date | formatDate}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-show="flag === 2">
+         <!-- @click="openProblemDetails(item.id)" -->
+        <div class="invoicing-item" v-for="(item,index) in invoicingList" :key="item.id" >
+          <div class="item-title">{{ item.companyName }}</div>
+          <div class="item-content">
+            <div>订单编号</div>
+            <div>{{ item.documentNum }}</div>
+          </div>
+          <div class="item-content">
+            <div>开票状态</div>
+            <div v-if="item.status===1">待出票</div>
+            <div v-else-if="item.status===2">待出票</div>
+            <div v-else>未知状态</div>
+          </div>
+          <div class="item-content">
+            <div>开票金额</div>
+            <div>¥{{ item.money }}</div>
+          </div>
+          <div class="item-content">
+            <div>购方名称</div>
+            <div>{{ item.buyName }}</div>
+          </div>
+          <div class="item-content">
+            <div>创建时间</div>
+            <div>{{ item.createTime | formatDate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- 更多筛选弹框 -->
+  <van-popup round :style="{ height: '6rem',width:'80%'}" v-model="show">
+
+    <div class="popup-box">
+      <div class="box-main">
+        <div class="m-title">
+          更多筛选
+        </div>
+        <div class="m-name">
+          <input placeholder="输入客户名称" type="text">
+        </div>
+        <div class="m-name">
+          <input placeholder="输入单据名称" type="text">
+        </div>
+        <div class="m-name" @click="showDate = true">
+          <span v-show="!date">选择单据日期</span>{{date}}
+          <img v-show="!date" src="../../image/review/xiala.png" alt="">
+        </div>
+      </div>
+      <div class="box-footer">
+        <div class="f-left">重置</div>
+        <div @click="closePopup" class="f-right">提交</div>
+      </div>
+    </div>
+  </van-popup>
+  <!-- 日期弹框 -->
+  <van-calendar :min-date="minDate" v-model="showDate" @confirm="onConfirm" />
+</div>

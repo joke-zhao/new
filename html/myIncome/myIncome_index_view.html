@@ -1,0 +1,129 @@
+<!-- 收入明细页面开始 -->
+<div id="app">
+  <header>
+    <div class="header-box">
+      <div class="box">
+        <div v-for="item in tabs" :key="item.id" class="box-item">
+          <div @click='changeTabs(item.id)' :class="item.id === isActive ? 'isActive-border' : 'item-border'">
+            <span class="item-name">{{item.name}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main-box">
+      <!-- 总收入 -->
+      <div v-show="isActive === 1" class="box-header">
+        <div class="header-item">
+          <div class="item-name">总收入</div>
+          <div class="item-price">{{incomeSum}}</div>
+        </div>
+        <div class="header-item">
+          <div class="item-name">代理收入</div>
+          <div class="item-price">{{daiIncome}}</div>
+        </div>
+        <div class="header-item">
+          <div class="item-name">分享收入</div>
+          <div class="item-price">{{shareIncome}}</div>
+        </div>
+        <div class="header-item">
+          <div class="item-name">服务收入</div>
+          <div class="item-price">{{serverIncome}}</div>
+        </div>
+      </div>
+      <!-- 代理 -->
+      <div v-show="isActive === 2" class="box-header">
+        <div class="header-item">
+          <div class="item-name">代理收入</div>
+          <div class="item-price">{{daiIncome}}</div>
+        </div>
+        <div class="header-item">
+          <div class="item-name">存货额</div>
+          <div class="item-price">0</div>
+        </div>
+        <div class="header-item">
+          <div class="item-name">存货MD</div>
+          <div class="item-price">{{mdCount}}</div>
+        </div>
+        <div class="header-item">
+          <div class="item-name">剩余MD</div>
+          <div class="item-price">{{mdCount}}</div>
+        </div>
+      </div>
+      <!-- 分享 -->
+      <div v-show="isActive === 3" class="box-header">
+        <div class="header-item2">
+          <div class="item-name">分享收入</div>
+          <div class="item-price">{{shareIncome}}</div>
+        </div>
+        <div class="header-item2">
+          <div class="item-name">分享套餐</div>
+          <div class="item-price">{{shareCombo}}</div>
+        </div>
+        <div class="header-item2">
+          <div class="item-name">分享课程</div>
+          <div class="item-price">{{shareCourse}}</div>
+        </div>
+        <div class="header-item2">
+          <div class="item-name">分享服务</div>
+          <div class="item-price">{{shareInfo.business}}</div>
+        </div>
+        <div class="header-item2">
+          <div class="item-name">团队分分红</div>
+          <div class="item-price">{{team}}</div>
+        </div>
+        <div class="header-item2">
+          <div class="item-name">级差将</div>
+          <div class="item-price">{{range}}</div>
+        </div>
+      </div>
+      <!-- 服务 -->
+      <div v-show="isActive === 4" class="box-header">
+        <div class="header-item">
+          <div class="item-name">服务收入</div>
+          <div class="item-price">{{serverIncome}}</div>
+        </div>
+        <div class="header-item">
+          <div class="item-name">工商</div>
+          <div class="item-price">{{serverIndustry}}</div>
+        </div>
+        <div class="header-item">
+          <div class="item-name">跑腿</div>
+          <div class="item-price">{{serverErrand}}</div>
+        </div>
+      </div>
+      <!-- 详细信息 -->
+      <div class="box-main">
+        <!-- 信息项 -->
+        <div  @click="openDetail" class="main-item">
+          <div class="item-left">
+            <img src="../../image/set-info/myIncome1.png" alt="">
+            <span>收入明细表</span>
+          </div>
+          <div class="item-right">
+            <img src="../../image/set-info/right.png" alt="">
+          </div>
+        </div>
+        <div @click="openBoss" class="main-item">
+          <div class="item-left">
+            <img src="../../image/set-info/myIncome2.png" alt="">
+            <span>我邀请的BOSS</span>
+          </div>
+          <div class="item-right">
+            <img src="../../image/set-info/right.png" alt="">
+          </div>
+        </div>
+        <div @click='openAgency' class="main-item">
+          <div class="item-left">
+            <img src="../../image/set-info/myIncome3.png" alt="">
+            <span>我的下级代理</span>
+          </div>
+          <div class="item-right">
+            <img src="../../image/set-info/right.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

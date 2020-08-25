@@ -1,0 +1,74 @@
+.container {
+  width: 100%;
+  padding: 0.4rem 0.24rem 0 0.24rem;
+}
+.container .head {
+  width: 100%;
+  margin-bottom: 0.2rem;
+  height: 0.9rem;
+}
+.container .head .head_title {
+  width: 100%;
+  height: 100%;
+}
+.container .head .head_title input {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.container .head .head_tip {
+  width: 1.04rem;
+}
+.container .text_area {
+  width: 100%;
+  height: 3.4rem;
+}
+.container .text_area textarea {
+  width: 100%;
+  height: 2.68rem;
+  border: none;
+}
+.container .btn_box {
+  width: 100%;
+  height: 0.8rem;
+  margin: 0.84rem 0.16rem 0 0.16rem;
+  font-size: 0.3rem;
+}
+.container .btn_box .btn {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+  border: none;
+  border-radius: 0.16rem;
+}
+.column_center {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.row_center {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+.row_right {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.font_normal {
+  font-size: 0.28rem;
+}
+.font_small {
+  font-size: 0.24rem;
+}
+.tips-left {
+  padding-left: 0.24rem;
+}
+.tips-right {
+  padding-right: 0.24rem;
+}

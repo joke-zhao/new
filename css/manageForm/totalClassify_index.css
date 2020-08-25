@@ -1,0 +1,385 @@
+#totalClassify {
+  width: 100%;
+  position: relative;
+  padding-right: 0.2rem;
+}
+#totalClassify .startTime-font {
+  display: flex;
+  font-size: 0.25rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000000;
+  opacity: 0.96;
+}
+#totalClassify .aTitle {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.35rem;
+  margin-top: 0.3rem;
+  margin-bottom: -0.5rem;
+}
+#totalClassify .company {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0.38rem;
+}
+#totalClassify .company .company-top {
+  margin-top: 0.42rem;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+#totalClassify .company .company-top .company_name {
+  display: flex;
+  height: 100%;
+}
+#totalClassify .company .company-top .company_name p {
+  font-size: 0.35rem;
+  color: #000;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#totalClassify .company .level {
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: left;
+  align-items: center;
+  display: flex;
+  width: 6.72rem;
+  height: 0.68rem;
+  margin-top: 0.3rem;
+}
+#totalClassify .company .level .level-font {
+  font-size: 0.35rem;
+  color: #000;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #000000;
+}
+#totalClassify .company .level .level-pick {
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1.72rem;
+  height: 0.68rem;
+  border: 1px solid #7F7F7F;
+  border-radius: 0.04rem;
+  margin-left: 0.38rem;
+}
+#totalClassify .company .level .level-pick .date-icon {
+  width: 0.25rem;
+  height: 0.26rem;
+  opacity: 0.8;
+}
+#totalClassify .company .level .level-pick .spans {
+  width: 0.01rem;
+  height: 0.36rem;
+  border: 0.01rem solid #000000;
+  opacity: 0.3;
+  margin-left: 0.18rem;
+}
+#totalClassify .company .level .level-pick .startTime {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  text-align: center;
+}
+#totalClassify .company .level .level-pick .startTime .van-cell {
+  padding: 0rem;
+  opacity: 1;
+}
+#totalClassify .company .level .level-pick .startTime .van-field__control {
+  text-align: center;
+  opacity: 1;
+}
+#totalClassify .company .level .level-pick .startTime .startTime_title {
+  width: 0.7rem;
+  font-size: 0.2rem;
+}
+#totalClassify .company .level .level-pick .endTime {
+  display: flex;
+}
+#totalClassify .company .level .level-pick .endTime .van-cell {
+  padding: 0rem;
+  opacity: 1;
+}
+#totalClassify .company .level .level-pick .endTime .van-field__control {
+  text-align: center;
+  opacity: 1;
+}
+#totalClassify .company .level .level-pick .endTime .endTime_title {
+  width: 0.7rem;
+  font-size: 0.2rem;
+}
+#totalClassify .company .level .level-pick > el-date-picker {
+  width: 40%;
+  height: 100%;
+}
+#totalClassify .company .level .company_cny {
+  width: 45%;
+  text-align: right;
+  font-size: 0.24rem;
+  color: #000;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #000000;
+}
+#totalClassify .datePick {
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 6.72rem;
+  height: 0.68rem;
+  border: 1px solid #7F7F7F;
+  border-radius: 0.04rem;
+  margin-top: 0.3rem;
+}
+#totalClassify .datePick .date-icon {
+  width: 0.25rem;
+  height: 0.26rem;
+  opacity: 0.8;
+}
+#totalClassify .datePick .spans {
+  width: 0.01rem;
+  height: 0.36rem;
+  border: 0.01rem solid #000000;
+  opacity: 0.3;
+  margin-left: 0.18rem;
+}
+#totalClassify .datePick .startTime {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  text-align: center;
+}
+#totalClassify .datePick .startTime .van-cell {
+  padding: 0rem;
+  opacity: 1;
+}
+#totalClassify .datePick .startTime .van-field__control {
+  text-align: center;
+  opacity: 1;
+}
+#totalClassify .datePick .startTime .startTime_title {
+  width: 0.7rem;
+  font-size: 0.2rem;
+}
+#totalClassify .datePick .endTime {
+  display: flex;
+}
+#totalClassify .datePick .endTime .van-cell {
+  padding: 0rem;
+  opacity: 1;
+}
+#totalClassify .datePick .endTime .van-field__control {
+  text-align: center;
+  opacity: 1;
+}
+#totalClassify .datePick .endTime .endTime_title {
+  width: 0.7rem;
+  font-size: 0.2rem;
+}
+#totalClassify .datePick > el-date-picker {
+  width: 40%;
+  height: 100%;
+}
+#totalClassify .picture {
+  height: 6rem;
+  width: 100%;
+  padding: 0 0.2rem;
+}
+#totalClassify .picture #myChart {
+  width: 100%;
+  height: 100%;
+}
+#totalClassify .watchDetail_title {
+  height: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.3rem;
+  color: #000;
+  font-weight: 400;
+}
+#totalClassify .watchDetail_title img {
+  margin-right: 0.25rem;
+  height: 0.15rem;
+  width: 0.2rem;
+}
+#totalClassify .accountDetails {
+  width: 100%;
+  margin-top: 0.3rem;
+}
+#totalClassify .accountDetails .accountDetails_content {
+  width: 100%;
+  padding: 0 0.2rem;
+  background-color: #F9F8F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.3rem;
+}
+#totalClassify .accountTitle {
+  width: 100%;
+  height: 1.25rem;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+#totalClassify .accountTitle .accountTitle_company {
+  width: 100%;
+  margin-bottom: 0;
+}
+#totalClassify .accountTitle .accountTitle_company .accountTitle_company_2 {
+  display: flex;
+  justify-content: center;
+  font-size: 0.3rem;
+  color: #000000;
+}
+#totalClassify .accountTitle .accountTitle_company .accountTitle_company_3 {
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.2rem;
+  color: #7f7f7f;
+  margin-top: -0.2rem;
+}
+#totalClassify .accountTitle .accountTitle_date {
+  width: 40%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+#totalClassify .accountTitle .accountTitle_date .accountTitle_month {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #7F7F7F;
+  border-radius: 0.04rem;
+}
+#totalClassify .accountTitle .accountTitle_date .accountTitle_month img {
+  height: 0.15rem;
+  width: 0.2rem;
+  margin-top: 0.22rem;
+  margin-right: 0.3rem;
+}
+#totalClassify .accountTitle .accountTitle_date .accountTitle_month .van-cell {
+  padding: 0;
+}
+#totalClassify .accountTitle .accountTitle_date .accountTitle_month .van-field__control {
+  margin-top: 0.05rem;
+  text-align: center;
+  padding: 0;
+}
+#totalClassify .accountTitle .accountTitle_date .accountTitle_date_1 {
+  font-size: 0.25rem;
+  width: 40%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.1rem;
+}
+#totalClassify .accountTitle .accountTitle_date el-date-picker {
+  width: 60%;
+}
+#totalClassify .watchDetail_content {
+  padding-left: 0.2rem;
+  overflow-x: scroll;
+  margin-top: 0.3rem;
+}
+#totalClassify .watchDetail_content #table {
+  overflow-x: scroll;
+  width: 300%;
+  font-size: 0.29rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#totalClassify .watchDetail_content #table .table-title {
+  font-size: 0.5rem;
+}
+#totalClassify .watchDetail_content #table .table-name {
+  font-size: 0.4rem;
+}
+#totalClassify .watchDetail_content #table .table-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#totalClassify .watchDetail_content #table .table-page .table-page-box-left {
+  width: 35%;
+  display: flex;
+  justify-content: flex-start;
+}
+#totalClassify .watchDetail_content #table .table-page .table-page-box-right {
+  width: 35%;
+  display: flex;
+  justify-content: flex-end;
+}
+#totalClassify .watchDetail_content #table .table-page-second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#totalClassify .watchDetail_content #table .table-box {
+  width: 100%;
+}
+#totalClassify .watchDetail_content #table .table-box table {
+  border-collapse: collapse;
+  border: 0px solid #999;
+}
+#totalClassify .watchDetail_content #table .table-box table td {
+  border-top: 0;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+  border-left: 0;
+}
+#totalClassify .watchDetail_content .signature {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 0.2rem;
+}
+#totalClassify .watchDetail_content .signature .signature-man {
+  width: 4rem;
+  font-size: 0.29rem;
+}
+#totalClassify .bottom_btns {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+#totalClassify .bottom_btns .export {
+  height: 50%;
+  width: 100%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}
+#totalClassify .bottom_btns .print {
+  height: 50%;
+  width: 100%;
+  background-color: #5172F3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}

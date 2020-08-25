@@ -1,0 +1,138 @@
+/**css代码在此处开始*/
+.app .logo1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.8rem;
+}
+.app .logo1 .logo1_pho {
+  width: 1.21rem;
+  height: 1.2rem;
+}
+.app .logo2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.2rem;
+}
+.app .logo2 .logo2_pho {
+  width: 3.2rem;
+  height: 0.62rem;
+}
+.app .item {
+  margin-top: 0.91rem;
+}
+.app .item-input {
+  width: 100%;
+  height: 1rem;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+}
+.app .item-input .icon-company {
+  width: 0.26rem;
+  height: 0.36rem;
+  margin-left: 0.42rem;
+  margin-right: 0.26rem;
+}
+.app .item-input input {
+  outline-style: none;
+  border: 0;
+  padding: 0.13rem 0.14rem;
+  width: 100%;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #000;
+  caret-color: #000;
+  user-select: auto !important;
+  -webkit-user-select: auto !important;
+}
+.app .item-input .item-hide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0.61rem;
+}
+.app .item-input img {
+  width: 0.3rem;
+  height: 0.2rem;
+}
+.app .foot {
+  width: 6.7rem;
+  height: 0.8rem;
+  background: linear-gradient(0deg, #6887FF 0%, #4769EE 100%);
+  border-radius: 16px;
+  margin-left: 0.4rem;
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.app .forgter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.29rem;
+}
+.app .forgter .forgter-box1 {
+  font-size: 0.26rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  display: flex;
+  margin-left: 0.4rem;
+}
+.app .forgter .forgter-box2 {
+  display: flex;
+  margin-right: 0.4rem;
+  font-size: 0.26rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #222222;
+}
+.app .wechat {
+  width: 100%;
+  margin-top: 0.8rem;
+}
+.app .wechat .wechat-icon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app .wechat .wechat-icon .wechat-icon-logo {
+  width: 1rem;
+  height: 1rem;
+}
+.app .wechat .wechat-word {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+  margin-top: 0.19rem;
+}
+.app .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.22rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #808080;
+  margin-top: 1.45rem;
+}
+.app .footer .footer_font {
+  color: #4769EE;
+}

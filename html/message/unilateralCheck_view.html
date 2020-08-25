@@ -1,0 +1,204 @@
+<div id="unilateralCheck">
+    <div class="notice">
+        <!-- 1.单据核对,去拍照 -->
+        <div class="notice-item" v-for="(item,index) in receiptsList">
+            <div class="notice-item-time">
+                <div class="notice-item-time-text">
+                    {{item.createTime | formatDate}}
+                </div>
+            </div>
+            <div class="notice-item-card">
+                <div class="notice-item-card-title" >
+                    <div class="notice-item-card-title-left">
+                        {{item.title}}
+                    </div>
+                    <div class="notice-item-card-title-right" >
+                        <div v-if="item.status===0" class="notice-item-card-title-right-text" @click="showPopup(item)">
+                            {{item.operation}}
+                        </div>
+                        <div v-if="item.status===1" class="notice-item-card-title-right-text">
+                            &nbsp;&nbsp;&nbsp;&nbsp;已处理
+                        </div>
+                        <div class="notice-item-card-title-right-more">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="notice-item-card-line"></div>
+                <div class="notice-item-card-content">
+                    <div class="notice-item-card-content-area">
+                        <div class="notice-item-card-content-area-text">
+                            {{item.content}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2.取单通知.去审核 -->
+        <div class="notice-item" v-for="(item,index) in aSingleList">
+            <div class="notice-item-time">
+                <div class="notice-item-time-text">
+                    {{item.createTime | formatDate}}
+                </div>
+            </div>
+            <div class="notice-item-card">
+                <div class="notice-item-card-title">
+                    <div class="notice-item-card-title-left">
+                        {{item.title}}
+                    </div>
+                    <div class="notice-item-card-title-right">
+                        <div v-if="item.status===0" class="notice-item-card-title-right-text" @click="showPopup(item)">
+                            {{item.operation}}
+                        </div>
+                        <div v-if="item.status===1" class="notice-item-card-title-right-text">
+                            &nbsp;&nbsp;&nbsp;&nbsp;已处理
+                        </div>
+                        <div class="notice-item-card-title-right-more">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="notice-item-card-line"></div>
+                <div class="notice-item-card-content">
+                    <div class="notice-item-card-content-area">
+                        <div class="notice-item-card-content-area-text">
+                            {{item.content}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- .3报表确认查看 -->
+        <div class="notice-item" v-for="(item,index) in reportList">
+            <div class="notice-item-time">
+                <div class="notice-item-time-text">
+                    {{item.createTime | formatDate}}
+                </div>
+            </div>
+            <div class="notice-item-card">
+                <div class="notice-item-card-title">
+                    <div class="notice-item-card-title-left">
+                        {{item.title}}
+                    </div>
+                    <div class="notice-item-card-title-right">
+                        <div v-if="item.status===0" class="notice-item-card-title-right-text" @click="showPopup(item)">
+                            {{item.operation}}
+                        </div>
+                        <div v-if="item.status===1" class="notice-item-card-title-right-text">
+                            &nbsp;&nbsp;&nbsp;&nbsp;已处理
+                        </div>
+                        <div class="notice-item-card-title-right-more">
+                        </div>
+                    </div>
+                </div>
+                <div class="notice-item-card-line"></div>
+                <div class="notice-item-card-content">
+                    <div class="notice-item-card-content-area">
+                        <div class="notice-item-card-content-area-text">
+                            {{item.content}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--    4.款项通知-->
+        <div class="notice-item" v-for="(item,index) in fundList">
+            <div class="notice-item-time">
+                <div class="notice-item-time-text">
+                    {{item.createTime | formatDate}}
+                </div>
+            </div>
+            <div class="notice-item-card">
+                <div class="notice-item-card-title" @click="showPopup">
+                    <div class="notice-item-card-title-left">
+                        {{item.title}}
+                    </div>
+<!--                    <div class="notice-item-card-title-right">-->
+<!--                        <div class="notice-item-card-title-right-text">-->
+<!--                            {{item.operation}}-->
+<!--                        </div>-->
+<!--                        <div class="notice-item-card-title-right-more">-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+                <div class="notice-item-card-line"></div>
+                <div class="notice-item-card-content">
+                    <div class="notice-item-card-content-area">
+                        <div class="notice-item-card-content-area-text">
+                            {{item.content}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--    5.财税分析-->
+        <div class="notice-item" v-for="(item,index) in financialAnalysisList">
+            <div class="notice-item-time">
+                <div class="notice-item-time-text">
+                    {{item.createTime | formatDate}}
+                </div>
+            </div>
+            <div class="notice-item-card">
+                <div class="notice-item-card-title" @click="showPopup">
+                    <div class="notice-item-card-title-left">
+                        {{item.title}}
+                    </div>
+                    <div class="notice-item-card-title-right">
+                        <div v-if="item.status===0" class="notice-item-card-title-right-text" @click="showPopup(item)">
+                            {{item.operation}}
+                        </div>
+                        <div v-if="item.status===1" class="notice-item-card-title-right-text">
+                            &nbsp;&nbsp;&nbsp;&nbsp;已处理
+                        </div>
+                        <div class="notice-item-card-title-right-more">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="notice-item-card-line"></div>
+                <div class="notice-item-card-content">
+                    <div class="notice-item-card-content-area">
+                        <div class="notice-item-card-content-area-text">
+                            {{item.content}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- 单据审核弹窗 -->
+    <van-popup v-model="show" class="popup">
+        <div class="popupTitle">确认上月单据上传情况</div>
+        <div class="popupContent">
+            <div class="content1">
+                <div v-show="show1" @click="select1" class="content1Select"></div>
+                <img v-show="!show1" @click="select1" class="content1Select" src="../../image/message/select.png" style="width: .4rem;height: .4rem;padding: 0;">
+                <div class="content1Accomplish">已完成</div>
+            </div>
+            <div class="content2">
+                我已完成
+            </div>
+            <div class="content3">
+                <div v-show="show2" @click="select2" class="content3Select"></div>
+                <img v-show="!show2" @click="select2" class="content3Select" src="../../image/message/select.png" style="width: .4rem;height: .4rem;">
+                <div class="content1UnAccomplish">未完成</div>
+            </div>
+            <div class="content4">
+                我未完成
+            </div>
+        </div>
+        <div class="submit" @click="submit">提交</div>
+    </van-popup>
+</div>
+
+
+

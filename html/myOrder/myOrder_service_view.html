@@ -1,0 +1,49 @@
+<div class="container column_center-start">
+    <div class="title row_center">
+        <div class="title_item row_center"><span class="column_center" :class="{border_white:title[0].isActive,border_none:!title[0].isActive}" @click="isUnderLine(0)">全部</span></div>
+        <div class="line"></div>
+        <div class="title_item row_center"><span class="column_center" :class="{border_white:title[1].isActive,border_none:!title[1].isActive}" @click="isUnderLine(1)">服务中</span></div>
+        <div class="line"></div>
+        <div class="title_item row_center"><span class="column_center" :class="{border_white:title[2].isActive,border_none:!title[2].isActive}" @click="isUnderLine(2)">结束</span></div>
+    </div>
+    <!--内容区背景容器，圆角边框，背景白色，需要设置padding-bottom-->
+    <div class="container_bg">
+        <!--内容区容器，背景色是灰色-->
+        <div class="content column_center-start">
+            <!--内容项，高度3.32rem-->
+            <div class="content_item" :class="{'border-top':index==0}" v-for="(item,index) in list" @click="openDetail(item.serverId)">
+                <div class="item_title">
+                    <div class="title_content">{{item.companyName|subCompany}}</div>
+                    <div class="status">{{item.status|statusTotext}}</div>
+                </div>
+                <div class="item_content row_center">
+                    <div class="image">
+                        <img :src="item.imgUrl|splitImg"/>
+                    </div>
+                    <div class="item_content_text">
+                        <div class="register">{{item.serverType}}</div>
+                        <div class="service_type">{{item.serverLabel|subLabel}}</div>
+                        <div class="service_cost">服务费：￥{{item.serverPrice}}</div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="content_item">-->
+                <!--<div class="item_title">-->
+                    <!--<div class="title_content">广州爪瓦科技有限公司</div>-->
+                    <!--<div class="status">服务中</div>-->
+                <!--</div>-->
+                <!--<div class="item_content row_center">-->
+                    <!--<div class="image">-->
+                        <!--<img/>-->
+                    <!--</div>-->
+                    <!--<div class="item_content_text">-->
+                        <!--<div class="register">注册代办</div>-->
+                        <!--<div class="service_type">服务类型、服务类型、服务..</div>-->
+                        <!--<div class="service_cost">服务费：￥100</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+/* @name: 转为REM单位fn
+ * @ps: 默认宽度为750px
+ */
+/* @name: 上下左右居中 (未知高度)
+ * @ps: 需要设置父元素 display:table
+ */
+.centers {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* @name: 上下左右居中 （确定高度）*/
+.centersHeight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+/*
+ * @name: 文字溢出显示省略号
+ * @ps: 需要设置宽度
+ */
+.ellipsis {
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* @name: 强制不换行 */
+.nowrap {
+  white-space: nowrap;
+  word-wrap: normal;
+  word-break: keep-all;
+}
+/* @name: 清除浮动 */
+.clearFix {
+  overflow: hidden;
+  clear: both;
+}
+/*
+ * @name:  三角形
+ * @param: @size  大小
+ * @param: @color 颜色
+ * @param: @type {string}  类型 (up || down || left || right || topleft || topright || bottomleft || bottomright)
+ */

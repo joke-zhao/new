@@ -1,0 +1,59 @@
+#app {
+  font-size: 0.24rem;
+  color: #000;
+}
+#app .container .container-box {
+  width: 90%;
+  margin: 0 auto;
+}
+#app .container .container-box .box-header {
+  font-size: 0.3rem;
+  padding: 0.6rem 0;
+}
+#app .container .container-box .box-header div {
+  text-align: center;
+}
+#app .container .container-box .box-header div span {
+  padding: 0 2px;
+  color: #6383FD;
+}
+#app .container .container-box .box-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+#app .container .container-box .box-main div {
+  width: 2rem;
+  height: 0.7rem;
+  margin-bottom: 0.25rem;
+  margin-right: 0.2rem;
+  border-radius: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .container .container-box .box-main .main-item {
+  color: #fff;
+  background-color: #6383FD;
+}
+#app .container .container-box .box-main .main-item2 {
+  box-sizing: border-box;
+  border: 1px solid #6383FD;
+  color: #6383FD;
+  background-color: #fff;
+}
+#app .footer {
+  position: fixed;
+  bottom: 1rem;
+  width: 100%;
+}
+#app .footer .footer-box {
+  width: 90%;
+  height: 0.8rem;
+  margin: 0 auto;
+  line-height: 0.8rem;
+  font-size: 0.3rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+}

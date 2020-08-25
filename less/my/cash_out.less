@@ -1,0 +1,49 @@
+#app{
+  width: 100%;
+  height: 100%;
+  .cash{
+    width: 100%;
+    height: 100%;
+    .cash-list{
+      width: 90%;
+      height: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding-left: .42rem;
+      padding-right: .42rem;
+      .cash-list-item{
+        padding-top: .42rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: .02rem solid #DCDCDC;
+        padding-bottom: .27rem;
+        .cash-list-item-left{
+          .cash-list-item-left-title{
+            font-size:.3rem;
+            font-family:PingFang SC;
+            font-weight:500;
+            color:#333333;
+          }
+          .cash-list-item-left-date{
+            margin-top: .33rem;
+            font-size:.24rem;
+            font-family:PingFang SC;
+            font-weight:500;
+            color:#999999;
+          }
+        }
+        .cash-list-item-right{
+          display: flex;
+          align-items: center;
+          .cash-list-item-right-money{
+            font-size:.38rem;
+            font-family:PingFang SC;
+            font-weight:bold;
+            color:#333333;
+          }
+        }
+      }
+    }
+  }
+}

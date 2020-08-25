@@ -1,0 +1,24 @@
+<div id="bMap">
+  <header>
+    <div class="search">
+      <!-- <input type="text" class="searchInput" v-model="addressName" />
+      <div class="searchBtn" @click="searchMap">搜索</div> -->
+      <van-search v-model="addressName" class="searchInput" shape="round" show-action placeholder="请输入公司服务地址">
+        <template #action>
+          <div class="searchBtn" @click="searchMap">搜索</div>
+        </template>
+      </van-search>
+    </div>
+  </header>
+  <main>
+    <div class="Map" style="height: 300px;">
+    </div>
+  </main>
+  <div class="LenovoWord">
+    <div v-for="(item,index) in LenovoWord" :key="index" @click="getMessage(item)">
+      <p class="name">{{item.name}}</p>
+      <p class="address">{{item.address}}</p>
+    </div>
+  </div>
+
+</div>

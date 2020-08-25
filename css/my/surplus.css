@@ -1,0 +1,323 @@
+#app {
+  width: 100%;
+  height: 100%;
+  /* 支付方式弹吃层 */
+}
+#app .surplus {
+  width: 100%;
+  height: 100%;
+  background: #F5F5F5;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+#app .surplus .surplus-bg {
+  width: 100%;
+  height: 5.22rem;
+  background: url("../../image/my/bg.png") no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#app .surplus .surplus-bg img {
+  margin-top: 0.48rem;
+  width: 0.98rem;
+  height: 0.98rem;
+}
+#app .surplus .surplus-bg .surplus-bg-surplus {
+  font-size: 0.72rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #fff;
+}
+#app .surplus .surplus-form {
+  width: 6.39em;
+  height: 8.14rem;
+  background: #fff;
+  position: fixed;
+  left: 0.43rem;
+  top: 2.6rem;
+  border-radius: 0.38rem;
+}
+#app .surplus .surplus-form .surplus-form-record {
+  margin-left: 0.64rem;
+  width: 5.12rem;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.01rem solid #eeeeee;
+}
+#app .surplus .surplus-form .surplus-form-record .surplus-form-record-text {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #666666;
+}
+#app .surplus .surplus-form .surplus-form-record .surplus-form-record-back {
+  width: 0.2rem;
+  height: 0.2rem;
+  border-top: 0.01rem solid #666666;
+  border-right: 0.01rem solid #666666;
+  transform: rotate(45deg);
+}
+#app .surplus .surplus-form .surplus-form-should {
+  margin-left: 0.64rem;
+  margin-top: 0.38rem;
+  width: 5.12rem;
+  display: flex;
+  justify-content: space-between;
+}
+#app .surplus .surplus-form .surplus-form-should .surplus-form-should-key {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+#app .surplus .surplus-form .surplus-form-should .surplus-form-should-value {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+#app .surplus .surplus-form .surplus-form-choose {
+  margin-top: 0.4rem;
+  margin-left: 0.64rem;
+  display: flex;
+  align-items: center;
+}
+#app .surplus .surplus-form .surplus-form-choose .surplus-form-choose-radio {
+  width: 0.32rem;
+  height: 0.32rem;
+  border: 0.02rem solid #BFBFBF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .surplus .surplus-form .surplus-form-choose .surplus-form-choose-radio .surplus-form-choose-radio-choose {
+  width: 0.22rem;
+  height: 0.22rem;
+  border-radius: 50%;
+  background: #000;
+}
+#app .surplus .surplus-form .surplus-form-choose .surplus-form-choose-text {
+  margin-left: 0.17rem;
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+#app .surplus .surplus-form .surplus-form-gain {
+  margin-top: 0.4rem;
+  margin-left: 0.64rem;
+  width: 5.12rem;
+  display: flex;
+  justify-content: space-between;
+  height: 0.87rem;
+  border-bottom: 0.01rem solid #eeeeee;
+}
+#app .surplus .surplus-form .surplus-form-gain .surplus-form-gain-key {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+#app .surplus .surplus-form .surplus-form-gain .surplus-form-gain-value {
+  font-size: 0.36rem;
+  font-family: PingFang SC;
+  font-weight: 800;
+  color: #333333;
+}
+#app .surplus .surplus-form .surplus-form-bind {
+  width: 5.12rem;
+  height: 0.83rem;
+  display: flex;
+  align-items: center;
+  margin-left: 0.64rem;
+  border-bottom: 0.01rem solid #eeeeee;
+}
+#app .surplus .surplus-form .surplus-form-bind .surplus-form-bind-img {
+  width: 0.42rem;
+  height: 0.38rem;
+}
+#app .surplus .surplus-form .surplus-form-bind .surplus-form-bind-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#app .surplus .surplus-form .surplus-form-bind .surplus-form-bind-text {
+  margin-left: 0.26rem;
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+#app .surplus .surplus-form .surplus-form-bind .surplus-form-bind-button {
+  margin-left: 0.63rem;
+  width: 1.34rem;
+  height: 0.45rem;
+  border: 1px solid #333333;
+  border-radius: 0.23rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+#app .surplus .surplus-form .surplus-form-input {
+  border-bottom: 0.01rem solid #eeeeee;
+  height: 1.86rem;
+  width: 5.12rem;
+  margin-left: 0.64rem;
+}
+#app .surplus .surplus-form .surplus-form-input .surplus-form-input-text {
+  margin-top: 0.31rem;
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+#app .surplus .surplus-form .surplus-form-input .surplus-form-input-bottom {
+  width: 100%;
+  margin-top: 0.5rem;
+  height: 0.45rem;
+  display: flex;
+  align-items: center;
+}
+#app .surplus .surplus-form .surplus-form-input .surplus-form-input-bottom .surplus-form-input-bottom-text {
+  font-size: 0.6rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+#app .surplus .surplus-form .surplus-form-input .surplus-form-input-bottom .surplus-form-input-bottom-input {
+  display: flex;
+  width: 70%;
+  margin-left: 0.3rem;
+  align-items: center;
+  height: 100%;
+  flex-direction: row;
+}
+#app .surplus .surplus-form .surplus-form-input .surplus-form-input-bottom .surplus-form-input-bottom-input input {
+  display: block;
+  width: 90%;
+  height: 100%;
+  border: none;
+  font-size: 0.55rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  border: 0;
+  caret-color: #000;
+  user-select: auto !important;
+  -webkit-user-select: auto !important;
+  outline-style: none;
+}
+#app .surplus .surplus-form .surplus-form-explain {
+  margin-left: 0.64rem;
+  margin-top: 0.21rem;
+  font-size: 0.2rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999999;
+}
+#app .surplus .surplus-button {
+  z-index: 1000;
+  width: 6.04rem;
+  height: 0.8rem;
+  background: linear-gradient(180deg, #6886FF 0%, #4769EE 100%);
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.67rem;
+  margin-left: 0.75rem;
+  font-size: 0.3rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #fff;
+}
+#app .popup-box .box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#app .popup-box .box .box-header {
+  padding: 0.3rem 0;
+  font-size: 0.3rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 2px solid #f5f5f5;
+}
+#app .popup-box .box .box-main {
+  padding: 0 0.2rem;
+  /* 支付方式选中的样式 */
+}
+#app .popup-box .box .box-main p {
+  font-size: 0.28rem;
+  font-weight: 600;
+}
+#app .popup-box .box .box-main .main-item {
+  box-sizing: border-box;
+  width: 100%;
+  height: 1rem;
+  margin-top: 0.2rem;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 0.28rem;
+  color: #000;
+  border: 1px solid #fff;
+}
+#app .popup-box .box .box-main .main-item .item-left {
+  display: flex;
+  align-items: center;
+}
+#app .popup-box .box .box-main .main-item .item-left img {
+  margin-right: 0.2rem;
+  width: 0.48rem;
+  height: 0.39rem;
+}
+#app .popup-box .box .box-main .main-item:last-child img {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+#app .popup-box .box .box-main .select-pay {
+  border: 1px solid #1BA3E8;
+  background-color: #DEF4FF;
+}
+#app .popup-box .box .box-footer {
+  position: absolute;
+  width: 100%;
+  height: 0.9rem;
+  bottom: 0;
+}
+#app .popup-box .box .box-footer .footer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#app .popup-box .box .box-footer .footer div {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.28rem;
+}
+#app .popup-box .box .box-footer .footer div span {
+  color: #FF0000;
+}
+#app .popup-box .box .box-footer .footer div:last-child {
+  font-size: 0.3rem;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(0deg, #6887ff 0%, #4769ee 100%);
+}

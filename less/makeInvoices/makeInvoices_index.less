@@ -1,0 +1,391 @@
+#app {
+  height: 100%;
+  box-sizing: border-box;
+
+  input {
+    //清除input默认样式
+    outline-style: none;
+    border: none;
+    caret-color: #ccc; //修改光标颜色 一定要加 否则苹果手机无法输入
+    user-select: auto !important;
+    -webkit-user-select: auto !important; //苹果手机兼容
+  }
+
+  #invoices-taxpayers {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #F5F5F5;
+
+    .invoices-taxpayers-header {
+      width: 100%;
+      height: 2.25rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      background-image: url("../../image/invoices_taxpayers/background.png");
+      background-size: 100% 100%;
+
+      .invoices-taxpayers-header-box {
+        margin-top: .64rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        
+        .invoices-taxpayers-header-box-line {
+          width: .06rem;
+          height: .44rem;
+          background-color: #ffffff;
+          border-radius: .03rem;
+          margin-left: .5rem;
+        }
+
+        .invoices-taxpayers-header-box-name {
+          color: #FFFFFF;
+          font-size: .32rem;
+          font-weight: bold;
+          padding-left: .23rem;
+
+        }
+      }
+
+    }
+
+    .invoices-taxpayers-info {
+      box-sizing: border-box;
+      margin-top: -.6rem;
+      border-radius: .5rem .5rem 0 0;
+      background-color: #FFFFFF;
+      width: 100%;
+      padding: .2rem .43rem 0 .42rem;
+
+      .invoices-taxpayers-info-item {
+        height: 0.82rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: #E4E4E4 solid 0.02rem;
+
+        .font-style-gray {
+          color: #999999;
+        }
+
+        .invoices-taxpayers-info-item-searchBox {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          .invoices-taxpayers-info-item-content {
+            flex-grow: 1;
+            font-size: .24rem;
+            font-weight: 500;
+            font-family: PingFang SC;
+          }
+
+          .select-common-style {
+            width: 4.52rem;
+            height: 100%;
+            background: #fff;
+            border: none;
+            outline: none;
+          }
+
+          &::after {
+            content: '';
+            width: .23rem;
+            height: .14rem;
+            display: block;
+            background: url(../../image/invoices_taxpayers/more.png) no-repeat center;
+            background-size: .16rem;
+          }
+        }
+
+        .invoices-taxpayers-info-item-title {
+          flex-shrink: 0;
+          width: 1.9rem;
+          font-size: .24rem;
+          font-weight: 500;
+          font-family: PingFang SC;
+        }
+
+        .invoices-taxpayers-info-item-content {
+          // flex-grow: 1;
+          font-size: .24rem;
+          font-weight: 500;
+          font-family: PingFang SC;
+        }
+
+        .select-common-style {
+          height: 100%;
+          background: #fff;
+          border: none;
+          outline: none;
+
+          /* &::after {
+            content: '';
+            width: .115rem;
+            height: .07rem;
+            display: block;
+            background: url(../../image/invoices_taxpayers/more.png) no-repeat center;
+            background-size: .16rem;
+          } */
+        }
+
+        .invoices-taxpayers-info-item-select {
+          display: flex;
+          flex-direction: row;
+          align-self: center;
+
+          .invoices-taxpayers-info-item-select-input {
+            font-size: .24rem;
+
+            input {
+              border-width: 0px;
+            }
+          }
+
+          .invoices-taxpayers-info-item-select-input-icon {
+            width: .181rem;
+            height: .181rem;
+            border-top: #999999 solid 0.03rem;
+            border-right: #999999 solid 0.03rem;
+            transform: rotate(135deg);
+          }
+
+        }
+
+        .invoices-taxpayers-info-item-search {
+          justify-self: flex-end;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.09rem;
+          height: .48rem;
+          background-color: #6383FD;
+          color: #FFFFFF;
+          font-family: PingFang SC;
+          font-size: .24rem;
+          font-weight: 500;
+          border-radius: .24rem;
+        }
+      }
+
+      .invoices-taxpayers-info-cancelBorder {
+        border-bottom: 0px;
+      }
+    }
+
+    .actives {
+      background-color: #6383FD;
+      border: none;
+    }
+
+    .invoices-taxpayers-goods {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      background-color: #ffffff;
+      padding: 0 .42rem 0 .42rem;
+      margin: 0 0 .39rem 0;
+      border-radius: 0 0 .5rem .5rem;
+
+      .invoices-taxpayers-goods-item {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: .85rem;
+        font-size: .24rem;
+        font-family: PingFang SC;
+        border-bottom: #E5E5E5 solid .02rem;
+
+        .font-style-bold {
+          font-size: .30rem;
+          font-weight: bold;
+          font-family: PingFang SC;
+        }
+
+        .invoices-taxpayers-goods-item-title {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+
+          .invoices-taxpayers-goods-item-title-radio {
+            width: .28rem;
+            height: .28rem;
+            border: #999999 solid .02rem;
+            border-radius: 0.14rem;
+            margin-right: .33rem;
+          }
+
+        }
+
+        .invoices-taxpayers-goods-item-content {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+
+          .invoices-taxpayers-goods-item-content-radio {
+            width: .28rem;
+            height: .28rem;
+            border: #999999 solid .02rem;
+            border-radius: 0.14rem;
+            margin-right: .13rem;
+          }
+
+          .invoices-taxpayers-goods-item-content-search {
+            justify-self: flex-end;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.09rem;
+            height: .48rem;
+            background-color: #6383FD;
+            color: #FFFFFF;
+            font-family: PingFang SC;
+            font-size: .24rem;
+            font-weight: 500;
+            border-radius: .24rem;
+            margin-left: .29rem;
+          }
+
+          .invoices-taxpayers-goods-item-content-update {
+            background-color: #ffffff;
+            border: #6383FD solid .02rem;
+            color: #6383FD;
+          }
+        }
+      }
+
+      .invoices-taxpayers-goods-header {
+        font-size: .30rem;
+        font-weight: bold;
+        font-family: PingFang SC;
+        height: 1.11rem;
+      }
+
+      .invoices-taxpayers-goods-add {
+        align-self: center;
+        width: 6.04rem;
+        height: .8rem;
+        margin: .37rem 0 .36rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #F3F3F3;
+        border-radius: .4rem;
+
+        .invoices-taxpayers-goods-add-icon {
+          font-size: .48rem;
+          font-weight: 800;
+          font-family: PingFang SC;
+          color: #6383FD;
+          margin-right: .23rem;
+        }
+
+        .invoices-taxpayers-goods-add-content {
+          font-size: .3rem;
+          font-weight: bold;
+          font-family: PingFang SC;
+          color: #6383FD;
+        }
+      }
+    }
+
+    .invoices-taxpayers-bottom {
+      align-self: center;
+      width: 6.04rem;
+      margin-bottom: .39rem;
+
+      .invoices-taxpayers-bottom-submitItems {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: .8rem;
+        font-size: .3rem;
+        font-weight: bold;
+        color: #FFFFFF;
+        //background-color: #6886FF;
+        background-image: linear-gradient(180deg, #6886FF, #4769EE);
+        border-radius: .4rem;
+        margin-bottom: .25rem;
+      }
+
+      .invoices-taxpayers-bottom-submitInvoices {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: .8rem;
+        font-size: .3rem;
+        font-weight: bold;
+        color: #6383FD;
+        border: #6383FD solid .02rem;
+        //border-image: linear-gradient(0deg, rgba(104,134,255,1), rgba(71,105,238,1)) 10 10;
+        background: #F5F5F5;
+        //background:linear-gradient(0deg,rgba(104,134,255,1) 0%,rgba(71,105,238,1) 100%);
+        border-radius: .4rem;
+      }
+    }
+  }
+  .popup-box {
+    font-size: .24rem;
+    .popup-head {
+      background-color: #6383FD;
+      font-size: .3rem;
+      color: #fff;
+      text-align: center;
+      height: 1rem;
+      line-height: 1rem;
+      
+    }
+    .main-item {
+      height: 0.8rem;    
+      line-height: 0.8rem;
+      display: flex;
+      justify-content: flex-start;
+      margin: 0 0.4rem;
+      border-bottom: 1px solid #E5E5E5;
+      color: #333333;
+      .main-item-title{
+        width: 1.8rem;
+      }
+      
+    }
+    .box-footer{
+      height: 1rem;
+      display: flex;
+      margin: 0.4rem 0.4rem 0 0.4rem;
+      line-height: 1rem;
+      justify-content: space-around;
+      position: relative;
+      border-radius: .4rem;
+      background-color: #4769EE;
+      font-size: 0.3rem;
+      color: #FFFFFF;
+      .f-middle {
+        position: absolute;
+        width: 2px;
+        height: 0.5rem;
+        top: 0.25rem;
+        background-color: #FFFFFF;
+      }
+    }
+
+  }
+}

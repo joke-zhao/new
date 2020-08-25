@@ -1,0 +1,141 @@
+<div id="inventoryList">
+    <div class="company">
+        <div class="company_name"><p>{{companyName}}</p></div>
+        <div class="company_cny">币种:（CNY）</div>
+    </div>
+
+
+    <div class="datePick">
+        <div class="date-icon">
+            <img src="../../image/manageForm/date.png" alt="">
+        </div>
+        <span class="spans"></span>
+        <div class="startTime">
+            <van-field
+                    readonly
+                    clickable
+                    name="datetimePicker"
+                    :value="startTime"
+                    placeholder="点击选择时间"
+                    @click="showPicker1 = true"
+            />
+            <van-popup v-model="showPicker1" position="bottom">
+                <van-datetime-picker
+                        v-model="currentDate"
+                        type="year-month"
+                        title="开始年月"
+                        :min-date="yearMinDate"
+                        :max-date="yearMaxDate"
+                        :formatter="formatter"
+                        @confirm="onPicker1"
+                        @cancel="showPicker1 = false"
+                />
+            </van-popup>
+        </div>
+        <div class="startTime-font">至</div>
+        <div class="endTime">
+            <van-field
+                    readonly
+                    clickable
+                    name="datetimePicker"
+                    :value="endTime"
+                    placeholder="点击选择时间"
+                    @click="showPicker2 = true"
+            />
+            <van-popup v-model="showPicker2" position="bottom">
+                <van-datetime-picker
+                        v-model="currentDate"
+                        type="year-month"
+                        title="结束年月"
+                        :min-date="yearMinDate"
+                        :max-date="yearMaxDate"
+                        :formatter="formatter"
+                        @confirm="onPicker2"
+                        @cancel="showPicker2 = false"
+                />
+            </van-popup>
+        </div>
+    </div>
+
+    <div class="table_name">存货明细表</div>
+
+    <div class="picture">
+        <div id="myChart"></div>
+    </div>
+
+    <div class="watchDetail_title" v-on:click="Show()"  >
+        <div >查看明细</div>
+        <img v-bind:src="moreImg" style="width: 0.24rem;height: 0.15rem;" v-show="isShowImg" alt="">
+        <img v-bind:src="packUpMore" style="width: 0.24rem;height: 0.15rem;" v-show="!isShowImg" alt="">
+    </div>
+
+    <div class="isShow" v-show="isShow">
+
+
+        <!--startprint-->
+        <div class="watchDetail_content">
+            <table border="1" cellspacing="0"
+                   style="text-align: center;width: 100%;overflow: scroll;height: 100%;margin: 0 auto;font-size: 0.25rem;">
+                <thead>
+                <tr >
+                    <td colspan="8">
+                        <div class="table-title">存货明细表</div>
+                    </td>
+                </tr>
+                <tr >
+                    <td colspan="8">
+                        <div class="table-page">
+                            <div class="table-page-box" style="text-align: center;margin: 0 auto">
+                                时间：{{startTime.substring(0,4)}}年{{startTime.substring(5,7)}}月到{{endTime.substring(0,4)}}年{{endTime.substring(5,7)}}月
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr >
+                    <td colspan="8">
+                        <div class="table-page-second">
+                            <div class="table-page-box">单位名称：{{companyName}}</div>
+                            <div class="table-page-box">币别：RMB</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="2">品名</td>
+                    <td colspan="1" rowspan="2">单位</td>
+                    <td colspan="2" rowspan="1">本期收入</td>
+                    <td colspan="2" rowspan="1">本期发出</td>
+                    <td colspan="2" rowspan="1">本期结存</td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1">数量</td>
+                    <td colspan="1" rowspan="1">金额</td>
+                    <td colspan="1" rowspan="1">数量</td>
+                    <td colspan="1" rowspan="1">金额</td>
+                    <td colspan="1" rowspan="1">数量</td>
+                    <td colspan="1" rowspan="1">金额</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="(item, index) in palList" :key="index">
+                    <td >{{item.prdName}}</td>
+                    <td style="text-align: center;">{{item.unit}}</td>
+                    <td style="text-align: right;">{{item.inumber}}</td>
+                    <td style="text-align: right;">{{item.imoney==0?'':item.imoney}}</td>
+                    <td style="text-align: right;">{{item.onumber}}</td>
+                    <td style="text-align: right;">{{item.omoney==0?'':item.omoney}}</td>
+                    <td style="text-align: right;">{{item.snumber}}</td>
+                    <td style="text-align: right;">{{item.smoney==0?'':item.smoney}}</td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <!--endprint-->
+    </div>
+    <div class="bottom_btns">
+        <div @click="showShare = true" class="export">导出</div>
+        <van-share-sheet v-model="showShare" :options="options"
+                         @select="onSelect" title="选择导出方式"  />
+        <div @click="handlPrint" class="print">打印</div>
+    </div>
+</div>

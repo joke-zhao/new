@@ -1,0 +1,121 @@
+<div id="app">
+    <div class="content">
+        <!-- 广告 -->
+        <div class="advertisement">
+            <img src="../../image/legwork/adver.png">
+        </div>
+        <div class="list">
+            <div class="list-item"  @click="openMap(0)">
+                <div class="list-item-left">取货地址</div>
+                <div class="list-item-right">{{pickupAddress|subText}}</div>
+            </div>
+            <div class="list-line"></div>
+            <div class="list-item">
+                <div class="list-item-left">门牌号</div>
+                <input type="text" v-model="PickupDoorplate"  placeholder="请填写" class="list-item-input" @focus="hideBottom" @blur="showBottom">
+            </div>
+            <div class="list-line"></div>
+            <div class="list-item" @click="openMap(1)">
+                <div class="list-item-left">送货地址</div>
+                <div class="list-item-right">{{deliveryAddress|subText}}</div>
+            </div>
+            <div class="list-line"></div>
+            <div class="list-item">
+                <div class="list-item-left">门牌号</div>
+                <input type="text" v-model="DeliveryDoorplate" placeholder="请填写" class="list-item-input" @focus="hideBottom" @blur="showBottom">
+            </div>
+            <div class="list-line"></div>
+            <div class="list-item" @click="isShowDate=true">
+                <div class="list-item-left">取货时间</div>
+                <div class="list-item-right" >{{currentTime}}</div>
+            </div>
+            <div class="list-line"></div>
+            <div class="list-item">
+                <div class="list-item-left">代跑费 <span></span></div>
+                <input type="text" v-model="pinch" placeholder="请填写" class="list-item-input" @input="handle" @focus="hideBottom" @blur="showBottom">
+            </div>
+            <div class="list-line"></div>
+            <div class="list-item">
+                <div class="list-item-left">备      注</div>
+                <input type="text" v-model="note" placeholder="请填写" class="list-item-input" @focus="hideBottom" @blur="showBottom">
+            </div>
+        </div>
+        <!--<div @click="isPay=!isPay" class="btn-add-order">-->
+            <!--下单-->
+        <!--</div>-->
+        <footer v-show="hideshow">
+            <!-- 唤起支付弹窗 -->
+            <div @click="handlePay" class="footer-box">
+                <span>下单</span>
+            </div>
+        </footer>
+    </div>
+    <div class="bottom-bar" v-show="hideshow">
+        <div @click="openIndex" class="bottom-bar-item">
+            <img src="../../image/legwork/help_no.png">
+            帮人跑
+        </div>
+        <div class="bottom-bar-item">
+            <img src="../../image/legwork/lookfor_on.png">
+            找人跑
+        </div>
+        <div @click="openOrder" class="bottom-bar-item">
+            <img src="../../image/legwork/order_no.png">
+            我的订单
+        </div>
+    </div>
+
+    <div class="popup-box">
+        <van-popup
+                v-model="isPay"
+                position="bottom"
+                :style="{ height: '40%' }"
+        >
+            <div class="box">
+                <div class="box-header">
+                    支付
+                </div>
+                <div class="box-main">
+                    <!-- <p>支付方式</p> -->
+                    <van-radio-group v-model="payFlag">
+                        <div
+                                v-for="item in payList"
+                                :key="item.payId"
+                                :class="{ 'main-item': true, 'select-pay': item.payId === payFlag }"
+                        >
+                            <div class="item-left">
+                                <img :src="item.icon" alt="" />
+                                <span>{{item.name}}</span>
+                            </div>
+                            <div class="item-rigth">
+                                <van-radio icon-size="0.33rem" :name="item.payId"></van-radio>
+                            </div>
+                        </div>
+                    </van-radio-group>
+                </div>
+                <div class="box-footer">
+                    <div class="footer">
+                        <div class="lefe-footer">
+                            应付金额：
+                            <span>￥{{pinch}}</span>
+                        </div>
+                        <div @click="handlePayType" class="right-footer">
+                            付款
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </van-popup>
+    </div>
+    <van-popup v-model="isShowDate" close-on-click-overlay position="bottom" :style="{ height: '30%' }">
+        <van-datetime-picker
+                v-model="tempTime"
+                type="time"
+                title="选择时间"
+                :min-hour="0"
+                :max-hour="23"
+                @confirm="onConfirm"
+                @cancel="onCancel"
+        />
+    </van-popup>
+</div>

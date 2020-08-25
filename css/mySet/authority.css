@@ -1,0 +1,233 @@
+/**css代码在此处开始*/
+#authority {
+  width: 100%;
+  height: 100%;
+}
+#authority h1 {
+  text-align: center;
+  font-size: 0.32rem;
+  height: 0.85rem;
+  background-color: #EDEDED;
+  font-weight: 600;
+  line-height: 0.85rem;
+}
+#authority .coninfo {
+  position: relative;
+  height: 12.49rem;
+}
+#authority .coninfo .peoinfomation {
+  height: 2.71rem;
+  background-image: url(../../image/set-info/skyimg.png);
+  background-size: 100% 100%;
+}
+#authority .coninfo .peoinfomation .information {
+  height: 2.11rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.42rem;
+}
+#authority .coninfo .peoinfomation .information img {
+  height: 1.27rem;
+  width: 1.27rem;
+  border-radius: 50%;
+  background-color: #fff;
+}
+#authority .coninfo .peoinfomation .information p {
+  font-size: 0.3rem;
+  color: #fff;
+  padding-left: 0.43rem;
+  padding-right: 2.33rem;
+}
+#authority .coninfo .peoinfomation .information button {
+  width: 1.67rem;
+  height: 0.48rem;
+  font-size: 0.24rem;
+  color: #6383FD;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 0.24rem;
+}
+#authority .coninfo .basic {
+  height: 8.65rem;
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background-color: #fff;
+  position: absolute;
+  top: 2.11rem;
+  left: 0;
+}
+#authority .coninfo .basic .trigger {
+  padding: 0.49rem;
+  height: 1.52rem;
+  box-sizing: border-box;
+}
+#authority .coninfo .basic .trigger li {
+  height: 0.53rem;
+  font-size: 0.24rem;
+  color: #6383FD;
+  width: 50%;
+  float: left;
+  line-height: 0.53rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#authority .coninfo .basic .trigger li p {
+  width: 0.97rem;
+}
+#authority .coninfo .basic .trigger li + li {
+  border-left: 1px solid #6383FD;
+}
+#authority .coninfo .basic .trigger .actives p {
+  border-bottom: 3px solid #6383FD;
+}
+#authority .coninfo .basic .syndicate {
+  padding: 0 0.41rem;
+}
+#authority .coninfo .basic .syndicate li {
+  height: 0.81rem;
+  border-top: 2px solid #E5E5E5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#authority .coninfo .basic .syndicate li p {
+  font-size: 0.24rem;
+}
+#authority .coninfo .basic .syndicate li .btns {
+  height: 0.42rem;
+  width: 0.69rem;
+  border-radius: 0.21rem;
+  background-color: #DBDBDB;
+}
+#authority .coninfo .basic .syndicate li .btns span {
+  display: block;
+  background-color: #fff;
+  height: 0.38rem;
+  width: 0.38rem;
+  border-radius: 50%;
+  float: right;
+  margin-top: 0.02rem;
+  margin-right: 0.02rem;
+}
+#authority .coninfo .basic .syndicate li .acs {
+  background-color: #6383FD;
+}
+#authority .coninfo .basic .syndicate li .acs span {
+  display: block;
+  background-color: #fff;
+  height: 0.38rem;
+  width: 0.38rem;
+  border-radius: 50%;
+  float: left;
+  margin-top: 0.02rem;
+  margin-left: 0.02rem;
+}
+#authority .coninfo .basic .syndicate li:last-of-type {
+  border-bottom: 2px solid #E5E5E5;
+}
+#authority .coninfo .basic .taxpass {
+  padding: 0 0.41rem;
+}
+#authority .coninfo .basic .taxpass li {
+  height: 0.81rem;
+  border-top: 2px solid #E5E5E5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#authority .coninfo .basic .taxpass li p {
+  font-size: 0.24rem;
+}
+#authority .coninfo .basic .taxpass li .btns {
+  height: 0.42rem;
+  width: 0.69rem;
+  border-radius: 0.21rem;
+  background-color: #DBDBDB;
+}
+#authority .coninfo .basic .taxpass li .btns span {
+  display: block;
+  background-color: #fff;
+  height: 0.38rem;
+  width: 0.38rem;
+  border-radius: 50%;
+  float: right;
+  margin-top: 0.02rem;
+  margin-right: 0.02rem;
+}
+#authority .coninfo .basic .taxpass li .acs {
+  background-color: #6383FD;
+}
+#authority .coninfo .basic .taxpass li .acs span {
+  display: block;
+  background-color: #fff;
+  height: 0.38rem;
+  width: 0.38rem;
+  border-radius: 50%;
+  float: left;
+  margin-top: 0.02rem;
+  margin-left: 0.02rem;
+}
+#authority .coninfo .basic .taxpass li:last-of-type {
+  border-bottom: 2px solid #E5E5E5;
+}
+#authority .pupwindow {
+  width: 7.5rem;
+  height: 10rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(bottom, white, rgba(229, 231, 237, 0.456));
+  background: -ms-linear-gradient(bottom, white, rgba(229, 231, 237, 0.456));
+  background: -webkit-linear-gradient(bottom, white, rgba(229, 231, 237, 0.456));
+  background: -moz-linear-gradient(bottom, white, rgba(229, 231, 237, 0.456));
+}
+#authority .pupwindow .hint {
+  height: 2.12rem;
+  width: 6.16rem;
+  margin-top: 3.82rem;
+  margin-left: 0.6rem;
+  border-radius: 0.3rem;
+  border: 2px solid #6383fd;
+  background-color: #fff;
+}
+#authority .pupwindow .hint h5 {
+  font-size: 0.3rem;
+  padding-left: 1.04rem;
+  padding-top: 0.5rem;
+  background: url(../../image/set-info/tishi.png) no-repeat 0.53rem 0.47rem;
+  background-size: 0.33rem 0.44rem;
+}
+#authority .pupwindow .hint p {
+  font-size: 0.24rem;
+  padding-left: 1.04rem;
+  padding-top: 0.2rem;
+}
+#authority .pupwindow .btns {
+  width: 6.16rem;
+  height: 0.8rem;
+  margin-top: 0.47rem;
+  margin-left: 0.76rem;
+}
+#authority .pupwindow .btns .btns-jj {
+  width: 3.57rem;
+  height: 0.8rem;
+  border-radius: 0.4rem;
+  background-color: #D4D4D4;
+  color: #fff;
+  font-size: 0.3rem;
+  outline: none;
+  border: none;
+}
+#authority .pupwindow .btns .checkbox {
+  width: 2.17rem;
+  height: 0.8rem;
+  border-radius: 0.4rem;
+  color: #fff;
+  font-size: 0.3rem;
+  background-color: #6886FF;
+  outline: none;
+  border: none;
+}

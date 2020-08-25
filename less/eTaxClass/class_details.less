@@ -1,0 +1,351 @@
+#app{
+    padding-bottom:1rem;//底部盒子高度
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: .3rem;
+        border-bottom: .16rem solid #F5F5F5;
+        .video{
+            width: 100%;
+            height: 4.2rem;
+            min-height: 4.2rem;
+            video{
+                width: 100%;
+                // height: 4.2rem;
+                max-height: 4.2rem;
+            }
+            img{
+                width: 100%;
+                height: 4.2rem;
+                min-height: 4.2rem;
+            }
+        }
+        .title{
+            margin-top: .4rem;
+            width: 96%;
+            display: flex;
+            margin-left: 3%;
+            justify-content: flex-start;
+            margin-right: auto;
+            font-size:.32rem;
+            font-family:PingFang SC;
+            font-weight:500;
+            color:#000;
+            line-height:.42rem;
+        }
+        .content{
+            margin-top: .19rem;
+            width: 96%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            .charge{
+                border: 1px solid #F64A38;
+                border-radius:.1rem;
+                color: #F64A38;
+                font-size:.24rem;
+                line-height:.37rem;
+                width: .9rem;
+                height: .4rem;
+            }
+            .sum{
+                margin-left: .19rem;
+                font-size:.24rem;
+                line-height:.37rem;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:#808080;
+            }
+            .zan{
+                justify-content: flex-end;
+                margin-left: auto;
+                font-size:.24rem;
+                line-height:.37rem;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:#808080;
+                img{
+                    width: .3rem;
+                    height: .3rem;
+                }
+                span{
+                    font-size:.24rem;
+                    line-height:.37rem;
+                    font-family:PingFang SC;
+                    font-weight:400;
+                    color:#808080;
+                }
+            }
+        }
+    }
+    .center{
+        .tab{
+            display: flex;
+            height:1.2rem;
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #F5F5F5;
+            .h-left{
+                width: 25%;
+                border-bottom: 3px solid #4C6DF0;
+                color:#4C6DF0;
+            }
+            .h-right{
+                width: 25%;
+                border-bottom: 3px solid #fff;
+                color:#808080;
+            }
+            .tab1{
+                // width: 25%;
+                justify-content: center;
+                margin-right: 10%;
+                height: .58rem;
+                font-size:.3rem;
+                font-family:PingFang SC;
+                font-weight:bold;
+                // color:#4C6DF0;
+            }
+            .tab2{
+                display: flex;
+                justify-content: center;
+                margin-left: 10%;
+                // width: 20%;
+                height: .58rem;
+                font-size:.3rem;
+                font-family:PingFang SC;
+                font-weight:bold;
+                // color:#808080;
+            }
+        }
+        .introduction{
+            width: 94%;
+            margin-left: 3%;
+            margin-top: .37rem;
+            font-size:.24rem;
+            font-family:PingFang SC;
+            font-weight:400;
+            color:rgba(51,51,51,1);
+            line-height:.36rem;
+        }
+        
+    .friend_replied{
+        margin-top: .4rem;
+        width: 96%;
+        margin-left: 3%;
+        .contents{
+            .user{
+                display: flex;
+                margin-top: .2rem;
+                // justify-content: center;
+                align-items: center;
+                .photo{
+                    width: .9rem;
+                    height: .9rem;
+                    line-height:.37rem;
+                    // margin-top: -2.2rem;
+                    img{
+                        width: .9rem;
+                        height: .9rem;
+                        border-radius: 50%;
+                    }
+                }
+                .namedate{
+                    margin-left: .24rem;
+                    .name{
+                        font-size:.3rem;
+                        font-family:PingFang SC;
+                        font-weight:500;
+                        color:#222222;
+                        line-height:.37rem;
+                    }
+                    .date{
+                        margin-top: .16rem;
+                        font-size:.24rem;
+                        font-family:PingFang SC;
+                        font-weight:400;
+                        color:#999999;
+                        line-height:.37rem;
+                    }
+                }
+            }
+            // .content{
+            //     margin-top: .4rem;
+            //     font-size:.28rem;
+            //     font-family:PingFang SC;
+            //     font-weight:400;
+            //     color:#333333;
+            //     line-height:.42rem;
+            //     span{
+            //         color: #4769EE;
+            //     }
+            // }
+            .content{
+                display: flex;
+                margin-top: .4rem;
+                font-family:PingFang SC;
+                color:#333333;
+                font-size:.28rem;
+                font-weight:400;
+                line-height:.42rem;
+                .contentspan{
+                    overflow : hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                }
+                // .getAll{
+                //     margin-left: .2rem;
+                //     color: #4769EE;
+                // }
+                .getAll{
+                    overflow : hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 100;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+    }
+    .bottom{
+        width: 100%;
+        height: .9rem;
+        position: fixed;
+        bottom: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .price{
+            display: flex;
+            justify-content: flex-start;
+            margin-right: auto;
+            padding-left: 3%;
+            align-items: center;
+            width:50%;
+            height:.9rem;
+            font-size:.28rem;
+            font-family:PingFang SC;
+            font-weight:bold;
+            color:#F64A38;
+            background-color: #F5F5F5;
+        }
+        .buy{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:50%;
+            height:.9rem;
+            font-size:.3rem;
+            font-family:PingFang SC;
+            font-weight:bold;
+            color:#fff;
+            background:linear-gradient(0deg,rgba(104,135,255,1) 0%,rgba(71,105,238,1) 100%);
+        }
+    }
+    
+    /* 支付方式弹出层 */
+    .popup-box {
+
+        .box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            .box-header {
+                padding: .3rem 0;
+                font-size: .3rem;
+                font-weight: 600;
+                text-align: center;
+                border-bottom: 2px solid #f5f5f5;
+            }
+
+            .box-main {
+                padding: 0 .2rem;
+                p {
+                    font-size: .28rem;
+                    font-weight: 600;
+                }
+
+                .main-item {
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 1rem;
+                    margin-top: 0.2rem;
+                    padding: 0 0.2rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 5px;
+                    font-size: .28rem;
+                    color: #000;
+                    border: 1px solid #fff;
+
+                    .item-left {
+                        display: flex;
+                        align-items: center;
+                        img {
+                            margin-right: .2rem;
+                            width: 0.48rem;
+                            height: 0.39rem;
+                        }
+                    }
+                }
+
+                .main-item:last-child {
+                    img {
+                        width: 0.4rem;
+                        height: 0.4rem;
+                    }
+                }
+
+                /* 支付方式选中的样式 */
+                .select-pay {
+                    border: 1px solid #1BA3E8;
+                    background-color: #DEF4FF;
+                }
+            }
+
+            .box-footer {
+                position: absolute;
+                width: 100%;
+                height: .9rem;
+                bottom: 0;
+                .footer{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    
+                div{
+                    flex:1;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: .28rem;
+                    span{
+                        color:#FF0000;
+                    }
+                }
+                div:last-child{
+                    font-size: .3rem;
+                    color:#fff;
+                    font-weight: 600;
+                    background:linear-gradient(0deg,rgba(104,135,255,1) 0%,rgba(71,105,238,1) 100%);
+                }
+                }
+            }
+        }
+    }
+    .bottomSearch{
+        width: 100%;
+        height: .9rem;
+        position: fixed;
+        bottom: 0px;
+    }
+}

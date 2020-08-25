@@ -1,0 +1,96 @@
+.container{
+  padding: 0 .40rem  0 .40rem;
+  .type{
+    height: 0.79rem;
+    font-size: .3rem;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(0,0,0,1);
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 0.02rem solid #DCDCDC;
+    .type_title{
+      width: 1.58rem;
+      opacity:0.5;
+    }
+    .type_content{
+      width: 5.05rem;
+    }
+  }
+  .content{
+    padding: .23rem 0 .25rem 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: .3rem;
+    font-family:PingFang SC;
+    font-weight:500;
+    border-bottom: 0.02rem solid #DCDCDC;
+    .content_title{
+      width: 1.58rem;
+      color:rgba(0,0,0,1);
+      opacity:0.5;
+    }
+    .content_text{
+      width: 5.05rem;
+      .content_item{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        .item_cost{
+          font-family:PingFang SC;
+          font-weight:800;
+          color:rgba(191,29,29,1);
+        }
+      }
+      .sum{
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-end;
+        align-items: center;
+        font-family:PingFang SC;
+        font-weight:800;
+        color:rgba(191,29,29,1);
+      }
+    }
+  }
+  .description{
+    padding: .3rem 0 .44rem 0;
+    width:6.65rem;
+    .description_title{
+      font-size:.3rem;
+      font-family:PingFang SC;
+      font-weight:500;
+      color:rgba(0,0,0,1);
+      opacity:0.9;
+      img{
+        width: .22rem;
+        height: .25rem;
+        margin-right: .13rem;
+      }
+    }
+    .description_content{
+      margin-top: .3rem;
+      font-size:.28rem;
+      font-family:PingFang SC;
+      font-weight:500;
+      color:rgba(0,0,0,1);
+      line-height:.36rem;
+      height: 2.42rem;
+      overflow-y: auto;
+    }
+  }
+}
+.column_center-start{
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.border-slive{
+  border-bottom: 0.02rem solid #DCDCDC;
+}
